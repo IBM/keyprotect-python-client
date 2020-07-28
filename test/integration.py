@@ -11,35 +11,32 @@ import keyprotect
 from keyprotect import bxauth
 
 
-#service_id="ce46b1ab-c71f-4b1f-9fc4-4a774a49260c"
-service_id = os.environ.get('KP_INSTANCE_ID')
+service_id = os.environ.get("KP_INSTANCE_ID")
+region_name = os.environ.get("KP_INSTANCE_REGION") or "us-east"
 
 
 env_vars = [os.environ.get('IBMCLOUD_API_KEY'),
             os.environ.get('BLUEMIX_API_KEY')]
 
 
-# iterate throuh in order and use first one that is not nil/empty
+# iterate through possible API key vars
+# in order and use first one that is not nil/empty
 for var in env_vars:
     if var:
         apikey = var
         break
 
 
-def get_client(region):
+def main():
     tm = bxauth.TokenManager(api_key=apikey)
 
-    return keyprotect.Keys(
-        iamtoken=tm.get_token(),
-        region=region,
-        instance_id=service_id
+    kp = keyprotect.Client(
+        credentials=tm,
+        region=region_name,
+        service_instance_id=service_id,
     )
 
-
-def main():
-    kp = get_client(region="us-east")
-
-    for key in kp.index():
+    for key in kp.keys():
         print("%s\t%s" % (key['id'], key['name']))
 
     key = kp.create(name="MyTestKey")
