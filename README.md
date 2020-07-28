@@ -7,6 +7,14 @@ A Pythonic client for IBM Key Protect
 
 This is a thin wrapper around the KeyProtect client in the [redstone](https://github.com/IBM/redstone) Python package. For detailed documentation and API references, please see the [redstone docs](https://redstone-py.readthedocs.org)
 
+# Installation
+
+The client is available on PyPI as the `keyprotect` package and is installable via `pip`:
+
+```sh
+pip install -U keyprotect
+```
+
 # Usage
 
 The following python is a quick example of how to use the keyprotect module.
