@@ -1,6 +1,6 @@
 # keyprotect-python-client
 
-[![Build Status](https://travis-ci.org/locke105/python-keyprotect.svg?branch=master)](https://travis-ci.org/locke105/python-keyprotect)
+[![Build Status](https://travis-ci.com/IBM/keyprotect-python-client.svg?branch=master)](https://travis-ci.com/IBM/keyprotect-python-client)
 [![Apache License](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 A Pythonic client for IBM Key Protect
