@@ -43,7 +43,7 @@ for key in kp.keys():
 key = kp.create(name="MyTestKey")
 print("Created key '%s'" % key['id'])
 
-kp.delete(key.get('id'))
+kp.delete(key_id=key.get('id'))
 print("Deleted key '%s'" % key['id'])
 
 
@@ -53,17 +53,17 @@ key = kp.create(name="MyRootKey", root=True)
 
 # wrap/unwrap, payload should be a bytestring if python3
 message = b'This is a really important message.'
-wrapped = kp.wrap(key.get('id'), message)
+wrapped = kp.wrap(key_id=key.get('id'), plaintext=message)
 ciphertext = wrapped.get("ciphertext")
 
-unwrapped = kp.unwrap(key.get('id'), ciphertext)
+unwrapped = kp.unwrap(key_id=key.get('id'), ciphertext=ciphertext)
 assert message == unwrapped
 
 # wrap/unwrap with AAD
 message = b'This is a really important message too.'
-wrapped = kp.wrap(key.get('id'), message, aad=['python-keyprotect'])
+wrapped = kp.wrap(key_id=key.get('id'), plaintext=message, aad=['python-keyprotect'])
 ciphertext = wrapped.get("ciphertext")
 
-unwrapped = kp.unwrap(key.get('id'), ciphertext, aad=['python-keyprotect'])
+unwrapped = kp.unwrap(key_id=key.get('id'), ciphertext=ciphertext, aad=['python-keyprotect'])
 assert message == unwrapped
 ```
