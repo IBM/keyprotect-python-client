@@ -47,7 +47,7 @@ def main():
     kp.delete(key.get('id'))
     print("Deleted key '%s'" % key['id'])
 
-    # wrap/unwrap
+    # wrap/unwrap/rewrap
     print("Creating root key")
     key = kp.create(name="MyRootKey", root=True)
 
@@ -61,10 +61,18 @@ def main():
     print("Unwrapped plaintext: %r" % unwrapped)
     assert message == unwrapped
 
+    rotated = kp.rotate(key.get('id'))
+    if rotated == 'Success':
+        print("Rotated key: %s" % key.get('id'))
+
+    print("Rewrapping message...")
+    rewrapped = kp.rewrap(key.get('id'), ciphertext)
+    assert rewrapped['ciphertext'] != ciphertext
+
     kp.delete(key.get('id'))
     print("Deleted key '%s'" % key['id'])
 
-    # wrap/unwrap with AAD
+    # wrap/unwrap/rewrap with AAD
     print("Creating root key")
     key = kp.create(name="MyRootKey", root=True)
 
@@ -77,6 +85,14 @@ def main():
     unwrapped = kp.unwrap(key.get('id'), ciphertext, aad=['python-keyprotect'])
     print("Unwrapped plaintext: %r" % unwrapped)
     assert message == unwrapped
+
+    rotated = kp.rotate(key.get('id'))
+    if rotated == 'Success':
+        print("Rotated key: %s" % key.get('id'))
+
+    print("Rewrapping message...")
+    rewrapped = kp.rewrap(key.get('id'), ciphertext, aad=['python-keyprotect'])
+    assert rewrapped['ciphertext'] != ciphertext
 
     kp.delete(key.get('id'))
     print("Deleted key '%s'" % key['id'])
