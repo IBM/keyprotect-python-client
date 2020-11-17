@@ -47,30 +47,37 @@ def main():
     print("key %s dual auth delete policy: %s" % (key['id'], set_key_dual_auth_policy['resources'][0]['dualAuthDelete']))
 
     print("Setting multiple key policies, using one http request")
-    key_multiple = kp.set_key_multiple_policies(key['id'], rotation_interval=3, dual_auth_enable=True)
-    print("key %s rotation policy: %s" % (key['id'], key_multiple['resources'][0]['rotation']))
-    print("key %s dual auth delete policy: %s" % (key['id'], key_multiple['resources'][1]['dualAuthDelete']))
+    set_key_multiple_auth_policy = kp.set_key_multiple_policies(key['id'], rotation_interval=3, dual_auth_enable=True)
+    print("key %s rotation policy: %s" % (key['id'], set_key_multiple_auth_policy['resources'][0]['rotation']))
+    print("key %s dual auth delete policy: %s" % (key['id'],
+                                                  set_key_multiple_auth_policy['resources'][1]['dualAuthDelete']))
 
     print("Retrieving key policies for key %s:" % key['id'])
     key_policies_get = kp.get_key_policies(key['id'])
     print(key_policies_get)
 
-    print("Enabling instance dual auth delete policy")
+    print("Setting instance dual auth delete policy")
     set_instance_dual_auth_policy = kp.set_instance_dual_auth_policy(True)
     print(set_instance_dual_auth_policy)
 
-    print("Setting instance network policy to public-and-private")
+    print("Setting instance allowed network policy to public-and-private")
     set_instance_allowed_network_policy = kp.set_instance_allowed_network_policy(True, "public-and-private")
     print(set_instance_allowed_network_policy)
 
     print("Setting multiple instance policies, using one http request")
-    set_instance_multiple_policies = kp.set_instance_multiple_policies(allowed_network_enable=False,
+    set_instance_multiple_policies = kp.set_instance_multiple_policies(dual_auth_enable=True,
+                                                                       allowed_network_enable=False,
                                                                        network_type="public-and-private")
     print(set_instance_multiple_policies)
 
     print("Retrieving instance policies for instance %s:" % service_id)
     instance_policies_get = kp.get_instance_policies()
     print(instance_policies_get)
+
+    # Example:
+    # print("Setting instance allowed IP policy")
+    # set_instance_allowed_ip_policy = kp.set_instance_allowed_ip_policy(True, ["X.X.X.X/N", "X.X.X.X/N"])
+    # print(set_instance_allowed_ip_policy)
 
 
 if __name__ == "__main__":
