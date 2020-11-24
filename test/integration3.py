@@ -46,6 +46,12 @@ def main():
     set_key_dual_auth_policy = kp.set_key_dual_auth_policy(key['id'], True)
     print("key %s dual auth delete policy: %s" % (key['id'], set_key_dual_auth_policy['resources'][0]['dualAuthDelete']))
 
+    kp.set_key_for_delete(key['id'])
+    print("Initiated key '%s' for delete" % key['id'])
+
+    kp.unset_key_for_delete(key['id'])
+    print("Unsetted key '%s' for delete" % key['id'])
+
     print("Retrieving key policies for key %s:" % key['id'])
     key_policies_get = kp.get_key_policies(key['id'])
     print(key_policies_get)
