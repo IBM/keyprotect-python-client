@@ -49,12 +49,12 @@ def main():
     print("Restored key '%s'" % key['id'])
 
     # disable
-    kp.disable(key.get('id'))
+    kp.disable_key(key.get('id'))
     print("Disabled key '%s'" % key['id'])
 
     # enable
     time.sleep(31)
-    kp.enable(key.get('id'))
+    kp.enable_key(key.get('id'))
     print("Enabled key '%s'" % key['id'])
 
     # create import token
@@ -70,7 +70,7 @@ def main():
     print("Registrations: %r" % regs)
 
     #  sample for getting registrations associated with an instance
-    all_regs = kp.get_all_registrations()
+    all_regs = kp.get_registrations()
     print("All registrations: %r" % all_regs)
 
 if __name__ == "__main__":

@@ -62,8 +62,7 @@ def main():
     assert message == unwrapped
 
     rotated = kp.rotate(key.get('id'))
-    if rotated == 'Success':
-        print("Rotated key: %s" % key.get('id'))
+    print("Rotated key: %r" % key.get('id'))
 
     print("Rewrapping message...")
     rewrapped = kp.rewrap(key.get('id'), ciphertext)
@@ -87,8 +86,7 @@ def main():
     assert message == unwrapped
 
     rotated = kp.rotate(key.get('id'))
-    if rotated == 'Success':
-        print("Rotated key: %s" % key.get('id'))
+    print("Rotated key: %r" % key.get('id'))
 
     print("Rewrapping message...")
     rewrapped = kp.rewrap(key.get('id'), ciphertext, aad=['python-keyprotect'])
