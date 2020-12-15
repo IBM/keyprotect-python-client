@@ -67,3 +67,17 @@ ciphertext = wrapped.get("ciphertext")
 unwrapped = kp.unwrap(key_id=key.get('id'), ciphertext=ciphertext, aad=['python-keyprotect'])
 assert message == unwrapped
 ```
+
+# Using custom endpoint
+
+The following example shows how to use custom service endpoint
+
+```python
+kp = keyprotect.Client(
+    credentials=tm,
+    region="<region>",
+    service_instance_id=os.getenv("KP_INSTANCE_ID"),
+    # Set custom service endpoint
+    endpoint_url="https://private.us-south.kms.cloud.ibm.com"
+)
+```
