@@ -7,6 +7,8 @@ A Pythonic client for IBM Key Protect
 
 This is a thin wrapper around the KeyProtect client in the [redstone](https://github.com/IBM/redstone) Python package. For detailed documentation and API references, please see the [redstone docs](https://redstone-py.readthedocs.org)
 
+The client works with Python 3.5 or higher
+
 # Installation
 
 The client is available on PyPI as the `keyprotect` package and is installable via `pip`:
@@ -66,4 +68,18 @@ ciphertext = wrapped.get("ciphertext")
 
 unwrapped = kp.unwrap(key_id=key.get('id'), ciphertext=ciphertext, aad=['python-keyprotect'])
 assert message == unwrapped
+```
+
+## Using custom endpoint
+
+The following example shows how to use custom service endpoint
+
+```python
+kp = keyprotect.Client(
+    credentials=tm,
+    region="<region>",
+    service_instance_id=os.getenv("KP_INSTANCE_ID"),
+    # Set custom service endpoint
+    endpoint_url="https://private.us-south.kms.cloud.ibm.com"
+)
 ```
