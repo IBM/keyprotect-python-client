@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/IBM/keyprotect-python-client.svg?branch=master)](https://travis-ci.com/IBM/keyprotect-python-client)
 [![Apache License](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-A Pythonic client for IBM Key Protect
+A Pythonic client for IBM Key Protect, this supports Python 3
 
 This is a thin wrapper around the KeyProtect client in the [redstone](https://github.com/IBM/redstone) Python package. For detailed documentation and API references, please see the [redstone docs](https://redstone-py.readthedocs.org)
 
