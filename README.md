@@ -3,9 +3,11 @@
 [![Build Status](https://travis-ci.com/IBM/keyprotect-python-client.svg?branch=master)](https://travis-ci.com/IBM/keyprotect-python-client)
 [![Apache License](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-A Pythonic client for IBM Key Protect, this supports Python 3
+A Pythonic client for IBM Key Protect
 
 This is a thin wrapper around the KeyProtect client in the [redstone](https://github.com/IBM/redstone) Python package. For detailed documentation and API references, please see the [redstone docs](https://redstone-py.readthedocs.org)
+
+The client works with Python 3.5 or higher
 
 # Installation
 
@@ -68,7 +70,7 @@ unwrapped = kp.unwrap(key_id=key.get('id'), ciphertext=ciphertext, aad=['python-
 assert message == unwrapped
 ```
 
-# Using custom endpoint
+## Using custom endpoint
 
 The following example shows how to use custom service endpoint
 
