@@ -5,6 +5,7 @@ from __future__ import print_function
 import logging
 import os
 import pprint
+import sys
 import traceback
 
 import keyprotect
@@ -91,3 +92,4 @@ if __name__ == "__main__":
         traceback.print_exc()
         if hasattr(ex, "raw_response"):
             print(ex.raw_response)
+        sys.exit(1)
