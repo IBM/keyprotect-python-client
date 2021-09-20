@@ -14,8 +14,3 @@ install:
 
 script:
   - tox
-
-env:
-  global:
-    - KP_INSTANCE_ID="3f00c4a5-04fe-41be-9a7a-222b0c9b5448"
-    - KP_INSTANCE_REGION="us-south"
