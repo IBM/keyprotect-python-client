@@ -7,7 +7,7 @@ with open("README.md", "r") as rfh:
 
 setuptools.setup(
     name = "keyprotect",
-    version = "2.1.0",
+    version = "2.2.0",
     description = "A Pythonic client for IBM Key Protect",
     long_description = long_description,
     long_description_content_type = "text/markdown",
@@ -17,7 +17,7 @@ setuptools.setup(
     author_email = "mathewrodden@gmail.com",
     packages = setuptools.find_packages(),
     install_requires = [
-        "redstone>=0.5,<0.6",
+        "redstone>=0.5.1,<0.6",
     ],
     python_requires=">=3.5",
     classifiers = [
