@@ -72,9 +72,11 @@ unwrapped = kp.unwrap(key_id=key.get('id'), ciphertext=ciphertext, aad=['python-
 assert message == unwrapped
 ```
 
-## Using custom endpoint
+## Using custom endpoint (for HPCS, Private Endpoint, Satellite, and Stage/Test instances)
 
-The following example shows how to use custom service endpoint
+Custom endpoints are needed when using this Python client against an HPCS/Satellite/Private service instance.
+
+The following example shows how to specify a custom service endpoint
 
 ```python
 kp = keyprotect.Client(
