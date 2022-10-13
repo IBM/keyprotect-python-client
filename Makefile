@@ -8,10 +8,15 @@ publish: dist
 	twine upload dist/*
 	rm -fr build dist .egg *.egg-info
 
-ci: test-init lint
+setup: deps dev_deps
 
-test-init:
-	python -m pytest test
+deps:
+	python -m pip install -r requirements.txt
+
+dev_deps:
+	python -m pip install -r requirements-dev.txt
+
+ci: setup lint
 
 lint:
 	./pylint.sh
