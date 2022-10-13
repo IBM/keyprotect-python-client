@@ -1,5 +1,7 @@
 .PHONY: dist
 
+ci: setup test-unit lint
+
 dist:
 	python setup.py sdist bdist_wheel
 

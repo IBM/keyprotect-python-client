@@ -22,8 +22,8 @@ install:
 - echo -e "machine github.ibm.com\n  login $GITHUB_OAUTH_TOKEN" > ~/.netrc
 - pip install setuptools=="60.8.2"
 
-# script:
-# - make ci
+script:
+- make ci
 
 #To enable semantic-release, uncomment these sections.
 before_deploy:
