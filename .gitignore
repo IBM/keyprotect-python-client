@@ -87,15 +87,28 @@ celerybeat-schedule
 venv/
 ENV/
 
-# Spyder project settings
-.spyderproject
-.spyproject
+.DS_Store
 
-# Rope project settings
-.ropeproject
+# resources
+resources/output.wav
 
-# mkdocs documentation
-/site
+docs/_build/
+deploy.sh
+docs/apis
+docs/gh-pages
+test/__init__.py
+*~
 
-# mypy
-.mypy_cache/
+.sfdx/tools/apex.db
+.pytest_cache/
+
+# openapi-sdkgen
+.openapi-generator/
+.openapi-generator-ignore
+/.pydevproject
+/.settings/
+
+# files produced by "npm install" commands during build
+package.json
+package-lock.json
+node_modules/
