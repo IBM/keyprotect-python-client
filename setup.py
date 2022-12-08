@@ -4,10 +4,11 @@ import setuptools
 with open("README.md", "r") as rfh:
     long_description = rfh.read()
 
+__version__ = '2.2.0'
 
 setuptools.setup(
     name = "keyprotect",
-    version = "2.2.0",
+    version = __version__,
     description = "A Pythonic client for IBM Key Protect",
     long_description = long_description,
     long_description_content_type = "text/markdown",
