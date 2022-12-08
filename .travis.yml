@@ -18,7 +18,6 @@ install:
 - sudo apt-get update
 - sudo apt-get install pandoc
 - pip install pypandoc
-- echo -e "machine github.ibm.com\n  login $GITHUB_OAUTH_TOKEN" > ~/.netrc
 - pip install setuptools=="60.8.2"
 
 script:
@@ -42,6 +41,7 @@ deploy:
     python: '3.10'
     branch: master
 - provider: pypi
+  setuptools_version: "60.8.2"
   user: __token__
   password: $PYPI_TOKEN
   repository: https://upload.pypi.org/legacy
