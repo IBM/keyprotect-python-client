@@ -18,7 +18,7 @@ setuptools.setup(
     author_email = "mathewrodden@gmail.com",
     packages = setuptools.find_packages(),
     install_requires = [
-        "redstone>=0.5.1,<0.6",
+        "redstone>=0.6.0,<0.7",
     ],
     python_requires=">=3.5",
     classifiers = [
