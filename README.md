@@ -1,4 +1,4 @@
-# IBM Cloud Python SDK Version 2.2.1
+# IBM Cloud Python SDK Version 2.3.0
 
 # keyprotect-python-client
 
