@@ -1,4 +1,4 @@
-## [2.3.0](https://github.com/IBM/keyprotect-python-client/compare/v2.2.1...v2.3.0) (2024-06-12)
+## [2.3.1](https://github.com/IBM/keyprotect-python-client/compare/v2.2.1...v2.3.1) (2024-06-12)
 
 Added [KMIP Management API](https://cloud.ibm.com/apidocs/key-protect#get-kmip-adapters) support to Python SDK
 
