@@ -29,5 +29,6 @@ jobs:
         env:
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: |
+          pip install --upgrade pip setuptools wheel
           make ci
           make publish-release
