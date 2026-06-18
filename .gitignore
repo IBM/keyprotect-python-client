@@ -6,8 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Test Results
+*results.txt
+
 # Distribution / packaging
 .Python
+uv.lock
 env/
 build/
 develop-eggs/
@@ -88,6 +92,13 @@ venv/
 ENV/
 
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # resources
 resources/output.wav
@@ -101,6 +112,18 @@ test/__init__.py
 
 .sfdx/tools/apex.db
 .pytest_cache/
+results
+
+# Environment and Credentials
+ibm_key_protect_api_v2.env
+
+# Certificates and Keys
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
 
 # openapi-sdkgen
 .openapi-generator/
