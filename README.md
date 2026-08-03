@@ -1,4 +1,4 @@
-# IBM Cloud Python SDK Version 3.0.0
+# IBM Cloud Python SDK Version 2.3.1
 
 # keyprotect-python-client
 
@@ -42,7 +42,7 @@ from keyprotect.ibm_key_protect_api_v2 import IbmKeyProtectApiV2
 # ---------------------------------------------------------------------------
 
 API_KEY = os.getenv("IBMCLOUD_API_KEY", <API_KEY>)
-INSTANCE_ID = os.getenv("KP_INSTANCE_ID", <Instance ID>)
+INSTANCE_ID = os.getenv("KP_INSTANCE_ID", <INSTANCE_ID>)
 KP_URL = os.getenv("KP_URL", "https://us-south.kms.cloud.ibm.com")
 
 # ---------------------------------------------------------------------------
@@ -193,19 +193,6 @@ cls.created_keyring_id = "test-keyring"
 cls.kmip_name         = "test-kmip"
 cls.kmip_cert_name    = "Test-certificate"
 ```
-
-#### KMIP certificate tests
-
-Tests such as `test_add_kmip_client_certificate` require a temporary certificate.
-Generate one with:
-
-```bash
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out temp.pem -sha256 -days 1 -nodes \
-  -subj "/C=XX/ST=<XX>/L=<locality>/O=<company>/OU=<org>/CN=CommonNameOrHostname" > /dev/null
-```
-
-- `key.pem` — private key (not needed for cert creation)
-- `temp.pem` — public certificate used when calling the KMIP client certificate API
 
 ### Running Tests
 

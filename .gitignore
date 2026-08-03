@@ -118,7 +118,6 @@ results
 ibm_key_protect_api_v2.env
 
 # Certificates and Keys
-*.pem
 *.key
 *.crt
 *.cer
