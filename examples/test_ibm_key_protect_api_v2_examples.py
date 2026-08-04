@@ -23,8 +23,45 @@ import os
 import pytest
 import json
 import time
+from datetime import datetime, timezone, timedelta
 from keyprotect.ibm_key_protect_api_v2 import *
 from typing import Any
+
+from cryptography import x509
+from cryptography.x509.oid import NameOID
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import rsa as crypto_rsa
+
+# MANUAL: generateTestCertPEM produces a self-signed X.509 certificate in memory for testing
+def generate_test_cert_pem() -> str:
+    """Produce a self-signed X.509 certificate in memory, removing the need for
+    a pre-generated temp.pem file or an external openssl invocation.
+    Equivalent to:
+        openssl req -x509 -newkey rsa:4096 -keyout key.pem -out temp.pem \\
+          -sha256 -days 1 -nodes \\
+          -subj "/C=XX/ST=XX/L=locality/O=company/OU=org/CN=CommonNameOrHostname"
+    """
+    key = crypto_rsa.generate_private_key(public_exponent=65537, key_size=4096)
+    subject = issuer = x509.Name([
+        x509.NameAttribute(NameOID.COUNTRY_NAME, "XX"),
+        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "XX"),
+        x509.NameAttribute(NameOID.LOCALITY_NAME, "locality"),
+        x509.NameAttribute(NameOID.ORGANIZATION_NAME, "company"),
+        x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, "org"),
+        x509.NameAttribute(NameOID.COMMON_NAME, "CommonNameOrHostname"),
+    ])
+    cert = (
+        x509.CertificateBuilder()
+        .subject_name(subject)
+        .issuer_name(issuer)
+        .public_key(key.public_key())
+        .serial_number(x509.random_serial_number())
+        .not_valid_before(datetime.now(timezone.utc))
+        .not_valid_after(datetime.now(timezone.utc) + timedelta(days=1))
+        .add_extension(x509.BasicConstraints(ca=True, path_length=None), critical=True)
+        .sign(key, hashes.SHA256())
+    )
+    return cert.public_bytes(serialization.Encoding.PEM).decode("utf-8")
 
 #
 # This file provides an example of how to use the IBM Key Protect API service.
@@ -1129,9 +1166,8 @@ class TestIbmKeyProtectApiV2Examples:
                 'collectionTotal': 1,
             }
 
-            # Read actual certificate from file
-            with open("temp.pem", "r") as f:
-                certificate = f.read()
+            # MANUAL: Generate certificate in memory instead of reading from temp.pem
+            certificate = generate_test_cert_pem()
 
             create_kmip_client_certificate_object_model = {
                 'certificate': certificate,

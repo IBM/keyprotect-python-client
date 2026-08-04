@@ -28,7 +28,7 @@ from ibm_cloud_sdk_core.detailed_response import DetailedResponse
 from typing import Any
 import json
 import time
-import datetime
+from datetime import datetime, timezone, timedelta
 
 from cryptography import x509
 from cryptography.x509.oid import NameOID
@@ -62,8 +62,8 @@ def generate_test_cert_pem() -> str:
         .issuer_name(issuer)
         .public_key(key.public_key())
         .serial_number(x509.random_serial_number())
-        .not_valid_before(datetime.datetime.now(datetime.timezone.utc))
-        .not_valid_after(datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=1))
+        .not_valid_before(datetime.now(timezone.utc))
+        .not_valid_after(datetime.now(timezone.utc) + timedelta(days=1))
         .add_extension(x509.BasicConstraints(ca=True, path_length=None), critical=True)
         .sign(key, hashes.SHA256())
     )
