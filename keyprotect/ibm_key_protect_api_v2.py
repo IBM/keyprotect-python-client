@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# IBM OpenAPI SDK Code Generator Version: 3.114.3-943fbc81-20260603-173645
+# IBM OpenAPI SDK Code Generator Version: 3.115.0-a8d44b59-20260713-123033
 
 """
 IBM Key Protect helps you provision encrypted keys for apps across IBM Cloud. As you
@@ -146,7 +146,7 @@ class IbmKeyProtectApiV2(BaseService):
                `../keys?extractable=true`.
         :param str filter: (optional) When provided, returns the list of keys that
                match the queried properties. Each key property to be filtered on is
-               specified as the property name itself, followed by an “=“ symbol,  and then
+               specified as the property name itself, followed by an “=“ symbol, and then
                the value to filter on, followed by a space if there are more properties to
                filter only. Note: Anything between `<` and `>` in the examples or
                descriptions represent placeholder to specify the value
@@ -196,8 +196,8 @@ class IbmKeyProtectApiV2(BaseService):
                same applies vice versa).
         :param str x_kms_key_ring: (optional) The ID of the target key ring. If
                unspecified, all resources in the instance that the caller has access to
-               will be returned. When the header  is specified, only resources within the
-               specified key ring, that the caller has access to,  will be returned. The
+               will be returned. When the header is specified, only resources within the
+               specified key ring, that the caller has access to, will be returned. The
                key ring ID of keys that are created without an `X-Kms-Key-Ring` header is:
                `default`.
         :param dict headers: A `dict` containing the request headers
@@ -275,10 +275,10 @@ class IbmKeyProtectApiV2(BaseService):
                the key material due to key generation time. To retrieve the key material,
                you can perform a subsequent `GET /keys/{id}` request.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key belongs to. When the header is not specified,  Key Protect
-               will perform a key ring lookup. For a more optimized request,  specify the
+               specified key belongs to. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
-                `X-Kms-Key-Ring` header is: `default`.
+               `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
         :return: A `DetailedResponse` containing the result, headers and HTTP status code.
         :rtype: DetailedResponse with `dict` result representing a `Key` object
@@ -339,13 +339,13 @@ class IbmKeyProtectApiV2(BaseService):
         List keys.
 
         Retrieves a list of keys that are stored in your Key Protect service instance.
-        **Important:** When a user of Key Protect on Satellite views lists of  keys
-        through the [IBM Console](https://cloud.ibm.com/login),  or programmatically via
-        this API, keys with ["fine grain"
+        **Important:** When a user of Key Protect on Satellite views lists of keys through
+        the [IBM Console](https://cloud.ibm.com/login), or programmatically via this API,
+        keys with ["fine grain"
         permissions](/docs/key-protect?topic=key-protect-grant-access-keys#grant-access-key-level)
-         won't appear due to the manner in which the service aggregates the  collection.
-        While the user can still use the key resource, only by using  the CLI or API and
-        passing the specific key ID can a user access the  metadata and other details of
+        won't appear due to the manner in which the service aggregates the collection.
+        While the user can still use the key resource, only by using the CLI or API and
+        passing the specific key ID can a user access the metadata and other details of
         the key.
         **Note:** `GET /keys` will not return the key material in the response body. You
         can retrieve the key material for a standard key with a subsequent `GET
@@ -457,7 +457,7 @@ class IbmKeyProtectApiV2(BaseService):
                not provided.
         :param str filter: (optional) When provided, returns the list of keys that
                match the queried properties. Each key property to be filtered on is
-               specified as the property name itself, followed by an “=“ symbol,  and then
+               specified as the property name itself, followed by an “=“ symbol, and then
                the value to filter on, followed by a space if there are more properties to
                filter only. Note: Anything between `<` and `>` in the examples or
                descriptions represent placeholder to specify the value
@@ -507,8 +507,8 @@ class IbmKeyProtectApiV2(BaseService):
                same applies vice versa).
         :param str x_kms_key_ring: (optional) The ID of the target key ring. If
                unspecified, all resources in the instance that the caller has access to
-               will be returned. When the header  is specified, only resources within the
-               specified key ring, that the caller has access to,  will be returned. The
+               will be returned. When the header is specified, only resources within the
+               specified key ring, that the caller has access to, will be returned. The
                key ring ID of keys that are created without an `X-Kms-Key-Ring` header is:
                `default`.
         :param dict headers: A `dict` containing the request headers
@@ -593,10 +593,10 @@ class IbmKeyProtectApiV2(BaseService):
                the key material due to key generation time. To retrieve the key material,
                you can perform a subsequent `GET /keys/{id}` request.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key belongs to. When the header is not specified,  Key Protect
-               will perform a key ring lookup. For a more optimized request,  specify the
+               specified key belongs to. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
-                `X-Kms-Key-Ring` header is: `default`.
+               `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
         :return: A `DetailedResponse` containing the result, headers and HTTP status code.
         :rtype: DetailedResponse with `dict` result representing a `Key` object
@@ -658,8 +658,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -745,11 +745,10 @@ class IbmKeyProtectApiV2(BaseService):
         key](/docs/key-protect?topic=key-protect-unwrap-keys)
         - `wrap`: Use a root key to [wrap or encrypt a data encryption
         key](/docs/key-protect?topic=key-protect-wrap-keys)
-        **Note:** If you unwrap a wrapped data encryption key (WDEK) that was not  wrapped
-        by the latest version of the key, the service also returns the a  new WDEK,
-        wrapped with the latest version of the key as the ciphertext field.  The
-        recommendation is to store and use that WDEK, although older WDEKs will continue
-        to work.
+        **Note:** If you unwrap a wrapped data encryption key (WDEK) that was not wrapped
+        by the latest version of the key, the service also returns the a new WDEK, wrapped
+        with the latest version of the key as the ciphertext field. The recommendation is
+        to store and use that WDEK, although older WDEKs will continue to work.
 
         :param str id: The v4 UUID that uniquely identifies the key.
         :param str bluemix_instance: The IBM Cloud instance ID that identifies your
@@ -759,8 +758,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str prefer: (optional) Alters server behavior for POST or DELETE
@@ -854,8 +853,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -921,11 +920,11 @@ class IbmKeyProtectApiV2(BaseService):
         [enable a dual authorization policy](#set-key-policies) to safely delete keys from
         your service instance.
         **Important:** After a key has been deleted, any data that is encrypted by the key
-        becomes inaccessible, though this can be reversed if the key is  restored within
-        the 30-day time frame. After 30 days, key metadata,  registrations, and policies
-        are available for up to 90 days, at which  point the key becomes eligible to be
-        purged. Note that once a key is no  longer restorable and has been purged, its
-        associated data can no longer  be accessed.
+        becomes inaccessible, though this can be reversed if the key is restored within
+        the 30-day time frame. After 30 days, key metadata, registrations, and policies
+        are available for up to 90 days, at which point the key becomes eligible to be
+        purged. Note that once a key is no longer restorable and has been purged, its
+        associated data can no longer be accessed.
         **Note:** By default, Key Protect blocks the deletion of a key that's protecting a
         cloud resource, such as a Cloud Object Storage bucket. Use
         `GET keys/{id}/registrations` to verify if the key has an active registration to a
@@ -938,8 +937,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str prefer: (optional) Alters server behavior for POST or DELETE
@@ -1026,8 +1025,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1082,11 +1081,11 @@ class IbmKeyProtectApiV2(BaseService):
         """
         Purge a deleted key.
 
-        Purges all key metadata and registrations associated with the specified key.  This
+        Purges all key metadata and registrations associated with the specified key. This
         method requires setting the [_KeyPurge_
         permission](https://cloud.ibm.com/docs/key-protect?topic=key-protect-grant-access-keys#grant-access-keys-specific-functions)
         that is not enabled by default. Purging a key can only be applied to a key in the
-        **Destroyed** (5) state.  After a key is deleted, there is a wait period of up to
+        **Destroyed** (5) state. After a key is deleted, there is a wait period of up to
         four hours before purge key operation is allowed.
         **Important:** When you purge a key, you permanently shred its contents and
         associated data. The action cannot be reversed.
@@ -1097,8 +1096,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str prefer: (optional) Alters server behavior for POST or DELETE
@@ -1172,8 +1171,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str prefer: (optional) Alters server behavior for POST or DELETE
@@ -1253,8 +1252,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param int limit: (optional) The number of key versions to retrieve. By
@@ -1357,8 +1356,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1434,8 +1433,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1507,8 +1506,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1581,8 +1580,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str prefer: (optional) Alters server behavior for POST or DELETE
@@ -1659,8 +1658,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1723,8 +1722,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1786,8 +1785,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1848,8 +1847,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -1923,8 +1922,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -2001,8 +2000,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str policy: (optional) The type of policy that is associated with
@@ -2087,8 +2086,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param str policy: (optional) The type of policy that is associated with
@@ -2359,10 +2358,10 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key belongs to. When the header is not specified,  Key Protect
-               will perform a key ring lookup. For a more optimized request,  specify the
+               specified key belongs to. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
-                `X-Kms-Key-Ring` header is: `default`.
+               `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
         :return: A `DetailedResponse` containing the result, headers and HTTP status code.
         :rtype: DetailedResponse with `dict` result representing a `ImportToken` object
@@ -2431,10 +2430,10 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key belongs to. When the header is not specified,  Key Protect
-               will perform a key ring lookup. For a more optimized request,  specify the
+               specified key belongs to. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
-                `X-Kms-Key-Ring` header is: `default`.
+               `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
         :return: A `DetailedResponse` containing the result, headers and HTTP status code.
         :rtype: DetailedResponse with `dict` result representing a `GetImportToken` object
@@ -2502,8 +2501,8 @@ class IbmKeyProtectApiV2(BaseService):
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param int limit: (optional) The number of registrations to retrieve. By
@@ -2538,7 +2537,7 @@ class IbmKeyProtectApiV2(BaseService):
                search for registered cloud resources that are non-erasable due to a
                retention policy. This policy should only be set if a WORM policy
                (https://www.ibm.com/docs/en/spectrum-scale/5.0.1?topic=ics-how-write-once-read-many-worm-storage-works)
-               must be satisfied.  Do not set this policy by default.
+               must be satisfied. Do not set this policy by default.
                **Usage:** To search for registered cloud resources that have a retention
                policy, use `../registrations?preventKeyDeletion=true`.
         :param bool total_count: (optional) If set to `true`, returns `totalCount`
@@ -2624,8 +2623,8 @@ class IbmKeyProtectApiV2(BaseService):
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the target key ring. If
                unspecified, all resources in the instance that the caller has access to
-               will be returned. When the header  is specified, only resources within the
-               specified key ring, that the caller has access to,  will be returned. The
+               will be returned. When the header is specified, only resources within the
+               specified key ring, that the caller has access to, will be returned. The
                key ring ID of keys that are created without an `X-Kms-Key-Ring` header is:
                `default`.
         :param str url_encoded_resource_crn_query: (optional) Filters for resources
@@ -2654,7 +2653,7 @@ class IbmKeyProtectApiV2(BaseService):
                search for registered cloud resources that are non-erasable due to a
                retention policy. This policy should only be set if a WORM policy
                (https://www.ibm.com/docs/en/spectrum-scale/5.0.1?topic=ics-how-write-once-read-many-worm-storage-works)
-               must be satisfied.  Do not set this policy by default.
+               must be satisfied. Do not set this policy by default.
                **Usage:** To search for registered cloud resources that have a retention
                policy, use `../registrations?preventKeyDeletion=true`.
         :param bool total_count: (optional) If set to `true`, returns `totalCount`
@@ -2727,22 +2726,22 @@ class IbmKeyProtectApiV2(BaseService):
 
         :param str id: The v4 UUID or alias that uniquely identifies the key.
         :param str alias: A human-readable alias that uniquely identifies a key.
-               Each alias is unique  only within the given instance and is not reserved
-               across the Key Protect service.  Each key can have up to five aliases.
-               There is no limit to the number of aliases  per instance. The length of the
-               alias can be between 2 - 90 characters, inclusive.  An alias must be
-               alphanumeric and cannot contain spaces or special characters other  than
-               '-' or '_'. Also, the alias cannot be a version 4 UUID and must not be  a
-               Key Protect reserved name: `allowed_ip`, `key`, `keys`, `metadata`,
-               `policy`, `policies`, `registration`, `registrations`, `ring`, `rings`,
-               `rotate`, `wrap`, `unwrap`, `rewrap`, `version`, `versions`.
+               Each alias is unique only within the given instance and is not reserved
+               across the Key Protect service. Each key can have up to five aliases. There
+               is no limit to the number of aliases per instance. The length of the alias
+               can be between 2 - 90 characters, inclusive. An alias must be alphanumeric
+               and cannot contain spaces or special characters other than '-' or '_'.
+               Also, the alias cannot be a version 4 UUID and must not be a Key Protect
+               reserved name: `allowed_ip`, `key`, `keys`, `metadata`, `policy`,
+               `policies`, `registration`, `registrations`, `ring`, `rings`, `rotate`,
+               `wrap`, `unwrap`, `rewrap`, `version`, `versions`.
         :param str bluemix_instance: The IBM Cloud instance ID that identifies your
                Key Protect service instance.
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -2804,22 +2803,22 @@ class IbmKeyProtectApiV2(BaseService):
 
         :param str id: The v4 UUID or alias that uniquely identifies the key.
         :param str alias: A human-readable alias that uniquely identifies a key.
-               Each alias is unique  only within the given instance and is not reserved
-               across the Key Protect service.  Each key can have up to five aliases.
-               There is no limit to the number of aliases  per instance. The length of the
-               alias can be between 2 - 90 characters, inclusive.  An alias must be
-               alphanumeric and cannot contain spaces or special characters other  than
-               '-' or '_'. Also, the alias cannot be a version 4 UUID and must not be  a
-               Key Protect reserved name: `allowed_ip`, `key`, `keys`, `metadata`,
-               `policy`, `policies`, `registration`, `registrations`, `ring`, `rings`,
-               `rotate`, `wrap`, `unwrap`, `rewrap`, `version`, `versions`.
+               Each alias is unique only within the given instance and is not reserved
+               across the Key Protect service. Each key can have up to five aliases. There
+               is no limit to the number of aliases per instance. The length of the alias
+               can be between 2 - 90 characters, inclusive. An alias must be alphanumeric
+               and cannot contain spaces or special characters other than '-' or '_'.
+               Also, the alias cannot be a version 4 UUID and must not be a Key Protect
+               reserved name: `allowed_ip`, `key`, `keys`, `metadata`, `policy`,
+               `policies`, `registration`, `registrations`, `ring`, `rings`, `rotate`,
+               `wrap`, `unwrap`, `rewrap`, `version`, `versions`.
         :param str bluemix_instance: The IBM Cloud instance ID that identifies your
                Key Protect service instance.
         :param str correlation_id: (optional) The v4 UUID used to correlate and
                track transactions.
         :param str x_kms_key_ring: (optional) The ID of the key ring that the
-               specified key is a part of. When the  header is not specified, Key Protect
-               will perform a key ring lookup. For  a more optimized request, specify the
+               specified key is a part of. When the header is not specified, Key Protect
+               will perform a key ring lookup. For a more optimized request, specify the
                key ring on every call. The key ring ID of keys that are created without an
                `X-Kms-Key-Ring` header is: `default`.
         :param dict headers: A `dict` containing the request headers
@@ -2884,7 +2883,7 @@ class IbmKeyProtectApiV2(BaseService):
         :param str bluemix_instance: The IBM Cloud instance ID that identifies your
                Key Protect service instance.
         :param int limit: (optional) The number of key rings to retrieve. By
-               default, `GET /key_rings` returns  100 key rings including the default key
+               default, `GET /key_rings` returns 100 key rings including the default key
                ring. To retrieve a different set of key rings, use `limit` with `offset`
                to page through your available resources. The maximum value for `limit` is
                5,000.
@@ -3029,7 +3028,7 @@ class IbmKeyProtectApiV2(BaseService):
                track transactions.
         :param bool force: (optional) Force delete the key ring. All keys in the
                key ring are required to be deleted (in state `5`) before this action can
-               be performed.  If the key ring to be deleted contains keys, they will be
+               be performed. If the key ring to be deleted contains keys, they will be
                moved to the `default` key ring which requires the `kms.secrets.patch` IAM
                action.
         :param dict headers: A `dict` containing the request headers
@@ -3525,7 +3524,7 @@ class IbmKeyProtectApiV2(BaseService):
         Delete a KMIP object from a KMIP Adapter.
 
         Deletes a KMIP object from a KMIP Adapter given its id. Changes the state of the
-        KMIP object to 5 (Destroyed) and erases its key material.  Any data encrypted by
+        KMIP object to 5 (Destroyed) and erases its key material. Any data encrypted by
         this KMIP object will be crypto erased when the KMIP Object changes it state to 5
         (Destroyed).
 
@@ -4385,7 +4384,7 @@ class CollectionMetadataListKeys:
     :param str collection_type: The type of resources in the resource array.
     :param int collection_total: The number of elements in the resource array.
     :param bool incomplete_search: (optional) If present, indicates the search did
-          not complete due to the searchable set of keys being too large.  Please retry
+          not complete due to the searchable set of keys being too large. Please retry
           your request with additional or more specific filters (i.e. extractable, state,
           etc.). To determine the size of the searchable set of keys, please use `HEAD
           /api/v2/keys` with the desired search filters. For a search to be performmed,
@@ -4409,7 +4408,7 @@ class CollectionMetadataListKeys:
         :param str collection_type: The type of resources in the resource array.
         :param int collection_total: The number of elements in the resource array.
         :param bool incomplete_search: (optional) If present, indicates the search
-               did not complete due to the searchable set of keys being too large.  Please
+               did not complete due to the searchable set of keys being too large. Please
                retry your request with additional or more specific filters (i.e.
                extractable, state, etc.). To determine the size of the searchable set of
                keys, please use `HEAD /api/v2/keys` with the desired search filters. For a
@@ -4634,7 +4633,7 @@ class CreateKMIPAdapterObject:
           within the kms instance. If one is not specified, one will be autogenerated of
           the format `kmip_adapter_<random_string>`. To protect your privacy do not use
           personal data, such as your name or location, as a name for your KMIP adapter.
-          The name must be  alphanumeric and cannot contain spaces or special characters
+          The name must be alphanumeric and cannot contain spaces or special characters
           other than `-` or `_`. The name cannot be a UUID.
     :param str description: (optional) The optional description of the KMIP adapter.
           The maximum length is 240 characters. To protect your privacy, do not use
@@ -4661,7 +4660,7 @@ class CreateKMIPAdapterObject:
                unique within the kms instance. If one is not specified, one will be
                autogenerated of the format `kmip_adapter_<random_string>`. To protect your
                privacy do not use personal data, such as your name or location, as a name
-               for your KMIP adapter. The name must be  alphanumeric and cannot contain
+               for your KMIP adapter. The name must be alphanumeric and cannot contain
                spaces or special characters other than `-` or `_`. The name cannot be a
                UUID.
         :param str description: (optional) The optional description of the KMIP
@@ -4749,10 +4748,10 @@ class CreateKMIPClientCertificateObject:
           Adapter. It should explicitly have the BEGIN CERTIFICATE and END CERTIFICATE
           tags.
     :param str name: (optional) A human-readable name that uniquely identifies a
-          certificate within the given adapter. If one is  not specified, one will be
+          certificate within the given adapter. If one is not specified, one will be
           autogenerated of the format `kmip_cert_<random_string>`. To protect your privacy
           do not use personal data, such as your name or location, as a name for your
-          client certificate. The name must be  alphanumeric and cannot contain spaces or
+          client certificate. The name must be alphanumeric and cannot contain spaces or
           special characters other than `-` or `_`. The name cannot be a UUID.
     """
 
@@ -4769,10 +4768,10 @@ class CreateKMIPClientCertificateObject:
                KMIP Adapter. It should explicitly have the BEGIN CERTIFICATE and END
                CERTIFICATE tags.
         :param str name: (optional) A human-readable name that uniquely identifies
-               a certificate within the given adapter. If one is  not specified, one will
+               a certificate within the given adapter. If one is not specified, one will
                be autogenerated of the format `kmip_cert_<random_string>`. To protect your
                privacy do not use personal data, such as your name or location, as a name
-               for your client certificate. The name must be  alphanumeric and cannot
+               for your client certificate. The name must be alphanumeric and cannot
                contain spaces or special characters other than `-` or `_`. The name cannot
                be a UUID.
         """
@@ -8454,14 +8453,14 @@ class KMIPAdapter:
           instance. If one is not specified, one will be autogenerated of the format
           `kmip_adapter_<random_string>`. To protect your privacy do not use personal
           data, such as your name or location, as a name for your KMIP adapter. The name
-          must be  alphanumeric and cannot contain spaces or special characters other than
+          must be alphanumeric and cannot contain spaces or special characters other than
           `-` or `_`. The name cannot be a UUID.
     :param datetime created_at: The date the KMIP adapter was created. The date
           format follows RFC 3339.
     :param str created_by: The unique identifier of the user that created the KMIP
           adapter.
     :param datetime updated_at: The date the KMIP adapter was last modified, either
-          by creation or by modification  of adapter subresources. The date format follows
+          by creation or by modification of adapter subresources. The date format follows
           RFC 3339.
     :param str updated_by: The unique identifier of the user that updated the KMIP
           adapter.
@@ -8495,14 +8494,14 @@ class KMIPAdapter:
                the kms instance. If one is not specified, one will be autogenerated of the
                format `kmip_adapter_<random_string>`. To protect your privacy do not use
                personal data, such as your name or location, as a name for your KMIP
-               adapter. The name must be  alphanumeric and cannot contain spaces or
-               special characters other than `-` or `_`. The name cannot be a UUID.
+               adapter. The name must be alphanumeric and cannot contain spaces or special
+               characters other than `-` or `_`. The name cannot be a UUID.
         :param datetime created_at: The date the KMIP adapter was created. The date
                format follows RFC 3339.
         :param str created_by: The unique identifier of the user that created the
                KMIP adapter.
         :param datetime updated_at: The date the KMIP adapter was last modified,
-               either by creation or by modification  of adapter subresources. The date
+               either by creation or by modification of adapter subresources. The date
                format follows RFC 3339.
         :param str updated_by: The unique identifier of the user that updated the
                KMIP adapter.
@@ -8626,10 +8625,10 @@ class KMIPClientCertificate:
     Properties of a client certificate.
 
     :param str name: A human-readable name that uniquely identifies a certificate
-          within the given adapter. If one is  not specified, one will be autogenerated of
+          within the given adapter. If one is not specified, one will be autogenerated of
           the format `kmip_cert_<random_string>`. To protect your privacy do not use
           personal data, such as your name or location, as a name for your client
-          certificate. The name must be  alphanumeric and cannot contain spaces or special
+          certificate. The name must be alphanumeric and cannot contain spaces or special
           characters other than `-` or `_`. The name cannot be a UUID.
     :param str id: The v4 UUID that uniquely identifies this certificate resource.
     :param datetime created_at: The date this certificate resource was created on
@@ -8652,10 +8651,10 @@ class KMIPClientCertificate:
         Initialize a KMIPClientCertificate object.
 
         :param str name: A human-readable name that uniquely identifies a
-               certificate within the given adapter. If one is  not specified, one will be
+               certificate within the given adapter. If one is not specified, one will be
                autogenerated of the format `kmip_cert_<random_string>`. To protect your
                privacy do not use personal data, such as your name or location, as a name
-               for your client certificate. The name must be  alphanumeric and cannot
+               for your client certificate. The name must be alphanumeric and cannot
                contain spaces or special characters other than `-` or `_`. The name cannot
                be a UUID.
         :param str id: The v4 UUID that uniquely identifies this certificate
@@ -8743,10 +8742,10 @@ class KMIPClientPartialCertificate:
     Partial properties of a client certificate.
 
     :param str name: A human-readable name that uniquely identifies a certificate
-          within the given adapter. If one is  not specified, one will be autogenerated of
+          within the given adapter. If one is not specified, one will be autogenerated of
           the format `kmip_cert_<random_string>`. To protect your privacy do not use
           personal data, such as your name or location, as a name for your client
-          certificate. The name must be  alphanumeric and cannot contain spaces or special
+          certificate. The name must be alphanumeric and cannot contain spaces or special
           characters other than `-` or `_`. The name cannot be a UUID.
     :param str id: The v4 UUID that uniquely identifies this certificate resource.
     :param datetime created_at: The date this certificate resource was created on
@@ -8765,10 +8764,10 @@ class KMIPClientPartialCertificate:
         Initialize a KMIPClientPartialCertificate object.
 
         :param str name: A human-readable name that uniquely identifies a
-               certificate within the given adapter. If one is  not specified, one will be
+               certificate within the given adapter. If one is not specified, one will be
                autogenerated of the format `kmip_cert_<random_string>`. To protect your
                privacy do not use personal data, such as your name or location, as a name
-               for your client certificate. The name must be  alphanumeric and cannot
+               for your client certificate. The name must be alphanumeric and cannot
                contain spaces or special characters other than `-` or `_`. The name cannot
                be a UUID.
         :param str id: The v4 UUID that uniquely identifies this certificate
@@ -9323,7 +9322,7 @@ class KeyFullRepresentation:
           convenience. To protect your privacy do not use personal data, such as your name
           or location, as the name for your key.
     :param List[str] aliases: (optional) One or more, up to a total of five,
-          human-readable unique aliases assigned  to your key. To protect your privacy do
+          human-readable unique aliases assigned to your key. To protect your privacy do
           not use personal data, such as your name or location, as an alias for your key.
           Each alias must be alphanumeric and cannot contain spaces or special characters
           other than `-` or `_`. The alias cannot be a UUID and must not be a Key Protect
@@ -9336,7 +9335,7 @@ class KeyFullRepresentation:
           description for your key.
     :param List[str] tags: (optional) Up to 30 tags can be created. Tags can be
           between 0-30 characters, including spaces. Special characters not permitted
-          include angled  brackets, comma, colon, ampersand, and vertical pipe character
+          include angled brackets, comma, colon, ampersand, and vertical pipe character
           (|). To protect your privacy, do not use personal data, such as your name or
           location, as a tag for your key.
     :param int state: (optional) The key state based on NIST SP 800-57. States are
@@ -9457,21 +9456,20 @@ class KeyFullRepresentation:
                convenience. To protect your privacy do not use personal data, such as your
                name or location, as the name for your key.
         :param List[str] aliases: (optional) One or more, up to a total of five,
-               human-readable unique aliases assigned  to your key. To protect your
-               privacy do not use personal data, such as your name or location, as an
-               alias for your key. Each alias must be alphanumeric and cannot contain
-               spaces or special characters other than `-` or `_`. The alias cannot be a
-               UUID and must not be a Key Protect reserved name: `allowed_ip`, `key`,
-               `keys`, `metadata`, `policy`, `policies`, `registration`, `registrations`,
-               `ring`, `rings`, `rotate`, `wrap`, `unwrap`, `rewrap`, `version`,
-               `versions`.
+               human-readable unique aliases assigned to your key. To protect your privacy
+               do not use personal data, such as your name or location, as an alias for
+               your key. Each alias must be alphanumeric and cannot contain spaces or
+               special characters other than `-` or `_`. The alias cannot be a UUID and
+               must not be a Key Protect reserved name: `allowed_ip`, `key`, `keys`,
+               `metadata`, `policy`, `policies`, `registration`, `registrations`, `ring`,
+               `rings`, `rotate`, `wrap`, `unwrap`, `rewrap`, `version`, `versions`.
         :param str description: (optional) A text field used to provide a more
                detailed description of the key. The maximum length is 240 characters. To
                protect your privacy, do not use personal data, such as your name or
                location, as a description for your key.
         :param List[str] tags: (optional) Up to 30 tags can be created. Tags can be
                between 0-30 characters, including spaces. Special characters not permitted
-               include angled  brackets, comma, colon, ampersand, and vertical pipe
+               include angled brackets, comma, colon, ampersand, and vertical pipe
                character (|). To protect your privacy, do not use personal data, such as
                your name or location, as a tag for your key.
         :param bool extractable: (optional) A boolean that determines whether the
@@ -10366,7 +10364,7 @@ class KeyWithPayload:
           convenience. To protect your privacy do not use personal data, such as your name
           or location, as the name for your key.
     :param List[str] aliases: (optional) One or more, up to a total of five,
-          human-readable unique aliases assigned  to your key. To protect your privacy do
+          human-readable unique aliases assigned to your key. To protect your privacy do
           not use personal data, such as your name or location, as an alias for your key.
           Each alias must be alphanumeric and cannot contain spaces or special characters
           other than `-` or `_`. The alias cannot be a UUID and must not be a Key Protect
@@ -10379,7 +10377,7 @@ class KeyWithPayload:
           description for your key.
     :param List[str] tags: (optional) Up to 30 tags can be created. Tags can be
           between 0-30 characters, including spaces. Special characters not permitted
-          include angled  brackets, comma, colon, ampersand, and vertical pipe character
+          include angled brackets, comma, colon, ampersand, and vertical pipe character
           (|). To protect your privacy, do not use personal data, such as your name or
           location, as a tag for your key.
     :param int state: (optional) The key state based on NIST SP 800-57. States are
@@ -10505,21 +10503,20 @@ class KeyWithPayload:
                convenience. To protect your privacy do not use personal data, such as your
                name or location, as the name for your key.
         :param List[str] aliases: (optional) One or more, up to a total of five,
-               human-readable unique aliases assigned  to your key. To protect your
-               privacy do not use personal data, such as your name or location, as an
-               alias for your key. Each alias must be alphanumeric and cannot contain
-               spaces or special characters other than `-` or `_`. The alias cannot be a
-               UUID and must not be a Key Protect reserved name: `allowed_ip`, `key`,
-               `keys`, `metadata`, `policy`, `policies`, `registration`, `registrations`,
-               `ring`, `rings`, `rotate`, `wrap`, `unwrap`, `rewrap`, `version`,
-               `versions`.
+               human-readable unique aliases assigned to your key. To protect your privacy
+               do not use personal data, such as your name or location, as an alias for
+               your key. Each alias must be alphanumeric and cannot contain spaces or
+               special characters other than `-` or `_`. The alias cannot be a UUID and
+               must not be a Key Protect reserved name: `allowed_ip`, `key`, `keys`,
+               `metadata`, `policy`, `policies`, `registration`, `registrations`, `ring`,
+               `rings`, `rotate`, `wrap`, `unwrap`, `rewrap`, `version`, `versions`.
         :param str description: (optional) A text field used to provide a more
                detailed description of the key. The maximum length is 240 characters. To
                protect your privacy, do not use personal data, such as your name or
                location, as a description for your key.
         :param List[str] tags: (optional) Up to 30 tags can be created. Tags can be
                between 0-30 characters, including spaces. Special characters not permitted
-               include angled  brackets, comma, colon, ampersand, and vertical pipe
+               include angled brackets, comma, colon, ampersand, and vertical pipe
                character (|). To protect your privacy, do not use personal data, such as
                your name or location, as a tag for your key.
         :param bool extractable: (optional) A boolean that determines whether the
@@ -11871,9 +11868,6 @@ class RegistrationResource:
           modified. The date format follows RFC 3339.
     :param str description: (optional) Description of the purpose of the
           registration.
-    :param str registration_metadata: (optional) Additional information about the
-          registration. This field is not exposed to customers and is visible only with
-          IBM Cloud service to service calls.
     :param bool prevent_key_deletion: (optional) A boolean that determines whether
           Key Protect must prevent deletion of a root key.
     :param KeyVersion key_version: (optional) Properties associated with a specific
@@ -11891,7 +11885,6 @@ class RegistrationResource:
         updated_by: Optional[str] = None,
         last_updated: Optional[datetime] = None,
         description: Optional[str] = None,
-        registration_metadata: Optional[str] = None,
         prevent_key_deletion: Optional[bool] = None,
         key_version: Optional['KeyVersion'] = None,
     ) -> None:
@@ -11907,7 +11900,6 @@ class RegistrationResource:
         self.updated_by = updated_by
         self.last_updated = last_updated
         self.description = description
-        self.registration_metadata = registration_metadata
         self.prevent_key_deletion = prevent_key_deletion
         self.key_version = key_version
 
@@ -11931,8 +11923,6 @@ class RegistrationResource:
             args['last_updated'] = string_to_datetime(last_updated)
         if (description := _dict.get('description')) is not None:
             args['description'] = description
-        if (registration_metadata := _dict.get('registrationMetadata')) is not None:
-            args['registration_metadata'] = registration_metadata
         if (prevent_key_deletion := _dict.get('preventKeyDeletion')) is not None:
             args['prevent_key_deletion'] = prevent_key_deletion
         if (key_version := _dict.get('keyVersion')) is not None:
@@ -11963,8 +11953,6 @@ class RegistrationResource:
             _dict['lastUpdated'] = datetime_to_string(getattr(self, 'last_updated'))
         if hasattr(self, 'description') and getattr(self, 'description') is not None:
             _dict['description'] = getattr(self, 'description')
-        if hasattr(self, 'registration_metadata') and getattr(self, 'registration_metadata') is not None:
-            _dict['registrationMetadata'] = getattr(self, 'registration_metadata')
         if hasattr(self, 'prevent_key_deletion') and getattr(self, 'prevent_key_deletion') is not None:
             _dict['preventKeyDeletion'] = getattr(self, 'prevent_key_deletion')
         if hasattr(self, 'key_version') and getattr(self, 'key_version') is not None:
@@ -12079,8 +12067,8 @@ class RewrapKeyResponseBody:
 
     :param str ciphertext: (optional) The wrapped data encryption key (WDEK) that
           you can export to your app or service. The ciphertext contains the DEK wrapped
-          by the latest version  of the key (WDEK). It is recommended to store and use
-          this WDEK in future calls to Key Protect. The value is base64 encoded.
+          by the latest version of the key (WDEK). It is recommended to store and use this
+          WDEK in future calls to Key Protect. The value is base64 encoded.
     :param WrappedKeyVersionKeyVersion key_version: (optional) The key version that
           was used to wrap the DEK. This key version is associated with the `ciphertext`
           value that was used in the request.
@@ -12101,9 +12089,9 @@ class RewrapKeyResponseBody:
 
         :param str ciphertext: (optional) The wrapped data encryption key (WDEK)
                that you can export to your app or service. The ciphertext contains the DEK
-               wrapped by the latest version  of the key (WDEK). It is recommended to
-               store and use  this WDEK in future calls to Key Protect. The value is
-               base64 encoded.
+               wrapped by the latest version of the key (WDEK). It is recommended to store
+               and use this WDEK in future calls to Key Protect. The value is base64
+               encoded.
         """
         self.ciphertext = ciphertext
         self.key_version = key_version
@@ -13339,8 +13327,8 @@ class UnwrapKeyResponseBody:
           operations.
     :param str ciphertext: (optional) The wrapped data encryption key (WDEK) that
           you can export to your app or service. The ciphertext contains the DEK wrapped
-          by the latest version  of the key (WDEK). It is recommended to store and use
-          this WDEK in future calls to Key Protect. The value is base64 encoded.
+          by the latest version of the key (WDEK). It is recommended to store and use this
+          WDEK in future calls to Key Protect. The value is base64 encoded.
     :param WrappedKeyVersionKeyVersion key_version: (optional) The key version that
           was used to wrap the DEK. This key version is associated with the `ciphertext`
           value that was used in the request.
@@ -13375,9 +13363,9 @@ class UnwrapKeyResponseBody:
                unwrap operations.
         :param str ciphertext: (optional) The wrapped data encryption key (WDEK)
                that you can export to your app or service. The ciphertext contains the DEK
-               wrapped by the latest version  of the key (WDEK). It is recommended to
-               store and use  this WDEK in future calls to Key Protect. The value is
-               base64 encoded.
+               wrapped by the latest version of the key (WDEK). It is recommended to store
+               and use this WDEK in future calls to Key Protect. The value is base64
+               encoded.
         """
         self.plaintext = plaintext
         self.ciphertext = ciphertext
@@ -13460,8 +13448,8 @@ class WrapKeyResponseBody:
           operations.
     :param str ciphertext: (optional) The wrapped data encryption key (WDEK) that
           you can export to your app or service. The ciphertext contains the DEK wrapped
-          by the latest version  of the key (WDEK). It is recommended to store and use
-          this WDEK in future calls to Key Protect. The value is base64 encoded.
+          by the latest version of the key (WDEK). It is recommended to store and use this
+          WDEK in future calls to Key Protect. The value is base64 encoded.
     :param WrappedKeyVersionKeyVersion key_version: (optional) The key version that
           was used to wrap the DEK. This key version is associated with the `ciphertext`
           value that was used in the request.
@@ -13492,9 +13480,9 @@ class WrapKeyResponseBody:
                unwrap operations.
         :param str ciphertext: (optional) The wrapped data encryption key (WDEK)
                that you can export to your app or service. The ciphertext contains the DEK
-               wrapped by the latest version  of the key (WDEK). It is recommended to
-               store and use  this WDEK in future calls to Key Protect. The value is
-               base64 encoded.
+               wrapped by the latest version of the key (WDEK). It is recommended to store
+               and use this WDEK in future calls to Key Protect. The value is base64
+               encoded.
         """
         self.plaintext = plaintext
         self.ciphertext = ciphertext
@@ -14591,8 +14579,8 @@ class KeyActionOneOfResponseRewrapKeyResponseBody(KeyActionOneOfResponse):
 
     :param str ciphertext: (optional) The wrapped data encryption key (WDEK) that
           you can export to your app or service. The ciphertext contains the DEK wrapped
-          by the latest version  of the key (WDEK). It is recommended to store and use
-          this WDEK in future calls to Key Protect. The value is base64 encoded.
+          by the latest version of the key (WDEK). It is recommended to store and use this
+          WDEK in future calls to Key Protect. The value is base64 encoded.
     :param WrappedKeyVersionKeyVersion key_version: (optional) The key version that
           was used to wrap the DEK. This key version is associated with the `ciphertext`
           value that was used in the request.
@@ -14613,9 +14601,9 @@ class KeyActionOneOfResponseRewrapKeyResponseBody(KeyActionOneOfResponse):
 
         :param str ciphertext: (optional) The wrapped data encryption key (WDEK)
                that you can export to your app or service. The ciphertext contains the DEK
-               wrapped by the latest version  of the key (WDEK). It is recommended to
-               store and use  this WDEK in future calls to Key Protect. The value is
-               base64 encoded.
+               wrapped by the latest version of the key (WDEK). It is recommended to store
+               and use this WDEK in future calls to Key Protect. The value is base64
+               encoded.
         """
         # pylint: disable=super-init-not-called
         self.ciphertext = ciphertext
@@ -14694,8 +14682,8 @@ class KeyActionOneOfResponseUnwrapKeyResponseBody(KeyActionOneOfResponse):
           operations.
     :param str ciphertext: (optional) The wrapped data encryption key (WDEK) that
           you can export to your app or service. The ciphertext contains the DEK wrapped
-          by the latest version  of the key (WDEK). It is recommended to store and use
-          this WDEK in future calls to Key Protect. The value is base64 encoded.
+          by the latest version of the key (WDEK). It is recommended to store and use this
+          WDEK in future calls to Key Protect. The value is base64 encoded.
     :param WrappedKeyVersionKeyVersion key_version: (optional) The key version that
           was used to wrap the DEK. This key version is associated with the `ciphertext`
           value that was used in the request.
@@ -14730,9 +14718,9 @@ class KeyActionOneOfResponseUnwrapKeyResponseBody(KeyActionOneOfResponse):
                unwrap operations.
         :param str ciphertext: (optional) The wrapped data encryption key (WDEK)
                that you can export to your app or service. The ciphertext contains the DEK
-               wrapped by the latest version  of the key (WDEK). It is recommended to
-               store and use  this WDEK in future calls to Key Protect. The value is
-               base64 encoded.
+               wrapped by the latest version of the key (WDEK). It is recommended to store
+               and use this WDEK in future calls to Key Protect. The value is base64
+               encoded.
         """
         # pylint: disable=super-init-not-called
         self.plaintext = plaintext
@@ -14816,8 +14804,8 @@ class KeyActionOneOfResponseWrapKeyResponseBody(KeyActionOneOfResponse):
           operations.
     :param str ciphertext: (optional) The wrapped data encryption key (WDEK) that
           you can export to your app or service. The ciphertext contains the DEK wrapped
-          by the latest version  of the key (WDEK). It is recommended to store and use
-          this WDEK in future calls to Key Protect. The value is base64 encoded.
+          by the latest version of the key (WDEK). It is recommended to store and use this
+          WDEK in future calls to Key Protect. The value is base64 encoded.
     :param WrappedKeyVersionKeyVersion key_version: (optional) The key version that
           was used to wrap the DEK. This key version is associated with the `ciphertext`
           value that was used in the request.
@@ -14848,9 +14836,9 @@ class KeyActionOneOfResponseWrapKeyResponseBody(KeyActionOneOfResponse):
                unwrap operations.
         :param str ciphertext: (optional) The wrapped data encryption key (WDEK)
                that you can export to your app or service. The ciphertext contains the DEK
-               wrapped by the latest version  of the key (WDEK). It is recommended to
-               store and use  this WDEK in future calls to Key Protect. The value is
-               base64 encoded.
+               wrapped by the latest version of the key (WDEK). It is recommended to store
+               and use this WDEK in future calls to Key Protect. The value is base64
+               encoded.
         """
         # pylint: disable=super-init-not-called
         self.plaintext = plaintext
