@@ -38,6 +38,7 @@ from cryptography.hazmat.primitives.asymmetric import rsa as crypto_rsa
 # Config file name
 config_file = "ibm_key_protect_api_v2.env"
 
+
 # MANUAL: generateTestCertPEM produces a self-signed X.509 certificate in memory for testing
 def generate_test_cert_pem() -> str:
     """Produce a self-signed X.509 certificate in memory, removing the need for
@@ -48,14 +49,16 @@ def generate_test_cert_pem() -> str:
           -subj "/C=XX/ST=XX/L=locality/O=company/OU=org/CN=CommonNameOrHostname"
     """
     key = crypto_rsa.generate_private_key(public_exponent=65537, key_size=4096)
-    subject = issuer = x509.Name([
-        x509.NameAttribute(NameOID.COUNTRY_NAME, "XX"),
-        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "XX"),
-        x509.NameAttribute(NameOID.LOCALITY_NAME, "locality"),
-        x509.NameAttribute(NameOID.ORGANIZATION_NAME, "company"),
-        x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, "org"),
-        x509.NameAttribute(NameOID.COMMON_NAME, "CommonNameOrHostname"),
-    ])
+    subject = issuer = x509.Name(
+        [
+            x509.NameAttribute(NameOID.COUNTRY_NAME, "XX"),
+            x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "XX"),
+            x509.NameAttribute(NameOID.LOCALITY_NAME, "locality"),
+            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "company"),
+            x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, "org"),
+            x509.NameAttribute(NameOID.COMMON_NAME, "CommonNameOrHostname"),
+        ]
+    )
     cert = (
         x509.CertificateBuilder()
         .subject_name(subject)
@@ -1030,4 +1033,3 @@ class TestIbmKeyProtectApiV2:
                 )
             except Exception as e:
                 print(f"Failed deleting key ring: {e}")
-

@@ -32,6 +32,7 @@ from cryptography.x509.oid import NameOID
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa as crypto_rsa
 
+
 # MANUAL: generateTestCertPEM produces a self-signed X.509 certificate in memory for testing
 def generate_test_cert_pem() -> str:
     """Produce a self-signed X.509 certificate in memory, removing the need for
@@ -42,14 +43,16 @@ def generate_test_cert_pem() -> str:
           -subj "/C=XX/ST=XX/L=locality/O=company/OU=org/CN=CommonNameOrHostname"
     """
     key = crypto_rsa.generate_private_key(public_exponent=65537, key_size=4096)
-    subject = issuer = x509.Name([
-        x509.NameAttribute(NameOID.COUNTRY_NAME, "XX"),
-        x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "XX"),
-        x509.NameAttribute(NameOID.LOCALITY_NAME, "locality"),
-        x509.NameAttribute(NameOID.ORGANIZATION_NAME, "company"),
-        x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, "org"),
-        x509.NameAttribute(NameOID.COMMON_NAME, "CommonNameOrHostname"),
-    ])
+    subject = issuer = x509.Name(
+        [
+            x509.NameAttribute(NameOID.COUNTRY_NAME, "XX"),
+            x509.NameAttribute(NameOID.STATE_OR_PROVINCE_NAME, "XX"),
+            x509.NameAttribute(NameOID.LOCALITY_NAME, "locality"),
+            x509.NameAttribute(NameOID.ORGANIZATION_NAME, "company"),
+            x509.NameAttribute(NameOID.ORGANIZATIONAL_UNIT_NAME, "org"),
+            x509.NameAttribute(NameOID.COMMON_NAME, "CommonNameOrHostname"),
+        ]
+    )
     cert = (
         x509.CertificateBuilder()
         .subject_name(subject)
@@ -62,6 +65,7 @@ def generate_test_cert_pem() -> str:
         .sign(key, hashes.SHA256())
     )
     return cert.public_bytes(serialization.Encoding.PEM).decode("utf-8")
+
 
 #
 # This file provides an example of how to use the IBM Key Protect API service.
@@ -76,7 +80,7 @@ def generate_test_cert_pem() -> str:
 # in a configuration file and then:
 # export IBM_CREDENTIALS_FILE=<name of configuration file>
 #
-config_file = 'ibm_key_protect_api_v2.env'
+config_file = "ibm_key_protect_api_v2.env"
 
 
 ##############################################################################
@@ -91,7 +95,7 @@ class TestIbmKeyProtectApiV2Examples:
     @classmethod
     def setup_class(cls):
         if os.path.exists(config_file):
-            os.environ['IBM_CREDENTIALS_FILE'] = config_file
+            os.environ["IBM_CREDENTIALS_FILE"] = config_file
 
             cls.ibm_key_protect_api_service = IbmKeyProtectApiV2.new_instance()
 
@@ -111,10 +115,11 @@ class TestIbmKeyProtectApiV2Examples:
             cls.disable_key_timestamp = None
             cls.delete_key_timestamp = None
 
-        print('Setup complete.')
+        print("Setup complete.")
 
     needscredentials = pytest.mark.skipif(
-        not os.path.exists(config_file), reason="External configuration not available, skipping..."
+        not os.path.exists(config_file),
+        reason="External configuration not available, skipping...",
     )
 
     @needscredentials
@@ -125,14 +130,19 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-getKeyCollectionMetadata
 
-            response = self.__class__.ibm_key_protect_api_service.get_key_collection_metadata(
-                bluemix_instance=self.__class__.bluemix_instance,
-                state=[0, 1, 2, 3],
-                extractable=True,
+            response = (
+                self.__class__.ibm_key_protect_api_service.get_key_collection_metadata(
+                    bluemix_instance=self.__class__.bluemix_instance,
+                    state=[0, 1, 2, 3],
+                    extractable=True,
+                )
             )
 
             # end-getKeyCollectionMetadata
-            print('\nget_key_collection_metadata() response status code: ', response.get_status_code())
+            print(
+                "\nget_key_collection_metadata() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -143,7 +153,7 @@ class TestIbmKeyProtectApiV2Examples:
         create_key request example
         """
         try:
-            print('\ncreate_key() result:')
+            print("\ncreate_key() result:")
 
             # begin-createKey
 
@@ -186,7 +196,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_keys request example
         """
         try:
-            print('\nget_keys() result:')
+            print("\nget_keys() result:")
 
             # begin-getKeys
 
@@ -208,7 +218,7 @@ class TestIbmKeyProtectApiV2Examples:
         create_key_with_policies_overrides request example
         """
         try:
-            print('\ncreate_key_with_policies_overrides() result:')
+            print("\ncreate_key_with_policies_overrides() result:")
 
             # begin-createKeyWithPoliciesOverrides
 
@@ -256,7 +266,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_key request example
         """
         try:
-            print('\nget_key() result:')
+            print("\nget_key() result:")
 
             # begin-getKey
 
@@ -290,7 +300,10 @@ class TestIbmKeyProtectApiV2Examples:
             )
 
             # end-setKeyForDeletion
-            print('\nset_key_for_deletion() response status code: ', response.get_status_code())
+            print(
+                "\nset_key_for_deletion() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -306,13 +319,18 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-unsetKeyForDeletion
 
-            response = self.__class__.ibm_key_protect_api_service.unset_key_for_deletion(
-                id=self.__class__.policies_overriden_key_id,
-                bluemix_instance=self.__class__.bluemix_instance,
+            response = (
+                self.__class__.ibm_key_protect_api_service.unset_key_for_deletion(
+                    id=self.__class__.policies_overriden_key_id,
+                    bluemix_instance=self.__class__.bluemix_instance,
+                )
             )
 
             # end-unsetKeyForDeletion
-            print('\nunset_key_for_deletion() response status code: ', response.get_status_code())
+            print(
+                "\nunset_key_for_deletion() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -323,7 +341,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_key_metadata request example
         """
         try:
-            print('\nget_key_metadata() result:')
+            print("\nget_key_metadata() result:")
 
             # begin-getKeyMetadata
 
@@ -340,14 +358,13 @@ class TestIbmKeyProtectApiV2Examples:
         except ApiException as e:
             pytest.fail(str(e))
 
-
     @needscredentials
     def test_get_key_versions_example(self):
         """
         get_key_versions request example
         """
         try:
-            print('\nget_key_versions() result:')
+            print("\nget_key_versions() result:")
 
             # begin-getKeyVersions
 
@@ -370,7 +387,7 @@ class TestIbmKeyProtectApiV2Examples:
         wrap_key request example
         """
         try:
-            print('\nwrap_key() result:')
+            print("\nwrap_key() result:")
 
             # begin-wrapKey
 
@@ -405,7 +422,7 @@ class TestIbmKeyProtectApiV2Examples:
         unwrap_key request example
         """
         try:
-            print('\nunwrap_key() result:')
+            print("\nunwrap_key() result:")
 
             # begin-unwrapKey
 
@@ -435,7 +452,7 @@ class TestIbmKeyProtectApiV2Examples:
         rewrap_key request example
         """
         try:
-            print('\nrewrap_key() result:')
+            print("\nrewrap_key() result:")
 
             # begin-rewrapKey
 
@@ -465,7 +482,7 @@ class TestIbmKeyProtectApiV2Examples:
         rotate_key request example
         """
         try:
-            print('\nrotate_key() result:')
+            print("\nrotate_key() result:")
 
             # begin-rotateKey
 
@@ -481,7 +498,7 @@ class TestIbmKeyProtectApiV2Examples:
             )
 
             # end-rotateKey
-            print('\nrotate_key() response status code: ', response.get_status_code())
+            print("\nrotate_key() response status code: ", response.get_status_code())
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -500,7 +517,7 @@ class TestIbmKeyProtectApiV2Examples:
             )
 
             # end-disableKey
-            print('\ndisable_key() response status code: ', response.get_status_code())
+            print("\ndisable_key() response status code: ", response.get_status_code())
             # Record timestamp for rate limit handling in test_enable_key
             self.__class__.disable_key_timestamp = time.time()
 
@@ -527,7 +544,7 @@ class TestIbmKeyProtectApiV2Examples:
             )
 
             # end-enableKey
-            print('\nenable_key() response status code: ', response.get_status_code())
+            print("\nenable_key() response status code: ", response.get_status_code())
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -538,34 +555,34 @@ class TestIbmKeyProtectApiV2Examples:
         put_policy request example
         """
         try:
-            print('\nput_policy() result:')
+            print("\nput_policy() result:")
 
             # begin-putPolicy
 
             collection_metadata_model = {
-                'collectionType': 'application/vnd.ibm.kms.policy+json',
-                'collectionTotal': 1,
+                "collectionType": "application/vnd.ibm.kms.policy+json",
+                "collectionTotal": 1,
             }
 
             key_policy_dual_auth_delete_dual_auth_delete_model = {
-                'enabled': False,
+                "enabled": False,
             }
 
             key_policy_dual_auth_delete_model = {
-                'type': 'application/vnd.ibm.kms.policy+json',
-                'dualAuthDelete': key_policy_dual_auth_delete_dual_auth_delete_model,
+                "type": "application/vnd.ibm.kms.policy+json",
+                "dualAuthDelete": key_policy_dual_auth_delete_dual_auth_delete_model,
             }
 
             set_key_policies_one_of_model = {
-                'metadata': collection_metadata_model,
-                'resources': [key_policy_dual_auth_delete_model],
+                "metadata": collection_metadata_model,
+                "resources": [key_policy_dual_auth_delete_model],
             }
 
             response = self.__class__.ibm_key_protect_api_service.put_policy(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_policy_put_body=set_key_policies_one_of_model,
-                policy='dualAuthDelete',
+                policy="dualAuthDelete",
             )
             get_key_policies_one_of = response.get_result()
 
@@ -582,14 +599,14 @@ class TestIbmKeyProtectApiV2Examples:
         get_policy request example
         """
         try:
-            print('\nget_policy() result:')
+            print("\nget_policy() result:")
 
             # begin-getPolicy
 
             response = self.__class__.ibm_key_protect_api_service.get_policy(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
-                policy='dualAuthDelete',
+                policy="dualAuthDelete",
             )
             get_key_policies_one_of = response.get_result()
 
@@ -609,37 +626,42 @@ class TestIbmKeyProtectApiV2Examples:
             # begin-putInstancePolicy
 
             collection_metadata_model = {
-                'collectionType': 'application/vnd.ibm.kms.policy+json',
-                'collectionTotal': 1,
+                "collectionType": "application/vnd.ibm.kms.policy+json",
+                "collectionTotal": 1,
             }
 
             instance_policy_allowed_network_policy_data_attributes_model = {
-                'allowed_network': 'public-and-private',
+                "allowed_network": "public-and-private",
             }
 
             instance_policy_allowed_network_policy_data_model = {
-                'enabled': True,
-                'attributes': instance_policy_allowed_network_policy_data_attributes_model,
+                "enabled": True,
+                "attributes": instance_policy_allowed_network_policy_data_attributes_model,
             }
 
             set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {
-                'policy_type': 'allowedNetwork',
-                'policy_data': instance_policy_allowed_network_policy_data_model,
+                "policy_type": "allowedNetwork",
+                "policy_data": instance_policy_allowed_network_policy_data_model,
             }
 
             set_instance_policies_one_of_model = {
-                'metadata': collection_metadata_model,
-                'resources': [set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model],
+                "metadata": collection_metadata_model,
+                "resources": [
+                    set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model
+                ],
             }
 
             response = self.__class__.ibm_key_protect_api_service.put_instance_policy(
                 bluemix_instance=self.__class__.bluemix_instance,
                 instance_policy_put_body=set_instance_policies_one_of_model,
-                policy='allowedNetwork',
+                policy="allowedNetwork",
             )
 
             # end-putInstancePolicy
-            print('\nput_instance_policy() response status code: ', response.get_status_code())
+            print(
+                "\nput_instance_policy() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -650,7 +672,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_instance_policy request example
         """
         try:
-            print('\nget_instance_policy() result:')
+            print("\nget_instance_policy() result:")
 
             # begin-getInstancePolicy
 
@@ -675,7 +697,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_allowed_ip_port request example
         """
         try:
-            print('\nget_allowed_ip_port() result:')
+            print("\nget_allowed_ip_port() result:")
 
             # begin-getAllowedIPPort
 
@@ -697,7 +719,7 @@ class TestIbmKeyProtectApiV2Examples:
         post_import_token request example
         """
         try:
-            print('\npost_import_token() result:')
+            print("\npost_import_token() result:")
 
             # begin-postImportToken
 
@@ -719,7 +741,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_import_token request example
         """
         try:
-            print('\nget_import_token() result:')
+            print("\nget_import_token() result:")
 
             # begin-getImportToken
 
@@ -741,7 +763,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_registrations request example
         """
         try:
-            print('\nget_registrations() result:')
+            print("\nget_registrations() result:")
 
             # begin-getRegistrations
 
@@ -764,12 +786,14 @@ class TestIbmKeyProtectApiV2Examples:
         get_registrations_all_keys request example
         """
         try:
-            print('\nget_registrations_all_keys() result:')
+            print("\nget_registrations_all_keys() result:")
 
             # begin-getRegistrationsAllKeys
 
-            response = self.__class__.ibm_key_protect_api_service.get_registrations_all_keys(
-                bluemix_instance=self.__class__.bluemix_instance,
+            response = (
+                self.__class__.ibm_key_protect_api_service.get_registrations_all_keys(
+                    bluemix_instance=self.__class__.bluemix_instance,
+                )
             )
             registration_with_total_count = response.get_result()
 
@@ -786,13 +810,13 @@ class TestIbmKeyProtectApiV2Examples:
         create_key_alias request example
         """
         try:
-            print('\ncreate_key_alias() result:')
+            print("\ncreate_key_alias() result:")
 
             # begin-createKeyAlias
 
             response = self.__class__.ibm_key_protect_api_service.create_key_alias(
                 id=self.__class__.created_key_id,
-                alias='testString',
+                alias="testString",
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             key_alias = response.get_result()
@@ -814,12 +838,15 @@ class TestIbmKeyProtectApiV2Examples:
 
             response = self.__class__.ibm_key_protect_api_service.delete_key_alias(
                 id=self.__class__.created_key_id,
-                alias='testString',
+                alias="testString",
                 bluemix_instance=self.__class__.bluemix_instance,
             )
 
             # end-deleteKeyAlias
-            print('\ndelete_key_alias() response status code: ', response.get_status_code())
+            print(
+                "\ndelete_key_alias() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -830,7 +857,7 @@ class TestIbmKeyProtectApiV2Examples:
         list_key_rings request example
         """
         try:
-            print('\nlist_key_rings() result:')
+            print("\nlist_key_rings() result:")
 
             # begin-listKeyRings
 
@@ -843,7 +870,6 @@ class TestIbmKeyProtectApiV2Examples:
 
             print(list_key_rings_with_total_count)
 
-
         except ApiException as e:
             pytest.fail(str(e))
 
@@ -853,13 +879,13 @@ class TestIbmKeyProtectApiV2Examples:
         get_kmip_adapters request example
         """
         try:
-            print('\nget_kmip_adapters() result:')
+            print("\nget_kmip_adapters() result:")
 
             # begin-get_kmip_adapters
 
             response = self.__class__.ibm_key_protect_api_service.get_kmip_adapters(
                 bluemix_instance=self.__class__.bluemix_instance,
-                crk_id='feddecaf-0000-0000-0000-1234567890ab',
+                crk_id="feddecaf-0000-0000-0000-1234567890ab",
             )
             list_kmip_adapters_with_total_count = response.get_result()
 
@@ -884,7 +910,9 @@ class TestIbmKeyProtectApiV2Examples:
             )
 
             # end-createKeyRing
-            print('\ncreate_key_ring() response status code: ', response.get_status_code())
+            print(
+                "\ncreate_key_ring() response status code: ", response.get_status_code()
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -895,7 +923,7 @@ class TestIbmKeyProtectApiV2Examples:
         patch_key request example
         """
         try:
-            print('\npatch_key() result:')
+            print("\npatch_key() result:")
 
             # begin-patchKey
 
@@ -924,7 +952,7 @@ class TestIbmKeyProtectApiV2Examples:
         purge_key request example
         """
         try:
-            print('\npurge_key() result:')
+            print("\npurge_key() result:")
 
             # begin-purgeKey
 
@@ -949,7 +977,7 @@ class TestIbmKeyProtectApiV2Examples:
         delete_key request example
         """
         try:
-            print('\ndelete_key() result:')
+            print("\ndelete_key() result:")
 
             # begin-deleteKey
 
@@ -967,7 +995,6 @@ class TestIbmKeyProtectApiV2Examples:
             # Record timestamp for rate limit handling in test_restore_key
             self.__class__.delete_key_timestamp = time.time()
 
-
         except ApiException as e:
             pytest.fail(str(e))
 
@@ -977,7 +1004,7 @@ class TestIbmKeyProtectApiV2Examples:
         restore_key request example
         """
         try:
-            print('\nrestore_key() result:')
+            print("\nrestore_key() result:")
 
             # Wait 31 seconds after delete to respect API rate limits
             if self.__class__.delete_key_timestamp is not None:
@@ -1000,10 +1027,8 @@ class TestIbmKeyProtectApiV2Examples:
             # with open('/tmp/result.out', 'wb') as fp:
             #     fp.write(result)
 
-
         except ApiException as e:
             pytest.fail(str(e))
-
 
     @needscredentials
     def test_create_kmip_adapter_example(self):
@@ -1011,7 +1036,7 @@ class TestIbmKeyProtectApiV2Examples:
         create_kmip_adapter request example
         """
         try:
-            print('\ncreate_kmip_adapter() result:')
+            print("\ncreate_kmip_adapter() result:")
 
             # begin-create_kmip_adapter
 
@@ -1053,7 +1078,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_kmip_adapter request example
         """
         try:
-            print('\nget_kmip_adapter() result:')
+            print("\nget_kmip_adapter() result:")
 
             # begin-get_kmip_adapter
 
@@ -1076,7 +1101,7 @@ class TestIbmKeyProtectApiV2Examples:
         get_kmip_objects request example
         """
         try:
-            print('\nget_kmip_objects() result:')
+            print("\nget_kmip_objects() result:")
 
             # begin-get_kmip_objects
 
@@ -1102,14 +1127,14 @@ class TestIbmKeyProtectApiV2Examples:
         get_kmip_object request example
         """
         try:
-            print('\nget_kmip_object() result:')
+            print("\nget_kmip_object() result:")
 
             # begin-get_kmip_object
 
             response = self.__class__.ibm_key_protect_api_service.get_kmip_object(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
-                id='testString',
+                id="testString",
             )
             list_kmip_objects_with_total_count = response.get_result()
 
@@ -1126,15 +1151,19 @@ class TestIbmKeyProtectApiV2Examples:
         get_kmip_client_certificates request example
         """
         try:
-            print('\nget_kmip_client_certificates() result:')
+            print("\nget_kmip_client_certificates() result:")
 
             # begin-get_kmip_client_certificates
 
-            response = self.__class__.ibm_key_protect_api_service.get_kmip_client_certificates(
-                adapter_id=self.__class__.kmip_name,
-                bluemix_instance=self.__class__.bluemix_instance,
+            response = (
+                self.__class__.ibm_key_protect_api_service.get_kmip_client_certificates(
+                    adapter_id=self.__class__.kmip_name,
+                    bluemix_instance=self.__class__.bluemix_instance,
+                )
             )
-            list_kmip_partial_client_certificates_with_total_count = response.get_result()
+            list_kmip_partial_client_certificates_with_total_count = (
+                response.get_result()
+            )
 
             print(list_kmip_partial_client_certificates_with_total_count)
 
@@ -1149,28 +1178,30 @@ class TestIbmKeyProtectApiV2Examples:
         add_kmip_client_certificate request example
         """
         try:
-            print('\nadd_kmip_client_certificate() result:')
+            print("\nadd_kmip_client_certificate() result:")
 
             # begin-add_kmip_client_certificate
 
             collection_metadata_model = {
-                'collectionType': 'application/vnd.ibm.kms.kmip_client_certificate+json',
-                'collectionTotal': 1,
+                "collectionType": "application/vnd.ibm.kms.kmip_client_certificate+json",
+                "collectionTotal": 1,
             }
 
             # MANUAL: Generate certificate in memory instead of reading from temp.pem
             certificate = generate_test_cert_pem()
 
             create_kmip_client_certificate_object_model = {
-                'certificate': certificate,
-                'name': self.__class__.kmip_cert_name,
+                "certificate": certificate,
+                "name": self.__class__.kmip_cert_name,
             }
 
-            response = self.__class__.ibm_key_protect_api_service.add_kmip_client_certificate(
-                adapter_id=self.__class__.kmip_name,
-                bluemix_instance=self.__class__.bluemix_instance,
-                metadata=collection_metadata_model,
-                resources=[create_kmip_client_certificate_object_model],
+            response = (
+                self.__class__.ibm_key_protect_api_service.add_kmip_client_certificate(
+                    adapter_id=self.__class__.kmip_name,
+                    bluemix_instance=self.__class__.bluemix_instance,
+                    metadata=collection_metadata_model,
+                    resources=[create_kmip_client_certificate_object_model],
+                )
             )
             list_kmip_client_certificates = response.get_result()
 
@@ -1187,14 +1218,16 @@ class TestIbmKeyProtectApiV2Examples:
         get_kmip_client_certificate request example
         """
         try:
-            print('\nget_kmip_client_certificate() result:')
+            print("\nget_kmip_client_certificate() result:")
 
             # begin-get_kmip_client_certificate
 
-            response = self.__class__.ibm_key_protect_api_service.get_kmip_client_certificate(
-                adapter_id=self.__class__.kmip_name,
-                id=self.__class__.kmip_cert_name,
-                bluemix_instance=self.__class__.bluemix_instance,
+            response = (
+                self.__class__.ibm_key_protect_api_service.get_kmip_client_certificate(
+                    adapter_id=self.__class__.kmip_name,
+                    id=self.__class__.kmip_cert_name,
+                    bluemix_instance=self.__class__.bluemix_instance,
+                )
             )
             list_kmip_client_certificates = response.get_result()
 
@@ -1229,11 +1262,12 @@ class TestIbmKeyProtectApiV2Examples:
             )
 
             # end-deleteKeyRing
-            print('\ndelete_key_ring() response status code: ', response.get_status_code())
+            print(
+                "\ndelete_key_ring() response status code: ", response.get_status_code()
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
-
 
     @needscredentials
     def test_sync_associated_resources_example(self):
@@ -1243,13 +1277,18 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-syncAssociatedResources
 
-            response = self.__class__.ibm_key_protect_api_service.sync_associated_resources(
-                id=self.__class__.policies_overriden_key_id,
-                bluemix_instance=self.__class__.bluemix_instance,
+            response = (
+                self.__class__.ibm_key_protect_api_service.sync_associated_resources(
+                    id=self.__class__.policies_overriden_key_id,
+                    bluemix_instance=self.__class__.bluemix_instance,
+                )
             )
 
             # end-syncAssociatedResources
-            print('\nsync_associated_resources() response status code: ', response.get_status_code())
+            print(
+                "\nsync_associated_resources() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -1268,11 +1307,14 @@ class TestIbmKeyProtectApiV2Examples:
             response = self.__class__.ibm_key_protect_api_service.delete_kmip_object(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
-                id='testString',
+                id="testString",
             )
 
             # end-delete_kmip_object
-            print('\ndelete_kmip_object() response status code: ', response.get_status_code())
+            print(
+                "\ndelete_kmip_object() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
@@ -1294,7 +1336,10 @@ class TestIbmKeyProtectApiV2Examples:
 
             # end-delete_kmip_object
 
-            print('\ndelete_kmip_client_certificate() response status code: ', response.get_status_code())
+            print(
+                "\ndelete_kmip_client_certificate() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(reason=str(e))
@@ -1315,7 +1360,10 @@ class TestIbmKeyProtectApiV2Examples:
 
             # end-delete_kmip_adapter
 
-            print('\ndelete_kmip_adapter() response status code: ', response.get_status_code())
+            print(
+                "\ndelete_kmip_adapter() response status code: ",
+                response.get_status_code(),
+            )
 
         except ApiException as e:
             pytest.fail(str(e))
