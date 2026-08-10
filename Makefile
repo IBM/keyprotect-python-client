@@ -2,41 +2,59 @@
 # to be ready for development work in the local sandbox.
 # example: "make setup"
 
-LINT_DIRS=keyprotect test/unit
+PYTHON=python
+LINT=black
+LINT_DIRS=ibm_platform_services test/unit test/integration examples
 
-setup: deps
+setup: deps dev-deps install-project
 
-all: setup test-unit lint
+all: upgrade-pip setup test-unit lint
 
 ci: all
 
-publish-release: build-dist publish-dist
+publish-release: publish-deps build-dist publish-dist
+
+upgrade-pip:
+	${PYTHON} -m pip install --upgrade pip
 
 deps:
-	uv sync --all-groups
+	${PYTHON} -m pip install .
+
+dev-deps:
+	${PYTHON} -m pip install .[dev]
 
 detect-secrets:
 	detect-secrets scan --update .secrets.baseline
 	detect-secrets audit .secrets.baseline
 
+publish-deps:
+	${PYTHON} -m pip install .[publish]
+
+install-project:
+	${PYTHON} -m pip install -e .
+
 test: test-unit test-int
 
 test-unit:
-	uv run pytest --cov=keyprotect test/unit
+	${PYTHON} -m pytest --cov=ibm_platform_services test/unit
 
 test-int:
-	uv run pytest test/integration
+	${PYTHON} -m pytest test/integration
 
 test-examples:
-	uv run pytest examples
+	${PYTHON} -m pytest examples
 
 lint:
-	uv run pylint ${LINT_DIRS} --exit-zero
+	${PYTHON} -m pylint ${LINT_DIRS}
+	${LINT} --check ${LINT_DIRS}
+
+lint-fix:
+	${LINT} ${LINT_DIRS}
 
 build-dist:
-	rm -rf dist
-	uv build
+	rm -fr dist
+	${PYTHON} -m build
 
 # This target requires the TWINE_PASSWORD env variable to be set to the user's pypi.org API token.
 publish-dist:
-	TWINE_USERNAME=__token__ uv run twine upload --non-interactive --verbose dist/*
+	TWINE_USERNAME=__token__ ${PYTHON} -m twine upload --non-interactive --verbose dist/*
