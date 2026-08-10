@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python -m pylint mysdk test --exit-zero
+uv run pylint keyprotect test --exit-zero

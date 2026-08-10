@@ -1,22 +1,42 @@
-.PHONY: dist
+# This makefile is used to make it easier to get the project set up
+# to be ready for development work in the local sandbox.
+# example: "make setup"
 
-dist:
-	python setup.py sdist bdist_wheel
+LINT_DIRS=keyprotect test/unit
 
-publish: dist
-	pip install 'twine>=1.5.0'
-	twine upload dist/*
-	rm -fr build dist .egg *.egg-info
+setup: deps
 
-setup: deps dev_deps
+all: setup test-unit lint
+
+ci: all
+
+publish-release: build-dist publish-dist
 
 deps:
-	python -m pip install -r requirements.txt
+	uv sync --all-groups
 
-dev_deps:
-	python -m pip install -r requirements-dev.txt
+detect-secrets:
+	detect-secrets scan --update .secrets.baseline
+	detect-secrets audit .secrets.baseline
 
-ci: setup lint
+test: test-unit test-int
+
+test-unit:
+	uv run pytest --cov=keyprotect test/unit
+
+test-int:
+	uv run pytest test/integration
+
+test-examples:
+	uv run pytest examples
 
 lint:
-	./pylint.sh
+	uv run pylint ${LINT_DIRS} --exit-zero
+
+build-dist:
+	rm -rf dist
+	uv build
+
+# This target requires the TWINE_PASSWORD env variable to be set to the user's pypi.org API token.
+publish-dist:
+	TWINE_USERNAME=__token__ uv run twine upload --non-interactive --verbose dist/*
