@@ -1,3 +1,4 @@
+"""Common utilities for the IBM Key Protect SDK."""
 import platform
 import uuid
 from .version import __version__
@@ -26,7 +27,6 @@ def get_sdk_headers(service_name, service_version, operation_id, correlation_id=
     headers = {}
     headers[HEADER_NAME_X_REQUEST_ID] = get_x_request_id()
     headers[HEADER_NAME_X_CORRELATION_ID] = get_x_correlation_id(correlation_id)
-    
     return headers
 
 def get_x_request_id():

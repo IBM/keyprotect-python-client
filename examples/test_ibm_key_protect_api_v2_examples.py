@@ -78,10 +78,6 @@ def generate_test_cert_pem() -> str:
 #
 config_file = 'ibm_key_protect_api_v2.env'
 
-ibm_key_protect_api_service = None
-
-config = None
-
 
 ##############################################################################
 # Start of Examples for Service: IbmKeyProtectApiV2
@@ -94,24 +90,21 @@ class TestIbmKeyProtectApiV2Examples:
 
     @classmethod
     def setup_class(cls):
-        global ibm_key_protect_api_service
         if os.path.exists(config_file):
             os.environ['IBM_CREDENTIALS_FILE'] = config_file
 
-            ibm_key_protect_api_service = IbmKeyProtectApiV2.new_instance(
-            )
+            cls.ibm_key_protect_api_service = IbmKeyProtectApiV2.new_instance()
 
-            assert ibm_key_protect_api_service is not None
+            assert cls.ibm_key_protect_api_service is not None
 
             # Load the configuration
-            global config
-            config = read_external_sources(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME)
-            
+            cls.config = read_external_sources(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME)
+
             # Initialize class variables for test state management
             cls.created_keyring_id = "test-example-keyring"
             cls.kmip_name = "test-example-kmip"
             cls.kmip_cert_name = "Test-example-certificate"
-            cls.bluemix_instance = config.get("BLUEMIX_INSTANCE")
+            cls.bluemix_instance = cls.config.get("BLUEMIX_INSTANCE")
             cls.created_key_id = None
             cls.policies_overriden_key_id = None
             cls.ciphertext = None
@@ -132,7 +125,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-getKeyCollectionMetadata
 
-            response = ibm_key_protect_api_service.get_key_collection_metadata(
+            response = self.__class__.ibm_key_protect_api_service.get_key_collection_metadata(
                 bluemix_instance=self.__class__.bluemix_instance,
                 state=[0, 1, 2, 3],
                 extractable=True,
@@ -169,7 +162,7 @@ class TestIbmKeyProtectApiV2Examples:
                 ],
             }
 
-            response = ibm_key_protect_api_service.create_key(
+            response = self.__class__.ibm_key_protect_api_service.create_key(
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_create_body=io.BytesIO(json.dumps(key_create_body).encode("utf-8")),
                 prefer="return=representation",
@@ -197,7 +190,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getKeys
 
-            response = ibm_key_protect_api_service.get_keys(
+            response = self.__class__.ibm_key_protect_api_service.get_keys(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             list_keys = response.get_result()
@@ -236,7 +229,7 @@ class TestIbmKeyProtectApiV2Examples:
                 ],
             }
 
-            response = ibm_key_protect_api_service.create_key_with_policies_overrides(
+            response = self.__class__.ibm_key_protect_api_service.create_key_with_policies_overrides(
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_with_policy_overrides_create_body=io.BytesIO(
                     json.dumps(key_with_policy_overrides_create_body).encode("utf-8")
@@ -246,7 +239,7 @@ class TestIbmKeyProtectApiV2Examples:
             key = response.get_result()
             key_data = key.json()
             key_id = key_data["resources"][0]["id"]
-            
+
             # Store the key ID in class variable for use in other tests
             self.__class__.policies_overriden_key_id = key_id
 
@@ -267,7 +260,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getKey
 
-            response = ibm_key_protect_api_service.get_key(
+            response = self.__class__.ibm_key_protect_api_service.get_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -291,7 +284,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-setKeyForDeletion
 
-            response = ibm_key_protect_api_service.set_key_for_deletion(
+            response = self.__class__.ibm_key_protect_api_service.set_key_for_deletion(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -313,7 +306,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-unsetKeyForDeletion
 
-            response = ibm_key_protect_api_service.unset_key_for_deletion(
+            response = self.__class__.ibm_key_protect_api_service.unset_key_for_deletion(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -334,7 +327,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getKeyMetadata
 
-            response = ibm_key_protect_api_service.get_key_metadata(
+            response = self.__class__.ibm_key_protect_api_service.get_key_metadata(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -358,7 +351,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getKeyVersions
 
-            response = ibm_key_protect_api_service.get_key_versions(
+            response = self.__class__.ibm_key_protect_api_service.get_key_versions(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -385,7 +378,7 @@ class TestIbmKeyProtectApiV2Examples:
                 "plaintext": "cGxhaW50ZXh0LWRhdGEta2V5",
             }
 
-            response = ibm_key_protect_api_service.wrap_key(
+            response = self.__class__.ibm_key_protect_api_service.wrap_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_action_wrap_body=io.BytesIO(
@@ -395,7 +388,7 @@ class TestIbmKeyProtectApiV2Examples:
             wrap_key_response_body = response.get_result()
             wrap_key_response_data = wrap_key_response_body.json()
             ciphertext = wrap_key_response_data["ciphertext"]
-            
+
             # Store ciphertext for use in unwrap/rewrap tests
             self.__class__.ciphertext = ciphertext
 
@@ -420,7 +413,7 @@ class TestIbmKeyProtectApiV2Examples:
                 "ciphertext": self.__class__.ciphertext,
             }
 
-            response = ibm_key_protect_api_service.unwrap_key(
+            response = self.__class__.ibm_key_protect_api_service.unwrap_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_action_unwrap_body=io.BytesIO(
@@ -450,7 +443,7 @@ class TestIbmKeyProtectApiV2Examples:
                 "ciphertext": self.__class__.ciphertext,
             }
 
-            response = ibm_key_protect_api_service.rewrap_key(
+            response = self.__class__.ibm_key_protect_api_service.rewrap_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_action_rewrap_body=io.BytesIO(
@@ -478,7 +471,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             key_action_rotate_body = {}
 
-            response = ibm_key_protect_api_service.rotate_key(
+            response = self.__class__.ibm_key_protect_api_service.rotate_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_action_rotate_body=io.BytesIO(
@@ -492,7 +485,7 @@ class TestIbmKeyProtectApiV2Examples:
 
         except ApiException as e:
             pytest.fail(str(e))
-            
+
     @needscredentials
     def test_disable_key_example(self):
         """
@@ -501,7 +494,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-disableKey
 
-            response = ibm_key_protect_api_service.disable_key(
+            response = self.__class__.ibm_key_protect_api_service.disable_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -528,7 +521,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-enableKey
 
-            response = ibm_key_protect_api_service.enable_key(
+            response = self.__class__.ibm_key_protect_api_service.enable_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -568,7 +561,7 @@ class TestIbmKeyProtectApiV2Examples:
                 'resources': [key_policy_dual_auth_delete_model],
             }
 
-            response = ibm_key_protect_api_service.put_policy(
+            response = self.__class__.ibm_key_protect_api_service.put_policy(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_policy_put_body=set_key_policies_one_of_model,
@@ -593,7 +586,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getPolicy
 
-            response = ibm_key_protect_api_service.get_policy(
+            response = self.__class__.ibm_key_protect_api_service.get_policy(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 policy='dualAuthDelete',
@@ -639,7 +632,7 @@ class TestIbmKeyProtectApiV2Examples:
                 'resources': [set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model],
             }
 
-            response = ibm_key_protect_api_service.put_instance_policy(
+            response = self.__class__.ibm_key_protect_api_service.put_instance_policy(
                 bluemix_instance=self.__class__.bluemix_instance,
                 instance_policy_put_body=set_instance_policies_one_of_model,
                 policy='allowedNetwork',
@@ -661,7 +654,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getInstancePolicy
 
-            response = ibm_key_protect_api_service.get_instance_policy(
+            response = self.__class__.ibm_key_protect_api_service.get_instance_policy(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             get_instance_policies_one_of = response.get_result()
@@ -686,7 +679,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getAllowedIPPort
 
-            response = ibm_key_protect_api_service.get_allowed_ip_port(
+            response = self.__class__.ibm_key_protect_api_service.get_allowed_ip_port(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             allowed_ip_port = response.get_result()
@@ -708,7 +701,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-postImportToken
 
-            response = ibm_key_protect_api_service.post_import_token(
+            response = self.__class__.ibm_key_protect_api_service.post_import_token(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             import_token = response.get_result()
@@ -730,7 +723,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getImportToken
 
-            response = ibm_key_protect_api_service.get_import_token(
+            response = self.__class__.ibm_key_protect_api_service.get_import_token(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             get_import_token = response.get_result()
@@ -752,7 +745,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getRegistrations
 
-            response = ibm_key_protect_api_service.get_registrations(
+            response = self.__class__.ibm_key_protect_api_service.get_registrations(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -775,7 +768,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-getRegistrationsAllKeys
 
-            response = ibm_key_protect_api_service.get_registrations_all_keys(
+            response = self.__class__.ibm_key_protect_api_service.get_registrations_all_keys(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
             registration_with_total_count = response.get_result()
@@ -797,7 +790,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-createKeyAlias
 
-            response = ibm_key_protect_api_service.create_key_alias(
+            response = self.__class__.ibm_key_protect_api_service.create_key_alias(
                 id=self.__class__.created_key_id,
                 alias='testString',
                 bluemix_instance=self.__class__.bluemix_instance,
@@ -819,7 +812,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-deleteKeyAlias
 
-            response = ibm_key_protect_api_service.delete_key_alias(
+            response = self.__class__.ibm_key_protect_api_service.delete_key_alias(
                 id=self.__class__.created_key_id,
                 alias='testString',
                 bluemix_instance=self.__class__.bluemix_instance,
@@ -841,7 +834,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-listKeyRings
 
-            response = ibm_key_protect_api_service.list_key_rings(
+            response = self.__class__.ibm_key_protect_api_service.list_key_rings(
                 bluemix_instance=self.__class__.bluemix_instance,
             )
 
@@ -864,7 +857,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-get_kmip_adapters
 
-            response = ibm_key_protect_api_service.get_kmip_adapters(
+            response = self.__class__.ibm_key_protect_api_service.get_kmip_adapters(
                 bluemix_instance=self.__class__.bluemix_instance,
                 crk_id='feddecaf-0000-0000-0000-1234567890ab',
             )
@@ -885,7 +878,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-createKeyRing
 
-            response = ibm_key_protect_api_service.create_key_ring(
+            response = self.__class__.ibm_key_protect_api_service.create_key_ring(
                 key_ring_id=self.__class__.created_keyring_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -908,7 +901,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             key_patch_body = {"keyRingID": self.__class__.created_keyring_id}
 
-            response = ibm_key_protect_api_service.patch_key(
+            response = self.__class__.ibm_key_protect_api_service.patch_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 key_patch_body=io.BytesIO(json.dumps(key_patch_body).encode("utf-8")),
@@ -935,7 +928,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-purgeKey
 
-            response = ibm_key_protect_api_service.purge_key(
+            response = self.__class__.ibm_key_protect_api_service.purge_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 x_kms_key_ring=self.__class__.created_keyring_id,
@@ -960,7 +953,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-deleteKey
 
-            response = ibm_key_protect_api_service.delete_key(
+            response = self.__class__.ibm_key_protect_api_service.delete_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 x_kms_key_ring=self.__class__.created_keyring_id,
@@ -994,7 +987,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-restoreKey
 
-            response = ibm_key_protect_api_service.restore_key(
+            response = self.__class__.ibm_key_protect_api_service.restore_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 x_kms_key_ring=self.__class__.created_keyring_id,
@@ -1040,7 +1033,7 @@ class TestIbmKeyProtectApiV2Examples:
                 "profile_data": kmip_profile_data_body_model,
             }
 
-            response = ibm_key_protect_api_service.create_kmip_adapter(
+            response = self.__class__.ibm_key_protect_api_service.create_kmip_adapter(
                 bluemix_instance=self.__class__.bluemix_instance,
                 metadata=collection_metadata_model,
                 resources=[create_kmip_adapter_object_model],
@@ -1064,7 +1057,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-get_kmip_adapter
 
-            response = ibm_key_protect_api_service.get_kmip_adapter(
+            response = self.__class__.ibm_key_protect_api_service.get_kmip_adapter(
                 id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -1087,7 +1080,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-get_kmip_objects
 
-            response = ibm_key_protect_api_service.get_kmip_objects(
+            response = self.__class__.ibm_key_protect_api_service.get_kmip_objects(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -1113,7 +1106,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-get_kmip_object
 
-            response = ibm_key_protect_api_service.get_kmip_object(
+            response = self.__class__.ibm_key_protect_api_service.get_kmip_object(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
                 id='testString',
@@ -1137,7 +1130,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-get_kmip_client_certificates
 
-            response = ibm_key_protect_api_service.get_kmip_client_certificates(
+            response = self.__class__.ibm_key_protect_api_service.get_kmip_client_certificates(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -1173,7 +1166,7 @@ class TestIbmKeyProtectApiV2Examples:
                 'name': self.__class__.kmip_cert_name,
             }
 
-            response = ibm_key_protect_api_service.add_kmip_client_certificate(
+            response = self.__class__.ibm_key_protect_api_service.add_kmip_client_certificate(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
                 metadata=collection_metadata_model,
@@ -1198,7 +1191,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-get_kmip_client_certificate
 
-            response = ibm_key_protect_api_service.get_kmip_client_certificate(
+            response = self.__class__.ibm_key_protect_api_service.get_kmip_client_certificate(
                 adapter_id=self.__class__.kmip_name,
                 id=self.__class__.kmip_cert_name,
                 bluemix_instance=self.__class__.bluemix_instance,
@@ -1223,14 +1216,14 @@ class TestIbmKeyProtectApiV2Examples:
             # Move key to default ring before deleting keyring
             key_patch_body = {"keyRingID": "default"}
 
-            response = ibm_key_protect_api_service.patch_key(
+            response = self.__class__.ibm_key_protect_api_service.patch_key(
                 id=self.__class__.created_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
                 x_kms_key_ring=self.__class__.created_keyring_id,
                 key_patch_body=io.BytesIO(json.dumps(key_patch_body).encode("utf-8")),
             )
 
-            response = ibm_key_protect_api_service.delete_key_ring(
+            response = self.__class__.ibm_key_protect_api_service.delete_key_ring(
                 key_ring_id=self.__class__.created_keyring_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -1250,7 +1243,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-syncAssociatedResources
 
-            response = ibm_key_protect_api_service.sync_associated_resources(
+            response = self.__class__.ibm_key_protect_api_service.sync_associated_resources(
                 id=self.__class__.policies_overriden_key_id,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
@@ -1272,7 +1265,7 @@ class TestIbmKeyProtectApiV2Examples:
         try:
             # begin-delete_kmip_object
 
-            response = ibm_key_protect_api_service.delete_kmip_object(
+            response = self.__class__.ibm_key_protect_api_service.delete_kmip_object(
                 adapter_id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
                 id='testString',
@@ -1293,7 +1286,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-delete_kmip_object
 
-            response = ibm_key_protect_api_service.delete_kmip_client_certificate(
+            response = self.__class__.ibm_key_protect_api_service.delete_kmip_client_certificate(
                 adapter_id=self.__class__.kmip_name,
                 id=self.__class__.kmip_cert_name,
                 bluemix_instance=self.__class__.bluemix_instance,
@@ -1315,18 +1308,18 @@ class TestIbmKeyProtectApiV2Examples:
 
             # begin-delete_kmip_adapter
 
-            response = ibm_key_protect_api_service.delete_kmip_adapter(
+            response = self.__class__.ibm_key_protect_api_service.delete_kmip_adapter(
                 id=self.__class__.kmip_name,
                 bluemix_instance=self.__class__.bluemix_instance,
             )
-            
+
             # end-delete_kmip_adapter
 
             print('\ndelete_kmip_adapter() response status code: ', response.get_status_code())
 
         except ApiException as e:
             pytest.fail(str(e))
-            
+
     @needscredentials
     def test_cleanup_resources(self):
         """
@@ -1337,7 +1330,7 @@ class TestIbmKeyProtectApiV2Examples:
         if self.__class__.created_key_id:
             try:
                 print(f"Deleting created key: {self.__class__.created_key_id}")
-                ibm_key_protect_api_service.delete_key(
+                self.__class__.ibm_key_protect_api_service.delete_key(
                     id=self.__class__.created_key_id,
                     bluemix_instance=self.__class__.bluemix_instance,
                     prefer="return=representation",
@@ -1347,7 +1340,7 @@ class TestIbmKeyProtectApiV2Examples:
 
             try:
                 print(f"Purging created key: {self.__class__.created_key_id}")
-                ibm_key_protect_api_service.purge_key(
+                self.__class__.ibm_key_protect_api_service.purge_key(
                     id=self.__class__.created_key_id,
                     bluemix_instance=self.__class__.bluemix_instance,
                     prefer="return=representation",
@@ -1360,7 +1353,7 @@ class TestIbmKeyProtectApiV2Examples:
                 print(
                     f"Deleting policies overridden key: {self.__class__.policies_overriden_key_id}"
                 )
-                ibm_key_protect_api_service.delete_key(
+                self.__class__.ibm_key_protect_api_service.delete_key(
                     id=self.__class__.policies_overriden_key_id,
                     bluemix_instance=self.__class__.bluemix_instance,
                     prefer="return=representation",
@@ -1373,7 +1366,7 @@ class TestIbmKeyProtectApiV2Examples:
                 print(
                     f"Purging policies overridden key: {self.__class__.policies_overriden_key_id}"
                 )
-                ibm_key_protect_api_service.purge_key(
+                self.__class__.ibm_key_protect_api_service.purge_key(
                     id=self.__class__.policies_overriden_key_id,
                     bluemix_instance=self.__class__.bluemix_instance,
                     prefer="return=representation",
@@ -1384,7 +1377,7 @@ class TestIbmKeyProtectApiV2Examples:
         if self.__class__.created_keyring_id:
             try:
                 print(f"Deleting key ring: {self.__class__.created_keyring_id}")
-                ibm_key_protect_api_service.delete_key_ring(
+                self.__class__.ibm_key_protect_api_service.delete_key_ring(
                     key_ring_id=self.__class__.created_keyring_id,
                     bluemix_instance=self.__class__.bluemix_instance,
                     force=False,
