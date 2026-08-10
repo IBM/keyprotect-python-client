@@ -4,7 +4,7 @@
 
 PYTHON=python
 LINT=black
-LINT_DIRS=ibm_platform_services test/unit test/integration examples
+LINT_DIRS=keyprotect test/unit test/integration examples
 
 setup: deps dev-deps install-project
 
@@ -36,7 +36,7 @@ install-project:
 test: test-unit test-int
 
 test-unit:
-	${PYTHON} -m pytest --cov=ibm_platform_services test/unit
+	${PYTHON} -m pytest --cov=keyprotect test/unit
 
 test-int:
 	${PYTHON} -m pytest test/integration
