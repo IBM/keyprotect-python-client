@@ -177,7 +177,6 @@ class TestIbmKeyProtectApiV2Examples:
             key = response.get_result()
             key_data = key.json()
             key_id = key_data["resources"][0]["id"]
-            
             # Store the key ID in class variable for use in other tests
             self.__class__.created_key_id = key_id
 
