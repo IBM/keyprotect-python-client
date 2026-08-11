@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "keyprotect"
-version = "2.3.1"
+version = "3.0.0"
 description = "A Pythonic client for IBM Key Protect"
 readme = "README.md"
 license = "Apache-2.0"
