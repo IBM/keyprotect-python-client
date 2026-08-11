@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/IBM/keyprotect-python-client/compare/v3.0.0...v3.0.1) (2026-08-11)
+
+
+### Bug Fixes
+
+* **build:** update pyproject toml with build and publish ([#20](https://github.com/IBM/keyprotect-python-client/issues/20)) ([ce0dffb](https://github.com/IBM/keyprotect-python-client/commit/ce0dffbce9ed4734215f0e5bca08121f2fab2ee2))
+
 # [3.0.0](https://github.com/IBM/keyprotect-python-client/compare/v2.3.1...v3.0.0) (2026-08-11)
 
 
