@@ -3315,18 +3315,18 @@ class TestPutInstancePolicy:
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model = {}
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_network_policy_data_attributes_model
+        instance_policy_allowed_network_policy_data_model["attributes"] = (
+            instance_policy_allowed_network_policy_data_attributes_model
+        )
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_type"
-        ] = "allowedNetwork"
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_data"
-        ] = instance_policy_allowed_network_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_type"] = (
+            "allowedNetwork"
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_data"] = (
+            instance_policy_allowed_network_policy_data_model
+        )
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork model
         set_instance_policies_one_of_model = {}
@@ -3395,18 +3395,18 @@ class TestPutInstancePolicy:
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model = {}
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_network_policy_data_attributes_model
+        instance_policy_allowed_network_policy_data_model["attributes"] = (
+            instance_policy_allowed_network_policy_data_attributes_model
+        )
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_type"
-        ] = "allowedNetwork"
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_data"
-        ] = instance_policy_allowed_network_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_type"] = (
+            "allowedNetwork"
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_data"] = (
+            instance_policy_allowed_network_policy_data_model
+        )
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork model
         set_instance_policies_one_of_model = {}
@@ -3467,18 +3467,18 @@ class TestPutInstancePolicy:
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model = {}
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_network_policy_data_attributes_model
+        instance_policy_allowed_network_policy_data_model["attributes"] = (
+            instance_policy_allowed_network_policy_data_attributes_model
+        )
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_type"
-        ] = "allowedNetwork"
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_data"
-        ] = instance_policy_allowed_network_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_type"] = (
+            "allowedNetwork"
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_data"] = (
+            instance_policy_allowed_network_policy_data_model
+        )
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork model
         set_instance_policies_one_of_model = {}
@@ -6856,9 +6856,9 @@ class TestModel_CollectionMetadataWithTotalCount:
 
         # Construct a json representation of a CollectionMetadataWithTotalCount model
         collection_metadata_with_total_count_model_json = {}
-        collection_metadata_with_total_count_model_json[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_with_total_count_model_json["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_with_total_count_model_json["collectionTotal"] = 1
         collection_metadata_with_total_count_model_json["totalCount"] = 1
 
@@ -7142,21 +7142,21 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResources
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model = (
             {}
         )  # GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model[
-            "enabled"
-        ] = True
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model["enabled"] = (
+            True
+        )
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model[
             "attributes"
         ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_attributes_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem model
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json[
-            "policy_type"
-        ] = "testString"
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json[
-            "policy_data"
-        ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json["policy_type"] = (
+            "testString"
+        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json["policy_data"] = (
+            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model
+        )
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem by calling from_dict on the json representation
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model = (
@@ -7572,16 +7572,16 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItem:
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyData
         get_instance_policy_allowed_ip_resources_item_policy_data_model["enabled"] = True
-        get_instance_policy_allowed_ip_resources_item_policy_data_model[
-            "attributes"
-        ] = get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
+        get_instance_policy_allowed_ip_resources_item_policy_data_model["attributes"] = (
+            get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
+        )
 
         # Construct a json representation of a GetInstancePolicyAllowedIPResourcesItem model
         get_instance_policy_allowed_ip_resources_item_model_json = {}
         get_instance_policy_allowed_ip_resources_item_model_json["policy_type"] = "testString"
-        get_instance_policy_allowed_ip_resources_item_model_json[
-            "policy_data"
-        ] = get_instance_policy_allowed_ip_resources_item_policy_data_model
+        get_instance_policy_allowed_ip_resources_item_model_json["policy_data"] = (
+            get_instance_policy_allowed_ip_resources_item_policy_data_model
+        )
 
         # Construct a model instance of GetInstancePolicyAllowedIPResourcesItem by calling from_dict on the json representation
         get_instance_policy_allowed_ip_resources_item_model = GetInstancePolicyAllowedIPResourcesItem.from_dict(
@@ -7640,9 +7640,9 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItemPolicyData:
         # Construct a json representation of a GetInstancePolicyAllowedIPResourcesItemPolicyData model
         get_instance_policy_allowed_ip_resources_item_policy_data_model_json = {}
         get_instance_policy_allowed_ip_resources_item_policy_data_model_json["enabled"] = True
-        get_instance_policy_allowed_ip_resources_item_policy_data_model_json[
-            "attributes"
-        ] = get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
+        get_instance_policy_allowed_ip_resources_item_policy_data_model_json["attributes"] = (
+            get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
+        )
 
         # Construct a model instance of GetInstancePolicyAllowedIPResourcesItemPolicyData by calling from_dict on the json representation
         get_instance_policy_allowed_ip_resources_item_policy_data_model = (
@@ -7756,9 +7756,9 @@ class TestModel_GetInstancePolicyDualAuthDeleteResourcesItem:
         # Construct a json representation of a GetInstancePolicyDualAuthDeleteResourcesItem model
         get_instance_policy_dual_auth_delete_resources_item_model_json = {}
         get_instance_policy_dual_auth_delete_resources_item_model_json["policy_type"] = "testString"
-        get_instance_policy_dual_auth_delete_resources_item_model_json[
-            "policy_data"
-        ] = dual_auth_delete_properties_model
+        get_instance_policy_dual_auth_delete_resources_item_model_json["policy_data"] = (
+            dual_auth_delete_properties_model
+        )
 
         # Construct a model instance of GetInstancePolicyDualAuthDeleteResourcesItem by calling from_dict on the json representation
         get_instance_policy_dual_auth_delete_resources_item_model = (
@@ -7862,16 +7862,16 @@ class TestModel_GetInstancePolicyRotationResourcesItem:
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyData
         get_instance_policy_rotation_resources_item_policy_data_model["enabled"] = True
-        get_instance_policy_rotation_resources_item_policy_data_model[
-            "attributes"
-        ] = get_instance_policy_rotation_resources_item_policy_data_attributes_model
+        get_instance_policy_rotation_resources_item_policy_data_model["attributes"] = (
+            get_instance_policy_rotation_resources_item_policy_data_attributes_model
+        )
 
         # Construct a json representation of a GetInstancePolicyRotationResourcesItem model
         get_instance_policy_rotation_resources_item_model_json = {}
         get_instance_policy_rotation_resources_item_model_json["policy_type"] = "testString"
-        get_instance_policy_rotation_resources_item_model_json[
-            "policy_data"
-        ] = get_instance_policy_rotation_resources_item_policy_data_model
+        get_instance_policy_rotation_resources_item_model_json["policy_data"] = (
+            get_instance_policy_rotation_resources_item_policy_data_model
+        )
 
         # Construct a model instance of GetInstancePolicyRotationResourcesItem by calling from_dict on the json representation
         get_instance_policy_rotation_resources_item_model = GetInstancePolicyRotationResourcesItem.from_dict(
@@ -7922,9 +7922,9 @@ class TestModel_GetInstancePolicyRotationResourcesItemPolicyData:
         # Construct a json representation of a GetInstancePolicyRotationResourcesItemPolicyData model
         get_instance_policy_rotation_resources_item_policy_data_model_json = {}
         get_instance_policy_rotation_resources_item_policy_data_model_json["enabled"] = True
-        get_instance_policy_rotation_resources_item_policy_data_model_json[
-            "attributes"
-        ] = get_instance_policy_rotation_resources_item_policy_data_attributes_model
+        get_instance_policy_rotation_resources_item_policy_data_model_json["attributes"] = (
+            get_instance_policy_rotation_resources_item_policy_data_attributes_model
+        )
 
         # Construct a model instance of GetInstancePolicyRotationResourcesItemPolicyData by calling from_dict on the json representation
         get_instance_policy_rotation_resources_item_policy_data_model = (
@@ -8159,12 +8159,12 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem model
         get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json = {}
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json[
-            "type"
-        ] = "application/vnd.ibm.kms.policy+json"
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json[
-            "dualAuthDelete"
-        ] = key_policy_dual_auth_delete_dual_auth_delete_model
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json["type"] = (
+            "application/vnd.ibm.kms.policy+json"
+        )
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json["dualAuthDelete"] = (
+            key_policy_dual_auth_delete_dual_auth_delete_model
+        )
 
         # Construct a model instance of GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem by calling from_dict on the json representation
         get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model = (
@@ -8266,9 +8266,9 @@ class TestModel_GetMultipleKeyPoliciesResource:
 
         # Construct a json representation of a GetMultipleKeyPoliciesResource model
         get_multiple_key_policies_resource_model_json = {}
-        get_multiple_key_policies_resource_model_json[
-            "dualAuthDelete"
-        ] = get_multiple_key_policies_resource_dual_auth_delete_model
+        get_multiple_key_policies_resource_model_json["dualAuthDelete"] = (
+            get_multiple_key_policies_resource_dual_auth_delete_model
+        )
         get_multiple_key_policies_resource_model_json["rotation"] = key_policy_rotation_non_required_rotation_model
 
         # Construct a model instance of GetMultipleKeyPoliciesResource by calling from_dict on the json representation
@@ -8396,9 +8396,9 @@ class TestModel_InstancePolicyAllowedIPPolicyData:
         # Construct a json representation of a InstancePolicyAllowedIPPolicyData model
         instance_policy_allowed_ip_policy_data_model_json = {}
         instance_policy_allowed_ip_policy_data_model_json["enabled"] = True
-        instance_policy_allowed_ip_policy_data_model_json[
-            "attributes"
-        ] = instance_policy_allowed_ip_policy_data_attributes_model
+        instance_policy_allowed_ip_policy_data_model_json["attributes"] = (
+            instance_policy_allowed_ip_policy_data_attributes_model
+        )
 
         # Construct a model instance of InstancePolicyAllowedIPPolicyData by calling from_dict on the json representation
         instance_policy_allowed_ip_policy_data_model = InstancePolicyAllowedIPPolicyData.from_dict(
@@ -8494,9 +8494,9 @@ class TestModel_InstancePolicyAllowedNetworkPolicyData:
         # Construct a json representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model_json = {}
         instance_policy_allowed_network_policy_data_model_json["enabled"] = True
-        instance_policy_allowed_network_policy_data_model_json[
-            "attributes"
-        ] = instance_policy_allowed_network_policy_data_attributes_model
+        instance_policy_allowed_network_policy_data_model_json["attributes"] = (
+            instance_policy_allowed_network_policy_data_attributes_model
+        )
 
         # Construct a model instance of InstancePolicyAllowedNetworkPolicyData by calling from_dict on the json representation
         instance_policy_allowed_network_policy_data_model = InstancePolicyAllowedNetworkPolicyData.from_dict(
@@ -8599,9 +8599,9 @@ class TestModel_InstancePolicyKeyCreateImportAccessPolicyData:
         # Construct a json representation of a InstancePolicyKeyCreateImportAccessPolicyData model
         instance_policy_key_create_import_access_policy_data_model_json = {}
         instance_policy_key_create_import_access_policy_data_model_json["enabled"] = True
-        instance_policy_key_create_import_access_policy_data_model_json[
-            "attributes"
-        ] = instance_policy_key_create_import_access_policy_data_attributes_model
+        instance_policy_key_create_import_access_policy_data_model_json["attributes"] = (
+            instance_policy_key_create_import_access_policy_data_attributes_model
+        )
 
         # Construct a model instance of InstancePolicyKeyCreateImportAccessPolicyData by calling from_dict on the json representation
         instance_policy_key_create_import_access_policy_data_model = (
@@ -8866,9 +8866,9 @@ class TestModel_InstancePolicyRotationPolicyData:
         # Construct a json representation of a InstancePolicyRotationPolicyData model
         instance_policy_rotation_policy_data_model_json = {}
         instance_policy_rotation_policy_data_model_json["enabled"] = True
-        instance_policy_rotation_policy_data_model_json[
-            "attributes"
-        ] = instance_policy_rotation_policy_data_attributes_model
+        instance_policy_rotation_policy_data_model_json["attributes"] = (
+            instance_policy_rotation_policy_data_attributes_model
+        )
 
         # Construct a model instance of InstancePolicyRotationPolicyData by calling from_dict on the json representation
         instance_policy_rotation_policy_data_model = InstancePolicyRotationPolicyData.from_dict(
@@ -9739,9 +9739,9 @@ class TestModel_ListKMIPAdaptersWithTotalCount:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_with_total_count_model["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -9848,9 +9848,9 @@ class TestModel_ListKMIPObjectsWithTotalCount:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_with_total_count_model["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -9909,9 +9909,9 @@ class TestModel_ListKMIPPartialClientCertificatesWithTotalCount:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_with_total_count_model["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -9923,9 +9923,9 @@ class TestModel_ListKMIPPartialClientCertificatesWithTotalCount:
 
         # Construct a json representation of a ListKMIPPartialClientCertificatesWithTotalCount model
         list_kmip_partial_client_certificates_with_total_count_model_json = {}
-        list_kmip_partial_client_certificates_with_total_count_model_json[
-            "metadata"
-        ] = collection_metadata_with_total_count_model
+        list_kmip_partial_client_certificates_with_total_count_model_json["metadata"] = (
+            collection_metadata_with_total_count_model
+        )
         list_kmip_partial_client_certificates_with_total_count_model_json["resources"] = [
             kmip_client_partial_certificate_model
         ]
@@ -9977,9 +9977,9 @@ class TestModel_ListKeyRingsWithTotalCount:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_with_total_count_model["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -10368,9 +10368,9 @@ class TestModel_RegistrationWithTotalCount:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_with_total_count_model["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -10529,18 +10529,18 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
 
         instance_policy_allowed_ip_policy_data_model = {}  # InstancePolicyAllowedIPPolicyData
         instance_policy_allowed_ip_policy_data_model["enabled"] = True
-        instance_policy_allowed_ip_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_ip_policy_data_attributes_model
+        instance_policy_allowed_ip_policy_data_model["attributes"] = (
+            instance_policy_allowed_ip_policy_data_attributes_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem model
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json[
-            "policy_type"
-        ] = "allowedIP"
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json[
-            "policy_data"
-        ] = instance_policy_allowed_ip_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json["policy_type"] = (
+            "allowedIP"
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json["policy_data"] = (
+            instance_policy_allowed_ip_policy_data_model
+        )
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem by calling from_dict on the json representation
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model = (
@@ -10599,18 +10599,18 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResources
 
         instance_policy_allowed_network_policy_data_model = {}  # InstancePolicyAllowedNetworkPolicyData
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_network_policy_data_attributes_model
+        instance_policy_allowed_network_policy_data_model["attributes"] = (
+            instance_policy_allowed_network_policy_data_attributes_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json[
-            "policy_type"
-        ] = "allowedNetwork"
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json[
-            "policy_data"
-        ] = instance_policy_allowed_network_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json["policy_type"] = (
+            "allowedNetwork"
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json["policy_data"] = (
+            instance_policy_allowed_network_policy_data_model
+        )
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem by calling from_dict on the json representation
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
@@ -10673,9 +10673,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessRe
 
         instance_policy_key_create_import_access_policy_data_model = {}  # InstancePolicyKeyCreateImportAccessPolicyData
         instance_policy_key_create_import_access_policy_data_model["enabled"] = True
-        instance_policy_key_create_import_access_policy_data_model[
-            "attributes"
-        ] = instance_policy_key_create_import_access_policy_data_attributes_model
+        instance_policy_key_create_import_access_policy_data_model["attributes"] = (
+            instance_policy_key_create_import_access_policy_data_attributes_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem model
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json = {}
@@ -10742,9 +10742,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem:
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem model
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json = {}
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json["policy_type"] = "metrics"
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json[
-            "policy_data"
-        ] = metrics_properties_model
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json["policy_data"] = (
+            metrics_properties_model
+        )
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem by calling from_dict on the json representation
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model = (
@@ -10806,9 +10806,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem:
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem model
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json = {}
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json["policy_type"] = "rotation"
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json[
-            "policy_data"
-        ] = instance_policy_rotation_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json["policy_data"] = (
+            instance_policy_rotation_policy_data_model
+        )
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem by calling from_dict on the json representation
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model = (
@@ -10864,9 +10864,9 @@ class TestModel_SetInstancePolicyDualAuthDeleteResourcesItem:
         # Construct a json representation of a SetInstancePolicyDualAuthDeleteResourcesItem model
         set_instance_policy_dual_auth_delete_resources_item_model_json = {}
         set_instance_policy_dual_auth_delete_resources_item_model_json["policy_type"] = "dualAuthDelete"
-        set_instance_policy_dual_auth_delete_resources_item_model_json[
-            "policy_data"
-        ] = dual_auth_delete_properties_model
+        set_instance_policy_dual_auth_delete_resources_item_model_json["policy_data"] = (
+            dual_auth_delete_properties_model
+        )
 
         # Construct a model instance of SetInstancePolicyDualAuthDeleteResourcesItem by calling from_dict on the json representation
         set_instance_policy_dual_auth_delete_resources_item_model = (
@@ -10917,9 +10917,9 @@ class TestModel_SetMultipleInstancePoliciesResourcesItem:
         set_multiple_instance_policies_resources_item_policy_data_attributes_model = (
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "allowed_network"
-        ] = "public-and-private"
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_network"] = (
+            "public-and-private"
+        )
         set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -10938,16 +10938,16 @@ class TestModel_SetMultipleInstancePoliciesResourcesItem:
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyData
         set_multiple_instance_policies_resources_item_policy_data_model["enabled"] = True
-        set_multiple_instance_policies_resources_item_policy_data_model[
-            "attributes"
-        ] = set_multiple_instance_policies_resources_item_policy_data_attributes_model
+        set_multiple_instance_policies_resources_item_policy_data_model["attributes"] = (
+            set_multiple_instance_policies_resources_item_policy_data_attributes_model
+        )
 
         # Construct a json representation of a SetMultipleInstancePoliciesResourcesItem model
         set_multiple_instance_policies_resources_item_model_json = {}
         set_multiple_instance_policies_resources_item_model_json["policy_type"] = "allowedNetwork"
-        set_multiple_instance_policies_resources_item_model_json[
-            "policy_data"
-        ] = set_multiple_instance_policies_resources_item_policy_data_model
+        set_multiple_instance_policies_resources_item_model_json["policy_data"] = (
+            set_multiple_instance_policies_resources_item_policy_data_model
+        )
 
         # Construct a model instance of SetMultipleInstancePoliciesResourcesItem by calling from_dict on the json representation
         set_multiple_instance_policies_resources_item_model = SetMultipleInstancePoliciesResourcesItem.from_dict(
@@ -10995,9 +10995,9 @@ class TestModel_SetMultipleInstancePoliciesResourcesItemPolicyData:
         set_multiple_instance_policies_resources_item_policy_data_attributes_model = (
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "allowed_network"
-        ] = "public-and-private"
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_network"] = (
+            "public-and-private"
+        )
         set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -11015,9 +11015,9 @@ class TestModel_SetMultipleInstancePoliciesResourcesItemPolicyData:
         # Construct a json representation of a SetMultipleInstancePoliciesResourcesItemPolicyData model
         set_multiple_instance_policies_resources_item_policy_data_model_json = {}
         set_multiple_instance_policies_resources_item_policy_data_model_json["enabled"] = True
-        set_multiple_instance_policies_resources_item_policy_data_model_json[
-            "attributes"
-        ] = set_multiple_instance_policies_resources_item_policy_data_attributes_model
+        set_multiple_instance_policies_resources_item_policy_data_model_json["attributes"] = (
+            set_multiple_instance_policies_resources_item_policy_data_attributes_model
+        )
 
         # Construct a model instance of SetMultipleInstancePoliciesResourcesItemPolicyData by calling from_dict on the json representation
         set_multiple_instance_policies_resources_item_policy_data_model = (
@@ -11069,9 +11069,9 @@ class TestModel_SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes:
 
         # Construct a json representation of a SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes model
         set_multiple_instance_policies_resources_item_policy_data_attributes_model_json = {}
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "allowed_network"
-        ] = "public-and-private"
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["allowed_network"] = (
+            "public-and-private"
+        )
         set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -11144,9 +11144,9 @@ class TestModel_SetMultipleKeyPoliciesResource:
         # Construct a json representation of a SetMultipleKeyPoliciesResource model
         set_multiple_key_policies_resource_model_json = {}
         set_multiple_key_policies_resource_model_json["type"] = "application/vnd.ibm.kms.policy+json"
-        set_multiple_key_policies_resource_model_json[
-            "dualAuthDelete"
-        ] = key_policy_dual_auth_delete_dual_auth_delete_model
+        set_multiple_key_policies_resource_model_json["dualAuthDelete"] = (
+            key_policy_dual_auth_delete_dual_auth_delete_model
+        )
         set_multiple_key_policies_resource_model_json["rotation"] = key_policy_rotation_rotation_model
 
         # Construct a model instance of SetMultipleKeyPoliciesResource by calling from_dict on the json representation
@@ -11282,9 +11282,9 @@ class TestModel_CollectionMetadataOneOfCollectionMetadata:
 
         # Construct a json representation of a CollectionMetadataOneOfCollectionMetadata model
         collection_metadata_one_of_collection_metadata_model_json = {}
-        collection_metadata_one_of_collection_metadata_model_json[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        collection_metadata_one_of_collection_metadata_model_json["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         collection_metadata_one_of_collection_metadata_model_json["collectionTotal"] = 1
 
         # Construct a model instance of CollectionMetadataOneOfCollectionMetadata by calling from_dict on the json representation
@@ -11350,21 +11350,21 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedIP:
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyData
         get_instance_policy_allowed_ip_resources_item_policy_data_model["enabled"] = True
-        get_instance_policy_allowed_ip_resources_item_policy_data_model[
-            "attributes"
-        ] = get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
+        get_instance_policy_allowed_ip_resources_item_policy_data_model["attributes"] = (
+            get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
+        )
 
         get_instance_policy_allowed_ip_resources_item_model = {}  # GetInstancePolicyAllowedIPResourcesItem
         get_instance_policy_allowed_ip_resources_item_model["policy_type"] = "testString"
-        get_instance_policy_allowed_ip_resources_item_model[
-            "policy_data"
-        ] = get_instance_policy_allowed_ip_resources_item_policy_data_model
+        get_instance_policy_allowed_ip_resources_item_model["policy_data"] = (
+            get_instance_policy_allowed_ip_resources_item_policy_data_model
+        )
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyAllowedIP model
         get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json["resources"] = [
             get_instance_policy_allowed_ip_resources_item_model
         ]
@@ -11433,9 +11433,9 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork:
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model = (
             {}
         )  # GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model[
-            "enabled"
-        ] = True
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model["enabled"] = (
+            True
+        )
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model[
             "attributes"
         ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_attributes_model
@@ -11443,18 +11443,18 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork:
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model = (
             {}
         )  # GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model[
-            "policy_type"
-        ] = "testString"
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model[
-            "policy_data"
-        ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model["policy_type"] = (
+            "testString"
+        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model["policy_data"] = (
+            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model
+        )
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork model
         get_instance_policies_one_of_get_instance_policy_allowed_network_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_allowed_network_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_instance_policy_allowed_network_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_instance_policy_allowed_network_model_json["resources"] = [
             get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model
         ]
@@ -11522,9 +11522,9 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete:
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete model
         get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json["resources"] = [
             get_instance_policy_dual_auth_delete_resources_item_model
         ]
@@ -11624,9 +11624,9 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess:
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess model
         get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json["resources"] = [
             get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model
         ]
@@ -11694,9 +11694,9 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyMetrics:
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyMetrics model
         get_instance_policies_one_of_get_instance_policy_metrics_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_metrics_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_instance_policy_metrics_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_instance_policy_metrics_model_json["resources"] = [
             get_instance_policy_metrics_resources_item_model
         ]
@@ -11764,21 +11764,21 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyRotation:
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyData
         get_instance_policy_rotation_resources_item_policy_data_model["enabled"] = True
-        get_instance_policy_rotation_resources_item_policy_data_model[
-            "attributes"
-        ] = get_instance_policy_rotation_resources_item_policy_data_attributes_model
+        get_instance_policy_rotation_resources_item_policy_data_model["attributes"] = (
+            get_instance_policy_rotation_resources_item_policy_data_attributes_model
+        )
 
         get_instance_policy_rotation_resources_item_model = {}  # GetInstancePolicyRotationResourcesItem
         get_instance_policy_rotation_resources_item_model["policy_type"] = "testString"
-        get_instance_policy_rotation_resources_item_model[
-            "policy_data"
-        ] = get_instance_policy_rotation_resources_item_policy_data_model
+        get_instance_policy_rotation_resources_item_model["policy_data"] = (
+            get_instance_policy_rotation_resources_item_policy_data_model
+        )
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyRotation model
         get_instance_policies_one_of_get_instance_policy_rotation_model_json = {}
-        get_instance_policies_one_of_get_instance_policy_rotation_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_instance_policy_rotation_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_instance_policy_rotation_model_json["resources"] = [
             get_instance_policy_rotation_resources_item_model
         ]
@@ -11863,9 +11863,9 @@ class TestModel_GetInstancePoliciesOneOfGetMultipleInstancePolicies:
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetMultipleInstancePolicies model
         get_instance_policies_one_of_get_multiple_instance_policies_model_json = {}
-        get_instance_policies_one_of_get_multiple_instance_policies_model_json[
-            "metadata"
-        ] = collection_metadata_one_of_model
+        get_instance_policies_one_of_get_multiple_instance_policies_model_json["metadata"] = (
+            collection_metadata_one_of_model
+        )
         get_instance_policies_one_of_get_multiple_instance_policies_model_json["resources"] = [
             instance_policy_resource_model
         ]
@@ -11930,12 +11930,12 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete:
         get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model = (
             {}
         )  # GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model[
-            "type"
-        ] = "application/vnd.ibm.kms.policy+json"
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model[
-            "dualAuthDelete"
-        ] = key_policy_dual_auth_delete_dual_auth_delete_model
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model["type"] = (
+            "application/vnd.ibm.kms.policy+json"
+        )
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model["dualAuthDelete"] = (
+            key_policy_dual_auth_delete_dual_auth_delete_model
+        )
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete model
         get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json = {}
@@ -12063,9 +12063,9 @@ class TestModel_GetKeyPoliciesOneOfGetMultipleKeyPolicies:
         key_policy_rotation_non_required_rotation_model["interval_month"] = 1
 
         get_multiple_key_policies_resource_model = {}  # GetMultipleKeyPoliciesResource
-        get_multiple_key_policies_resource_model[
-            "dualAuthDelete"
-        ] = get_multiple_key_policies_resource_dual_auth_delete_model
+        get_multiple_key_policies_resource_model["dualAuthDelete"] = (
+            get_multiple_key_policies_resource_dual_auth_delete_model
+        )
         get_multiple_key_policies_resource_model["rotation"] = key_policy_rotation_non_required_rotation_model
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetMultipleKeyPolicies model
@@ -12307,9 +12307,9 @@ class TestModel_ListCollectionMetadataCollectionMetadata:
 
         # Construct a json representation of a ListCollectionMetadataCollectionMetadata model
         list_collection_metadata_collection_metadata_model_json = {}
-        list_collection_metadata_collection_metadata_model_json[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        list_collection_metadata_collection_metadata_model_json["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         list_collection_metadata_collection_metadata_model_json["collectionTotal"] = 1
 
         # Construct a model instance of ListCollectionMetadataCollectionMetadata by calling from_dict on the json representation
@@ -12353,9 +12353,9 @@ class TestModel_ListCollectionMetadataCollectionMetadataWithTotalCount:
 
         # Construct a json representation of a ListCollectionMetadataCollectionMetadataWithTotalCount model
         list_collection_metadata_collection_metadata_with_total_count_model_json = {}
-        list_collection_metadata_collection_metadata_with_total_count_model_json[
-            "collectionType"
-        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        list_collection_metadata_collection_metadata_with_total_count_model_json["collectionType"] = (
+            "application/vnd.ibm.kms.allowed_ip_metadata+json"
+        )
         list_collection_metadata_collection_metadata_with_total_count_model_json["collectionTotal"] = 1
         list_collection_metadata_collection_metadata_with_total_count_model_json["totalCount"] = 1
 
@@ -12424,17 +12424,17 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIP:
 
         instance_policy_allowed_ip_policy_data_model = {}  # InstancePolicyAllowedIPPolicyData
         instance_policy_allowed_ip_policy_data_model["enabled"] = True
-        instance_policy_allowed_ip_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_ip_policy_data_attributes_model
+        instance_policy_allowed_ip_policy_data_model["attributes"] = (
+            instance_policy_allowed_ip_policy_data_attributes_model
+        )
 
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model = (
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model["policy_type"] = "allowedIP"
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model[
-            "policy_data"
-        ] = instance_policy_allowed_ip_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model["policy_data"] = (
+            instance_policy_allowed_ip_policy_data_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedIP model
         set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json = {}
@@ -12504,25 +12504,25 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork:
 
         instance_policy_allowed_network_policy_data_model = {}  # InstancePolicyAllowedNetworkPolicyData
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model[
-            "attributes"
-        ] = instance_policy_allowed_network_policy_data_attributes_model
+        instance_policy_allowed_network_policy_data_model["attributes"] = (
+            instance_policy_allowed_network_policy_data_attributes_model
+        )
 
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_type"
-        ] = "allowedNetwork"
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
-            "policy_data"
-        ] = instance_policy_allowed_network_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_type"] = (
+            "allowedNetwork"
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model["policy_data"] = (
+            instance_policy_allowed_network_policy_data_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork model
         set_instance_policies_one_of_set_instance_policy_allowed_network_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_network_model_json[
-            "metadata"
-        ] = collection_metadata_model
+        set_instance_policies_one_of_set_instance_policy_allowed_network_model_json["metadata"] = (
+            collection_metadata_model
+        )
         set_instance_policies_one_of_set_instance_policy_allowed_network_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model
         ]
@@ -12590,9 +12590,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete:
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete model
         set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json[
-            "metadata"
-        ] = collection_metadata_model
+        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json["metadata"] = (
+            collection_metadata_model
+        )
         set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json["resources"] = [
             set_instance_policy_dual_auth_delete_resources_item_model
         ]
@@ -12662,9 +12662,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess:
 
         instance_policy_key_create_import_access_policy_data_model = {}  # InstancePolicyKeyCreateImportAccessPolicyData
         instance_policy_key_create_import_access_policy_data_model["enabled"] = True
-        instance_policy_key_create_import_access_policy_data_model[
-            "attributes"
-        ] = instance_policy_key_create_import_access_policy_data_attributes_model
+        instance_policy_key_create_import_access_policy_data_model["attributes"] = (
+            instance_policy_key_create_import_access_policy_data_attributes_model
+        )
 
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model = (
             {}
@@ -12678,9 +12678,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess:
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess model
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json[
-            "metadata"
-        ] = collection_metadata_model
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json["metadata"] = (
+            collection_metadata_model
+        )
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model
         ]
@@ -12746,9 +12746,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyMetrics:
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model["policy_type"] = "metrics"
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model[
-            "policy_data"
-        ] = metrics_properties_model
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model["policy_data"] = (
+            metrics_properties_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyMetrics model
         set_instance_policies_one_of_set_instance_policy_metrics_model_json = {}
@@ -12822,9 +12822,9 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyRotation:
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model["policy_type"] = "rotation"
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model[
-            "policy_data"
-        ] = instance_policy_rotation_policy_data_model
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model["policy_data"] = (
+            instance_policy_rotation_policy_data_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyRotation model
         set_instance_policies_one_of_set_instance_policy_rotation_model_json = {}
@@ -12890,9 +12890,9 @@ class TestModel_SetInstancePoliciesOneOfSetMultipleInstancePolicies:
         set_multiple_instance_policies_resources_item_policy_data_attributes_model = (
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "allowed_network"
-        ] = "public-and-private"
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_network"] = (
+            "public-and-private"
+        )
         set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -12911,15 +12911,15 @@ class TestModel_SetInstancePoliciesOneOfSetMultipleInstancePolicies:
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyData
         set_multiple_instance_policies_resources_item_policy_data_model["enabled"] = True
-        set_multiple_instance_policies_resources_item_policy_data_model[
-            "attributes"
-        ] = set_multiple_instance_policies_resources_item_policy_data_attributes_model
+        set_multiple_instance_policies_resources_item_policy_data_model["attributes"] = (
+            set_multiple_instance_policies_resources_item_policy_data_attributes_model
+        )
 
         set_multiple_instance_policies_resources_item_model = {}  # SetMultipleInstancePoliciesResourcesItem
         set_multiple_instance_policies_resources_item_model["policy_type"] = "allowedNetwork"
-        set_multiple_instance_policies_resources_item_model[
-            "policy_data"
-        ] = set_multiple_instance_policies_resources_item_policy_data_model
+        set_multiple_instance_policies_resources_item_model["policy_data"] = (
+            set_multiple_instance_policies_resources_item_policy_data_model
+        )
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetMultipleInstancePolicies model
         set_instance_policies_one_of_set_multiple_instance_policies_model_json = {}

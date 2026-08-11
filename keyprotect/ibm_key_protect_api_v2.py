@@ -5276,9 +5276,9 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem:
                 "Required property 'policy_type' not present in GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args[
-                "policy_data"
-            ] = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(policy_data)
+            args["policy_data"] = (
+                GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(policy_data)
+            )
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem JSON"
@@ -5385,10 +5385,10 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicy
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args[
-                "attributes"
-            ] = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyDataAttributes.from_dict(
-                attributes
+            args["attributes"] = (
+                GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyDataAttributes.from_dict(
+                    attributes
+                )
             )
         return cls(**args)
 
@@ -5581,10 +5581,10 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesIte
                 "Required property 'policy_type' not present in GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args[
-                "policy_data"
-            ] = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItemPolicyData.from_dict(
-                policy_data
+            args["policy_data"] = (
+                GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItemPolicyData.from_dict(
+                    policy_data
+                )
             )
         else:
             raise ValueError(
@@ -5695,10 +5695,10 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesIte
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args[
-                "attributes"
-            ] = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItemPolicyDataAttributes.from_dict(
-                attributes
+            args["attributes"] = (
+                GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItemPolicyDataAttributes.from_dict(
+                    attributes
+                )
             )
         return cls(**args)
 
