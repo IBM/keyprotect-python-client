@@ -143,9 +143,7 @@ class TestGetKeyCollectionMetadata:
         query_string = responses.calls[0].request.url.split("?", 1)[1]
         query_string = urllib.parse.unquote_plus(query_string)
         assert "state={}".format(",".join([str(x) for x in state])) in query_string
-        assert (
-            "extractable={}".format("true" if extractable else "false") in query_string
-        )
+        assert "extractable={}".format("true" if extractable else "false") in query_string
         assert "filter={}".format(filter) in query_string
 
     def test_get_key_collection_metadata_all_params_with_retries(self):
@@ -213,10 +211,7 @@ class TestGetKeyCollectionMetadata:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_key_collection_metadata(**req_copy)
 
@@ -351,10 +346,7 @@ class TestCreateKey:
             "key_create_body": key_create_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.create_key(**req_copy)
 
@@ -425,9 +417,7 @@ class TestGetKeys:
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
         assert "state={}".format(",".join([str(x) for x in state])) in query_string
-        assert (
-            "extractable={}".format("true" if extractable else "false") in query_string
-        )
+        assert "extractable={}".format("true" if extractable else "false") in query_string
         assert "search={}".format(search) in query_string
         assert "sort={}".format(sort) in query_string
         assert "filter={}".format(filter) in query_string
@@ -503,10 +493,7 @@ class TestGetKeys:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_keys(**req_copy)
 
@@ -543,9 +530,7 @@ class TestCreateKeyWithPoliciesOverrides:
 
         # Set up parameter values
         bluemix_instance = "testString"
-        key_with_policy_overrides_create_body = io.BytesIO(
-            b"This is a mock file."
-        ).getvalue()
+        key_with_policy_overrides_create_body = io.BytesIO(b"This is a mock file.").getvalue()
         correlation_id = "testString"
         prefer = "return=representation"
         x_kms_key_ring = "default"
@@ -593,9 +578,7 @@ class TestCreateKeyWithPoliciesOverrides:
 
         # Set up parameter values
         bluemix_instance = "testString"
-        key_with_policy_overrides_create_body = io.BytesIO(
-            b"This is a mock file."
-        ).getvalue()
+        key_with_policy_overrides_create_body = io.BytesIO(b"This is a mock file.").getvalue()
 
         # Invoke method
         response = _service.create_key_with_policies_overrides(
@@ -637,9 +620,7 @@ class TestCreateKeyWithPoliciesOverrides:
 
         # Set up parameter values
         bluemix_instance = "testString"
-        key_with_policy_overrides_create_body = io.BytesIO(
-            b"This is a mock file."
-        ).getvalue()
+        key_with_policy_overrides_create_body = io.BytesIO(b"This is a mock file.").getvalue()
 
         # Pass in all but one required param and check for a ValueError
         req_param_dict = {
@@ -647,10 +628,7 @@ class TestCreateKeyWithPoliciesOverrides:
             "key_with_policy_overrides_create_body": key_with_policy_overrides_create_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.create_key_with_policies_overrides(**req_copy)
 
@@ -779,10 +757,7 @@ class TestGetKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_key(**req_copy)
 
@@ -937,10 +912,7 @@ class TestActionOnKey:
             "key_action_body": key_action_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.action_on_key(**req_copy)
 
@@ -1073,10 +1045,7 @@ class TestPatchKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.patch_key(**req_copy)
 
@@ -1213,10 +1182,7 @@ class TestDeleteKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.delete_key(**req_copy)
 
@@ -1345,10 +1311,7 @@ class TestGetKeyMetadata:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_key_metadata(**req_copy)
 
@@ -1479,10 +1442,7 @@ class TestPurgeKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.purge_key(**req_copy)
 
@@ -1613,10 +1573,7 @@ class TestRestoreKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.restore_key(**req_copy)
 
@@ -1682,13 +1639,8 @@ class TestGetKeyVersions:
         query_string = urllib.parse.unquote_plus(query_string)
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
-        assert (
-            "allKeyStates={}".format("true" if all_key_states else "false")
-            in query_string
-        )
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
+        assert "allKeyStates={}".format("true" if all_key_states else "false") in query_string
 
     def test_get_key_versions_all_params_with_retries(self):
         # Enable retries and run test_get_key_versions_all_params.
@@ -1765,10 +1717,7 @@ class TestGetKeyVersions:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_key_versions(**req_copy)
 
@@ -1940,10 +1889,7 @@ class TestWrapKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.wrap_key(**req_copy)
 
@@ -2082,10 +2028,7 @@ class TestUnwrapKey:
             "key_action_unwrap_body": key_action_unwrap_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.unwrap_key(**req_copy)
 
@@ -2224,10 +2167,7 @@ class TestRewrapKey:
             "key_action_rewrap_body": key_action_rewrap_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.rewrap_key(**req_copy)
 
@@ -2353,10 +2293,7 @@ class TestRotateKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.rotate_key(**req_copy)
 
@@ -2476,10 +2413,7 @@ class TestSetKeyForDeletion:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.set_key_for_deletion(**req_copy)
 
@@ -2599,10 +2533,7 @@ class TestUnsetKeyForDeletion:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.unset_key_for_deletion(**req_copy)
 
@@ -2722,10 +2653,7 @@ class TestEnableKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.enable_key(**req_copy)
 
@@ -2845,10 +2773,7 @@ class TestDisableKey:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.disable_key(**req_copy)
 
@@ -2968,10 +2893,7 @@ class TestSyncAssociatedResources:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.sync_associated_resources(**req_copy)
 
@@ -3047,9 +2969,7 @@ class TestPutPolicy:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.policy+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a KeyPolicyDualAuthDeleteDualAuthDelete model
@@ -3058,12 +2978,8 @@ class TestPutPolicy:
 
         # Construct a dict representation of a KeyPolicyDualAuthDelete model
         key_policy_dual_auth_delete_model = {}
-        key_policy_dual_auth_delete_model["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        key_policy_dual_auth_delete_model["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
+        key_policy_dual_auth_delete_model["type"] = "application/vnd.ibm.kms.policy+json"
+        key_policy_dual_auth_delete_model["dualAuthDelete"] = key_policy_dual_auth_delete_dual_auth_delete_model
 
         # Construct a dict representation of a SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete model
         set_key_policies_one_of_model = {}
@@ -3127,9 +3043,7 @@ class TestPutPolicy:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.policy+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a KeyPolicyDualAuthDeleteDualAuthDelete model
@@ -3138,12 +3052,8 @@ class TestPutPolicy:
 
         # Construct a dict representation of a KeyPolicyDualAuthDelete model
         key_policy_dual_auth_delete_model = {}
-        key_policy_dual_auth_delete_model["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        key_policy_dual_auth_delete_model["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
+        key_policy_dual_auth_delete_model["type"] = "application/vnd.ibm.kms.policy+json"
+        key_policy_dual_auth_delete_model["dualAuthDelete"] = key_policy_dual_auth_delete_dual_auth_delete_model
 
         # Construct a dict representation of a SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete model
         set_key_policies_one_of_model = {}
@@ -3197,9 +3107,7 @@ class TestPutPolicy:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.policy+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a KeyPolicyDualAuthDeleteDualAuthDelete model
@@ -3208,12 +3116,8 @@ class TestPutPolicy:
 
         # Construct a dict representation of a KeyPolicyDualAuthDelete model
         key_policy_dual_auth_delete_model = {}
-        key_policy_dual_auth_delete_model["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        key_policy_dual_auth_delete_model["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
+        key_policy_dual_auth_delete_model["type"] = "application/vnd.ibm.kms.policy+json"
+        key_policy_dual_auth_delete_model["dualAuthDelete"] = key_policy_dual_auth_delete_dual_auth_delete_model
 
         # Construct a dict representation of a SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete model
         set_key_policies_one_of_model = {}
@@ -3232,10 +3136,7 @@ class TestPutPolicy:
             "key_policy_put_body": key_policy_put_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.put_policy(**req_copy)
 
@@ -3370,10 +3271,7 @@ class TestGetPolicy:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_policy(**req_copy)
 
@@ -3407,28 +3305,22 @@ class TestPutInstancePolicy:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.policy+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyDataAttributes model
         instance_policy_allowed_network_policy_data_attributes_model = {}
-        instance_policy_allowed_network_policy_data_attributes_model[
-            "allowed_network"
-        ] = "private-only"
+        instance_policy_allowed_network_policy_data_attributes_model["allowed_network"] = "private-only"
 
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model = {}
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model["attributes"] = (
-            instance_policy_allowed_network_policy_data_attributes_model
-        )
+        instance_policy_allowed_network_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_network_policy_data_attributes_model
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {}
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
             "policy_type"
         ] = "allowedNetwork"
@@ -3493,28 +3385,22 @@ class TestPutInstancePolicy:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.policy+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyDataAttributes model
         instance_policy_allowed_network_policy_data_attributes_model = {}
-        instance_policy_allowed_network_policy_data_attributes_model[
-            "allowed_network"
-        ] = "private-only"
+        instance_policy_allowed_network_policy_data_attributes_model["allowed_network"] = "private-only"
 
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model = {}
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model["attributes"] = (
-            instance_policy_allowed_network_policy_data_attributes_model
-        )
+        instance_policy_allowed_network_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_network_policy_data_attributes_model
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {}
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
             "policy_type"
         ] = "allowedNetwork"
@@ -3571,28 +3457,22 @@ class TestPutInstancePolicy:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.policy+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyDataAttributes model
         instance_policy_allowed_network_policy_data_attributes_model = {}
-        instance_policy_allowed_network_policy_data_attributes_model[
-            "allowed_network"
-        ] = "private-only"
+        instance_policy_allowed_network_policy_data_attributes_model["allowed_network"] = "private-only"
 
         # Construct a dict representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model = {}
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model["attributes"] = (
-            instance_policy_allowed_network_policy_data_attributes_model
-        )
+        instance_policy_allowed_network_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_network_policy_data_attributes_model
 
         # Construct a dict representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = {}
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model[
             "policy_type"
         ] = "allowedNetwork"
@@ -3617,10 +3497,7 @@ class TestPutInstancePolicy:
             "instance_policy_put_body": instance_policy_put_body,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.put_instance_policy(**req_copy)
 
@@ -3747,10 +3624,7 @@ class TestGetInstancePolicy:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_instance_policy(**req_copy)
 
@@ -3871,10 +3745,7 @@ class TestGetAllowedIpPort:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_allowed_ip_port(**req_copy)
 
@@ -4044,10 +3915,7 @@ class TestPostImportToken:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.post_import_token(**req_copy)
 
@@ -4170,10 +4038,7 @@ class TestGetImportToken:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_import_token(**req_copy)
 
@@ -4280,17 +4145,9 @@ class TestGetRegistrations:
         query_string = urllib.parse.unquote_plus(query_string)
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "urlEncodedResourceCRNQuery={}".format(url_encoded_resource_crn_query)
-            in query_string
-        )
-        assert (
-            "preventKeyDeletion={}".format("true" if prevent_key_deletion else "false")
-            in query_string
-        )
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
+        assert "urlEncodedResourceCRNQuery={}".format(url_encoded_resource_crn_query) in query_string
+        assert "preventKeyDeletion={}".format("true" if prevent_key_deletion else "false") in query_string
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
 
     def test_get_registrations_all_params_with_retries(self):
         # Enable retries and run test_get_registrations_all_params.
@@ -4367,10 +4224,7 @@ class TestGetRegistrations:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_registrations(**req_copy)
 
@@ -4434,19 +4288,11 @@ class TestGetRegistrationsAllKeys:
         # Validate query params
         query_string = responses.calls[0].request.url.split("?", 1)[1]
         query_string = urllib.parse.unquote_plus(query_string)
-        assert (
-            "urlEncodedResourceCRNQuery={}".format(url_encoded_resource_crn_query)
-            in query_string
-        )
+        assert "urlEncodedResourceCRNQuery={}".format(url_encoded_resource_crn_query) in query_string
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "preventKeyDeletion={}".format("true" if prevent_key_deletion else "false")
-            in query_string
-        )
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
+        assert "preventKeyDeletion={}".format("true" if prevent_key_deletion else "false") in query_string
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
 
     def test_get_registrations_all_keys_all_params_with_retries(self):
         # Enable retries and run test_get_registrations_all_keys_all_params.
@@ -4519,10 +4365,7 @@ class TestGetRegistrationsAllKeys:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_registrations_all_keys(**req_copy)
 
@@ -4696,10 +4539,7 @@ class TestCreateKeyAlias:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.create_key_alias(**req_copy)
 
@@ -4825,10 +4665,7 @@ class TestDeleteKeyAlias:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.delete_key_alias(**req_copy)
 
@@ -4927,9 +4764,7 @@ class TestListKeyRings:
         query_string = urllib.parse.unquote_plus(query_string)
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
 
     def test_list_key_rings_all_params_with_retries(self):
         # Enable retries and run test_list_key_rings_all_params.
@@ -5002,10 +4837,7 @@ class TestListKeyRings:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.list_key_rings(**req_copy)
 
@@ -5123,10 +4955,7 @@ class TestCreateKeyRing:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.create_key_ring(**req_copy)
 
@@ -5250,10 +5079,7 @@ class TestDeleteKeyRing:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.delete_key_ring(**req_copy)
 
@@ -5354,9 +5180,7 @@ class TestGetKmipAdapters:
         query_string = urllib.parse.unquote_plus(query_string)
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
         assert "crk_id={}".format(crk_id) in query_string
 
     def test_get_kmip_adapters_all_params_with_retries(self):
@@ -5430,10 +5254,7 @@ class TestGetKmipAdapters:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_kmip_adapters(**req_copy)
 
@@ -5470,9 +5291,7 @@ class TestCreateKmipAdapter:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.kmip_adapter+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a KMIPProfileDataBodyKMIPProfileDataNative model
@@ -5509,10 +5328,7 @@ class TestCreateKmipAdapter:
         # Validate query params
         query_string = responses.calls[0].request.url.split("?", 1)[1]
         query_string = urllib.parse.unquote_plus(query_string)
-        assert (
-            "allowExpiringKey={}".format("true" if allow_expiring_key else "false")
-            in query_string
-        )
+        assert "allowExpiringKey={}".format("true" if allow_expiring_key else "false") in query_string
         # Validate body params
         req_body = json.loads(str(responses.calls[0].request.body, "utf-8"))
         assert req_body["metadata"] == collection_metadata_model
@@ -5545,9 +5361,7 @@ class TestCreateKmipAdapter:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.kmip_adapter+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a KMIPProfileDataBodyKMIPProfileDataNative model
@@ -5609,9 +5423,7 @@ class TestCreateKmipAdapter:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.kmip_adapter+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a KMIPProfileDataBodyKMIPProfileDataNative model
@@ -5637,10 +5449,7 @@ class TestCreateKmipAdapter:
             "resources": resources,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.create_kmip_adapter(**req_copy)
 
@@ -5767,10 +5576,7 @@ class TestGetKmipAdapter:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_kmip_adapter(**req_copy)
 
@@ -5888,10 +5694,7 @@ class TestDeleteKmipAdapter:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.delete_kmip_adapter(**req_copy)
 
@@ -5955,9 +5758,7 @@ class TestGetKmipObjects:
         query_string = urllib.parse.unquote_plus(query_string)
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
         assert "state={}".format(",".join([str(x) for x in state])) in query_string
 
     def test_get_kmip_objects_all_params_with_retries(self):
@@ -6035,10 +5836,7 @@ class TestGetKmipObjects:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_kmip_objects(**req_copy)
 
@@ -6171,10 +5969,7 @@ class TestGetKmipObject:
             "id": id,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_kmip_object(**req_copy)
 
@@ -6304,10 +6099,7 @@ class TestDeleteKmipObject:
             "id": id,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.delete_kmip_object(**req_copy)
 
@@ -6369,9 +6161,7 @@ class TestGetKmipClientCertificates:
         query_string = urllib.parse.unquote_plus(query_string)
         assert "limit={}".format(limit) in query_string
         assert "offset={}".format(offset) in query_string
-        assert (
-            "totalCount={}".format("true" if total_count else "false") in query_string
-        )
+        assert "totalCount={}".format("true" if total_count else "false") in query_string
 
     def test_get_kmip_client_certificates_all_params_with_retries(self):
         # Enable retries and run test_get_kmip_client_certificates_all_params.
@@ -6448,10 +6238,7 @@ class TestGetKmipClientCertificates:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_kmip_client_certificates(**req_copy)
 
@@ -6488,9 +6275,7 @@ class TestAddKmipClientCertificate:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.kmip_client_certificate+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a CreateKMIPClientCertificateObject model
@@ -6550,9 +6335,7 @@ class TestAddKmipClientCertificate:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.kmip_client_certificate+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a CreateKMIPClientCertificateObject model
@@ -6610,9 +6393,7 @@ class TestAddKmipClientCertificate:
 
         # Construct a dict representation of a CollectionMetadata model
         collection_metadata_model = {}
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.kmip_client_certificate+json"
         collection_metadata_model["collectionTotal"] = 1
 
         # Construct a dict representation of a CreateKMIPClientCertificateObject model
@@ -6634,10 +6415,7 @@ class TestAddKmipClientCertificate:
             "resources": resources,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.add_kmip_client_certificate(**req_copy)
 
@@ -6770,10 +6548,7 @@ class TestGetKmipClientCertificate:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.get_kmip_client_certificate(**req_copy)
 
@@ -6897,10 +6672,7 @@ class TestDeleteKmipClientCertificate:
             "bluemix_instance": bluemix_instance,
         }
         for param in req_param_dict.keys():
-            req_copy = {
-                key: val if key is not param else None
-                for (key, val) in req_param_dict.items()
-            }
+            req_copy = {key: val if key is not param else None for (key, val) in req_param_dict.items()}
             with pytest.raises(ValueError):
                 _service.delete_kmip_client_certificate(**req_copy)
 
@@ -6939,9 +6711,7 @@ class TestModel_AllowedIPPort:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         allowed_ip_port_resource_model = {}  # AllowedIPPortResource
@@ -6956,9 +6726,7 @@ class TestModel_AllowedIPPort:
         assert allowed_ip_port_model != False
 
         # Construct a model instance of AllowedIPPort by calling from_dict on the json representation
-        allowed_ip_port_model_dict = AllowedIPPort.from_dict(
-            allowed_ip_port_model_json
-        ).__dict__
+        allowed_ip_port_model_dict = AllowedIPPort.from_dict(allowed_ip_port_model_json).__dict__
         allowed_ip_port_model2 = AllowedIPPort(**allowed_ip_port_model_dict)
 
         # Verify the model instances are equivalent
@@ -6983,27 +6751,21 @@ class TestModel_AllowedIPPortResource:
         allowed_ip_port_resource_model_json = {}
 
         # Construct a model instance of AllowedIPPortResource by calling from_dict on the json representation
-        allowed_ip_port_resource_model = AllowedIPPortResource.from_dict(
-            allowed_ip_port_resource_model_json
-        )
+        allowed_ip_port_resource_model = AllowedIPPortResource.from_dict(allowed_ip_port_resource_model_json)
         assert allowed_ip_port_resource_model != False
 
         # Construct a model instance of AllowedIPPortResource by calling from_dict on the json representation
         allowed_ip_port_resource_model_dict = AllowedIPPortResource.from_dict(
             allowed_ip_port_resource_model_json
         ).__dict__
-        allowed_ip_port_resource_model2 = AllowedIPPortResource(
-            **allowed_ip_port_resource_model_dict
-        )
+        allowed_ip_port_resource_model2 = AllowedIPPortResource(**allowed_ip_port_resource_model_dict)
 
         # Verify the model instances are equivalent
         assert allowed_ip_port_resource_model == allowed_ip_port_resource_model2
 
         # Convert model instance back to dict and verify no loss of data
         allowed_ip_port_resource_model_json2 = allowed_ip_port_resource_model.to_dict()
-        assert (
-            allowed_ip_port_resource_model_json2 == allowed_ip_port_resource_model_json
-        )
+        assert allowed_ip_port_resource_model_json2 == allowed_ip_port_resource_model_json
 
 
 class TestModel_CollectionMetadata:
@@ -7018,24 +6780,16 @@ class TestModel_CollectionMetadata:
 
         # Construct a json representation of a CollectionMetadata model
         collection_metadata_model_json = {}
-        collection_metadata_model_json["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model_json["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model_json["collectionTotal"] = 1
 
         # Construct a model instance of CollectionMetadata by calling from_dict on the json representation
-        collection_metadata_model = CollectionMetadata.from_dict(
-            collection_metadata_model_json
-        )
+        collection_metadata_model = CollectionMetadata.from_dict(collection_metadata_model_json)
         assert collection_metadata_model != False
 
         # Construct a model instance of CollectionMetadata by calling from_dict on the json representation
-        collection_metadata_model_dict = CollectionMetadata.from_dict(
-            collection_metadata_model_json
-        ).__dict__
-        collection_metadata_model2 = CollectionMetadata(
-            **collection_metadata_model_dict
-        )
+        collection_metadata_model_dict = CollectionMetadata.from_dict(collection_metadata_model_json).__dict__
+        collection_metadata_model2 = CollectionMetadata(**collection_metadata_model_dict)
 
         # Verify the model instances are equivalent
         assert collection_metadata_model == collection_metadata_model2
@@ -7057,9 +6811,7 @@ class TestModel_CollectionMetadataListKeys:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        list_keys_metadata_properties_search_query_model = (
-            {}
-        )  # ListKeysMetadataPropertiesSearchQuery
+        list_keys_metadata_properties_search_query_model = {}  # ListKeysMetadataPropertiesSearchQuery
         list_keys_metadata_properties_search_query_model["query"] = "testString"
         list_keys_metadata_properties_search_query_model["scopes"] = ["name"]
         list_keys_metadata_properties_search_query_model["not"] = True
@@ -7067,14 +6819,10 @@ class TestModel_CollectionMetadataListKeys:
 
         # Construct a json representation of a CollectionMetadataListKeys model
         collection_metadata_list_keys_model_json = {}
-        collection_metadata_list_keys_model_json["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_list_keys_model_json["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_list_keys_model_json["collectionTotal"] = 1
         collection_metadata_list_keys_model_json["incompleteSearch"] = True
-        collection_metadata_list_keys_model_json["searchQuery"] = (
-            list_keys_metadata_properties_search_query_model
-        )
+        collection_metadata_list_keys_model_json["searchQuery"] = list_keys_metadata_properties_search_query_model
 
         # Construct a model instance of CollectionMetadataListKeys by calling from_dict on the json representation
         collection_metadata_list_keys_model = CollectionMetadataListKeys.from_dict(
@@ -7086,23 +6834,14 @@ class TestModel_CollectionMetadataListKeys:
         collection_metadata_list_keys_model_dict = CollectionMetadataListKeys.from_dict(
             collection_metadata_list_keys_model_json
         ).__dict__
-        collection_metadata_list_keys_model2 = CollectionMetadataListKeys(
-            **collection_metadata_list_keys_model_dict
-        )
+        collection_metadata_list_keys_model2 = CollectionMetadataListKeys(**collection_metadata_list_keys_model_dict)
 
         # Verify the model instances are equivalent
-        assert (
-            collection_metadata_list_keys_model == collection_metadata_list_keys_model2
-        )
+        assert collection_metadata_list_keys_model == collection_metadata_list_keys_model2
 
         # Convert model instance back to dict and verify no loss of data
-        collection_metadata_list_keys_model_json2 = (
-            collection_metadata_list_keys_model.to_dict()
-        )
-        assert (
-            collection_metadata_list_keys_model_json2
-            == collection_metadata_list_keys_model_json
-        )
+        collection_metadata_list_keys_model_json2 = collection_metadata_list_keys_model.to_dict()
+        assert collection_metadata_list_keys_model_json2 == collection_metadata_list_keys_model_json
 
 
 class TestModel_CollectionMetadataWithTotalCount:
@@ -7117,44 +6856,32 @@ class TestModel_CollectionMetadataWithTotalCount:
 
         # Construct a json representation of a CollectionMetadataWithTotalCount model
         collection_metadata_with_total_count_model_json = {}
-        collection_metadata_with_total_count_model_json["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_with_total_count_model_json[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_with_total_count_model_json["collectionTotal"] = 1
         collection_metadata_with_total_count_model_json["totalCount"] = 1
 
         # Construct a model instance of CollectionMetadataWithTotalCount by calling from_dict on the json representation
-        collection_metadata_with_total_count_model = (
-            CollectionMetadataWithTotalCount.from_dict(
-                collection_metadata_with_total_count_model_json
-            )
+        collection_metadata_with_total_count_model = CollectionMetadataWithTotalCount.from_dict(
+            collection_metadata_with_total_count_model_json
         )
         assert collection_metadata_with_total_count_model != False
 
         # Construct a model instance of CollectionMetadataWithTotalCount by calling from_dict on the json representation
-        collection_metadata_with_total_count_model_dict = (
-            CollectionMetadataWithTotalCount.from_dict(
-                collection_metadata_with_total_count_model_json
-            ).__dict__
-        )
+        collection_metadata_with_total_count_model_dict = CollectionMetadataWithTotalCount.from_dict(
+            collection_metadata_with_total_count_model_json
+        ).__dict__
         collection_metadata_with_total_count_model2 = CollectionMetadataWithTotalCount(
             **collection_metadata_with_total_count_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            collection_metadata_with_total_count_model
-            == collection_metadata_with_total_count_model2
-        )
+        assert collection_metadata_with_total_count_model == collection_metadata_with_total_count_model2
 
         # Convert model instance back to dict and verify no loss of data
-        collection_metadata_with_total_count_model_json2 = (
-            collection_metadata_with_total_count_model.to_dict()
-        )
-        assert (
-            collection_metadata_with_total_count_model_json2
-            == collection_metadata_with_total_count_model_json
-        )
+        collection_metadata_with_total_count_model_json2 = collection_metadata_with_total_count_model.to_dict()
+        assert collection_metadata_with_total_count_model_json2 == collection_metadata_with_total_count_model_json
 
 
 class TestModel_CreateKMIPAdapterObject:
@@ -7175,39 +6902,26 @@ class TestModel_CreateKMIPAdapterObject:
         # Construct a json representation of a CreateKMIPAdapterObject model
         create_kmip_adapter_object_model_json = {}
         create_kmip_adapter_object_model_json["name"] = "kmip-adapter-name"
-        create_kmip_adapter_object_model_json["description"] = (
-            "kmip adapter description"
-        )
+        create_kmip_adapter_object_model_json["description"] = "kmip adapter description"
         create_kmip_adapter_object_model_json["profile"] = "native_1.0"
-        create_kmip_adapter_object_model_json["profile_data"] = (
-            kmip_profile_data_body_model
-        )
+        create_kmip_adapter_object_model_json["profile_data"] = kmip_profile_data_body_model
 
         # Construct a model instance of CreateKMIPAdapterObject by calling from_dict on the json representation
-        create_kmip_adapter_object_model = CreateKMIPAdapterObject.from_dict(
-            create_kmip_adapter_object_model_json
-        )
+        create_kmip_adapter_object_model = CreateKMIPAdapterObject.from_dict(create_kmip_adapter_object_model_json)
         assert create_kmip_adapter_object_model != False
 
         # Construct a model instance of CreateKMIPAdapterObject by calling from_dict on the json representation
         create_kmip_adapter_object_model_dict = CreateKMIPAdapterObject.from_dict(
             create_kmip_adapter_object_model_json
         ).__dict__
-        create_kmip_adapter_object_model2 = CreateKMIPAdapterObject(
-            **create_kmip_adapter_object_model_dict
-        )
+        create_kmip_adapter_object_model2 = CreateKMIPAdapterObject(**create_kmip_adapter_object_model_dict)
 
         # Verify the model instances are equivalent
         assert create_kmip_adapter_object_model == create_kmip_adapter_object_model2
 
         # Convert model instance back to dict and verify no loss of data
-        create_kmip_adapter_object_model_json2 = (
-            create_kmip_adapter_object_model.to_dict()
-        )
-        assert (
-            create_kmip_adapter_object_model_json2
-            == create_kmip_adapter_object_model_json
-        )
+        create_kmip_adapter_object_model_json2 = create_kmip_adapter_object_model.to_dict()
+        assert create_kmip_adapter_object_model_json2 == create_kmip_adapter_object_model_json
 
 
 class TestModel_CreateKMIPClientCertificateObject:
@@ -7226,39 +6940,25 @@ class TestModel_CreateKMIPClientCertificateObject:
         create_kmip_client_certificate_object_model_json["name"] = "testString"
 
         # Construct a model instance of CreateKMIPClientCertificateObject by calling from_dict on the json representation
-        create_kmip_client_certificate_object_model = (
-            CreateKMIPClientCertificateObject.from_dict(
-                create_kmip_client_certificate_object_model_json
-            )
+        create_kmip_client_certificate_object_model = CreateKMIPClientCertificateObject.from_dict(
+            create_kmip_client_certificate_object_model_json
         )
         assert create_kmip_client_certificate_object_model != False
 
         # Construct a model instance of CreateKMIPClientCertificateObject by calling from_dict on the json representation
-        create_kmip_client_certificate_object_model_dict = (
-            CreateKMIPClientCertificateObject.from_dict(
-                create_kmip_client_certificate_object_model_json
-            ).__dict__
-        )
-        create_kmip_client_certificate_object_model2 = (
-            CreateKMIPClientCertificateObject(
-                **create_kmip_client_certificate_object_model_dict
-            )
+        create_kmip_client_certificate_object_model_dict = CreateKMIPClientCertificateObject.from_dict(
+            create_kmip_client_certificate_object_model_json
+        ).__dict__
+        create_kmip_client_certificate_object_model2 = CreateKMIPClientCertificateObject(
+            **create_kmip_client_certificate_object_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            create_kmip_client_certificate_object_model
-            == create_kmip_client_certificate_object_model2
-        )
+        assert create_kmip_client_certificate_object_model == create_kmip_client_certificate_object_model2
 
         # Convert model instance back to dict and verify no loss of data
-        create_kmip_client_certificate_object_model_json2 = (
-            create_kmip_client_certificate_object_model.to_dict()
-        )
-        assert (
-            create_kmip_client_certificate_object_model_json2
-            == create_kmip_client_certificate_object_model_json
-        )
+        create_kmip_client_certificate_object_model_json2 = create_kmip_client_certificate_object_model.to_dict()
+        assert create_kmip_client_certificate_object_model_json2 == create_kmip_client_certificate_object_model_json
 
 
 class TestModel_DeleteKey:
@@ -7274,9 +6974,7 @@ class TestModel_DeleteKey:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
@@ -7341,30 +7039,21 @@ class TestModel_DualAuthDeleteProperties:
         dual_auth_delete_properties_model_json["enabled"] = True
 
         # Construct a model instance of DualAuthDeleteProperties by calling from_dict on the json representation
-        dual_auth_delete_properties_model = DualAuthDeleteProperties.from_dict(
-            dual_auth_delete_properties_model_json
-        )
+        dual_auth_delete_properties_model = DualAuthDeleteProperties.from_dict(dual_auth_delete_properties_model_json)
         assert dual_auth_delete_properties_model != False
 
         # Construct a model instance of DualAuthDeleteProperties by calling from_dict on the json representation
         dual_auth_delete_properties_model_dict = DualAuthDeleteProperties.from_dict(
             dual_auth_delete_properties_model_json
         ).__dict__
-        dual_auth_delete_properties_model2 = DualAuthDeleteProperties(
-            **dual_auth_delete_properties_model_dict
-        )
+        dual_auth_delete_properties_model2 = DualAuthDeleteProperties(**dual_auth_delete_properties_model_dict)
 
         # Verify the model instances are equivalent
         assert dual_auth_delete_properties_model == dual_auth_delete_properties_model2
 
         # Convert model instance back to dict and verify no loss of data
-        dual_auth_delete_properties_model_json2 = (
-            dual_auth_delete_properties_model.to_dict()
-        )
-        assert (
-            dual_auth_delete_properties_model_json2
-            == dual_auth_delete_properties_model_json
-        )
+        dual_auth_delete_properties_model_json2 = dual_auth_delete_properties_model.to_dict()
+        assert dual_auth_delete_properties_model_json2 == dual_auth_delete_properties_model_json
 
 
 class TestModel_DualAuthKeyMetadata:
@@ -7383,18 +7072,12 @@ class TestModel_DualAuthKeyMetadata:
         dual_auth_key_metadata_model_json["keySetForDeletion"] = True
 
         # Construct a model instance of DualAuthKeyMetadata by calling from_dict on the json representation
-        dual_auth_key_metadata_model = DualAuthKeyMetadata.from_dict(
-            dual_auth_key_metadata_model_json
-        )
+        dual_auth_key_metadata_model = DualAuthKeyMetadata.from_dict(dual_auth_key_metadata_model_json)
         assert dual_auth_key_metadata_model != False
 
         # Construct a model instance of DualAuthKeyMetadata by calling from_dict on the json representation
-        dual_auth_key_metadata_model_dict = DualAuthKeyMetadata.from_dict(
-            dual_auth_key_metadata_model_json
-        ).__dict__
-        dual_auth_key_metadata_model2 = DualAuthKeyMetadata(
-            **dual_auth_key_metadata_model_dict
-        )
+        dual_auth_key_metadata_model_dict = DualAuthKeyMetadata.from_dict(dual_auth_key_metadata_model_json).__dict__
+        dual_auth_key_metadata_model2 = DualAuthKeyMetadata(**dual_auth_key_metadata_model_dict)
 
         # Verify the model instances are equivalent
         assert dual_auth_key_metadata_model == dual_auth_key_metadata_model2
@@ -7424,9 +7107,7 @@ class TestModel_GetImportToken:
         assert get_import_token_model != False
 
         # Construct a model instance of GetImportToken by calling from_dict on the json representation
-        get_import_token_model_dict = GetImportToken.from_dict(
-            get_import_token_model_json
-        ).__dict__
+        get_import_token_model_dict = GetImportToken.from_dict(get_import_token_model_json).__dict__
         get_import_token_model2 = GetImportToken(**get_import_token_model_dict)
 
         # Verify the model instances are equivalent
@@ -7469,9 +7150,7 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResources
         ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_attributes_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem model
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json = (
-            {}
-        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json = {}
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json[
             "policy_type"
         ] = "testString"
@@ -7480,20 +7159,23 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResources
         ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem.from_dict(
-            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem.from_dict(
+                get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json
+            )
         )
-        assert (
-            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model
-            != False
-        )
+        assert get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_dict = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem.from_dict(
-            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json
-        ).__dict__
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model2 = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem(
-            **get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_dict
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_dict = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem.from_dict(
+                get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_json
+            ).__dict__
+        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model2 = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem(
+                **get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -7534,9 +7216,7 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResources
         ] = "public-and-private"
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData model
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json = (
-            {}
-        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json = {}
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json[
             "enabled"
         ] = True
@@ -7545,20 +7225,25 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResources
         ] = get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_attributes_model
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(
-            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(
+                get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json
+            )
         )
         assert (
-            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model
-            != False
+            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model != False
         )
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_dict = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(
-            get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json
-        ).__dict__
-        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model2 = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData(
-            **get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_dict
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_dict = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(
+                get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_json
+            ).__dict__
+        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model2 = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData(
+                **get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -7674,9 +7359,7 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessRe
         ] = get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_policy_data_attributes_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem model
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json = (
-            {}
-        )
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json = {}
         get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json[
             "policy_type"
         ] = "testString"
@@ -7685,20 +7368,23 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessRe
         ] = get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_policy_data_model
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
-            get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model = (
+            GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
+                get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json
+            )
         )
-        assert (
-            get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model
-            != False
-        )
+        assert get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_dict = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
-            get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json
-        ).__dict__
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model2 = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem(
-            **get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_dict
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_dict = (
+            GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
+                get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_json
+            ).__dict__
+        )
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model2 = (
+            GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem(
+                **get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -7874,9 +7560,7 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItem:
         get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model = (
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model[
-            "allowed_ip"
-        ] = [
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
@@ -7887,46 +7571,35 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItem:
         get_instance_policy_allowed_ip_resources_item_policy_data_model = (
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyData
-        get_instance_policy_allowed_ip_resources_item_policy_data_model["enabled"] = (
-            True
-        )
+        get_instance_policy_allowed_ip_resources_item_policy_data_model["enabled"] = True
         get_instance_policy_allowed_ip_resources_item_policy_data_model[
             "attributes"
         ] = get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
 
         # Construct a json representation of a GetInstancePolicyAllowedIPResourcesItem model
         get_instance_policy_allowed_ip_resources_item_model_json = {}
-        get_instance_policy_allowed_ip_resources_item_model_json["policy_type"] = (
-            "testString"
-        )
-        get_instance_policy_allowed_ip_resources_item_model_json["policy_data"] = (
-            get_instance_policy_allowed_ip_resources_item_policy_data_model
-        )
+        get_instance_policy_allowed_ip_resources_item_model_json["policy_type"] = "testString"
+        get_instance_policy_allowed_ip_resources_item_model_json[
+            "policy_data"
+        ] = get_instance_policy_allowed_ip_resources_item_policy_data_model
 
         # Construct a model instance of GetInstancePolicyAllowedIPResourcesItem by calling from_dict on the json representation
-        get_instance_policy_allowed_ip_resources_item_model = (
-            GetInstancePolicyAllowedIPResourcesItem.from_dict(
-                get_instance_policy_allowed_ip_resources_item_model_json
-            )
+        get_instance_policy_allowed_ip_resources_item_model = GetInstancePolicyAllowedIPResourcesItem.from_dict(
+            get_instance_policy_allowed_ip_resources_item_model_json
         )
         assert get_instance_policy_allowed_ip_resources_item_model != False
 
         # Construct a model instance of GetInstancePolicyAllowedIPResourcesItem by calling from_dict on the json representation
-        get_instance_policy_allowed_ip_resources_item_model_dict = (
-            GetInstancePolicyAllowedIPResourcesItem.from_dict(
-                get_instance_policy_allowed_ip_resources_item_model_json
-            ).__dict__
-        )
-        get_instance_policy_allowed_ip_resources_item_model2 = (
-            GetInstancePolicyAllowedIPResourcesItem(
-                **get_instance_policy_allowed_ip_resources_item_model_dict
-            )
+        get_instance_policy_allowed_ip_resources_item_model_dict = GetInstancePolicyAllowedIPResourcesItem.from_dict(
+            get_instance_policy_allowed_ip_resources_item_model_json
+        ).__dict__
+        get_instance_policy_allowed_ip_resources_item_model2 = GetInstancePolicyAllowedIPResourcesItem(
+            **get_instance_policy_allowed_ip_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
         assert (
-            get_instance_policy_allowed_ip_resources_item_model
-            == get_instance_policy_allowed_ip_resources_item_model2
+            get_instance_policy_allowed_ip_resources_item_model == get_instance_policy_allowed_ip_resources_item_model2
         )
 
         # Convert model instance back to dict and verify no loss of data
@@ -7956,9 +7629,7 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItemPolicyData:
         get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model = (
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model[
-            "allowed_ip"
-        ] = [
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
@@ -7968,9 +7639,7 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItemPolicyData:
 
         # Construct a json representation of a GetInstancePolicyAllowedIPResourcesItemPolicyData model
         get_instance_policy_allowed_ip_resources_item_policy_data_model_json = {}
-        get_instance_policy_allowed_ip_resources_item_policy_data_model_json[
-            "enabled"
-        ] = True
+        get_instance_policy_allowed_ip_resources_item_policy_data_model_json["enabled"] = True
         get_instance_policy_allowed_ip_resources_item_policy_data_model_json[
             "attributes"
         ] = get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
@@ -8024,12 +7693,8 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes:
         """
 
         # Construct a json representation of a GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes model
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json = (
-            {}
-        )
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json[
-            "allowed_ip"
-        ] = [
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json = {}
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
@@ -8038,20 +7703,23 @@ class TestModel_GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes:
         ]
 
         # Construct a model instance of GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes by calling from_dict on the json representation
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model = GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes.from_dict(
-            get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model = (
+            GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes.from_dict(
+                get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json
+            )
         )
-        assert (
-            get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
-            != False
-        )
+        assert get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model != False
 
         # Construct a model instance of GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes by calling from_dict on the json representation
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_dict = GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes.from_dict(
-            get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json
-        ).__dict__
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model2 = GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes(
-            **get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_dict
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_dict = (
+            GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes.from_dict(
+                get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_json
+            ).__dict__
+        )
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model2 = (
+            GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes(
+                **get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -8087,9 +7755,7 @@ class TestModel_GetInstancePolicyDualAuthDeleteResourcesItem:
 
         # Construct a json representation of a GetInstancePolicyDualAuthDeleteResourcesItem model
         get_instance_policy_dual_auth_delete_resources_item_model_json = {}
-        get_instance_policy_dual_auth_delete_resources_item_model_json[
-            "policy_type"
-        ] = "testString"
+        get_instance_policy_dual_auth_delete_resources_item_model_json["policy_type"] = "testString"
         get_instance_policy_dual_auth_delete_resources_item_model_json[
             "policy_data"
         ] = dual_auth_delete_properties_model
@@ -8108,10 +7774,8 @@ class TestModel_GetInstancePolicyDualAuthDeleteResourcesItem:
                 get_instance_policy_dual_auth_delete_resources_item_model_json
             ).__dict__
         )
-        get_instance_policy_dual_auth_delete_resources_item_model2 = (
-            GetInstancePolicyDualAuthDeleteResourcesItem(
-                **get_instance_policy_dual_auth_delete_resources_item_model_dict
-            )
+        get_instance_policy_dual_auth_delete_resources_item_model2 = GetInstancePolicyDualAuthDeleteResourcesItem(
+            **get_instance_policy_dual_auth_delete_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -8147,38 +7811,25 @@ class TestModel_GetInstancePolicyMetricsResourcesItem:
 
         # Construct a json representation of a GetInstancePolicyMetricsResourcesItem model
         get_instance_policy_metrics_resources_item_model_json = {}
-        get_instance_policy_metrics_resources_item_model_json["policy_type"] = (
-            "testString"
-        )
-        get_instance_policy_metrics_resources_item_model_json["policy_data"] = (
-            metrics_properties_model
-        )
+        get_instance_policy_metrics_resources_item_model_json["policy_type"] = "testString"
+        get_instance_policy_metrics_resources_item_model_json["policy_data"] = metrics_properties_model
 
         # Construct a model instance of GetInstancePolicyMetricsResourcesItem by calling from_dict on the json representation
-        get_instance_policy_metrics_resources_item_model = (
-            GetInstancePolicyMetricsResourcesItem.from_dict(
-                get_instance_policy_metrics_resources_item_model_json
-            )
+        get_instance_policy_metrics_resources_item_model = GetInstancePolicyMetricsResourcesItem.from_dict(
+            get_instance_policy_metrics_resources_item_model_json
         )
         assert get_instance_policy_metrics_resources_item_model != False
 
         # Construct a model instance of GetInstancePolicyMetricsResourcesItem by calling from_dict on the json representation
-        get_instance_policy_metrics_resources_item_model_dict = (
-            GetInstancePolicyMetricsResourcesItem.from_dict(
-                get_instance_policy_metrics_resources_item_model_json
-            ).__dict__
-        )
-        get_instance_policy_metrics_resources_item_model2 = (
-            GetInstancePolicyMetricsResourcesItem(
-                **get_instance_policy_metrics_resources_item_model_dict
-            )
+        get_instance_policy_metrics_resources_item_model_dict = GetInstancePolicyMetricsResourcesItem.from_dict(
+            get_instance_policy_metrics_resources_item_model_json
+        ).__dict__
+        get_instance_policy_metrics_resources_item_model2 = GetInstancePolicyMetricsResourcesItem(
+            **get_instance_policy_metrics_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            get_instance_policy_metrics_resources_item_model
-            == get_instance_policy_metrics_resources_item_model2
-        )
+        assert get_instance_policy_metrics_resources_item_model == get_instance_policy_metrics_resources_item_model2
 
         # Convert model instance back to dict and verify no loss of data
         get_instance_policy_metrics_resources_item_model_json2 = (
@@ -8205,52 +7856,39 @@ class TestModel_GetInstancePolicyRotationResourcesItem:
         get_instance_policy_rotation_resources_item_policy_data_attributes_model = (
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyDataAttributes
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model[
-            "interval_month"
-        ] = 3
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model["interval_month"] = 3
 
         get_instance_policy_rotation_resources_item_policy_data_model = (
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyData
         get_instance_policy_rotation_resources_item_policy_data_model["enabled"] = True
-        get_instance_policy_rotation_resources_item_policy_data_model["attributes"] = (
-            get_instance_policy_rotation_resources_item_policy_data_attributes_model
-        )
+        get_instance_policy_rotation_resources_item_policy_data_model[
+            "attributes"
+        ] = get_instance_policy_rotation_resources_item_policy_data_attributes_model
 
         # Construct a json representation of a GetInstancePolicyRotationResourcesItem model
         get_instance_policy_rotation_resources_item_model_json = {}
-        get_instance_policy_rotation_resources_item_model_json["policy_type"] = (
-            "testString"
-        )
-        get_instance_policy_rotation_resources_item_model_json["policy_data"] = (
-            get_instance_policy_rotation_resources_item_policy_data_model
-        )
+        get_instance_policy_rotation_resources_item_model_json["policy_type"] = "testString"
+        get_instance_policy_rotation_resources_item_model_json[
+            "policy_data"
+        ] = get_instance_policy_rotation_resources_item_policy_data_model
 
         # Construct a model instance of GetInstancePolicyRotationResourcesItem by calling from_dict on the json representation
-        get_instance_policy_rotation_resources_item_model = (
-            GetInstancePolicyRotationResourcesItem.from_dict(
-                get_instance_policy_rotation_resources_item_model_json
-            )
+        get_instance_policy_rotation_resources_item_model = GetInstancePolicyRotationResourcesItem.from_dict(
+            get_instance_policy_rotation_resources_item_model_json
         )
         assert get_instance_policy_rotation_resources_item_model != False
 
         # Construct a model instance of GetInstancePolicyRotationResourcesItem by calling from_dict on the json representation
-        get_instance_policy_rotation_resources_item_model_dict = (
-            GetInstancePolicyRotationResourcesItem.from_dict(
-                get_instance_policy_rotation_resources_item_model_json
-            ).__dict__
-        )
-        get_instance_policy_rotation_resources_item_model2 = (
-            GetInstancePolicyRotationResourcesItem(
-                **get_instance_policy_rotation_resources_item_model_dict
-            )
+        get_instance_policy_rotation_resources_item_model_dict = GetInstancePolicyRotationResourcesItem.from_dict(
+            get_instance_policy_rotation_resources_item_model_json
+        ).__dict__
+        get_instance_policy_rotation_resources_item_model2 = GetInstancePolicyRotationResourcesItem(
+            **get_instance_policy_rotation_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            get_instance_policy_rotation_resources_item_model
-            == get_instance_policy_rotation_resources_item_model2
-        )
+        assert get_instance_policy_rotation_resources_item_model == get_instance_policy_rotation_resources_item_model2
 
         # Convert model instance back to dict and verify no loss of data
         get_instance_policy_rotation_resources_item_model_json2 = (
@@ -8279,15 +7917,11 @@ class TestModel_GetInstancePolicyRotationResourcesItemPolicyData:
         get_instance_policy_rotation_resources_item_policy_data_attributes_model = (
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyDataAttributes
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model[
-            "interval_month"
-        ] = 3
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model["interval_month"] = 3
 
         # Construct a json representation of a GetInstancePolicyRotationResourcesItemPolicyData model
         get_instance_policy_rotation_resources_item_policy_data_model_json = {}
-        get_instance_policy_rotation_resources_item_policy_data_model_json[
-            "enabled"
-        ] = True
+        get_instance_policy_rotation_resources_item_policy_data_model_json["enabled"] = True
         get_instance_policy_rotation_resources_item_policy_data_model_json[
             "attributes"
         ] = get_instance_policy_rotation_resources_item_policy_data_attributes_model
@@ -8341,28 +7975,27 @@ class TestModel_GetInstancePolicyRotationResourcesItemPolicyDataAttributes:
         """
 
         # Construct a json representation of a GetInstancePolicyRotationResourcesItemPolicyDataAttributes model
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model_json = (
-            {}
-        )
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model_json[
-            "interval_month"
-        ] = 3
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model_json = {}
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model_json["interval_month"] = 3
 
         # Construct a model instance of GetInstancePolicyRotationResourcesItemPolicyDataAttributes by calling from_dict on the json representation
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model = GetInstancePolicyRotationResourcesItemPolicyDataAttributes.from_dict(
-            get_instance_policy_rotation_resources_item_policy_data_attributes_model_json
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model = (
+            GetInstancePolicyRotationResourcesItemPolicyDataAttributes.from_dict(
+                get_instance_policy_rotation_resources_item_policy_data_attributes_model_json
+            )
         )
-        assert (
-            get_instance_policy_rotation_resources_item_policy_data_attributes_model
-            != False
-        )
+        assert get_instance_policy_rotation_resources_item_policy_data_attributes_model != False
 
         # Construct a model instance of GetInstancePolicyRotationResourcesItemPolicyDataAttributes by calling from_dict on the json representation
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model_dict = GetInstancePolicyRotationResourcesItemPolicyDataAttributes.from_dict(
-            get_instance_policy_rotation_resources_item_policy_data_attributes_model_json
-        ).__dict__
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model2 = GetInstancePolicyRotationResourcesItemPolicyDataAttributes(
-            **get_instance_policy_rotation_resources_item_policy_data_attributes_model_dict
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model_dict = (
+            GetInstancePolicyRotationResourcesItemPolicyDataAttributes.from_dict(
+                get_instance_policy_rotation_resources_item_policy_data_attributes_model_json
+            ).__dict__
+        )
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model2 = (
+            GetInstancePolicyRotationResourcesItemPolicyDataAttributes(
+                **get_instance_policy_rotation_resources_item_policy_data_attributes_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -8394,9 +8027,7 @@ class TestModel_GetKey:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
@@ -8459,9 +8090,7 @@ class TestModel_GetKeyMetadata:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
@@ -8500,9 +8129,7 @@ class TestModel_GetKeyMetadata:
         assert get_key_metadata_model != False
 
         # Construct a model instance of GetKeyMetadata by calling from_dict on the json representation
-        get_key_metadata_model_dict = GetKeyMetadata.from_dict(
-            get_key_metadata_model_json
-        ).__dict__
+        get_key_metadata_model_dict = GetKeyMetadata.from_dict(get_key_metadata_model_json).__dict__
         get_key_metadata_model2 = GetKeyMetadata(**get_key_metadata_model_dict)
 
         # Verify the model instances are equivalent
@@ -8527,15 +8154,11 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            {}
-        )  # KeyPolicyDualAuthDeleteDualAuthDelete
+        key_policy_dual_auth_delete_dual_auth_delete_model = {}  # KeyPolicyDualAuthDeleteDualAuthDelete
         key_policy_dual_auth_delete_dual_auth_delete_model["enabled"] = True
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem model
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json = (
-            {}
-        )
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json = {}
         get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json[
             "type"
         ] = "application/vnd.ibm.kms.policy+json"
@@ -8544,20 +8167,23 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
         ] = key_policy_dual_auth_delete_dual_auth_delete_model
 
         # Construct a model instance of GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem by calling from_dict on the json representation
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model = GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem.from_dict(
-            get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model = (
+            GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem.from_dict(
+                get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json
+            )
         )
-        assert (
-            get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model
-            != False
-        )
+        assert get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model != False
 
         # Construct a model instance of GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem by calling from_dict on the json representation
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_dict = GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem.from_dict(
-            get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json
-        ).__dict__
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model2 = GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem(
-            **get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_dict
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_dict = (
+            GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem.from_dict(
+                get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_json
+            ).__dict__
+        )
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model2 = (
+            GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem(
+                **get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -8594,47 +8220,29 @@ class TestModel_GetKeyPolicyRotationResourcesItem:
 
         # Construct a json representation of a GetKeyPolicyRotationResourcesItem model
         get_key_policy_rotation_resources_item_model_json = {}
-        get_key_policy_rotation_resources_item_model_json["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        get_key_policy_rotation_resources_item_model_json["rotation"] = (
-            key_policy_rotation_rotation_model
-        )
+        get_key_policy_rotation_resources_item_model_json["type"] = "application/vnd.ibm.kms.policy+json"
+        get_key_policy_rotation_resources_item_model_json["rotation"] = key_policy_rotation_rotation_model
 
         # Construct a model instance of GetKeyPolicyRotationResourcesItem by calling from_dict on the json representation
-        get_key_policy_rotation_resources_item_model = (
-            GetKeyPolicyRotationResourcesItem.from_dict(
-                get_key_policy_rotation_resources_item_model_json
-            )
+        get_key_policy_rotation_resources_item_model = GetKeyPolicyRotationResourcesItem.from_dict(
+            get_key_policy_rotation_resources_item_model_json
         )
         assert get_key_policy_rotation_resources_item_model != False
 
         # Construct a model instance of GetKeyPolicyRotationResourcesItem by calling from_dict on the json representation
-        get_key_policy_rotation_resources_item_model_dict = (
-            GetKeyPolicyRotationResourcesItem.from_dict(
-                get_key_policy_rotation_resources_item_model_json
-            ).__dict__
-        )
-        get_key_policy_rotation_resources_item_model2 = (
-            GetKeyPolicyRotationResourcesItem(
-                **get_key_policy_rotation_resources_item_model_dict
-            )
+        get_key_policy_rotation_resources_item_model_dict = GetKeyPolicyRotationResourcesItem.from_dict(
+            get_key_policy_rotation_resources_item_model_json
+        ).__dict__
+        get_key_policy_rotation_resources_item_model2 = GetKeyPolicyRotationResourcesItem(
+            **get_key_policy_rotation_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            get_key_policy_rotation_resources_item_model
-            == get_key_policy_rotation_resources_item_model2
-        )
+        assert get_key_policy_rotation_resources_item_model == get_key_policy_rotation_resources_item_model2
 
         # Convert model instance back to dict and verify no loss of data
-        get_key_policy_rotation_resources_item_model_json2 = (
-            get_key_policy_rotation_resources_item_model.to_dict()
-        )
-        assert (
-            get_key_policy_rotation_resources_item_model_json2
-            == get_key_policy_rotation_resources_item_model_json
-        )
+        get_key_policy_rotation_resources_item_model_json2 = get_key_policy_rotation_resources_item_model.to_dict()
+        assert get_key_policy_rotation_resources_item_model_json2 == get_key_policy_rotation_resources_item_model_json
 
 
 class TestModel_GetMultipleKeyPoliciesResource:
@@ -8649,58 +8257,40 @@ class TestModel_GetMultipleKeyPoliciesResource:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        get_multiple_key_policies_resource_dual_auth_delete_model = (
-            {}
-        )  # GetMultipleKeyPoliciesResourceDualAuthDelete
+        get_multiple_key_policies_resource_dual_auth_delete_model = {}  # GetMultipleKeyPoliciesResourceDualAuthDelete
         get_multiple_key_policies_resource_dual_auth_delete_model["enabled"] = True
 
-        key_policy_rotation_non_required_rotation_model = (
-            {}
-        )  # KeyPolicyRotationNonRequiredRotation
+        key_policy_rotation_non_required_rotation_model = {}  # KeyPolicyRotationNonRequiredRotation
         key_policy_rotation_non_required_rotation_model["enabled"] = True
         key_policy_rotation_non_required_rotation_model["interval_month"] = 1
 
         # Construct a json representation of a GetMultipleKeyPoliciesResource model
         get_multiple_key_policies_resource_model_json = {}
-        get_multiple_key_policies_resource_model_json["dualAuthDelete"] = (
-            get_multiple_key_policies_resource_dual_auth_delete_model
-        )
-        get_multiple_key_policies_resource_model_json["rotation"] = (
-            key_policy_rotation_non_required_rotation_model
-        )
+        get_multiple_key_policies_resource_model_json[
+            "dualAuthDelete"
+        ] = get_multiple_key_policies_resource_dual_auth_delete_model
+        get_multiple_key_policies_resource_model_json["rotation"] = key_policy_rotation_non_required_rotation_model
 
         # Construct a model instance of GetMultipleKeyPoliciesResource by calling from_dict on the json representation
-        get_multiple_key_policies_resource_model = (
-            GetMultipleKeyPoliciesResource.from_dict(
-                get_multiple_key_policies_resource_model_json
-            )
+        get_multiple_key_policies_resource_model = GetMultipleKeyPoliciesResource.from_dict(
+            get_multiple_key_policies_resource_model_json
         )
         assert get_multiple_key_policies_resource_model != False
 
         # Construct a model instance of GetMultipleKeyPoliciesResource by calling from_dict on the json representation
-        get_multiple_key_policies_resource_model_dict = (
-            GetMultipleKeyPoliciesResource.from_dict(
-                get_multiple_key_policies_resource_model_json
-            ).__dict__
-        )
+        get_multiple_key_policies_resource_model_dict = GetMultipleKeyPoliciesResource.from_dict(
+            get_multiple_key_policies_resource_model_json
+        ).__dict__
         get_multiple_key_policies_resource_model2 = GetMultipleKeyPoliciesResource(
             **get_multiple_key_policies_resource_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            get_multiple_key_policies_resource_model
-            == get_multiple_key_policies_resource_model2
-        )
+        assert get_multiple_key_policies_resource_model == get_multiple_key_policies_resource_model2
 
         # Convert model instance back to dict and verify no loss of data
-        get_multiple_key_policies_resource_model_json2 = (
-            get_multiple_key_policies_resource_model.to_dict()
-        )
-        assert (
-            get_multiple_key_policies_resource_model_json2
-            == get_multiple_key_policies_resource_model_json
-        )
+        get_multiple_key_policies_resource_model_json2 = get_multiple_key_policies_resource_model.to_dict()
+        assert get_multiple_key_policies_resource_model_json2 == get_multiple_key_policies_resource_model_json
 
 
 class TestModel_GetMultipleKeyPoliciesResourceDualAuthDelete:
@@ -8731,10 +8321,8 @@ class TestModel_GetMultipleKeyPoliciesResourceDualAuthDelete:
                 get_multiple_key_policies_resource_dual_auth_delete_model_json
             ).__dict__
         )
-        get_multiple_key_policies_resource_dual_auth_delete_model2 = (
-            GetMultipleKeyPoliciesResourceDualAuthDelete(
-                **get_multiple_key_policies_resource_dual_auth_delete_model_dict
-            )
+        get_multiple_key_policies_resource_dual_auth_delete_model2 = GetMultipleKeyPoliciesResourceDualAuthDelete(
+            **get_multiple_key_policies_resource_dual_auth_delete_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -8773,9 +8361,7 @@ class TestModel_ImportToken:
         assert import_token_model != False
 
         # Construct a model instance of ImportToken by calling from_dict on the json representation
-        import_token_model_dict = ImportToken.from_dict(
-            import_token_model_json
-        ).__dict__
+        import_token_model_dict = ImportToken.from_dict(import_token_model_json).__dict__
         import_token_model2 = ImportToken(**import_token_model_dict)
 
         # Verify the model instances are equivalent
@@ -8798,9 +8384,7 @@ class TestModel_InstancePolicyAllowedIPPolicyData:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        instance_policy_allowed_ip_policy_data_attributes_model = (
-            {}
-        )  # InstancePolicyAllowedIPPolicyDataAttributes
+        instance_policy_allowed_ip_policy_data_attributes_model = {}  # InstancePolicyAllowedIPPolicyDataAttributes
         instance_policy_allowed_ip_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -8812,44 +8396,30 @@ class TestModel_InstancePolicyAllowedIPPolicyData:
         # Construct a json representation of a InstancePolicyAllowedIPPolicyData model
         instance_policy_allowed_ip_policy_data_model_json = {}
         instance_policy_allowed_ip_policy_data_model_json["enabled"] = True
-        instance_policy_allowed_ip_policy_data_model_json["attributes"] = (
-            instance_policy_allowed_ip_policy_data_attributes_model
-        )
+        instance_policy_allowed_ip_policy_data_model_json[
+            "attributes"
+        ] = instance_policy_allowed_ip_policy_data_attributes_model
 
         # Construct a model instance of InstancePolicyAllowedIPPolicyData by calling from_dict on the json representation
-        instance_policy_allowed_ip_policy_data_model = (
-            InstancePolicyAllowedIPPolicyData.from_dict(
-                instance_policy_allowed_ip_policy_data_model_json
-            )
+        instance_policy_allowed_ip_policy_data_model = InstancePolicyAllowedIPPolicyData.from_dict(
+            instance_policy_allowed_ip_policy_data_model_json
         )
         assert instance_policy_allowed_ip_policy_data_model != False
 
         # Construct a model instance of InstancePolicyAllowedIPPolicyData by calling from_dict on the json representation
-        instance_policy_allowed_ip_policy_data_model_dict = (
-            InstancePolicyAllowedIPPolicyData.from_dict(
-                instance_policy_allowed_ip_policy_data_model_json
-            ).__dict__
-        )
-        instance_policy_allowed_ip_policy_data_model2 = (
-            InstancePolicyAllowedIPPolicyData(
-                **instance_policy_allowed_ip_policy_data_model_dict
-            )
+        instance_policy_allowed_ip_policy_data_model_dict = InstancePolicyAllowedIPPolicyData.from_dict(
+            instance_policy_allowed_ip_policy_data_model_json
+        ).__dict__
+        instance_policy_allowed_ip_policy_data_model2 = InstancePolicyAllowedIPPolicyData(
+            **instance_policy_allowed_ip_policy_data_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            instance_policy_allowed_ip_policy_data_model
-            == instance_policy_allowed_ip_policy_data_model2
-        )
+        assert instance_policy_allowed_ip_policy_data_model == instance_policy_allowed_ip_policy_data_model2
 
         # Convert model instance back to dict and verify no loss of data
-        instance_policy_allowed_ip_policy_data_model_json2 = (
-            instance_policy_allowed_ip_policy_data_model.to_dict()
-        )
-        assert (
-            instance_policy_allowed_ip_policy_data_model_json2
-            == instance_policy_allowed_ip_policy_data_model_json
-        )
+        instance_policy_allowed_ip_policy_data_model_json2 = instance_policy_allowed_ip_policy_data_model.to_dict()
+        assert instance_policy_allowed_ip_policy_data_model_json2 == instance_policy_allowed_ip_policy_data_model_json
 
 
 class TestModel_InstancePolicyAllowedIPPolicyDataAttributes:
@@ -8873,10 +8443,8 @@ class TestModel_InstancePolicyAllowedIPPolicyDataAttributes:
         ]
 
         # Construct a model instance of InstancePolicyAllowedIPPolicyDataAttributes by calling from_dict on the json representation
-        instance_policy_allowed_ip_policy_data_attributes_model = (
-            InstancePolicyAllowedIPPolicyDataAttributes.from_dict(
-                instance_policy_allowed_ip_policy_data_attributes_model_json
-            )
+        instance_policy_allowed_ip_policy_data_attributes_model = InstancePolicyAllowedIPPolicyDataAttributes.from_dict(
+            instance_policy_allowed_ip_policy_data_attributes_model_json
         )
         assert instance_policy_allowed_ip_policy_data_attributes_model != False
 
@@ -8886,10 +8454,8 @@ class TestModel_InstancePolicyAllowedIPPolicyDataAttributes:
                 instance_policy_allowed_ip_policy_data_attributes_model_json
             ).__dict__
         )
-        instance_policy_allowed_ip_policy_data_attributes_model2 = (
-            InstancePolicyAllowedIPPolicyDataAttributes(
-                **instance_policy_allowed_ip_policy_data_attributes_model_dict
-            )
+        instance_policy_allowed_ip_policy_data_attributes_model2 = InstancePolicyAllowedIPPolicyDataAttributes(
+            **instance_policy_allowed_ip_policy_data_attributes_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -8923,42 +8489,31 @@ class TestModel_InstancePolicyAllowedNetworkPolicyData:
         instance_policy_allowed_network_policy_data_attributes_model = (
             {}
         )  # InstancePolicyAllowedNetworkPolicyDataAttributes
-        instance_policy_allowed_network_policy_data_attributes_model[
-            "allowed_network"
-        ] = "public-and-private"
+        instance_policy_allowed_network_policy_data_attributes_model["allowed_network"] = "public-and-private"
 
         # Construct a json representation of a InstancePolicyAllowedNetworkPolicyData model
         instance_policy_allowed_network_policy_data_model_json = {}
         instance_policy_allowed_network_policy_data_model_json["enabled"] = True
-        instance_policy_allowed_network_policy_data_model_json["attributes"] = (
-            instance_policy_allowed_network_policy_data_attributes_model
-        )
+        instance_policy_allowed_network_policy_data_model_json[
+            "attributes"
+        ] = instance_policy_allowed_network_policy_data_attributes_model
 
         # Construct a model instance of InstancePolicyAllowedNetworkPolicyData by calling from_dict on the json representation
-        instance_policy_allowed_network_policy_data_model = (
-            InstancePolicyAllowedNetworkPolicyData.from_dict(
-                instance_policy_allowed_network_policy_data_model_json
-            )
+        instance_policy_allowed_network_policy_data_model = InstancePolicyAllowedNetworkPolicyData.from_dict(
+            instance_policy_allowed_network_policy_data_model_json
         )
         assert instance_policy_allowed_network_policy_data_model != False
 
         # Construct a model instance of InstancePolicyAllowedNetworkPolicyData by calling from_dict on the json representation
-        instance_policy_allowed_network_policy_data_model_dict = (
-            InstancePolicyAllowedNetworkPolicyData.from_dict(
-                instance_policy_allowed_network_policy_data_model_json
-            ).__dict__
-        )
-        instance_policy_allowed_network_policy_data_model2 = (
-            InstancePolicyAllowedNetworkPolicyData(
-                **instance_policy_allowed_network_policy_data_model_dict
-            )
+        instance_policy_allowed_network_policy_data_model_dict = InstancePolicyAllowedNetworkPolicyData.from_dict(
+            instance_policy_allowed_network_policy_data_model_json
+        ).__dict__
+        instance_policy_allowed_network_policy_data_model2 = InstancePolicyAllowedNetworkPolicyData(
+            **instance_policy_allowed_network_policy_data_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            instance_policy_allowed_network_policy_data_model
-            == instance_policy_allowed_network_policy_data_model2
-        )
+        assert instance_policy_allowed_network_policy_data_model == instance_policy_allowed_network_policy_data_model2
 
         # Convert model instance back to dict and verify no loss of data
         instance_policy_allowed_network_policy_data_model_json2 = (
@@ -8982,9 +8537,7 @@ class TestModel_InstancePolicyAllowedNetworkPolicyDataAttributes:
 
         # Construct a json representation of a InstancePolicyAllowedNetworkPolicyDataAttributes model
         instance_policy_allowed_network_policy_data_attributes_model_json = {}
-        instance_policy_allowed_network_policy_data_attributes_model_json[
-            "allowed_network"
-        ] = "public-and-private"
+        instance_policy_allowed_network_policy_data_attributes_model_json["allowed_network"] = "public-and-private"
 
         # Construct a model instance of InstancePolicyAllowedNetworkPolicyDataAttributes by calling from_dict on the json representation
         instance_policy_allowed_network_policy_data_attributes_model = (
@@ -9037,27 +8590,15 @@ class TestModel_InstancePolicyKeyCreateImportAccessPolicyData:
         instance_policy_key_create_import_access_policy_data_attributes_model = (
             {}
         )  # InstancePolicyKeyCreateImportAccessPolicyDataAttributes
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "create_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "create_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "import_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "import_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "enforce_token"
-        ] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["create_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["create_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["import_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["import_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["enforce_token"] = True
 
         # Construct a json representation of a InstancePolicyKeyCreateImportAccessPolicyData model
         instance_policy_key_create_import_access_policy_data_model_json = {}
-        instance_policy_key_create_import_access_policy_data_model_json["enabled"] = (
-            True
-        )
+        instance_policy_key_create_import_access_policy_data_model_json["enabled"] = True
         instance_policy_key_create_import_access_policy_data_model_json[
             "attributes"
         ] = instance_policy_key_create_import_access_policy_data_attributes_model
@@ -9076,10 +8617,8 @@ class TestModel_InstancePolicyKeyCreateImportAccessPolicyData:
                 instance_policy_key_create_import_access_policy_data_model_json
             ).__dict__
         )
-        instance_policy_key_create_import_access_policy_data_model2 = (
-            InstancePolicyKeyCreateImportAccessPolicyData(
-                **instance_policy_key_create_import_access_policy_data_model_dict
-            )
+        instance_policy_key_create_import_access_policy_data_model2 = InstancePolicyKeyCreateImportAccessPolicyData(
+            **instance_policy_key_create_import_access_policy_data_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -9112,37 +8651,30 @@ class TestModel_InstancePolicyKeyCreateImportAccessPolicyDataAttributes:
 
         # Construct a json representation of a InstancePolicyKeyCreateImportAccessPolicyDataAttributes model
         instance_policy_key_create_import_access_policy_data_attributes_model_json = {}
-        instance_policy_key_create_import_access_policy_data_attributes_model_json[
-            "create_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model_json[
-            "create_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model_json[
-            "import_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model_json[
-            "import_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model_json[
-            "enforce_token"
-        ] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model_json["create_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model_json["create_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model_json["import_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model_json["import_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model_json["enforce_token"] = True
 
         # Construct a model instance of InstancePolicyKeyCreateImportAccessPolicyDataAttributes by calling from_dict on the json representation
-        instance_policy_key_create_import_access_policy_data_attributes_model = InstancePolicyKeyCreateImportAccessPolicyDataAttributes.from_dict(
-            instance_policy_key_create_import_access_policy_data_attributes_model_json
+        instance_policy_key_create_import_access_policy_data_attributes_model = (
+            InstancePolicyKeyCreateImportAccessPolicyDataAttributes.from_dict(
+                instance_policy_key_create_import_access_policy_data_attributes_model_json
+            )
         )
-        assert (
-            instance_policy_key_create_import_access_policy_data_attributes_model
-            != False
-        )
+        assert instance_policy_key_create_import_access_policy_data_attributes_model != False
 
         # Construct a model instance of InstancePolicyKeyCreateImportAccessPolicyDataAttributes by calling from_dict on the json representation
-        instance_policy_key_create_import_access_policy_data_attributes_model_dict = InstancePolicyKeyCreateImportAccessPolicyDataAttributes.from_dict(
-            instance_policy_key_create_import_access_policy_data_attributes_model_json
-        ).__dict__
-        instance_policy_key_create_import_access_policy_data_attributes_model2 = InstancePolicyKeyCreateImportAccessPolicyDataAttributes(
-            **instance_policy_key_create_import_access_policy_data_attributes_model_dict
+        instance_policy_key_create_import_access_policy_data_attributes_model_dict = (
+            InstancePolicyKeyCreateImportAccessPolicyDataAttributes.from_dict(
+                instance_policy_key_create_import_access_policy_data_attributes_model_json
+            ).__dict__
+        )
+        instance_policy_key_create_import_access_policy_data_attributes_model2 = (
+            InstancePolicyKeyCreateImportAccessPolicyDataAttributes(
+                **instance_policy_key_create_import_access_policy_data_attributes_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -9173,12 +8705,8 @@ class TestModel_InstancePolicyProperties:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        instance_policy_properties_attributes_model = (
-            {}
-        )  # InstancePolicyPropertiesAttributes
-        instance_policy_properties_attributes_model["allowed_network"] = (
-            "public-and-private"
-        )
+        instance_policy_properties_attributes_model = {}  # InstancePolicyPropertiesAttributes
+        instance_policy_properties_attributes_model["allowed_network"] = "public-and-private"
         instance_policy_properties_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -9196,35 +8724,24 @@ class TestModel_InstancePolicyProperties:
         # Construct a json representation of a InstancePolicyProperties model
         instance_policy_properties_model_json = {}
         instance_policy_properties_model_json["enabled"] = True
-        instance_policy_properties_model_json["attributes"] = (
-            instance_policy_properties_attributes_model
-        )
+        instance_policy_properties_model_json["attributes"] = instance_policy_properties_attributes_model
 
         # Construct a model instance of InstancePolicyProperties by calling from_dict on the json representation
-        instance_policy_properties_model = InstancePolicyProperties.from_dict(
-            instance_policy_properties_model_json
-        )
+        instance_policy_properties_model = InstancePolicyProperties.from_dict(instance_policy_properties_model_json)
         assert instance_policy_properties_model != False
 
         # Construct a model instance of InstancePolicyProperties by calling from_dict on the json representation
         instance_policy_properties_model_dict = InstancePolicyProperties.from_dict(
             instance_policy_properties_model_json
         ).__dict__
-        instance_policy_properties_model2 = InstancePolicyProperties(
-            **instance_policy_properties_model_dict
-        )
+        instance_policy_properties_model2 = InstancePolicyProperties(**instance_policy_properties_model_dict)
 
         # Verify the model instances are equivalent
         assert instance_policy_properties_model == instance_policy_properties_model2
 
         # Convert model instance back to dict and verify no loss of data
-        instance_policy_properties_model_json2 = (
-            instance_policy_properties_model.to_dict()
-        )
-        assert (
-            instance_policy_properties_model_json2
-            == instance_policy_properties_model_json
-        )
+        instance_policy_properties_model_json2 = instance_policy_properties_model.to_dict()
+        assert instance_policy_properties_model_json2 == instance_policy_properties_model_json
 
 
 class TestModel_InstancePolicyPropertiesAttributes:
@@ -9239,9 +8756,7 @@ class TestModel_InstancePolicyPropertiesAttributes:
 
         # Construct a json representation of a InstancePolicyPropertiesAttributes model
         instance_policy_properties_attributes_model_json = {}
-        instance_policy_properties_attributes_model_json["allowed_network"] = (
-            "public-and-private"
-        )
+        instance_policy_properties_attributes_model_json["allowed_network"] = "public-and-private"
         instance_policy_properties_attributes_model_json["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -9257,39 +8772,25 @@ class TestModel_InstancePolicyPropertiesAttributes:
         instance_policy_properties_attributes_model_json["interval_month"] = 3
 
         # Construct a model instance of InstancePolicyPropertiesAttributes by calling from_dict on the json representation
-        instance_policy_properties_attributes_model = (
-            InstancePolicyPropertiesAttributes.from_dict(
-                instance_policy_properties_attributes_model_json
-            )
+        instance_policy_properties_attributes_model = InstancePolicyPropertiesAttributes.from_dict(
+            instance_policy_properties_attributes_model_json
         )
         assert instance_policy_properties_attributes_model != False
 
         # Construct a model instance of InstancePolicyPropertiesAttributes by calling from_dict on the json representation
-        instance_policy_properties_attributes_model_dict = (
-            InstancePolicyPropertiesAttributes.from_dict(
-                instance_policy_properties_attributes_model_json
-            ).__dict__
-        )
-        instance_policy_properties_attributes_model2 = (
-            InstancePolicyPropertiesAttributes(
-                **instance_policy_properties_attributes_model_dict
-            )
+        instance_policy_properties_attributes_model_dict = InstancePolicyPropertiesAttributes.from_dict(
+            instance_policy_properties_attributes_model_json
+        ).__dict__
+        instance_policy_properties_attributes_model2 = InstancePolicyPropertiesAttributes(
+            **instance_policy_properties_attributes_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            instance_policy_properties_attributes_model
-            == instance_policy_properties_attributes_model2
-        )
+        assert instance_policy_properties_attributes_model == instance_policy_properties_attributes_model2
 
         # Convert model instance back to dict and verify no loss of data
-        instance_policy_properties_attributes_model_json2 = (
-            instance_policy_properties_attributes_model.to_dict()
-        )
-        assert (
-            instance_policy_properties_attributes_model_json2
-            == instance_policy_properties_attributes_model_json
-        )
+        instance_policy_properties_attributes_model_json2 = instance_policy_properties_attributes_model.to_dict()
+        assert instance_policy_properties_attributes_model_json2 == instance_policy_properties_attributes_model_json
 
 
 class TestModel_InstancePolicyResource:
@@ -9304,12 +8805,8 @@ class TestModel_InstancePolicyResource:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        instance_policy_properties_attributes_model = (
-            {}
-        )  # InstancePolicyPropertiesAttributes
-        instance_policy_properties_attributes_model["allowed_network"] = (
-            "public-and-private"
-        )
+        instance_policy_properties_attributes_model = {}  # InstancePolicyPropertiesAttributes
+        instance_policy_properties_attributes_model["allowed_network"] = "public-and-private"
         instance_policy_properties_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -9326,39 +8823,29 @@ class TestModel_InstancePolicyResource:
 
         instance_policy_properties_model = {}  # InstancePolicyProperties
         instance_policy_properties_model["enabled"] = True
-        instance_policy_properties_model["attributes"] = (
-            instance_policy_properties_attributes_model
-        )
+        instance_policy_properties_model["attributes"] = instance_policy_properties_attributes_model
 
         # Construct a json representation of a InstancePolicyResource model
         instance_policy_resource_model_json = {}
         instance_policy_resource_model_json["policy_type"] = "testString"
-        instance_policy_resource_model_json["policy_data"] = (
-            instance_policy_properties_model
-        )
+        instance_policy_resource_model_json["policy_data"] = instance_policy_properties_model
 
         # Construct a model instance of InstancePolicyResource by calling from_dict on the json representation
-        instance_policy_resource_model = InstancePolicyResource.from_dict(
-            instance_policy_resource_model_json
-        )
+        instance_policy_resource_model = InstancePolicyResource.from_dict(instance_policy_resource_model_json)
         assert instance_policy_resource_model != False
 
         # Construct a model instance of InstancePolicyResource by calling from_dict on the json representation
         instance_policy_resource_model_dict = InstancePolicyResource.from_dict(
             instance_policy_resource_model_json
         ).__dict__
-        instance_policy_resource_model2 = InstancePolicyResource(
-            **instance_policy_resource_model_dict
-        )
+        instance_policy_resource_model2 = InstancePolicyResource(**instance_policy_resource_model_dict)
 
         # Verify the model instances are equivalent
         assert instance_policy_resource_model == instance_policy_resource_model2
 
         # Convert model instance back to dict and verify no loss of data
         instance_policy_resource_model_json2 = instance_policy_resource_model.to_dict()
-        assert (
-            instance_policy_resource_model_json2 == instance_policy_resource_model_json
-        )
+        assert instance_policy_resource_model_json2 == instance_policy_resource_model_json
 
 
 class TestModel_InstancePolicyRotationPolicyData:
@@ -9373,50 +8860,36 @@ class TestModel_InstancePolicyRotationPolicyData:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        instance_policy_rotation_policy_data_attributes_model = (
-            {}
-        )  # InstancePolicyRotationPolicyDataAttributes
+        instance_policy_rotation_policy_data_attributes_model = {}  # InstancePolicyRotationPolicyDataAttributes
         instance_policy_rotation_policy_data_attributes_model["interval_month"] = 3
 
         # Construct a json representation of a InstancePolicyRotationPolicyData model
         instance_policy_rotation_policy_data_model_json = {}
         instance_policy_rotation_policy_data_model_json["enabled"] = True
-        instance_policy_rotation_policy_data_model_json["attributes"] = (
-            instance_policy_rotation_policy_data_attributes_model
-        )
+        instance_policy_rotation_policy_data_model_json[
+            "attributes"
+        ] = instance_policy_rotation_policy_data_attributes_model
 
         # Construct a model instance of InstancePolicyRotationPolicyData by calling from_dict on the json representation
-        instance_policy_rotation_policy_data_model = (
-            InstancePolicyRotationPolicyData.from_dict(
-                instance_policy_rotation_policy_data_model_json
-            )
+        instance_policy_rotation_policy_data_model = InstancePolicyRotationPolicyData.from_dict(
+            instance_policy_rotation_policy_data_model_json
         )
         assert instance_policy_rotation_policy_data_model != False
 
         # Construct a model instance of InstancePolicyRotationPolicyData by calling from_dict on the json representation
-        instance_policy_rotation_policy_data_model_dict = (
-            InstancePolicyRotationPolicyData.from_dict(
-                instance_policy_rotation_policy_data_model_json
-            ).__dict__
-        )
+        instance_policy_rotation_policy_data_model_dict = InstancePolicyRotationPolicyData.from_dict(
+            instance_policy_rotation_policy_data_model_json
+        ).__dict__
         instance_policy_rotation_policy_data_model2 = InstancePolicyRotationPolicyData(
             **instance_policy_rotation_policy_data_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            instance_policy_rotation_policy_data_model
-            == instance_policy_rotation_policy_data_model2
-        )
+        assert instance_policy_rotation_policy_data_model == instance_policy_rotation_policy_data_model2
 
         # Convert model instance back to dict and verify no loss of data
-        instance_policy_rotation_policy_data_model_json2 = (
-            instance_policy_rotation_policy_data_model.to_dict()
-        )
-        assert (
-            instance_policy_rotation_policy_data_model_json2
-            == instance_policy_rotation_policy_data_model_json
-        )
+        instance_policy_rotation_policy_data_model_json2 = instance_policy_rotation_policy_data_model.to_dict()
+        assert instance_policy_rotation_policy_data_model_json2 == instance_policy_rotation_policy_data_model_json
 
 
 class TestModel_InstancePolicyRotationPolicyDataAttributes:
@@ -9434,10 +8907,8 @@ class TestModel_InstancePolicyRotationPolicyDataAttributes:
         instance_policy_rotation_policy_data_attributes_model_json["interval_month"] = 3
 
         # Construct a model instance of InstancePolicyRotationPolicyDataAttributes by calling from_dict on the json representation
-        instance_policy_rotation_policy_data_attributes_model = (
-            InstancePolicyRotationPolicyDataAttributes.from_dict(
-                instance_policy_rotation_policy_data_attributes_model_json
-            )
+        instance_policy_rotation_policy_data_attributes_model = InstancePolicyRotationPolicyDataAttributes.from_dict(
+            instance_policy_rotation_policy_data_attributes_model_json
         )
         assert instance_policy_rotation_policy_data_attributes_model != False
 
@@ -9447,10 +8918,8 @@ class TestModel_InstancePolicyRotationPolicyDataAttributes:
                 instance_policy_rotation_policy_data_attributes_model_json
             ).__dict__
         )
-        instance_policy_rotation_policy_data_attributes_model2 = (
-            InstancePolicyRotationPolicyDataAttributes(
-                **instance_policy_rotation_policy_data_attributes_model_dict
-            )
+        instance_policy_rotation_policy_data_attributes_model2 = InstancePolicyRotationPolicyDataAttributes(
+            **instance_policy_rotation_policy_data_attributes_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -9501,9 +8970,7 @@ class TestModel_KMIPAdapter:
         assert kmip_adapter_model != False
 
         # Construct a model instance of KMIPAdapter by calling from_dict on the json representation
-        kmip_adapter_model_dict = KMIPAdapter.from_dict(
-            kmip_adapter_model_json
-        ).__dict__
+        kmip_adapter_model_dict = KMIPAdapter.from_dict(kmip_adapter_model_json).__dict__
         kmip_adapter_model2 = KMIPAdapter(**kmip_adapter_model_dict)
 
         # Verify the model instances are equivalent
@@ -9527,26 +8994,20 @@ class TestModel_KMIPClientCertificate:
         # Construct a json representation of a KMIPClientCertificate model
         kmip_client_certificate_model_json = {}
         kmip_client_certificate_model_json["name"] = "testString"
-        kmip_client_certificate_model_json["id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_client_certificate_model_json["id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_client_certificate_model_json["created_at"] = "2019-01-01T12:00:00Z"
         kmip_client_certificate_model_json["created_by"] = "testString"
         kmip_client_certificate_model_json["certificate"] = "testString"
 
         # Construct a model instance of KMIPClientCertificate by calling from_dict on the json representation
-        kmip_client_certificate_model = KMIPClientCertificate.from_dict(
-            kmip_client_certificate_model_json
-        )
+        kmip_client_certificate_model = KMIPClientCertificate.from_dict(kmip_client_certificate_model_json)
         assert kmip_client_certificate_model != False
 
         # Construct a model instance of KMIPClientCertificate by calling from_dict on the json representation
         kmip_client_certificate_model_dict = KMIPClientCertificate.from_dict(
             kmip_client_certificate_model_json
         ).__dict__
-        kmip_client_certificate_model2 = KMIPClientCertificate(
-            **kmip_client_certificate_model_dict
-        )
+        kmip_client_certificate_model2 = KMIPClientCertificate(**kmip_client_certificate_model_dict)
 
         # Verify the model instances are equivalent
         assert kmip_client_certificate_model == kmip_client_certificate_model2
@@ -9569,12 +9030,8 @@ class TestModel_KMIPClientPartialCertificate:
         # Construct a json representation of a KMIPClientPartialCertificate model
         kmip_client_partial_certificate_model_json = {}
         kmip_client_partial_certificate_model_json["name"] = "testString"
-        kmip_client_partial_certificate_model_json["id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
-        kmip_client_partial_certificate_model_json["created_at"] = (
-            "2019-01-01T12:00:00Z"
-        )
+        kmip_client_partial_certificate_model_json["id"] = "feddecaf-0000-0000-0000-1234567890ab"
+        kmip_client_partial_certificate_model_json["created_at"] = "2019-01-01T12:00:00Z"
         kmip_client_partial_certificate_model_json["created_by"] = "testString"
 
         # Construct a model instance of KMIPClientPartialCertificate by calling from_dict on the json representation
@@ -9584,29 +9041,19 @@ class TestModel_KMIPClientPartialCertificate:
         assert kmip_client_partial_certificate_model != False
 
         # Construct a model instance of KMIPClientPartialCertificate by calling from_dict on the json representation
-        kmip_client_partial_certificate_model_dict = (
-            KMIPClientPartialCertificate.from_dict(
-                kmip_client_partial_certificate_model_json
-            ).__dict__
-        )
+        kmip_client_partial_certificate_model_dict = KMIPClientPartialCertificate.from_dict(
+            kmip_client_partial_certificate_model_json
+        ).__dict__
         kmip_client_partial_certificate_model2 = KMIPClientPartialCertificate(
             **kmip_client_partial_certificate_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            kmip_client_partial_certificate_model
-            == kmip_client_partial_certificate_model2
-        )
+        assert kmip_client_partial_certificate_model == kmip_client_partial_certificate_model2
 
         # Convert model instance back to dict and verify no loss of data
-        kmip_client_partial_certificate_model_json2 = (
-            kmip_client_partial_certificate_model.to_dict()
-        )
-        assert (
-            kmip_client_partial_certificate_model_json2
-            == kmip_client_partial_certificate_model_json
-        )
+        kmip_client_partial_certificate_model_json2 = kmip_client_partial_certificate_model.to_dict()
+        assert kmip_client_partial_certificate_model_json2 == kmip_client_partial_certificate_model_json
 
 
 class TestModel_KMIPObject:
@@ -9625,19 +9072,13 @@ class TestModel_KMIPObject:
         kmip_object_model_json["kmip_object_type"] = 2
         kmip_object_model_json["state"] = 1
         kmip_object_model_json["created_at"] = "2019-01-01T12:00:00Z"
-        kmip_object_model_json["created_by_kmip_client_cert_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_object_model_json["created_by_kmip_client_cert_id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_object_model_json["created_by"] = "testString"
         kmip_object_model_json["updated_at"] = "2019-01-01T12:00:00Z"
-        kmip_object_model_json["updated_by_kmip_client_cert_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_object_model_json["updated_by_kmip_client_cert_id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_object_model_json["updated_by"] = "testString"
         kmip_object_model_json["destroyed_at"] = "2019-01-01T12:00:00Z"
-        kmip_object_model_json["destroyed_by_kmip_client_cert_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_object_model_json["destroyed_by_kmip_client_cert_id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_object_model_json["destroyed_by"] = "testString"
         kmip_object_model_json["recoverable"] = True
 
@@ -9669,12 +9110,8 @@ class TestModel_Key:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
@@ -9737,9 +9174,7 @@ class TestModel_KeyAlias:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         key_alias_resource_model = {}  # KeyAliasResource
@@ -9779,15 +9214,11 @@ class TestModel_KeyAliasResource:
         key_alias_resource_model_json = {}
 
         # Construct a model instance of KeyAliasResource by calling from_dict on the json representation
-        key_alias_resource_model = KeyAliasResource.from_dict(
-            key_alias_resource_model_json
-        )
+        key_alias_resource_model = KeyAliasResource.from_dict(key_alias_resource_model_json)
         assert key_alias_resource_model != False
 
         # Construct a model instance of KeyAliasResource by calling from_dict on the json representation
-        key_alias_resource_model_dict = KeyAliasResource.from_dict(
-            key_alias_resource_model_json
-        ).__dict__
+        key_alias_resource_model_dict = KeyAliasResource.from_dict(key_alias_resource_model_json).__dict__
         key_alias_resource_model2 = KeyAliasResource(**key_alias_resource_model_dict)
 
         # Verify the model instances are equivalent
@@ -9829,31 +9260,23 @@ class TestModel_KeyFullRepresentation:
         key_full_representation_model_json["keyRingID"] = "testString"
         key_full_representation_model_json["algorithmBitSize"] = 256
         key_full_representation_model_json["algorithmMode"] = "CBC_PAD"
-        key_full_representation_model_json["dualAuthDelete"] = (
-            dual_auth_key_metadata_model
-        )
+        key_full_representation_model_json["dualAuthDelete"] = dual_auth_key_metadata_model
         key_full_representation_model_json["rotation"] = rotation_key_metadata_model
-        key_full_representation_model_json["restoreExpirationDate"] = (
-            "2000-03-21T00:00:00Z"
-        )
+        key_full_representation_model_json["restoreExpirationDate"] = "2000-03-21T00:00:00Z"
         key_full_representation_model_json["restoreAllowed"] = True
         key_full_representation_model_json["purgeAllowed"] = True
         key_full_representation_model_json["purgeAllowedFrom"] = "2000-03-21T00:00:00Z"
         key_full_representation_model_json["purgeScheduledOn"] = "2000-03-21T00:00:00Z"
 
         # Construct a model instance of KeyFullRepresentation by calling from_dict on the json representation
-        key_full_representation_model = KeyFullRepresentation.from_dict(
-            key_full_representation_model_json
-        )
+        key_full_representation_model = KeyFullRepresentation.from_dict(key_full_representation_model_json)
         assert key_full_representation_model != False
 
         # Construct a model instance of KeyFullRepresentation by calling from_dict on the json representation
         key_full_representation_model_dict = KeyFullRepresentation.from_dict(
             key_full_representation_model_json
         ).__dict__
-        key_full_representation_model2 = KeyFullRepresentation(
-            **key_full_representation_model_dict
-        )
+        key_full_representation_model2 = KeyFullRepresentation(**key_full_representation_model_dict)
 
         # Verify the model instances are equivalent
         assert key_full_representation_model == key_full_representation_model2
@@ -9879,30 +9302,21 @@ class TestModel_KeyFullRepresentationAlgorithmMetadata:
         key_full_representation_algorithm_metadata_model_json["mode"] = "CBC_PAD"
 
         # Construct a model instance of KeyFullRepresentationAlgorithmMetadata by calling from_dict on the json representation
-        key_full_representation_algorithm_metadata_model = (
-            KeyFullRepresentationAlgorithmMetadata.from_dict(
-                key_full_representation_algorithm_metadata_model_json
-            )
+        key_full_representation_algorithm_metadata_model = KeyFullRepresentationAlgorithmMetadata.from_dict(
+            key_full_representation_algorithm_metadata_model_json
         )
         assert key_full_representation_algorithm_metadata_model != False
 
         # Construct a model instance of KeyFullRepresentationAlgorithmMetadata by calling from_dict on the json representation
-        key_full_representation_algorithm_metadata_model_dict = (
-            KeyFullRepresentationAlgorithmMetadata.from_dict(
-                key_full_representation_algorithm_metadata_model_json
-            ).__dict__
-        )
-        key_full_representation_algorithm_metadata_model2 = (
-            KeyFullRepresentationAlgorithmMetadata(
-                **key_full_representation_algorithm_metadata_model_dict
-            )
+        key_full_representation_algorithm_metadata_model_dict = KeyFullRepresentationAlgorithmMetadata.from_dict(
+            key_full_representation_algorithm_metadata_model_json
+        ).__dict__
+        key_full_representation_algorithm_metadata_model2 = KeyFullRepresentationAlgorithmMetadata(
+            **key_full_representation_algorithm_metadata_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            key_full_representation_algorithm_metadata_model
-            == key_full_representation_algorithm_metadata_model2
-        )
+        assert key_full_representation_algorithm_metadata_model == key_full_representation_algorithm_metadata_model2
 
         # Convert model instance back to dict and verify no loss of data
         key_full_representation_algorithm_metadata_model_json2 = (
@@ -9926,45 +9340,30 @@ class TestModel_KeyPolicyDualAuthDelete:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            {}
-        )  # KeyPolicyDualAuthDeleteDualAuthDelete
+        key_policy_dual_auth_delete_dual_auth_delete_model = {}  # KeyPolicyDualAuthDeleteDualAuthDelete
         key_policy_dual_auth_delete_dual_auth_delete_model["enabled"] = True
 
         # Construct a json representation of a KeyPolicyDualAuthDelete model
         key_policy_dual_auth_delete_model_json = {}
-        key_policy_dual_auth_delete_model_json["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        key_policy_dual_auth_delete_model_json["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
+        key_policy_dual_auth_delete_model_json["type"] = "application/vnd.ibm.kms.policy+json"
+        key_policy_dual_auth_delete_model_json["dualAuthDelete"] = key_policy_dual_auth_delete_dual_auth_delete_model
 
         # Construct a model instance of KeyPolicyDualAuthDelete by calling from_dict on the json representation
-        key_policy_dual_auth_delete_model = KeyPolicyDualAuthDelete.from_dict(
-            key_policy_dual_auth_delete_model_json
-        )
+        key_policy_dual_auth_delete_model = KeyPolicyDualAuthDelete.from_dict(key_policy_dual_auth_delete_model_json)
         assert key_policy_dual_auth_delete_model != False
 
         # Construct a model instance of KeyPolicyDualAuthDelete by calling from_dict on the json representation
         key_policy_dual_auth_delete_model_dict = KeyPolicyDualAuthDelete.from_dict(
             key_policy_dual_auth_delete_model_json
         ).__dict__
-        key_policy_dual_auth_delete_model2 = KeyPolicyDualAuthDelete(
-            **key_policy_dual_auth_delete_model_dict
-        )
+        key_policy_dual_auth_delete_model2 = KeyPolicyDualAuthDelete(**key_policy_dual_auth_delete_model_dict)
 
         # Verify the model instances are equivalent
         assert key_policy_dual_auth_delete_model == key_policy_dual_auth_delete_model2
 
         # Convert model instance back to dict and verify no loss of data
-        key_policy_dual_auth_delete_model_json2 = (
-            key_policy_dual_auth_delete_model.to_dict()
-        )
-        assert (
-            key_policy_dual_auth_delete_model_json2
-            == key_policy_dual_auth_delete_model_json
-        )
+        key_policy_dual_auth_delete_model_json2 = key_policy_dual_auth_delete_model.to_dict()
+        assert key_policy_dual_auth_delete_model_json2 == key_policy_dual_auth_delete_model_json
 
 
 class TestModel_KeyPolicyDualAuthDeleteDualAuthDelete:
@@ -9982,30 +9381,21 @@ class TestModel_KeyPolicyDualAuthDeleteDualAuthDelete:
         key_policy_dual_auth_delete_dual_auth_delete_model_json["enabled"] = True
 
         # Construct a model instance of KeyPolicyDualAuthDeleteDualAuthDelete by calling from_dict on the json representation
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
-                key_policy_dual_auth_delete_dual_auth_delete_model_json
-            )
+        key_policy_dual_auth_delete_dual_auth_delete_model = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
+            key_policy_dual_auth_delete_dual_auth_delete_model_json
         )
         assert key_policy_dual_auth_delete_dual_auth_delete_model != False
 
         # Construct a model instance of KeyPolicyDualAuthDeleteDualAuthDelete by calling from_dict on the json representation
-        key_policy_dual_auth_delete_dual_auth_delete_model_dict = (
-            KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
-                key_policy_dual_auth_delete_dual_auth_delete_model_json
-            ).__dict__
-        )
-        key_policy_dual_auth_delete_dual_auth_delete_model2 = (
-            KeyPolicyDualAuthDeleteDualAuthDelete(
-                **key_policy_dual_auth_delete_dual_auth_delete_model_dict
-            )
+        key_policy_dual_auth_delete_dual_auth_delete_model_dict = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
+            key_policy_dual_auth_delete_dual_auth_delete_model_json
+        ).__dict__
+        key_policy_dual_auth_delete_dual_auth_delete_model2 = KeyPolicyDualAuthDeleteDualAuthDelete(
+            **key_policy_dual_auth_delete_dual_auth_delete_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-            == key_policy_dual_auth_delete_dual_auth_delete_model2
-        )
+        assert key_policy_dual_auth_delete_dual_auth_delete_model == key_policy_dual_auth_delete_dual_auth_delete_model2
 
         # Convert model instance back to dict and verify no loss of data
         key_policy_dual_auth_delete_dual_auth_delete_model_json2 = (
@@ -10039,15 +9429,11 @@ class TestModel_KeyPolicyRotation:
         key_policy_rotation_model_json["rotation"] = key_policy_rotation_rotation_model
 
         # Construct a model instance of KeyPolicyRotation by calling from_dict on the json representation
-        key_policy_rotation_model = KeyPolicyRotation.from_dict(
-            key_policy_rotation_model_json
-        )
+        key_policy_rotation_model = KeyPolicyRotation.from_dict(key_policy_rotation_model_json)
         assert key_policy_rotation_model != False
 
         # Construct a model instance of KeyPolicyRotation by calling from_dict on the json representation
-        key_policy_rotation_model_dict = KeyPolicyRotation.from_dict(
-            key_policy_rotation_model_json
-        ).__dict__
+        key_policy_rotation_model_dict = KeyPolicyRotation.from_dict(key_policy_rotation_model_json).__dict__
         key_policy_rotation_model2 = KeyPolicyRotation(**key_policy_rotation_model_dict)
 
         # Verify the model instances are equivalent
@@ -10074,30 +9460,21 @@ class TestModel_KeyPolicyRotationNonRequiredRotation:
         key_policy_rotation_non_required_rotation_model_json["interval_month"] = 1
 
         # Construct a model instance of KeyPolicyRotationNonRequiredRotation by calling from_dict on the json representation
-        key_policy_rotation_non_required_rotation_model = (
-            KeyPolicyRotationNonRequiredRotation.from_dict(
-                key_policy_rotation_non_required_rotation_model_json
-            )
+        key_policy_rotation_non_required_rotation_model = KeyPolicyRotationNonRequiredRotation.from_dict(
+            key_policy_rotation_non_required_rotation_model_json
         )
         assert key_policy_rotation_non_required_rotation_model != False
 
         # Construct a model instance of KeyPolicyRotationNonRequiredRotation by calling from_dict on the json representation
-        key_policy_rotation_non_required_rotation_model_dict = (
-            KeyPolicyRotationNonRequiredRotation.from_dict(
-                key_policy_rotation_non_required_rotation_model_json
-            ).__dict__
-        )
-        key_policy_rotation_non_required_rotation_model2 = (
-            KeyPolicyRotationNonRequiredRotation(
-                **key_policy_rotation_non_required_rotation_model_dict
-            )
+        key_policy_rotation_non_required_rotation_model_dict = KeyPolicyRotationNonRequiredRotation.from_dict(
+            key_policy_rotation_non_required_rotation_model_json
+        ).__dict__
+        key_policy_rotation_non_required_rotation_model2 = KeyPolicyRotationNonRequiredRotation(
+            **key_policy_rotation_non_required_rotation_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            key_policy_rotation_non_required_rotation_model
-            == key_policy_rotation_non_required_rotation_model2
-        )
+        assert key_policy_rotation_non_required_rotation_model == key_policy_rotation_non_required_rotation_model2
 
         # Convert model instance back to dict and verify no loss of data
         key_policy_rotation_non_required_rotation_model_json2 = (
@@ -10134,21 +9511,14 @@ class TestModel_KeyPolicyRotationRotation:
         key_policy_rotation_rotation_model_dict = KeyPolicyRotationRotation.from_dict(
             key_policy_rotation_rotation_model_json
         ).__dict__
-        key_policy_rotation_rotation_model2 = KeyPolicyRotationRotation(
-            **key_policy_rotation_rotation_model_dict
-        )
+        key_policy_rotation_rotation_model2 = KeyPolicyRotationRotation(**key_policy_rotation_rotation_model_dict)
 
         # Verify the model instances are equivalent
         assert key_policy_rotation_rotation_model == key_policy_rotation_rotation_model2
 
         # Convert model instance back to dict and verify no loss of data
-        key_policy_rotation_rotation_model_json2 = (
-            key_policy_rotation_rotation_model.to_dict()
-        )
-        assert (
-            key_policy_rotation_rotation_model_json2
-            == key_policy_rotation_rotation_model_json
-        )
+        key_policy_rotation_rotation_model_json2 = key_policy_rotation_rotation_model.to_dict()
+        assert key_policy_rotation_rotation_model_json2 == key_policy_rotation_rotation_model_json
 
 
 class TestModel_KeyRing:
@@ -10256,9 +9626,7 @@ class TestModel_KeyWithPayload:
         assert key_with_payload_model != False
 
         # Construct a model instance of KeyWithPayload by calling from_dict on the json representation
-        key_with_payload_model_dict = KeyWithPayload.from_dict(
-            key_with_payload_model_json
-        ).__dict__
+        key_with_payload_model_dict = KeyWithPayload.from_dict(key_with_payload_model_json).__dict__
         key_with_payload_model2 = KeyWithPayload(**key_with_payload_model_dict)
 
         # Verify the model instances are equivalent
@@ -10285,37 +9653,25 @@ class TestModel_KeyWithPayloadAlgorithmMetadata:
         key_with_payload_algorithm_metadata_model_json["mode"] = "CBC_PAD"
 
         # Construct a model instance of KeyWithPayloadAlgorithmMetadata by calling from_dict on the json representation
-        key_with_payload_algorithm_metadata_model = (
-            KeyWithPayloadAlgorithmMetadata.from_dict(
-                key_with_payload_algorithm_metadata_model_json
-            )
+        key_with_payload_algorithm_metadata_model = KeyWithPayloadAlgorithmMetadata.from_dict(
+            key_with_payload_algorithm_metadata_model_json
         )
         assert key_with_payload_algorithm_metadata_model != False
 
         # Construct a model instance of KeyWithPayloadAlgorithmMetadata by calling from_dict on the json representation
-        key_with_payload_algorithm_metadata_model_dict = (
-            KeyWithPayloadAlgorithmMetadata.from_dict(
-                key_with_payload_algorithm_metadata_model_json
-            ).__dict__
-        )
+        key_with_payload_algorithm_metadata_model_dict = KeyWithPayloadAlgorithmMetadata.from_dict(
+            key_with_payload_algorithm_metadata_model_json
+        ).__dict__
         key_with_payload_algorithm_metadata_model2 = KeyWithPayloadAlgorithmMetadata(
             **key_with_payload_algorithm_metadata_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            key_with_payload_algorithm_metadata_model
-            == key_with_payload_algorithm_metadata_model2
-        )
+        assert key_with_payload_algorithm_metadata_model == key_with_payload_algorithm_metadata_model2
 
         # Convert model instance back to dict and verify no loss of data
-        key_with_payload_algorithm_metadata_model_json2 = (
-            key_with_payload_algorithm_metadata_model.to_dict()
-        )
-        assert (
-            key_with_payload_algorithm_metadata_model_json2
-            == key_with_payload_algorithm_metadata_model_json
-        )
+        key_with_payload_algorithm_metadata_model_json2 = key_with_payload_algorithm_metadata_model.to_dict()
+        assert key_with_payload_algorithm_metadata_model_json2 == key_with_payload_algorithm_metadata_model_json
 
 
 class TestModel_ListKMIPAdapters:
@@ -10330,12 +9686,8 @@ class TestModel_ListKMIPAdapters:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        list_collection_metadata_model = (
-            {}
-        )  # ListCollectionMetadataCollectionMetadataWithTotalCount
-        list_collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        list_collection_metadata_model = {}  # ListCollectionMetadataCollectionMetadataWithTotalCount
+        list_collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         list_collection_metadata_model["collectionTotal"] = 1
         list_collection_metadata_model["totalCount"] = 1
 
@@ -10359,15 +9711,11 @@ class TestModel_ListKMIPAdapters:
         list_kmip_adapters_model_json["resources"] = [kmip_adapter_model]
 
         # Construct a model instance of ListKMIPAdapters by calling from_dict on the json representation
-        list_kmip_adapters_model = ListKMIPAdapters.from_dict(
-            list_kmip_adapters_model_json
-        )
+        list_kmip_adapters_model = ListKMIPAdapters.from_dict(list_kmip_adapters_model_json)
         assert list_kmip_adapters_model != False
 
         # Construct a model instance of ListKMIPAdapters by calling from_dict on the json representation
-        list_kmip_adapters_model_dict = ListKMIPAdapters.from_dict(
-            list_kmip_adapters_model_json
-        ).__dict__
+        list_kmip_adapters_model_dict = ListKMIPAdapters.from_dict(list_kmip_adapters_model_json).__dict__
         list_kmip_adapters_model2 = ListKMIPAdapters(**list_kmip_adapters_model_dict)
 
         # Verify the model instances are equivalent
@@ -10390,12 +9738,10 @@ class TestModel_ListKMIPAdaptersWithTotalCount:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_with_total_count_model = (
-            {}
-        )  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
+        collection_metadata_with_total_count_model[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -10415,45 +9761,29 @@ class TestModel_ListKMIPAdaptersWithTotalCount:
 
         # Construct a json representation of a ListKMIPAdaptersWithTotalCount model
         list_kmip_adapters_with_total_count_model_json = {}
-        list_kmip_adapters_with_total_count_model_json["metadata"] = (
-            collection_metadata_with_total_count_model
-        )
-        list_kmip_adapters_with_total_count_model_json["resources"] = [
-            kmip_adapter_model
-        ]
+        list_kmip_adapters_with_total_count_model_json["metadata"] = collection_metadata_with_total_count_model
+        list_kmip_adapters_with_total_count_model_json["resources"] = [kmip_adapter_model]
 
         # Construct a model instance of ListKMIPAdaptersWithTotalCount by calling from_dict on the json representation
-        list_kmip_adapters_with_total_count_model = (
-            ListKMIPAdaptersWithTotalCount.from_dict(
-                list_kmip_adapters_with_total_count_model_json
-            )
+        list_kmip_adapters_with_total_count_model = ListKMIPAdaptersWithTotalCount.from_dict(
+            list_kmip_adapters_with_total_count_model_json
         )
         assert list_kmip_adapters_with_total_count_model != False
 
         # Construct a model instance of ListKMIPAdaptersWithTotalCount by calling from_dict on the json representation
-        list_kmip_adapters_with_total_count_model_dict = (
-            ListKMIPAdaptersWithTotalCount.from_dict(
-                list_kmip_adapters_with_total_count_model_json
-            ).__dict__
-        )
+        list_kmip_adapters_with_total_count_model_dict = ListKMIPAdaptersWithTotalCount.from_dict(
+            list_kmip_adapters_with_total_count_model_json
+        ).__dict__
         list_kmip_adapters_with_total_count_model2 = ListKMIPAdaptersWithTotalCount(
             **list_kmip_adapters_with_total_count_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            list_kmip_adapters_with_total_count_model
-            == list_kmip_adapters_with_total_count_model2
-        )
+        assert list_kmip_adapters_with_total_count_model == list_kmip_adapters_with_total_count_model2
 
         # Convert model instance back to dict and verify no loss of data
-        list_kmip_adapters_with_total_count_model_json2 = (
-            list_kmip_adapters_with_total_count_model.to_dict()
-        )
-        assert (
-            list_kmip_adapters_with_total_count_model_json2
-            == list_kmip_adapters_with_total_count_model_json
-        )
+        list_kmip_adapters_with_total_count_model_json2 = list_kmip_adapters_with_total_count_model.to_dict()
+        assert list_kmip_adapters_with_total_count_model_json2 == list_kmip_adapters_with_total_count_model_json
 
 
 class TestModel_ListKMIPClientCertificates:
@@ -10468,12 +9798,8 @@ class TestModel_ListKMIPClientCertificates:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        list_collection_metadata_model = (
-            {}
-        )  # ListCollectionMetadataCollectionMetadataWithTotalCount
-        list_collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        list_collection_metadata_model = {}  # ListCollectionMetadataCollectionMetadataWithTotalCount
+        list_collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         list_collection_metadata_model["collectionTotal"] = 1
         list_collection_metadata_model["totalCount"] = 1
 
@@ -10486,12 +9812,8 @@ class TestModel_ListKMIPClientCertificates:
 
         # Construct a json representation of a ListKMIPClientCertificates model
         list_kmip_client_certificates_model_json = {}
-        list_kmip_client_certificates_model_json["metadata"] = (
-            list_collection_metadata_model
-        )
-        list_kmip_client_certificates_model_json["resources"] = [
-            kmip_client_certificate_model
-        ]
+        list_kmip_client_certificates_model_json["metadata"] = list_collection_metadata_model
+        list_kmip_client_certificates_model_json["resources"] = [kmip_client_certificate_model]
 
         # Construct a model instance of ListKMIPClientCertificates by calling from_dict on the json representation
         list_kmip_client_certificates_model = ListKMIPClientCertificates.from_dict(
@@ -10503,23 +9825,14 @@ class TestModel_ListKMIPClientCertificates:
         list_kmip_client_certificates_model_dict = ListKMIPClientCertificates.from_dict(
             list_kmip_client_certificates_model_json
         ).__dict__
-        list_kmip_client_certificates_model2 = ListKMIPClientCertificates(
-            **list_kmip_client_certificates_model_dict
-        )
+        list_kmip_client_certificates_model2 = ListKMIPClientCertificates(**list_kmip_client_certificates_model_dict)
 
         # Verify the model instances are equivalent
-        assert (
-            list_kmip_client_certificates_model == list_kmip_client_certificates_model2
-        )
+        assert list_kmip_client_certificates_model == list_kmip_client_certificates_model2
 
         # Convert model instance back to dict and verify no loss of data
-        list_kmip_client_certificates_model_json2 = (
-            list_kmip_client_certificates_model.to_dict()
-        )
-        assert (
-            list_kmip_client_certificates_model_json2
-            == list_kmip_client_certificates_model_json
-        )
+        list_kmip_client_certificates_model_json2 = list_kmip_client_certificates_model.to_dict()
+        assert list_kmip_client_certificates_model_json2 == list_kmip_client_certificates_model_json
 
 
 class TestModel_ListKMIPObjectsWithTotalCount:
@@ -10534,12 +9847,10 @@ class TestModel_ListKMIPObjectsWithTotalCount:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_with_total_count_model = (
-            {}
-        )  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
+        collection_metadata_with_total_count_model[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -10548,61 +9859,41 @@ class TestModel_ListKMIPObjectsWithTotalCount:
         kmip_object_model["kmip_object_type"] = 2
         kmip_object_model["state"] = 1
         kmip_object_model["created_at"] = "2019-01-01T12:00:00Z"
-        kmip_object_model["created_by_kmip_client_cert_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_object_model["created_by_kmip_client_cert_id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_object_model["created_by"] = "testString"
         kmip_object_model["updated_at"] = "2019-01-01T12:00:00Z"
-        kmip_object_model["updated_by_kmip_client_cert_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_object_model["updated_by_kmip_client_cert_id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_object_model["updated_by"] = "testString"
         kmip_object_model["destroyed_at"] = "2019-01-01T12:00:00Z"
-        kmip_object_model["destroyed_by_kmip_client_cert_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_object_model["destroyed_by_kmip_client_cert_id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_object_model["destroyed_by"] = "testString"
         kmip_object_model["recoverable"] = True
 
         # Construct a json representation of a ListKMIPObjectsWithTotalCount model
         list_kmip_objects_with_total_count_model_json = {}
-        list_kmip_objects_with_total_count_model_json["metadata"] = (
-            collection_metadata_with_total_count_model
-        )
+        list_kmip_objects_with_total_count_model_json["metadata"] = collection_metadata_with_total_count_model
         list_kmip_objects_with_total_count_model_json["resources"] = [kmip_object_model]
 
         # Construct a model instance of ListKMIPObjectsWithTotalCount by calling from_dict on the json representation
-        list_kmip_objects_with_total_count_model = (
-            ListKMIPObjectsWithTotalCount.from_dict(
-                list_kmip_objects_with_total_count_model_json
-            )
+        list_kmip_objects_with_total_count_model = ListKMIPObjectsWithTotalCount.from_dict(
+            list_kmip_objects_with_total_count_model_json
         )
         assert list_kmip_objects_with_total_count_model != False
 
         # Construct a model instance of ListKMIPObjectsWithTotalCount by calling from_dict on the json representation
-        list_kmip_objects_with_total_count_model_dict = (
-            ListKMIPObjectsWithTotalCount.from_dict(
-                list_kmip_objects_with_total_count_model_json
-            ).__dict__
-        )
+        list_kmip_objects_with_total_count_model_dict = ListKMIPObjectsWithTotalCount.from_dict(
+            list_kmip_objects_with_total_count_model_json
+        ).__dict__
         list_kmip_objects_with_total_count_model2 = ListKMIPObjectsWithTotalCount(
             **list_kmip_objects_with_total_count_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            list_kmip_objects_with_total_count_model
-            == list_kmip_objects_with_total_count_model2
-        )
+        assert list_kmip_objects_with_total_count_model == list_kmip_objects_with_total_count_model2
 
         # Convert model instance back to dict and verify no loss of data
-        list_kmip_objects_with_total_count_model_json2 = (
-            list_kmip_objects_with_total_count_model.to_dict()
-        )
-        assert (
-            list_kmip_objects_with_total_count_model_json2
-            == list_kmip_objects_with_total_count_model_json
-        )
+        list_kmip_objects_with_total_count_model_json2 = list_kmip_objects_with_total_count_model.to_dict()
+        assert list_kmip_objects_with_total_count_model_json2 == list_kmip_objects_with_total_count_model_json
 
 
 class TestModel_ListKMIPPartialClientCertificatesWithTotalCount:
@@ -10617,20 +9908,16 @@ class TestModel_ListKMIPPartialClientCertificatesWithTotalCount:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_with_total_count_model = (
-            {}
-        )  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
+        collection_metadata_with_total_count_model[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
         kmip_client_partial_certificate_model = {}  # KMIPClientPartialCertificate
         kmip_client_partial_certificate_model["name"] = "testString"
-        kmip_client_partial_certificate_model["id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_client_partial_certificate_model["id"] = "feddecaf-0000-0000-0000-1234567890ab"
         kmip_client_partial_certificate_model["created_at"] = "2019-01-01T12:00:00Z"
         kmip_client_partial_certificate_model["created_by"] = "testString"
 
@@ -10639,9 +9926,9 @@ class TestModel_ListKMIPPartialClientCertificatesWithTotalCount:
         list_kmip_partial_client_certificates_with_total_count_model_json[
             "metadata"
         ] = collection_metadata_with_total_count_model
-        list_kmip_partial_client_certificates_with_total_count_model_json[
-            "resources"
-        ] = [kmip_client_partial_certificate_model]
+        list_kmip_partial_client_certificates_with_total_count_model_json["resources"] = [
+            kmip_client_partial_certificate_model
+        ]
 
         # Construct a model instance of ListKMIPPartialClientCertificatesWithTotalCount by calling from_dict on the json representation
         list_kmip_partial_client_certificates_with_total_count_model = (
@@ -10657,10 +9944,8 @@ class TestModel_ListKMIPPartialClientCertificatesWithTotalCount:
                 list_kmip_partial_client_certificates_with_total_count_model_json
             ).__dict__
         )
-        list_kmip_partial_client_certificates_with_total_count_model2 = (
-            ListKMIPPartialClientCertificatesWithTotalCount(
-                **list_kmip_partial_client_certificates_with_total_count_model_dict
-            )
+        list_kmip_partial_client_certificates_with_total_count_model2 = ListKMIPPartialClientCertificatesWithTotalCount(
+            **list_kmip_partial_client_certificates_with_total_count_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -10691,12 +9976,10 @@ class TestModel_ListKeyRingsWithTotalCount:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_with_total_count_model = (
-            {}
-        )  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
+        collection_metadata_with_total_count_model[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -10707,9 +9990,7 @@ class TestModel_ListKeyRingsWithTotalCount:
 
         # Construct a json representation of a ListKeyRingsWithTotalCount model
         list_key_rings_with_total_count_model_json = {}
-        list_key_rings_with_total_count_model_json["metadata"] = (
-            collection_metadata_with_total_count_model
-        )
+        list_key_rings_with_total_count_model_json["metadata"] = collection_metadata_with_total_count_model
         list_key_rings_with_total_count_model_json["resources"] = [key_ring_model]
 
         # Construct a model instance of ListKeyRingsWithTotalCount by calling from_dict on the json representation
@@ -10719,29 +10000,19 @@ class TestModel_ListKeyRingsWithTotalCount:
         assert list_key_rings_with_total_count_model != False
 
         # Construct a model instance of ListKeyRingsWithTotalCount by calling from_dict on the json representation
-        list_key_rings_with_total_count_model_dict = (
-            ListKeyRingsWithTotalCount.from_dict(
-                list_key_rings_with_total_count_model_json
-            ).__dict__
-        )
+        list_key_rings_with_total_count_model_dict = ListKeyRingsWithTotalCount.from_dict(
+            list_key_rings_with_total_count_model_json
+        ).__dict__
         list_key_rings_with_total_count_model2 = ListKeyRingsWithTotalCount(
             **list_key_rings_with_total_count_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            list_key_rings_with_total_count_model
-            == list_key_rings_with_total_count_model2
-        )
+        assert list_key_rings_with_total_count_model == list_key_rings_with_total_count_model2
 
         # Convert model instance back to dict and verify no loss of data
-        list_key_rings_with_total_count_model_json2 = (
-            list_key_rings_with_total_count_model.to_dict()
-        )
-        assert (
-            list_key_rings_with_total_count_model_json2
-            == list_key_rings_with_total_count_model_json
-        )
+        list_key_rings_with_total_count_model_json2 = list_key_rings_with_total_count_model.to_dict()
+        assert list_key_rings_with_total_count_model_json2 == list_key_rings_with_total_count_model_json
 
 
 class TestModel_ListKeyVersions:
@@ -10756,12 +10027,8 @@ class TestModel_ListKeyVersions:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        list_collection_metadata_model = (
-            {}
-        )  # ListCollectionMetadataCollectionMetadataWithTotalCount
-        list_collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        list_collection_metadata_model = {}  # ListCollectionMetadataCollectionMetadataWithTotalCount
+        list_collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         list_collection_metadata_model["collectionTotal"] = 1
         list_collection_metadata_model["totalCount"] = 1
 
@@ -10773,15 +10040,11 @@ class TestModel_ListKeyVersions:
         list_key_versions_model_json["resources"] = [key_version_model]
 
         # Construct a model instance of ListKeyVersions by calling from_dict on the json representation
-        list_key_versions_model = ListKeyVersions.from_dict(
-            list_key_versions_model_json
-        )
+        list_key_versions_model = ListKeyVersions.from_dict(list_key_versions_model_json)
         assert list_key_versions_model != False
 
         # Construct a model instance of ListKeyVersions by calling from_dict on the json representation
-        list_key_versions_model_dict = ListKeyVersions.from_dict(
-            list_key_versions_model_json
-        ).__dict__
+        list_key_versions_model_dict = ListKeyVersions.from_dict(list_key_versions_model_json).__dict__
         list_key_versions_model2 = ListKeyVersions(**list_key_versions_model_dict)
 
         # Verify the model instances are equivalent
@@ -10804,23 +10067,17 @@ class TestModel_ListKeys:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        list_keys_metadata_properties_search_query_model = (
-            {}
-        )  # ListKeysMetadataPropertiesSearchQuery
+        list_keys_metadata_properties_search_query_model = {}  # ListKeysMetadataPropertiesSearchQuery
         list_keys_metadata_properties_search_query_model["query"] = "testString"
         list_keys_metadata_properties_search_query_model["scopes"] = ["name"]
         list_keys_metadata_properties_search_query_model["not"] = True
         list_keys_metadata_properties_search_query_model["exact"] = True
 
         collection_metadata_list_keys_model = {}  # CollectionMetadataListKeys
-        collection_metadata_list_keys_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_list_keys_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_list_keys_model["collectionTotal"] = 1
         collection_metadata_list_keys_model["incompleteSearch"] = True
-        collection_metadata_list_keys_model["searchQuery"] = (
-            list_keys_metadata_properties_search_query_model
-        )
+        collection_metadata_list_keys_model["searchQuery"] = list_keys_metadata_properties_search_query_model
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
         dual_auth_key_metadata_model["enabled"] = True
@@ -10887,30 +10144,21 @@ class TestModel_ListKeysMetadataPropertiesSearchQuery:
         list_keys_metadata_properties_search_query_model_json["exact"] = True
 
         # Construct a model instance of ListKeysMetadataPropertiesSearchQuery by calling from_dict on the json representation
-        list_keys_metadata_properties_search_query_model = (
-            ListKeysMetadataPropertiesSearchQuery.from_dict(
-                list_keys_metadata_properties_search_query_model_json
-            )
+        list_keys_metadata_properties_search_query_model = ListKeysMetadataPropertiesSearchQuery.from_dict(
+            list_keys_metadata_properties_search_query_model_json
         )
         assert list_keys_metadata_properties_search_query_model != False
 
         # Construct a model instance of ListKeysMetadataPropertiesSearchQuery by calling from_dict on the json representation
-        list_keys_metadata_properties_search_query_model_dict = (
-            ListKeysMetadataPropertiesSearchQuery.from_dict(
-                list_keys_metadata_properties_search_query_model_json
-            ).__dict__
-        )
-        list_keys_metadata_properties_search_query_model2 = (
-            ListKeysMetadataPropertiesSearchQuery(
-                **list_keys_metadata_properties_search_query_model_dict
-            )
+        list_keys_metadata_properties_search_query_model_dict = ListKeysMetadataPropertiesSearchQuery.from_dict(
+            list_keys_metadata_properties_search_query_model_json
+        ).__dict__
+        list_keys_metadata_properties_search_query_model2 = ListKeysMetadataPropertiesSearchQuery(
+            **list_keys_metadata_properties_search_query_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            list_keys_metadata_properties_search_query_model
-            == list_keys_metadata_properties_search_query_model2
-        )
+        assert list_keys_metadata_properties_search_query_model == list_keys_metadata_properties_search_query_model2
 
         # Convert model instance back to dict and verify no loss of data
         list_keys_metadata_properties_search_query_model_json2 = (
@@ -10937,15 +10185,11 @@ class TestModel_MetricsProperties:
         metrics_properties_model_json["enabled"] = True
 
         # Construct a model instance of MetricsProperties by calling from_dict on the json representation
-        metrics_properties_model = MetricsProperties.from_dict(
-            metrics_properties_model_json
-        )
+        metrics_properties_model = MetricsProperties.from_dict(metrics_properties_model_json)
         assert metrics_properties_model != False
 
         # Construct a model instance of MetricsProperties by calling from_dict on the json representation
-        metrics_properties_model_dict = MetricsProperties.from_dict(
-            metrics_properties_model_json
-        ).__dict__
+        metrics_properties_model_dict = MetricsProperties.from_dict(metrics_properties_model_json).__dict__
         metrics_properties_model2 = MetricsProperties(**metrics_properties_model_dict)
 
         # Verify the model instances are equivalent
@@ -10969,9 +10213,7 @@ class TestModel_PatchKeyResponseBody:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
@@ -11003,23 +10245,15 @@ class TestModel_PatchKeyResponseBody:
         # Construct a json representation of a PatchKeyResponseBody model
         patch_key_response_body_model_json = {}
         patch_key_response_body_model_json["metadata"] = collection_metadata_model
-        patch_key_response_body_model_json["resources"] = [
-            key_full_representation_model
-        ]
+        patch_key_response_body_model_json["resources"] = [key_full_representation_model]
 
         # Construct a model instance of PatchKeyResponseBody by calling from_dict on the json representation
-        patch_key_response_body_model = PatchKeyResponseBody.from_dict(
-            patch_key_response_body_model_json
-        )
+        patch_key_response_body_model = PatchKeyResponseBody.from_dict(patch_key_response_body_model_json)
         assert patch_key_response_body_model != False
 
         # Construct a model instance of PatchKeyResponseBody by calling from_dict on the json representation
-        patch_key_response_body_model_dict = PatchKeyResponseBody.from_dict(
-            patch_key_response_body_model_json
-        ).__dict__
-        patch_key_response_body_model2 = PatchKeyResponseBody(
-            **patch_key_response_body_model_dict
-        )
+        patch_key_response_body_model_dict = PatchKeyResponseBody.from_dict(patch_key_response_body_model_json).__dict__
+        patch_key_response_body_model2 = PatchKeyResponseBody(**patch_key_response_body_model_dict)
 
         # Verify the model instances are equivalent
         assert patch_key_response_body_model == patch_key_response_body_model2
@@ -11042,9 +10276,7 @@ class TestModel_PurgeKey:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         dual_auth_key_metadata_model = {}  # DualAuthKeyMetadata
@@ -11108,18 +10340,12 @@ class TestModel_RegistrationResource:
         registration_resource_model_json = {}
 
         # Construct a model instance of RegistrationResource by calling from_dict on the json representation
-        registration_resource_model = RegistrationResource.from_dict(
-            registration_resource_model_json
-        )
+        registration_resource_model = RegistrationResource.from_dict(registration_resource_model_json)
         assert registration_resource_model != False
 
         # Construct a model instance of RegistrationResource by calling from_dict on the json representation
-        registration_resource_model_dict = RegistrationResource.from_dict(
-            registration_resource_model_json
-        ).__dict__
-        registration_resource_model2 = RegistrationResource(
-            **registration_resource_model_dict
-        )
+        registration_resource_model_dict = RegistrationResource.from_dict(registration_resource_model_json).__dict__
+        registration_resource_model2 = RegistrationResource(**registration_resource_model_dict)
 
         # Verify the model instances are equivalent
         assert registration_resource_model == registration_resource_model2
@@ -11141,12 +10367,10 @@ class TestModel_RegistrationWithTotalCount:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_with_total_count_model = (
-            {}
-        )  # CollectionMetadataWithTotalCount
-        collection_metadata_with_total_count_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_with_total_count_model = {}  # CollectionMetadataWithTotalCount
+        collection_metadata_with_total_count_model[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_with_total_count_model["collectionTotal"] = 1
         collection_metadata_with_total_count_model["totalCount"] = 1
 
@@ -11154,12 +10378,8 @@ class TestModel_RegistrationWithTotalCount:
 
         # Construct a json representation of a RegistrationWithTotalCount model
         registration_with_total_count_model_json = {}
-        registration_with_total_count_model_json["metadata"] = (
-            collection_metadata_with_total_count_model
-        )
-        registration_with_total_count_model_json["resources"] = [
-            registration_resource_model
-        ]
+        registration_with_total_count_model_json["metadata"] = collection_metadata_with_total_count_model
+        registration_with_total_count_model_json["resources"] = [registration_resource_model]
 
         # Construct a model instance of RegistrationWithTotalCount by calling from_dict on the json representation
         registration_with_total_count_model = RegistrationWithTotalCount.from_dict(
@@ -11171,23 +10391,14 @@ class TestModel_RegistrationWithTotalCount:
         registration_with_total_count_model_dict = RegistrationWithTotalCount.from_dict(
             registration_with_total_count_model_json
         ).__dict__
-        registration_with_total_count_model2 = RegistrationWithTotalCount(
-            **registration_with_total_count_model_dict
-        )
+        registration_with_total_count_model2 = RegistrationWithTotalCount(**registration_with_total_count_model_dict)
 
         # Verify the model instances are equivalent
-        assert (
-            registration_with_total_count_model == registration_with_total_count_model2
-        )
+        assert registration_with_total_count_model == registration_with_total_count_model2
 
         # Convert model instance back to dict and verify no loss of data
-        registration_with_total_count_model_json2 = (
-            registration_with_total_count_model.to_dict()
-        )
-        assert (
-            registration_with_total_count_model_json2
-            == registration_with_total_count_model_json
-        )
+        registration_with_total_count_model_json2 = registration_with_total_count_model.to_dict()
+        assert registration_with_total_count_model_json2 == registration_with_total_count_model_json
 
 
 class TestModel_RewrapKeyResponseBody:
@@ -11205,27 +10416,21 @@ class TestModel_RewrapKeyResponseBody:
         rewrap_key_response_body_model_json["ciphertext"] = "testString"
 
         # Construct a model instance of RewrapKeyResponseBody by calling from_dict on the json representation
-        rewrap_key_response_body_model = RewrapKeyResponseBody.from_dict(
-            rewrap_key_response_body_model_json
-        )
+        rewrap_key_response_body_model = RewrapKeyResponseBody.from_dict(rewrap_key_response_body_model_json)
         assert rewrap_key_response_body_model != False
 
         # Construct a model instance of RewrapKeyResponseBody by calling from_dict on the json representation
         rewrap_key_response_body_model_dict = RewrapKeyResponseBody.from_dict(
             rewrap_key_response_body_model_json
         ).__dict__
-        rewrap_key_response_body_model2 = RewrapKeyResponseBody(
-            **rewrap_key_response_body_model_dict
-        )
+        rewrap_key_response_body_model2 = RewrapKeyResponseBody(**rewrap_key_response_body_model_dict)
 
         # Verify the model instances are equivalent
         assert rewrap_key_response_body_model == rewrap_key_response_body_model2
 
         # Convert model instance back to dict and verify no loss of data
         rewrap_key_response_body_model_json2 = rewrap_key_response_body_model.to_dict()
-        assert (
-            rewrap_key_response_body_model_json2 == rewrap_key_response_body_model_json
-        )
+        assert rewrap_key_response_body_model_json2 == rewrap_key_response_body_model_json
 
 
 class TestModel_RewrappedKeyVersionRewrappedKeyVersion:
@@ -11242,30 +10447,21 @@ class TestModel_RewrappedKeyVersionRewrappedKeyVersion:
         rewrapped_key_version_rewrapped_key_version_model_json = {}
 
         # Construct a model instance of RewrappedKeyVersionRewrappedKeyVersion by calling from_dict on the json representation
-        rewrapped_key_version_rewrapped_key_version_model = (
-            RewrappedKeyVersionRewrappedKeyVersion.from_dict(
-                rewrapped_key_version_rewrapped_key_version_model_json
-            )
+        rewrapped_key_version_rewrapped_key_version_model = RewrappedKeyVersionRewrappedKeyVersion.from_dict(
+            rewrapped_key_version_rewrapped_key_version_model_json
         )
         assert rewrapped_key_version_rewrapped_key_version_model != False
 
         # Construct a model instance of RewrappedKeyVersionRewrappedKeyVersion by calling from_dict on the json representation
-        rewrapped_key_version_rewrapped_key_version_model_dict = (
-            RewrappedKeyVersionRewrappedKeyVersion.from_dict(
-                rewrapped_key_version_rewrapped_key_version_model_json
-            ).__dict__
-        )
-        rewrapped_key_version_rewrapped_key_version_model2 = (
-            RewrappedKeyVersionRewrappedKeyVersion(
-                **rewrapped_key_version_rewrapped_key_version_model_dict
-            )
+        rewrapped_key_version_rewrapped_key_version_model_dict = RewrappedKeyVersionRewrappedKeyVersion.from_dict(
+            rewrapped_key_version_rewrapped_key_version_model_json
+        ).__dict__
+        rewrapped_key_version_rewrapped_key_version_model2 = RewrappedKeyVersionRewrappedKeyVersion(
+            **rewrapped_key_version_rewrapped_key_version_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            rewrapped_key_version_rewrapped_key_version_model
-            == rewrapped_key_version_rewrapped_key_version_model2
-        )
+        assert rewrapped_key_version_rewrapped_key_version_model == rewrapped_key_version_rewrapped_key_version_model2
 
         # Convert model instance back to dict and verify no loss of data
         rewrapped_key_version_rewrapped_key_version_model_json2 = (
@@ -11293,18 +10489,12 @@ class TestModel_RotationKeyMetadata:
         rotation_key_metadata_model_json["interval_month"] = 3
 
         # Construct a model instance of RotationKeyMetadata by calling from_dict on the json representation
-        rotation_key_metadata_model = RotationKeyMetadata.from_dict(
-            rotation_key_metadata_model_json
-        )
+        rotation_key_metadata_model = RotationKeyMetadata.from_dict(rotation_key_metadata_model_json)
         assert rotation_key_metadata_model != False
 
         # Construct a model instance of RotationKeyMetadata by calling from_dict on the json representation
-        rotation_key_metadata_model_dict = RotationKeyMetadata.from_dict(
-            rotation_key_metadata_model_json
-        ).__dict__
-        rotation_key_metadata_model2 = RotationKeyMetadata(
-            **rotation_key_metadata_model_dict
-        )
+        rotation_key_metadata_model_dict = RotationKeyMetadata.from_dict(rotation_key_metadata_model_json).__dict__
+        rotation_key_metadata_model2 = RotationKeyMetadata(**rotation_key_metadata_model_dict)
 
         # Verify the model instances are equivalent
         assert rotation_key_metadata_model == rotation_key_metadata_model2
@@ -11328,9 +10518,7 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        instance_policy_allowed_ip_policy_data_attributes_model = (
-            {}
-        )  # InstancePolicyAllowedIPPolicyDataAttributes
+        instance_policy_allowed_ip_policy_data_attributes_model = {}  # InstancePolicyAllowedIPPolicyDataAttributes
         instance_policy_allowed_ip_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -11339,18 +10527,14 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
             "2001:db8::/60",
         ]
 
-        instance_policy_allowed_ip_policy_data_model = (
-            {}
-        )  # InstancePolicyAllowedIPPolicyData
+        instance_policy_allowed_ip_policy_data_model = {}  # InstancePolicyAllowedIPPolicyData
         instance_policy_allowed_ip_policy_data_model["enabled"] = True
-        instance_policy_allowed_ip_policy_data_model["attributes"] = (
-            instance_policy_allowed_ip_policy_data_attributes_model
-        )
+        instance_policy_allowed_ip_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_ip_policy_data_attributes_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json = {}
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json[
             "policy_type"
         ] = "allowedIP"
@@ -11359,20 +10543,23 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
         ] = instance_policy_allowed_ip_policy_data_model
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model = SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_dict = SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model2 = SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem(
-            **set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_dict
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem(
+                **set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -11408,22 +10595,16 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResources
         instance_policy_allowed_network_policy_data_attributes_model = (
             {}
         )  # InstancePolicyAllowedNetworkPolicyDataAttributes
-        instance_policy_allowed_network_policy_data_attributes_model[
-            "allowed_network"
-        ] = "public-and-private"
+        instance_policy_allowed_network_policy_data_attributes_model["allowed_network"] = "public-and-private"
 
-        instance_policy_allowed_network_policy_data_model = (
-            {}
-        )  # InstancePolicyAllowedNetworkPolicyData
+        instance_policy_allowed_network_policy_data_model = {}  # InstancePolicyAllowedNetworkPolicyData
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model["attributes"] = (
-            instance_policy_allowed_network_policy_data_attributes_model
-        )
+        instance_policy_allowed_network_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_network_policy_data_attributes_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json = {}
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json[
             "policy_type"
         ] = "allowedNetwork"
@@ -11432,20 +10613,23 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResources
         ] = instance_policy_allowed_network_policy_data_model
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_dict = SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model2 = SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem(
-            **set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_dict
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem(
+                **set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -11481,34 +10665,20 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessRe
         instance_policy_key_create_import_access_policy_data_attributes_model = (
             {}
         )  # InstancePolicyKeyCreateImportAccessPolicyDataAttributes
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "create_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "create_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "import_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "import_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "enforce_token"
-        ] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["create_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["create_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["import_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["import_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["enforce_token"] = True
 
-        instance_policy_key_create_import_access_policy_data_model = (
-            {}
-        )  # InstancePolicyKeyCreateImportAccessPolicyData
+        instance_policy_key_create_import_access_policy_data_model = {}  # InstancePolicyKeyCreateImportAccessPolicyData
         instance_policy_key_create_import_access_policy_data_model["enabled"] = True
-        instance_policy_key_create_import_access_policy_data_model["attributes"] = (
-            instance_policy_key_create_import_access_policy_data_attributes_model
-        )
+        instance_policy_key_create_import_access_policy_data_model[
+            "attributes"
+        ] = instance_policy_key_create_import_access_policy_data_attributes_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json = {}
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json[
             "policy_type"
         ] = "keyCreateImportAccess"
@@ -11517,20 +10687,23 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessRe
         ] = instance_policy_key_create_import_access_policy_data_model
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model = SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_dict = SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model2 = SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem(
-            **set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_dict
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem(
+                **set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -11567,31 +10740,30 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem:
         metrics_properties_model["enabled"] = True
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json = (
-            {}
-        )
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json[
-            "policy_type"
-        ] = "metrics"
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json = {}
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json["policy_type"] = "metrics"
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json[
             "policy_data"
         ] = metrics_properties_model
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model = SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_dict = SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model2 = SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem(
-            **set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_dict
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem(
+                **set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -11624,45 +10796,38 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        instance_policy_rotation_policy_data_attributes_model = (
-            {}
-        )  # InstancePolicyRotationPolicyDataAttributes
+        instance_policy_rotation_policy_data_attributes_model = {}  # InstancePolicyRotationPolicyDataAttributes
         instance_policy_rotation_policy_data_attributes_model["interval_month"] = 3
 
-        instance_policy_rotation_policy_data_model = (
-            {}
-        )  # InstancePolicyRotationPolicyData
+        instance_policy_rotation_policy_data_model = {}  # InstancePolicyRotationPolicyData
         instance_policy_rotation_policy_data_model["enabled"] = True
-        instance_policy_rotation_policy_data_model["attributes"] = (
-            instance_policy_rotation_policy_data_attributes_model
-        )
+        instance_policy_rotation_policy_data_model["attributes"] = instance_policy_rotation_policy_data_attributes_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem model
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json = (
-            {}
-        )
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json[
-            "policy_type"
-        ] = "rotation"
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json = {}
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json["policy_type"] = "rotation"
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json[
             "policy_data"
         ] = instance_policy_rotation_policy_data_model
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model = SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_dict = SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem.from_dict(
-            set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model2 = SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem(
-            **set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_dict
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem.from_dict(
+                set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem(
+                **set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -11698,9 +10863,7 @@ class TestModel_SetInstancePolicyDualAuthDeleteResourcesItem:
 
         # Construct a json representation of a SetInstancePolicyDualAuthDeleteResourcesItem model
         set_instance_policy_dual_auth_delete_resources_item_model_json = {}
-        set_instance_policy_dual_auth_delete_resources_item_model_json[
-            "policy_type"
-        ] = "dualAuthDelete"
+        set_instance_policy_dual_auth_delete_resources_item_model_json["policy_type"] = "dualAuthDelete"
         set_instance_policy_dual_auth_delete_resources_item_model_json[
             "policy_data"
         ] = dual_auth_delete_properties_model
@@ -11719,10 +10882,8 @@ class TestModel_SetInstancePolicyDualAuthDeleteResourcesItem:
                 set_instance_policy_dual_auth_delete_resources_item_model_json
             ).__dict__
         )
-        set_instance_policy_dual_auth_delete_resources_item_model2 = (
-            SetInstancePolicyDualAuthDeleteResourcesItem(
-                **set_instance_policy_dual_auth_delete_resources_item_model_dict
-            )
+        set_instance_policy_dual_auth_delete_resources_item_model2 = SetInstancePolicyDualAuthDeleteResourcesItem(
+            **set_instance_policy_dual_auth_delete_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -11759,77 +10920,52 @@ class TestModel_SetMultipleInstancePoliciesResourcesItem:
         set_multiple_instance_policies_resources_item_policy_data_attributes_model[
             "allowed_network"
         ] = "public-and-private"
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "allowed_ip"
-        ] = [
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
             "198.51.100.0/24",
             "2001:db8::/60",
         ]
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "create_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "create_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "import_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "import_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "enforce_token"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "interval_month"
-        ] = 3
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["create_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["create_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["import_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["import_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["enforce_token"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["interval_month"] = 3
 
         set_multiple_instance_policies_resources_item_policy_data_model = (
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyData
-        set_multiple_instance_policies_resources_item_policy_data_model["enabled"] = (
-            True
-        )
+        set_multiple_instance_policies_resources_item_policy_data_model["enabled"] = True
         set_multiple_instance_policies_resources_item_policy_data_model[
             "attributes"
         ] = set_multiple_instance_policies_resources_item_policy_data_attributes_model
 
         # Construct a json representation of a SetMultipleInstancePoliciesResourcesItem model
         set_multiple_instance_policies_resources_item_model_json = {}
-        set_multiple_instance_policies_resources_item_model_json["policy_type"] = (
-            "allowedNetwork"
-        )
-        set_multiple_instance_policies_resources_item_model_json["policy_data"] = (
-            set_multiple_instance_policies_resources_item_policy_data_model
-        )
+        set_multiple_instance_policies_resources_item_model_json["policy_type"] = "allowedNetwork"
+        set_multiple_instance_policies_resources_item_model_json[
+            "policy_data"
+        ] = set_multiple_instance_policies_resources_item_policy_data_model
 
         # Construct a model instance of SetMultipleInstancePoliciesResourcesItem by calling from_dict on the json representation
-        set_multiple_instance_policies_resources_item_model = (
-            SetMultipleInstancePoliciesResourcesItem.from_dict(
-                set_multiple_instance_policies_resources_item_model_json
-            )
+        set_multiple_instance_policies_resources_item_model = SetMultipleInstancePoliciesResourcesItem.from_dict(
+            set_multiple_instance_policies_resources_item_model_json
         )
         assert set_multiple_instance_policies_resources_item_model != False
 
         # Construct a model instance of SetMultipleInstancePoliciesResourcesItem by calling from_dict on the json representation
-        set_multiple_instance_policies_resources_item_model_dict = (
-            SetMultipleInstancePoliciesResourcesItem.from_dict(
-                set_multiple_instance_policies_resources_item_model_json
-            ).__dict__
-        )
-        set_multiple_instance_policies_resources_item_model2 = (
-            SetMultipleInstancePoliciesResourcesItem(
-                **set_multiple_instance_policies_resources_item_model_dict
-            )
+        set_multiple_instance_policies_resources_item_model_dict = SetMultipleInstancePoliciesResourcesItem.from_dict(
+            set_multiple_instance_policies_resources_item_model_json
+        ).__dict__
+        set_multiple_instance_policies_resources_item_model2 = SetMultipleInstancePoliciesResourcesItem(
+            **set_multiple_instance_policies_resources_item_model_dict
         )
 
         # Verify the model instances are equivalent
         assert (
-            set_multiple_instance_policies_resources_item_model
-            == set_multiple_instance_policies_resources_item_model2
+            set_multiple_instance_policies_resources_item_model == set_multiple_instance_policies_resources_item_model2
         )
 
         # Convert model instance back to dict and verify no loss of data
@@ -11862,39 +10998,23 @@ class TestModel_SetMultipleInstancePoliciesResourcesItemPolicyData:
         set_multiple_instance_policies_resources_item_policy_data_attributes_model[
             "allowed_network"
         ] = "public-and-private"
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "allowed_ip"
-        ] = [
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
             "198.51.100.0/24",
             "2001:db8::/60",
         ]
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "create_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "create_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "import_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "import_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "enforce_token"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "interval_month"
-        ] = 3
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["create_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["create_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["import_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["import_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["enforce_token"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["interval_month"] = 3
 
         # Construct a json representation of a SetMultipleInstancePoliciesResourcesItemPolicyData model
         set_multiple_instance_policies_resources_item_policy_data_model_json = {}
-        set_multiple_instance_policies_resources_item_policy_data_model_json[
-            "enabled"
-        ] = True
+        set_multiple_instance_policies_resources_item_policy_data_model_json["enabled"] = True
         set_multiple_instance_policies_resources_item_policy_data_model_json[
             "attributes"
         ] = set_multiple_instance_policies_resources_item_policy_data_attributes_model
@@ -11948,55 +11068,42 @@ class TestModel_SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes:
         """
 
         # Construct a json representation of a SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes model
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json = (
-            {}
-        )
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json = {}
         set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
             "allowed_network"
         ] = "public-and-private"
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "allowed_ip"
-        ] = [
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
             "198.51.100.0/24",
             "2001:db8::/60",
         ]
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "create_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "create_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "import_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "import_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "enforce_token"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json[
-            "interval_month"
-        ] = 3
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["create_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["create_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["import_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["import_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["enforce_token"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_json["interval_month"] = 3
 
         # Construct a model instance of SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes by calling from_dict on the json representation
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model = SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes.from_dict(
-            set_multiple_instance_policies_resources_item_policy_data_attributes_model_json
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model = (
+            SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes.from_dict(
+                set_multiple_instance_policies_resources_item_policy_data_attributes_model_json
+            )
         )
-        assert (
-            set_multiple_instance_policies_resources_item_policy_data_attributes_model
-            != False
-        )
+        assert set_multiple_instance_policies_resources_item_policy_data_attributes_model != False
 
         # Construct a model instance of SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes by calling from_dict on the json representation
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model_dict = SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes.from_dict(
-            set_multiple_instance_policies_resources_item_policy_data_attributes_model_json
-        ).__dict__
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model2 = SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes(
-            **set_multiple_instance_policies_resources_item_policy_data_attributes_model_dict
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model_dict = (
+            SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes.from_dict(
+                set_multiple_instance_policies_resources_item_policy_data_attributes_model_json
+            ).__dict__
+        )
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model2 = (
+            SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes(
+                **set_multiple_instance_policies_resources_item_policy_data_attributes_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -12027,9 +11134,7 @@ class TestModel_SetMultipleKeyPoliciesResource:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            {}
-        )  # KeyPolicyDualAuthDeleteDualAuthDelete
+        key_policy_dual_auth_delete_dual_auth_delete_model = {}  # KeyPolicyDualAuthDeleteDualAuthDelete
         key_policy_dual_auth_delete_dual_auth_delete_model["enabled"] = True
 
         key_policy_rotation_rotation_model = {}  # KeyPolicyRotationRotation
@@ -12038,48 +11143,32 @@ class TestModel_SetMultipleKeyPoliciesResource:
 
         # Construct a json representation of a SetMultipleKeyPoliciesResource model
         set_multiple_key_policies_resource_model_json = {}
-        set_multiple_key_policies_resource_model_json["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        set_multiple_key_policies_resource_model_json["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
-        set_multiple_key_policies_resource_model_json["rotation"] = (
-            key_policy_rotation_rotation_model
-        )
+        set_multiple_key_policies_resource_model_json["type"] = "application/vnd.ibm.kms.policy+json"
+        set_multiple_key_policies_resource_model_json[
+            "dualAuthDelete"
+        ] = key_policy_dual_auth_delete_dual_auth_delete_model
+        set_multiple_key_policies_resource_model_json["rotation"] = key_policy_rotation_rotation_model
 
         # Construct a model instance of SetMultipleKeyPoliciesResource by calling from_dict on the json representation
-        set_multiple_key_policies_resource_model = (
-            SetMultipleKeyPoliciesResource.from_dict(
-                set_multiple_key_policies_resource_model_json
-            )
+        set_multiple_key_policies_resource_model = SetMultipleKeyPoliciesResource.from_dict(
+            set_multiple_key_policies_resource_model_json
         )
         assert set_multiple_key_policies_resource_model != False
 
         # Construct a model instance of SetMultipleKeyPoliciesResource by calling from_dict on the json representation
-        set_multiple_key_policies_resource_model_dict = (
-            SetMultipleKeyPoliciesResource.from_dict(
-                set_multiple_key_policies_resource_model_json
-            ).__dict__
-        )
+        set_multiple_key_policies_resource_model_dict = SetMultipleKeyPoliciesResource.from_dict(
+            set_multiple_key_policies_resource_model_json
+        ).__dict__
         set_multiple_key_policies_resource_model2 = SetMultipleKeyPoliciesResource(
             **set_multiple_key_policies_resource_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            set_multiple_key_policies_resource_model
-            == set_multiple_key_policies_resource_model2
-        )
+        assert set_multiple_key_policies_resource_model == set_multiple_key_policies_resource_model2
 
         # Convert model instance back to dict and verify no loss of data
-        set_multiple_key_policies_resource_model_json2 = (
-            set_multiple_key_policies_resource_model.to_dict()
-        )
-        assert (
-            set_multiple_key_policies_resource_model_json2
-            == set_multiple_key_policies_resource_model_json
-        )
+        set_multiple_key_policies_resource_model_json2 = set_multiple_key_policies_resource_model.to_dict()
+        assert set_multiple_key_policies_resource_model_json2 == set_multiple_key_policies_resource_model_json
 
 
 class TestModel_UnwrapKeyResponseBody:
@@ -12098,27 +11187,21 @@ class TestModel_UnwrapKeyResponseBody:
         unwrap_key_response_body_model_json["ciphertext"] = "testString"
 
         # Construct a model instance of UnwrapKeyResponseBody by calling from_dict on the json representation
-        unwrap_key_response_body_model = UnwrapKeyResponseBody.from_dict(
-            unwrap_key_response_body_model_json
-        )
+        unwrap_key_response_body_model = UnwrapKeyResponseBody.from_dict(unwrap_key_response_body_model_json)
         assert unwrap_key_response_body_model != False
 
         # Construct a model instance of UnwrapKeyResponseBody by calling from_dict on the json representation
         unwrap_key_response_body_model_dict = UnwrapKeyResponseBody.from_dict(
             unwrap_key_response_body_model_json
         ).__dict__
-        unwrap_key_response_body_model2 = UnwrapKeyResponseBody(
-            **unwrap_key_response_body_model_dict
-        )
+        unwrap_key_response_body_model2 = UnwrapKeyResponseBody(**unwrap_key_response_body_model_dict)
 
         # Verify the model instances are equivalent
         assert unwrap_key_response_body_model == unwrap_key_response_body_model2
 
         # Convert model instance back to dict and verify no loss of data
         unwrap_key_response_body_model_json2 = unwrap_key_response_body_model.to_dict()
-        assert (
-            unwrap_key_response_body_model_json2 == unwrap_key_response_body_model_json
-        )
+        assert unwrap_key_response_body_model_json2 == unwrap_key_response_body_model_json
 
 
 class TestModel_WrapKeyResponseBody:
@@ -12137,18 +11220,12 @@ class TestModel_WrapKeyResponseBody:
         wrap_key_response_body_model_json["ciphertext"] = "testString"
 
         # Construct a model instance of WrapKeyResponseBody by calling from_dict on the json representation
-        wrap_key_response_body_model = WrapKeyResponseBody.from_dict(
-            wrap_key_response_body_model_json
-        )
+        wrap_key_response_body_model = WrapKeyResponseBody.from_dict(wrap_key_response_body_model_json)
         assert wrap_key_response_body_model != False
 
         # Construct a model instance of WrapKeyResponseBody by calling from_dict on the json representation
-        wrap_key_response_body_model_dict = WrapKeyResponseBody.from_dict(
-            wrap_key_response_body_model_json
-        ).__dict__
-        wrap_key_response_body_model2 = WrapKeyResponseBody(
-            **wrap_key_response_body_model_dict
-        )
+        wrap_key_response_body_model_dict = WrapKeyResponseBody.from_dict(wrap_key_response_body_model_json).__dict__
+        wrap_key_response_body_model2 = WrapKeyResponseBody(**wrap_key_response_body_model_dict)
 
         # Verify the model instances are equivalent
         assert wrap_key_response_body_model == wrap_key_response_body_model2
@@ -12178,29 +11255,19 @@ class TestModel_WrappedKeyVersionKeyVersion:
         assert wrapped_key_version_key_version_model != False
 
         # Construct a model instance of WrappedKeyVersionKeyVersion by calling from_dict on the json representation
-        wrapped_key_version_key_version_model_dict = (
-            WrappedKeyVersionKeyVersion.from_dict(
-                wrapped_key_version_key_version_model_json
-            ).__dict__
-        )
+        wrapped_key_version_key_version_model_dict = WrappedKeyVersionKeyVersion.from_dict(
+            wrapped_key_version_key_version_model_json
+        ).__dict__
         wrapped_key_version_key_version_model2 = WrappedKeyVersionKeyVersion(
             **wrapped_key_version_key_version_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            wrapped_key_version_key_version_model
-            == wrapped_key_version_key_version_model2
-        )
+        assert wrapped_key_version_key_version_model == wrapped_key_version_key_version_model2
 
         # Convert model instance back to dict and verify no loss of data
-        wrapped_key_version_key_version_model_json2 = (
-            wrapped_key_version_key_version_model.to_dict()
-        )
-        assert (
-            wrapped_key_version_key_version_model_json2
-            == wrapped_key_version_key_version_model_json
-        )
+        wrapped_key_version_key_version_model_json2 = wrapped_key_version_key_version_model.to_dict()
+        assert wrapped_key_version_key_version_model_json2 == wrapped_key_version_key_version_model_json
 
 
 class TestModel_CollectionMetadataOneOfCollectionMetadata:
@@ -12215,29 +11282,23 @@ class TestModel_CollectionMetadataOneOfCollectionMetadata:
 
         # Construct a json representation of a CollectionMetadataOneOfCollectionMetadata model
         collection_metadata_one_of_collection_metadata_model_json = {}
-        collection_metadata_one_of_collection_metadata_model_json["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_collection_metadata_model_json[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_collection_metadata_model_json["collectionTotal"] = 1
 
         # Construct a model instance of CollectionMetadataOneOfCollectionMetadata by calling from_dict on the json representation
-        collection_metadata_one_of_collection_metadata_model = (
-            CollectionMetadataOneOfCollectionMetadata.from_dict(
-                collection_metadata_one_of_collection_metadata_model_json
-            )
+        collection_metadata_one_of_collection_metadata_model = CollectionMetadataOneOfCollectionMetadata.from_dict(
+            collection_metadata_one_of_collection_metadata_model_json
         )
         assert collection_metadata_one_of_collection_metadata_model != False
 
         # Construct a model instance of CollectionMetadataOneOfCollectionMetadata by calling from_dict on the json representation
-        collection_metadata_one_of_collection_metadata_model_dict = (
-            CollectionMetadataOneOfCollectionMetadata.from_dict(
-                collection_metadata_one_of_collection_metadata_model_json
-            ).__dict__
-        )
-        collection_metadata_one_of_collection_metadata_model2 = (
-            CollectionMetadataOneOfCollectionMetadata(
-                **collection_metadata_one_of_collection_metadata_model_dict
-            )
+        collection_metadata_one_of_collection_metadata_model_dict = CollectionMetadataOneOfCollectionMetadata.from_dict(
+            collection_metadata_one_of_collection_metadata_model_json
+        ).__dict__
+        collection_metadata_one_of_collection_metadata_model2 = CollectionMetadataOneOfCollectionMetadata(
+            **collection_metadata_one_of_collection_metadata_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -12270,20 +11331,14 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedIP:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model = (
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes
-        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model[
-            "allowed_ip"
-        ] = [
+        get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
@@ -12294,31 +11349,25 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedIP:
         get_instance_policy_allowed_ip_resources_item_policy_data_model = (
             {}
         )  # GetInstancePolicyAllowedIPResourcesItemPolicyData
-        get_instance_policy_allowed_ip_resources_item_policy_data_model["enabled"] = (
-            True
-        )
+        get_instance_policy_allowed_ip_resources_item_policy_data_model["enabled"] = True
         get_instance_policy_allowed_ip_resources_item_policy_data_model[
             "attributes"
         ] = get_instance_policy_allowed_ip_resources_item_policy_data_attributes_model
 
-        get_instance_policy_allowed_ip_resources_item_model = (
-            {}
-        )  # GetInstancePolicyAllowedIPResourcesItem
-        get_instance_policy_allowed_ip_resources_item_model["policy_type"] = (
-            "testString"
-        )
-        get_instance_policy_allowed_ip_resources_item_model["policy_data"] = (
-            get_instance_policy_allowed_ip_resources_item_policy_data_model
-        )
+        get_instance_policy_allowed_ip_resources_item_model = {}  # GetInstancePolicyAllowedIPResourcesItem
+        get_instance_policy_allowed_ip_resources_item_model["policy_type"] = "testString"
+        get_instance_policy_allowed_ip_resources_item_model[
+            "policy_data"
+        ] = get_instance_policy_allowed_ip_resources_item_policy_data_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyAllowedIP model
         get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json = {}
         get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json[
-            "resources"
-        ] = [get_instance_policy_allowed_ip_resources_item_model]
+        get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json["resources"] = [
+            get_instance_policy_allowed_ip_resources_item_model
+        ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedIP by calling from_dict on the json representation
         get_instance_policies_one_of_get_instance_policy_allowed_ip_model = (
@@ -12326,9 +11375,7 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedIP:
                 get_instance_policies_one_of_get_instance_policy_allowed_ip_model_json
             )
         )
-        assert (
-            get_instance_policies_one_of_get_instance_policy_allowed_ip_model != False
-        )
+        assert get_instance_policies_one_of_get_instance_policy_allowed_ip_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedIP by calling from_dict on the json representation
         get_instance_policies_one_of_get_instance_policy_allowed_ip_model_dict = (
@@ -12372,12 +11419,8 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_policy_data_attributes_model = (
@@ -12412,27 +11455,28 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork:
         get_instance_policies_one_of_get_instance_policy_allowed_network_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_instance_policy_allowed_network_model_json[
-            "resources"
-        ] = [
+        get_instance_policies_one_of_get_instance_policy_allowed_network_model_json["resources"] = [
             get_instance_policies_one_of_get_instance_policy_allowed_network_resources_item_model
         ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_allowed_network_model = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork.from_dict(
-            get_instance_policies_one_of_get_instance_policy_allowed_network_model_json
+        get_instance_policies_one_of_get_instance_policy_allowed_network_model = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork.from_dict(
+                get_instance_policies_one_of_get_instance_policy_allowed_network_model_json
+            )
         )
-        assert (
-            get_instance_policies_one_of_get_instance_policy_allowed_network_model
-            != False
-        )
+        assert get_instance_policies_one_of_get_instance_policy_allowed_network_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_allowed_network_model_dict = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork.from_dict(
-            get_instance_policies_one_of_get_instance_policy_allowed_network_model_json
-        ).__dict__
-        get_instance_policies_one_of_get_instance_policy_allowed_network_model2 = GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork(
-            **get_instance_policies_one_of_get_instance_policy_allowed_network_model_dict
+        get_instance_policies_one_of_get_instance_policy_allowed_network_model_dict = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork.from_dict(
+                get_instance_policies_one_of_get_instance_policy_allowed_network_model_json
+            ).__dict__
+        )
+        get_instance_policies_one_of_get_instance_policy_allowed_network_model2 = (
+            GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork(
+                **get_instance_policies_one_of_get_instance_policy_allowed_network_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -12465,53 +11509,44 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         dual_auth_delete_properties_model = {}  # DualAuthDeleteProperties
         dual_auth_delete_properties_model["enabled"] = True
 
-        get_instance_policy_dual_auth_delete_resources_item_model = (
-            {}
-        )  # GetInstancePolicyDualAuthDeleteResourcesItem
-        get_instance_policy_dual_auth_delete_resources_item_model["policy_type"] = (
-            "testString"
-        )
-        get_instance_policy_dual_auth_delete_resources_item_model["policy_data"] = (
-            dual_auth_delete_properties_model
-        )
+        get_instance_policy_dual_auth_delete_resources_item_model = {}  # GetInstancePolicyDualAuthDeleteResourcesItem
+        get_instance_policy_dual_auth_delete_resources_item_model["policy_type"] = "testString"
+        get_instance_policy_dual_auth_delete_resources_item_model["policy_data"] = dual_auth_delete_properties_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete model
-        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json = (
-            {}
-        )
+        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json = {}
         get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json[
-            "resources"
-        ] = [get_instance_policy_dual_auth_delete_resources_item_model]
+        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json["resources"] = [
+            get_instance_policy_dual_auth_delete_resources_item_model
+        ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model = GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete.from_dict(
-            get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json
+        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model = (
+            GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete.from_dict(
+                get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json
+            )
         )
-        assert (
-            get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model
-            != False
-        )
+        assert get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_dict = GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete.from_dict(
-            get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json
-        ).__dict__
-        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model2 = GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete(
-            **get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_dict
+        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_dict = (
+            GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete.from_dict(
+                get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_json
+            ).__dict__
+        )
+        get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model2 = (
+            GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete(
+                **get_instance_policies_one_of_get_instance_policy_dual_auth_delete_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -12544,12 +11579,8 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_policy_data_attributes_model = (
@@ -12592,33 +11623,32 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess:
         ] = get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_policy_data_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess model
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json = (
-            {}
-        )
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json = {}
         get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json[
-            "resources"
-        ] = [
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json["resources"] = [
             get_instance_policies_one_of_get_instance_policy_key_create_import_access_resources_item_model
         ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess.from_dict(
-            get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model = (
+            GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess.from_dict(
+                get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json
+            )
         )
-        assert (
-            get_instance_policies_one_of_get_instance_policy_key_create_import_access_model
-            != False
-        )
+        assert get_instance_policies_one_of_get_instance_policy_key_create_import_access_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess by calling from_dict on the json representation
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_dict = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess.from_dict(
-            get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json
-        ).__dict__
-        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model2 = GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
-            **get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_dict
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_dict = (
+            GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess.from_dict(
+                get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_json
+            ).__dict__
+        )
+        get_instance_policies_one_of_get_instance_policy_key_create_import_access_model2 = (
+            GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
+                **get_instance_policies_one_of_get_instance_policy_key_create_import_access_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -12651,33 +11681,25 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyMetrics:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         metrics_properties_model = {}  # MetricsProperties
         metrics_properties_model["enabled"] = True
 
-        get_instance_policy_metrics_resources_item_model = (
-            {}
-        )  # GetInstancePolicyMetricsResourcesItem
+        get_instance_policy_metrics_resources_item_model = {}  # GetInstancePolicyMetricsResourcesItem
         get_instance_policy_metrics_resources_item_model["policy_type"] = "testString"
-        get_instance_policy_metrics_resources_item_model["policy_data"] = (
-            metrics_properties_model
-        )
+        get_instance_policy_metrics_resources_item_model["policy_data"] = metrics_properties_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyMetrics model
         get_instance_policies_one_of_get_instance_policy_metrics_model_json = {}
         get_instance_policies_one_of_get_instance_policy_metrics_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_instance_policy_metrics_model_json[
-            "resources"
-        ] = [get_instance_policy_metrics_resources_item_model]
+        get_instance_policies_one_of_get_instance_policy_metrics_model_json["resources"] = [
+            get_instance_policy_metrics_resources_item_model
+        ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyMetrics by calling from_dict on the json representation
         get_instance_policies_one_of_get_instance_policy_metrics_model = (
@@ -12729,45 +11751,37 @@ class TestModel_GetInstancePoliciesOneOfGetInstancePolicyRotation:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
         get_instance_policy_rotation_resources_item_policy_data_attributes_model = (
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyDataAttributes
-        get_instance_policy_rotation_resources_item_policy_data_attributes_model[
-            "interval_month"
-        ] = 3
+        get_instance_policy_rotation_resources_item_policy_data_attributes_model["interval_month"] = 3
 
         get_instance_policy_rotation_resources_item_policy_data_model = (
             {}
         )  # GetInstancePolicyRotationResourcesItemPolicyData
         get_instance_policy_rotation_resources_item_policy_data_model["enabled"] = True
-        get_instance_policy_rotation_resources_item_policy_data_model["attributes"] = (
-            get_instance_policy_rotation_resources_item_policy_data_attributes_model
-        )
+        get_instance_policy_rotation_resources_item_policy_data_model[
+            "attributes"
+        ] = get_instance_policy_rotation_resources_item_policy_data_attributes_model
 
-        get_instance_policy_rotation_resources_item_model = (
-            {}
-        )  # GetInstancePolicyRotationResourcesItem
+        get_instance_policy_rotation_resources_item_model = {}  # GetInstancePolicyRotationResourcesItem
         get_instance_policy_rotation_resources_item_model["policy_type"] = "testString"
-        get_instance_policy_rotation_resources_item_model["policy_data"] = (
-            get_instance_policy_rotation_resources_item_policy_data_model
-        )
+        get_instance_policy_rotation_resources_item_model[
+            "policy_data"
+        ] = get_instance_policy_rotation_resources_item_policy_data_model
 
         # Construct a json representation of a GetInstancePoliciesOneOfGetInstancePolicyRotation model
         get_instance_policies_one_of_get_instance_policy_rotation_model_json = {}
         get_instance_policies_one_of_get_instance_policy_rotation_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_instance_policy_rotation_model_json[
-            "resources"
-        ] = [get_instance_policy_rotation_resources_item_model]
+        get_instance_policies_one_of_get_instance_policy_rotation_model_json["resources"] = [
+            get_instance_policy_rotation_resources_item_model
+        ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetInstancePolicyRotation by calling from_dict on the json representation
         get_instance_policies_one_of_get_instance_policy_rotation_model = (
@@ -12819,20 +11833,12 @@ class TestModel_GetInstancePoliciesOneOfGetMultipleInstancePolicies:
 
         # Construct dict forms of any model objects needed in order to build this model.
 
-        collection_metadata_one_of_model = (
-            {}
-        )  # CollectionMetadataOneOfCollectionMetadata
-        collection_metadata_one_of_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_one_of_model = {}  # CollectionMetadataOneOfCollectionMetadata
+        collection_metadata_one_of_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_one_of_model["collectionTotal"] = 1
 
-        instance_policy_properties_attributes_model = (
-            {}
-        )  # InstancePolicyPropertiesAttributes
-        instance_policy_properties_attributes_model["allowed_network"] = (
-            "public-and-private"
-        )
+        instance_policy_properties_attributes_model = {}  # InstancePolicyPropertiesAttributes
+        instance_policy_properties_attributes_model["allowed_network"] = "public-and-private"
         instance_policy_properties_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -12849,9 +11855,7 @@ class TestModel_GetInstancePoliciesOneOfGetMultipleInstancePolicies:
 
         instance_policy_properties_model = {}  # InstancePolicyProperties
         instance_policy_properties_model["enabled"] = True
-        instance_policy_properties_model["attributes"] = (
-            instance_policy_properties_attributes_model
-        )
+        instance_policy_properties_model["attributes"] = instance_policy_properties_attributes_model
 
         instance_policy_resource_model = {}  # InstancePolicyResource
         instance_policy_resource_model["policy_type"] = "testString"
@@ -12862,9 +11866,9 @@ class TestModel_GetInstancePoliciesOneOfGetMultipleInstancePolicies:
         get_instance_policies_one_of_get_multiple_instance_policies_model_json[
             "metadata"
         ] = collection_metadata_one_of_model
-        get_instance_policies_one_of_get_multiple_instance_policies_model_json[
-            "resources"
-        ] = [instance_policy_resource_model]
+        get_instance_policies_one_of_get_multiple_instance_policies_model_json["resources"] = [
+            instance_policy_resource_model
+        ]
 
         # Construct a model instance of GetInstancePoliciesOneOfGetMultipleInstancePolicies by calling from_dict on the json representation
         get_instance_policies_one_of_get_multiple_instance_policies_model = (
@@ -12872,9 +11876,7 @@ class TestModel_GetInstancePoliciesOneOfGetMultipleInstancePolicies:
                 get_instance_policies_one_of_get_multiple_instance_policies_model_json
             )
         )
-        assert (
-            get_instance_policies_one_of_get_multiple_instance_policies_model != False
-        )
+        assert get_instance_policies_one_of_get_multiple_instance_policies_model != False
 
         # Construct a model instance of GetInstancePoliciesOneOfGetMultipleInstancePolicies by calling from_dict on the json representation
         get_instance_policies_one_of_get_multiple_instance_policies_model_dict = (
@@ -12919,14 +11921,10 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            {}
-        )  # KeyPolicyDualAuthDeleteDualAuthDelete
+        key_policy_dual_auth_delete_dual_auth_delete_model = {}  # KeyPolicyDualAuthDeleteDualAuthDelete
         key_policy_dual_auth_delete_dual_auth_delete_model["enabled"] = True
 
         get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model = (
@@ -12941,12 +11939,8 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete:
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete model
         get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json = {}
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json[
-            "metadata"
-        ] = collection_metadata_model
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json[
-            "resources"
-        ] = [
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json["metadata"] = collection_metadata_model
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json["resources"] = [
             get_key_policies_one_of_get_key_policy_dual_auth_delete_resources_item_model
         ]
 
@@ -12964,10 +11958,8 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete:
                 get_key_policies_one_of_get_key_policy_dual_auth_delete_model_json
             ).__dict__
         )
-        get_key_policies_one_of_get_key_policy_dual_auth_delete_model2 = (
-            GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete(
-                **get_key_policies_one_of_get_key_policy_dual_auth_delete_model_dict
-            )
+        get_key_policies_one_of_get_key_policy_dual_auth_delete_model2 = GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete(
+            **get_key_policies_one_of_get_key_policy_dual_auth_delete_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -12999,52 +11991,36 @@ class TestModel_GetKeyPoliciesOneOfGetKeyPolicyRotation:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         key_policy_rotation_rotation_model = {}  # KeyPolicyRotationRotation
         key_policy_rotation_rotation_model["enabled"] = True
         key_policy_rotation_rotation_model["interval_month"] = 1
 
-        get_key_policy_rotation_resources_item_model = (
-            {}
-        )  # GetKeyPolicyRotationResourcesItem
-        get_key_policy_rotation_resources_item_model["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        get_key_policy_rotation_resources_item_model["rotation"] = (
-            key_policy_rotation_rotation_model
-        )
+        get_key_policy_rotation_resources_item_model = {}  # GetKeyPolicyRotationResourcesItem
+        get_key_policy_rotation_resources_item_model["type"] = "application/vnd.ibm.kms.policy+json"
+        get_key_policy_rotation_resources_item_model["rotation"] = key_policy_rotation_rotation_model
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetKeyPolicyRotation model
         get_key_policies_one_of_get_key_policy_rotation_model_json = {}
-        get_key_policies_one_of_get_key_policy_rotation_model_json["metadata"] = (
-            collection_metadata_model
-        )
+        get_key_policies_one_of_get_key_policy_rotation_model_json["metadata"] = collection_metadata_model
         get_key_policies_one_of_get_key_policy_rotation_model_json["resources"] = [
             get_key_policy_rotation_resources_item_model
         ]
 
         # Construct a model instance of GetKeyPoliciesOneOfGetKeyPolicyRotation by calling from_dict on the json representation
-        get_key_policies_one_of_get_key_policy_rotation_model = (
-            GetKeyPoliciesOneOfGetKeyPolicyRotation.from_dict(
-                get_key_policies_one_of_get_key_policy_rotation_model_json
-            )
+        get_key_policies_one_of_get_key_policy_rotation_model = GetKeyPoliciesOneOfGetKeyPolicyRotation.from_dict(
+            get_key_policies_one_of_get_key_policy_rotation_model_json
         )
         assert get_key_policies_one_of_get_key_policy_rotation_model != False
 
         # Construct a model instance of GetKeyPoliciesOneOfGetKeyPolicyRotation by calling from_dict on the json representation
-        get_key_policies_one_of_get_key_policy_rotation_model_dict = (
-            GetKeyPoliciesOneOfGetKeyPolicyRotation.from_dict(
-                get_key_policies_one_of_get_key_policy_rotation_model_json
-            ).__dict__
-        )
-        get_key_policies_one_of_get_key_policy_rotation_model2 = (
-            GetKeyPoliciesOneOfGetKeyPolicyRotation(
-                **get_key_policies_one_of_get_key_policy_rotation_model_dict
-            )
+        get_key_policies_one_of_get_key_policy_rotation_model_dict = GetKeyPoliciesOneOfGetKeyPolicyRotation.from_dict(
+            get_key_policies_one_of_get_key_policy_rotation_model_json
+        ).__dict__
+        get_key_policies_one_of_get_key_policy_rotation_model2 = GetKeyPoliciesOneOfGetKeyPolicyRotation(
+            **get_key_policies_one_of_get_key_policy_rotation_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -13076,44 +12052,32 @@ class TestModel_GetKeyPoliciesOneOfGetMultipleKeyPolicies:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
-        get_multiple_key_policies_resource_dual_auth_delete_model = (
-            {}
-        )  # GetMultipleKeyPoliciesResourceDualAuthDelete
+        get_multiple_key_policies_resource_dual_auth_delete_model = {}  # GetMultipleKeyPoliciesResourceDualAuthDelete
         get_multiple_key_policies_resource_dual_auth_delete_model["enabled"] = True
 
-        key_policy_rotation_non_required_rotation_model = (
-            {}
-        )  # KeyPolicyRotationNonRequiredRotation
+        key_policy_rotation_non_required_rotation_model = {}  # KeyPolicyRotationNonRequiredRotation
         key_policy_rotation_non_required_rotation_model["enabled"] = True
         key_policy_rotation_non_required_rotation_model["interval_month"] = 1
 
         get_multiple_key_policies_resource_model = {}  # GetMultipleKeyPoliciesResource
-        get_multiple_key_policies_resource_model["dualAuthDelete"] = (
-            get_multiple_key_policies_resource_dual_auth_delete_model
-        )
-        get_multiple_key_policies_resource_model["rotation"] = (
-            key_policy_rotation_non_required_rotation_model
-        )
+        get_multiple_key_policies_resource_model[
+            "dualAuthDelete"
+        ] = get_multiple_key_policies_resource_dual_auth_delete_model
+        get_multiple_key_policies_resource_model["rotation"] = key_policy_rotation_non_required_rotation_model
 
         # Construct a json representation of a GetKeyPoliciesOneOfGetMultipleKeyPolicies model
         get_key_policies_one_of_get_multiple_key_policies_model_json = {}
-        get_key_policies_one_of_get_multiple_key_policies_model_json["metadata"] = (
-            collection_metadata_model
-        )
+        get_key_policies_one_of_get_multiple_key_policies_model_json["metadata"] = collection_metadata_model
         get_key_policies_one_of_get_multiple_key_policies_model_json["resources"] = [
             get_multiple_key_policies_resource_model
         ]
 
         # Construct a model instance of GetKeyPoliciesOneOfGetMultipleKeyPolicies by calling from_dict on the json representation
-        get_key_policies_one_of_get_multiple_key_policies_model = (
-            GetKeyPoliciesOneOfGetMultipleKeyPolicies.from_dict(
-                get_key_policies_one_of_get_multiple_key_policies_model_json
-            )
+        get_key_policies_one_of_get_multiple_key_policies_model = GetKeyPoliciesOneOfGetMultipleKeyPolicies.from_dict(
+            get_key_policies_one_of_get_multiple_key_policies_model_json
         )
         assert get_key_policies_one_of_get_multiple_key_policies_model != False
 
@@ -13123,10 +12087,8 @@ class TestModel_GetKeyPoliciesOneOfGetMultipleKeyPolicies:
                 get_key_policies_one_of_get_multiple_key_policies_model_json
             ).__dict__
         )
-        get_key_policies_one_of_get_multiple_key_policies_model2 = (
-            GetKeyPoliciesOneOfGetMultipleKeyPolicies(
-                **get_key_policies_one_of_get_multiple_key_policies_model_dict
-            )
+        get_key_policies_one_of_get_multiple_key_policies_model2 = GetKeyPoliciesOneOfGetMultipleKeyPolicies(
+            **get_key_policies_one_of_get_multiple_key_policies_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -13157,28 +12119,20 @@ class TestModel_KMIPProfileDataBodyKMIPProfileDataNative:
 
         # Construct a json representation of a KMIPProfileDataBodyKMIPProfileDataNative model
         kmip_profile_data_body_kmip_profile_data_native_model_json = {}
-        kmip_profile_data_body_kmip_profile_data_native_model_json["crk_id"] = (
-            "feddecaf-0000-0000-0000-1234567890ab"
-        )
+        kmip_profile_data_body_kmip_profile_data_native_model_json["crk_id"] = "feddecaf-0000-0000-0000-1234567890ab"
 
         # Construct a model instance of KMIPProfileDataBodyKMIPProfileDataNative by calling from_dict on the json representation
-        kmip_profile_data_body_kmip_profile_data_native_model = (
-            KMIPProfileDataBodyKMIPProfileDataNative.from_dict(
-                kmip_profile_data_body_kmip_profile_data_native_model_json
-            )
+        kmip_profile_data_body_kmip_profile_data_native_model = KMIPProfileDataBodyKMIPProfileDataNative.from_dict(
+            kmip_profile_data_body_kmip_profile_data_native_model_json
         )
         assert kmip_profile_data_body_kmip_profile_data_native_model != False
 
         # Construct a model instance of KMIPProfileDataBodyKMIPProfileDataNative by calling from_dict on the json representation
-        kmip_profile_data_body_kmip_profile_data_native_model_dict = (
-            KMIPProfileDataBodyKMIPProfileDataNative.from_dict(
-                kmip_profile_data_body_kmip_profile_data_native_model_json
-            ).__dict__
-        )
-        kmip_profile_data_body_kmip_profile_data_native_model2 = (
-            KMIPProfileDataBodyKMIPProfileDataNative(
-                **kmip_profile_data_body_kmip_profile_data_native_model_dict
-            )
+        kmip_profile_data_body_kmip_profile_data_native_model_dict = KMIPProfileDataBodyKMIPProfileDataNative.from_dict(
+            kmip_profile_data_body_kmip_profile_data_native_model_json
+        ).__dict__
+        kmip_profile_data_body_kmip_profile_data_native_model2 = KMIPProfileDataBodyKMIPProfileDataNative(
+            **kmip_profile_data_body_kmip_profile_data_native_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -13209,9 +12163,7 @@ class TestModel_KeyActionOneOfResponseRewrapKeyResponseBody:
 
         # Construct a json representation of a KeyActionOneOfResponseRewrapKeyResponseBody model
         key_action_one_of_response_rewrap_key_response_body_model_json = {}
-        key_action_one_of_response_rewrap_key_response_body_model_json["ciphertext"] = (
-            "testString"
-        )
+        key_action_one_of_response_rewrap_key_response_body_model_json["ciphertext"] = "testString"
 
         # Construct a model instance of KeyActionOneOfResponseRewrapKeyResponseBody by calling from_dict on the json representation
         key_action_one_of_response_rewrap_key_response_body_model = (
@@ -13227,10 +12179,8 @@ class TestModel_KeyActionOneOfResponseRewrapKeyResponseBody:
                 key_action_one_of_response_rewrap_key_response_body_model_json
             ).__dict__
         )
-        key_action_one_of_response_rewrap_key_response_body_model2 = (
-            KeyActionOneOfResponseRewrapKeyResponseBody(
-                **key_action_one_of_response_rewrap_key_response_body_model_dict
-            )
+        key_action_one_of_response_rewrap_key_response_body_model2 = KeyActionOneOfResponseRewrapKeyResponseBody(
+            **key_action_one_of_response_rewrap_key_response_body_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -13261,12 +12211,8 @@ class TestModel_KeyActionOneOfResponseUnwrapKeyResponseBody:
 
         # Construct a json representation of a KeyActionOneOfResponseUnwrapKeyResponseBody model
         key_action_one_of_response_unwrap_key_response_body_model_json = {}
-        key_action_one_of_response_unwrap_key_response_body_model_json["plaintext"] = (
-            "testString"
-        )
-        key_action_one_of_response_unwrap_key_response_body_model_json["ciphertext"] = (
-            "testString"
-        )
+        key_action_one_of_response_unwrap_key_response_body_model_json["plaintext"] = "testString"
+        key_action_one_of_response_unwrap_key_response_body_model_json["ciphertext"] = "testString"
 
         # Construct a model instance of KeyActionOneOfResponseUnwrapKeyResponseBody by calling from_dict on the json representation
         key_action_one_of_response_unwrap_key_response_body_model = (
@@ -13282,10 +12228,8 @@ class TestModel_KeyActionOneOfResponseUnwrapKeyResponseBody:
                 key_action_one_of_response_unwrap_key_response_body_model_json
             ).__dict__
         )
-        key_action_one_of_response_unwrap_key_response_body_model2 = (
-            KeyActionOneOfResponseUnwrapKeyResponseBody(
-                **key_action_one_of_response_unwrap_key_response_body_model_dict
-            )
+        key_action_one_of_response_unwrap_key_response_body_model2 = KeyActionOneOfResponseUnwrapKeyResponseBody(
+            **key_action_one_of_response_unwrap_key_response_body_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -13316,18 +12260,12 @@ class TestModel_KeyActionOneOfResponseWrapKeyResponseBody:
 
         # Construct a json representation of a KeyActionOneOfResponseWrapKeyResponseBody model
         key_action_one_of_response_wrap_key_response_body_model_json = {}
-        key_action_one_of_response_wrap_key_response_body_model_json["plaintext"] = (
-            "testString"
-        )
-        key_action_one_of_response_wrap_key_response_body_model_json["ciphertext"] = (
-            "testString"
-        )
+        key_action_one_of_response_wrap_key_response_body_model_json["plaintext"] = "testString"
+        key_action_one_of_response_wrap_key_response_body_model_json["ciphertext"] = "testString"
 
         # Construct a model instance of KeyActionOneOfResponseWrapKeyResponseBody by calling from_dict on the json representation
-        key_action_one_of_response_wrap_key_response_body_model = (
-            KeyActionOneOfResponseWrapKeyResponseBody.from_dict(
-                key_action_one_of_response_wrap_key_response_body_model_json
-            )
+        key_action_one_of_response_wrap_key_response_body_model = KeyActionOneOfResponseWrapKeyResponseBody.from_dict(
+            key_action_one_of_response_wrap_key_response_body_model_json
         )
         assert key_action_one_of_response_wrap_key_response_body_model != False
 
@@ -13337,10 +12275,8 @@ class TestModel_KeyActionOneOfResponseWrapKeyResponseBody:
                 key_action_one_of_response_wrap_key_response_body_model_json
             ).__dict__
         )
-        key_action_one_of_response_wrap_key_response_body_model2 = (
-            KeyActionOneOfResponseWrapKeyResponseBody(
-                **key_action_one_of_response_wrap_key_response_body_model_dict
-            )
+        key_action_one_of_response_wrap_key_response_body_model2 = KeyActionOneOfResponseWrapKeyResponseBody(
+            **key_action_one_of_response_wrap_key_response_body_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -13371,36 +12307,27 @@ class TestModel_ListCollectionMetadataCollectionMetadata:
 
         # Construct a json representation of a ListCollectionMetadataCollectionMetadata model
         list_collection_metadata_collection_metadata_model_json = {}
-        list_collection_metadata_collection_metadata_model_json["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        list_collection_metadata_collection_metadata_model_json[
+            "collectionType"
+        ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         list_collection_metadata_collection_metadata_model_json["collectionTotal"] = 1
 
         # Construct a model instance of ListCollectionMetadataCollectionMetadata by calling from_dict on the json representation
-        list_collection_metadata_collection_metadata_model = (
-            ListCollectionMetadataCollectionMetadata.from_dict(
-                list_collection_metadata_collection_metadata_model_json
-            )
+        list_collection_metadata_collection_metadata_model = ListCollectionMetadataCollectionMetadata.from_dict(
+            list_collection_metadata_collection_metadata_model_json
         )
         assert list_collection_metadata_collection_metadata_model != False
 
         # Construct a model instance of ListCollectionMetadataCollectionMetadata by calling from_dict on the json representation
-        list_collection_metadata_collection_metadata_model_dict = (
-            ListCollectionMetadataCollectionMetadata.from_dict(
-                list_collection_metadata_collection_metadata_model_json
-            ).__dict__
-        )
-        list_collection_metadata_collection_metadata_model2 = (
-            ListCollectionMetadataCollectionMetadata(
-                **list_collection_metadata_collection_metadata_model_dict
-            )
+        list_collection_metadata_collection_metadata_model_dict = ListCollectionMetadataCollectionMetadata.from_dict(
+            list_collection_metadata_collection_metadata_model_json
+        ).__dict__
+        list_collection_metadata_collection_metadata_model2 = ListCollectionMetadataCollectionMetadata(
+            **list_collection_metadata_collection_metadata_model_dict
         )
 
         # Verify the model instances are equivalent
-        assert (
-            list_collection_metadata_collection_metadata_model
-            == list_collection_metadata_collection_metadata_model2
-        )
+        assert list_collection_metadata_collection_metadata_model == list_collection_metadata_collection_metadata_model2
 
         # Convert model instance back to dict and verify no loss of data
         list_collection_metadata_collection_metadata_model_json2 = (
@@ -13429,12 +12356,8 @@ class TestModel_ListCollectionMetadataCollectionMetadataWithTotalCount:
         list_collection_metadata_collection_metadata_with_total_count_model_json[
             "collectionType"
         ] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        list_collection_metadata_collection_metadata_with_total_count_model_json[
-            "collectionTotal"
-        ] = 1
-        list_collection_metadata_collection_metadata_with_total_count_model_json[
-            "totalCount"
-        ] = 1
+        list_collection_metadata_collection_metadata_with_total_count_model_json["collectionTotal"] = 1
+        list_collection_metadata_collection_metadata_with_total_count_model_json["totalCount"] = 1
 
         # Construct a model instance of ListCollectionMetadataCollectionMetadataWithTotalCount by calling from_dict on the json representation
         list_collection_metadata_collection_metadata_with_total_count_model = (
@@ -13442,9 +12365,7 @@ class TestModel_ListCollectionMetadataCollectionMetadataWithTotalCount:
                 list_collection_metadata_collection_metadata_with_total_count_model_json
             )
         )
-        assert (
-            list_collection_metadata_collection_metadata_with_total_count_model != False
-        )
+        assert list_collection_metadata_collection_metadata_with_total_count_model != False
 
         # Construct a model instance of ListCollectionMetadataCollectionMetadataWithTotalCount by calling from_dict on the json representation
         list_collection_metadata_collection_metadata_with_total_count_model_dict = (
@@ -13452,8 +12373,10 @@ class TestModel_ListCollectionMetadataCollectionMetadataWithTotalCount:
                 list_collection_metadata_collection_metadata_with_total_count_model_json
             ).__dict__
         )
-        list_collection_metadata_collection_metadata_with_total_count_model2 = ListCollectionMetadataCollectionMetadataWithTotalCount(
-            **list_collection_metadata_collection_metadata_with_total_count_model_dict
+        list_collection_metadata_collection_metadata_with_total_count_model2 = (
+            ListCollectionMetadataCollectionMetadataWithTotalCount(
+                **list_collection_metadata_collection_metadata_with_total_count_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -13487,14 +12410,10 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIP:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
-        instance_policy_allowed_ip_policy_data_attributes_model = (
-            {}
-        )  # InstancePolicyAllowedIPPolicyDataAttributes
+        instance_policy_allowed_ip_policy_data_attributes_model = {}  # InstancePolicyAllowedIPPolicyDataAttributes
         instance_policy_allowed_ip_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
@@ -13503,32 +12422,24 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIP:
             "2001:db8::/60",
         ]
 
-        instance_policy_allowed_ip_policy_data_model = (
-            {}
-        )  # InstancePolicyAllowedIPPolicyData
+        instance_policy_allowed_ip_policy_data_model = {}  # InstancePolicyAllowedIPPolicyData
         instance_policy_allowed_ip_policy_data_model["enabled"] = True
-        instance_policy_allowed_ip_policy_data_model["attributes"] = (
-            instance_policy_allowed_ip_policy_data_attributes_model
-        )
+        instance_policy_allowed_ip_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_ip_policy_data_attributes_model
 
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model = (
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model[
-            "policy_type"
-        ] = "allowedIP"
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model["policy_type"] = "allowedIP"
         set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model[
             "policy_data"
         ] = instance_policy_allowed_ip_policy_data_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyAllowedIP model
         set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json[
-            "metadata"
-        ] = collection_metadata_model
-        set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json[
-            "resources"
-        ] = [
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json["metadata"] = collection_metadata_model
+        set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_allowed_ip_resources_item_model
         ]
 
@@ -13538,9 +12449,7 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedIP:
                 set_instance_policies_one_of_set_instance_policy_allowed_ip_model_json
             )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_allowed_ip_model != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_allowed_ip_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedIP by calling from_dict on the json representation
         set_instance_policies_one_of_set_instance_policy_allowed_ip_model_dict = (
@@ -13585,25 +12494,19 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         instance_policy_allowed_network_policy_data_attributes_model = (
             {}
         )  # InstancePolicyAllowedNetworkPolicyDataAttributes
-        instance_policy_allowed_network_policy_data_attributes_model[
-            "allowed_network"
-        ] = "public-and-private"
+        instance_policy_allowed_network_policy_data_attributes_model["allowed_network"] = "public-and-private"
 
-        instance_policy_allowed_network_policy_data_model = (
-            {}
-        )  # InstancePolicyAllowedNetworkPolicyData
+        instance_policy_allowed_network_policy_data_model = {}  # InstancePolicyAllowedNetworkPolicyData
         instance_policy_allowed_network_policy_data_model["enabled"] = True
-        instance_policy_allowed_network_policy_data_model["attributes"] = (
-            instance_policy_allowed_network_policy_data_attributes_model
-        )
+        instance_policy_allowed_network_policy_data_model[
+            "attributes"
+        ] = instance_policy_allowed_network_policy_data_attributes_model
 
         set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model = (
             {}
@@ -13620,27 +12523,28 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork:
         set_instance_policies_one_of_set_instance_policy_allowed_network_model_json[
             "metadata"
         ] = collection_metadata_model
-        set_instance_policies_one_of_set_instance_policy_allowed_network_model_json[
-            "resources"
-        ] = [
+        set_instance_policies_one_of_set_instance_policy_allowed_network_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_allowed_network_resources_item_model
         ]
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_allowed_network_model = SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork.from_dict(
-            set_instance_policies_one_of_set_instance_policy_allowed_network_model_json
+        set_instance_policies_one_of_set_instance_policy_allowed_network_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork.from_dict(
+                set_instance_policies_one_of_set_instance_policy_allowed_network_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_allowed_network_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_allowed_network_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_allowed_network_model_dict = SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork.from_dict(
-            set_instance_policies_one_of_set_instance_policy_allowed_network_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_allowed_network_model2 = SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork(
-            **set_instance_policies_one_of_set_instance_policy_allowed_network_model_dict
+        set_instance_policies_one_of_set_instance_policy_allowed_network_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork.from_dict(
+                set_instance_policies_one_of_set_instance_policy_allowed_network_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_allowed_network_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork(
+                **set_instance_policies_one_of_set_instance_policy_allowed_network_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -13674,50 +12578,43 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         dual_auth_delete_properties_model = {}  # DualAuthDeleteProperties
         dual_auth_delete_properties_model["enabled"] = True
 
-        set_instance_policy_dual_auth_delete_resources_item_model = (
-            {}
-        )  # SetInstancePolicyDualAuthDeleteResourcesItem
-        set_instance_policy_dual_auth_delete_resources_item_model["policy_type"] = (
-            "dualAuthDelete"
-        )
-        set_instance_policy_dual_auth_delete_resources_item_model["policy_data"] = (
-            dual_auth_delete_properties_model
-        )
+        set_instance_policy_dual_auth_delete_resources_item_model = {}  # SetInstancePolicyDualAuthDeleteResourcesItem
+        set_instance_policy_dual_auth_delete_resources_item_model["policy_type"] = "dualAuthDelete"
+        set_instance_policy_dual_auth_delete_resources_item_model["policy_data"] = dual_auth_delete_properties_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete model
-        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json = {}
         set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json[
             "metadata"
         ] = collection_metadata_model
-        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json[
-            "resources"
-        ] = [set_instance_policy_dual_auth_delete_resources_item_model]
+        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json["resources"] = [
+            set_instance_policy_dual_auth_delete_resources_item_model
+        ]
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model = SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete.from_dict(
-            set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json
+        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete.from_dict(
+                set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_dict = SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete.from_dict(
-            set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model2 = SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete(
-            **set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_dict
+        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete.from_dict(
+                set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete(
+                **set_instance_policies_one_of_set_instance_policy_dual_auth_delete_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -13751,37 +12648,23 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         instance_policy_key_create_import_access_policy_data_attributes_model = (
             {}
         )  # InstancePolicyKeyCreateImportAccessPolicyDataAttributes
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "create_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "create_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "import_root_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "import_standard_key"
-        ] = True
-        instance_policy_key_create_import_access_policy_data_attributes_model[
-            "enforce_token"
-        ] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["create_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["create_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["import_root_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["import_standard_key"] = True
+        instance_policy_key_create_import_access_policy_data_attributes_model["enforce_token"] = True
 
-        instance_policy_key_create_import_access_policy_data_model = (
-            {}
-        )  # InstancePolicyKeyCreateImportAccessPolicyData
+        instance_policy_key_create_import_access_policy_data_model = {}  # InstancePolicyKeyCreateImportAccessPolicyData
         instance_policy_key_create_import_access_policy_data_model["enabled"] = True
-        instance_policy_key_create_import_access_policy_data_model["attributes"] = (
-            instance_policy_key_create_import_access_policy_data_attributes_model
-        )
+        instance_policy_key_create_import_access_policy_data_model[
+            "attributes"
+        ] = instance_policy_key_create_import_access_policy_data_attributes_model
 
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model = (
             {}
@@ -13794,33 +12677,32 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess:
         ] = instance_policy_key_create_import_access_policy_data_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess model
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json = (
-            {}
-        )
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json = {}
         set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json[
             "metadata"
         ] = collection_metadata_model
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json[
-            "resources"
-        ] = [
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_key_create_import_access_resources_item_model
         ]
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model = SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess.from_dict(
-            set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model = (
+            SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess.from_dict(
+                set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json
+            )
         )
-        assert (
-            set_instance_policies_one_of_set_instance_policy_key_create_import_access_model
-            != False
-        )
+        assert set_instance_policies_one_of_set_instance_policy_key_create_import_access_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess by calling from_dict on the json representation
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_dict = SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess.from_dict(
-            set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json
-        ).__dict__
-        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model2 = SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
-            **set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_dict
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_dict = (
+            SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess.from_dict(
+                set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_json
+            ).__dict__
+        )
+        set_instance_policies_one_of_set_instance_policy_key_create_import_access_model2 = (
+            SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
+                **set_instance_policies_one_of_set_instance_policy_key_create_import_access_model_dict
+            )
         )
 
         # Verify the model instances are equivalent
@@ -13854,9 +12736,7 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyMetrics:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         metrics_properties_model = {}  # MetricsProperties
@@ -13865,21 +12745,15 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyMetrics:
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model = (
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem
-        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model[
-            "policy_type"
-        ] = "metrics"
+        set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model["policy_type"] = "metrics"
         set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model[
             "policy_data"
         ] = metrics_properties_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyMetrics model
         set_instance_policies_one_of_set_instance_policy_metrics_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_metrics_model_json[
-            "metadata"
-        ] = collection_metadata_model
-        set_instance_policies_one_of_set_instance_policy_metrics_model_json[
-            "resources"
-        ] = [
+        set_instance_policies_one_of_set_instance_policy_metrics_model_json["metadata"] = collection_metadata_model
+        set_instance_policies_one_of_set_instance_policy_metrics_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_metrics_resources_item_model
         ]
 
@@ -13934,42 +12808,28 @@ class TestModel_SetInstancePoliciesOneOfSetInstancePolicyRotation:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
-        instance_policy_rotation_policy_data_attributes_model = (
-            {}
-        )  # InstancePolicyRotationPolicyDataAttributes
+        instance_policy_rotation_policy_data_attributes_model = {}  # InstancePolicyRotationPolicyDataAttributes
         instance_policy_rotation_policy_data_attributes_model["interval_month"] = 3
 
-        instance_policy_rotation_policy_data_model = (
-            {}
-        )  # InstancePolicyRotationPolicyData
+        instance_policy_rotation_policy_data_model = {}  # InstancePolicyRotationPolicyData
         instance_policy_rotation_policy_data_model["enabled"] = True
-        instance_policy_rotation_policy_data_model["attributes"] = (
-            instance_policy_rotation_policy_data_attributes_model
-        )
+        instance_policy_rotation_policy_data_model["attributes"] = instance_policy_rotation_policy_data_attributes_model
 
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model = (
             {}
         )  # SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem
-        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model[
-            "policy_type"
-        ] = "rotation"
+        set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model["policy_type"] = "rotation"
         set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model[
             "policy_data"
         ] = instance_policy_rotation_policy_data_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetInstancePolicyRotation model
         set_instance_policies_one_of_set_instance_policy_rotation_model_json = {}
-        set_instance_policies_one_of_set_instance_policy_rotation_model_json[
-            "metadata"
-        ] = collection_metadata_model
-        set_instance_policies_one_of_set_instance_policy_rotation_model_json[
-            "resources"
-        ] = [
+        set_instance_policies_one_of_set_instance_policy_rotation_model_json["metadata"] = collection_metadata_model
+        set_instance_policies_one_of_set_instance_policy_rotation_model_json["resources"] = [
             set_instance_policies_one_of_set_instance_policy_rotation_resources_item_model
         ]
 
@@ -14024,9 +12884,7 @@ class TestModel_SetInstancePoliciesOneOfSetMultipleInstancePolicies:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         set_multiple_instance_policies_resources_item_policy_data_attributes_model = (
@@ -14035,62 +12893,40 @@ class TestModel_SetInstancePoliciesOneOfSetMultipleInstancePolicies:
         set_multiple_instance_policies_resources_item_policy_data_attributes_model[
             "allowed_network"
         ] = "public-and-private"
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "allowed_ip"
-        ] = [
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["allowed_ip"] = [
             "10.1.0.0/32",
             "10.0.0.0/24",
             "192.0.2.0/32",
             "198.51.100.0/24",
             "2001:db8::/60",
         ]
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "create_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "create_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "import_root_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "import_standard_key"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "enforce_token"
-        ] = True
-        set_multiple_instance_policies_resources_item_policy_data_attributes_model[
-            "interval_month"
-        ] = 3
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["create_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["create_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["import_root_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["import_standard_key"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["enforce_token"] = True
+        set_multiple_instance_policies_resources_item_policy_data_attributes_model["interval_month"] = 3
 
         set_multiple_instance_policies_resources_item_policy_data_model = (
             {}
         )  # SetMultipleInstancePoliciesResourcesItemPolicyData
-        set_multiple_instance_policies_resources_item_policy_data_model["enabled"] = (
-            True
-        )
+        set_multiple_instance_policies_resources_item_policy_data_model["enabled"] = True
         set_multiple_instance_policies_resources_item_policy_data_model[
             "attributes"
         ] = set_multiple_instance_policies_resources_item_policy_data_attributes_model
 
-        set_multiple_instance_policies_resources_item_model = (
-            {}
-        )  # SetMultipleInstancePoliciesResourcesItem
-        set_multiple_instance_policies_resources_item_model["policy_type"] = (
-            "allowedNetwork"
-        )
-        set_multiple_instance_policies_resources_item_model["policy_data"] = (
-            set_multiple_instance_policies_resources_item_policy_data_model
-        )
+        set_multiple_instance_policies_resources_item_model = {}  # SetMultipleInstancePoliciesResourcesItem
+        set_multiple_instance_policies_resources_item_model["policy_type"] = "allowedNetwork"
+        set_multiple_instance_policies_resources_item_model[
+            "policy_data"
+        ] = set_multiple_instance_policies_resources_item_policy_data_model
 
         # Construct a json representation of a SetInstancePoliciesOneOfSetMultipleInstancePolicies model
         set_instance_policies_one_of_set_multiple_instance_policies_model_json = {}
-        set_instance_policies_one_of_set_multiple_instance_policies_model_json[
-            "metadata"
-        ] = collection_metadata_model
-        set_instance_policies_one_of_set_multiple_instance_policies_model_json[
-            "resources"
-        ] = [set_multiple_instance_policies_resources_item_model]
+        set_instance_policies_one_of_set_multiple_instance_policies_model_json["metadata"] = collection_metadata_model
+        set_instance_policies_one_of_set_multiple_instance_policies_model_json["resources"] = [
+            set_multiple_instance_policies_resources_item_model
+        ]
 
         # Construct a model instance of SetInstancePoliciesOneOfSetMultipleInstancePolicies by calling from_dict on the json representation
         set_instance_policies_one_of_set_multiple_instance_policies_model = (
@@ -14098,9 +12934,7 @@ class TestModel_SetInstancePoliciesOneOfSetMultipleInstancePolicies:
                 set_instance_policies_one_of_set_multiple_instance_policies_model_json
             )
         )
-        assert (
-            set_instance_policies_one_of_set_multiple_instance_policies_model != False
-        )
+        assert set_instance_policies_one_of_set_multiple_instance_policies_model != False
 
         # Construct a model instance of SetInstancePoliciesOneOfSetMultipleInstancePolicies by calling from_dict on the json representation
         set_instance_policies_one_of_set_multiple_instance_policies_model_dict = (
@@ -14145,32 +12979,22 @@ class TestModel_SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            {}
-        )  # KeyPolicyDualAuthDeleteDualAuthDelete
+        key_policy_dual_auth_delete_dual_auth_delete_model = {}  # KeyPolicyDualAuthDeleteDualAuthDelete
         key_policy_dual_auth_delete_dual_auth_delete_model["enabled"] = True
 
         key_policy_dual_auth_delete_model = {}  # KeyPolicyDualAuthDelete
-        key_policy_dual_auth_delete_model["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        key_policy_dual_auth_delete_model["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
+        key_policy_dual_auth_delete_model["type"] = "application/vnd.ibm.kms.policy+json"
+        key_policy_dual_auth_delete_model["dualAuthDelete"] = key_policy_dual_auth_delete_dual_auth_delete_model
 
         # Construct a json representation of a SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete model
         set_key_policies_one_of_set_key_policy_dual_auth_delete_model_json = {}
-        set_key_policies_one_of_set_key_policy_dual_auth_delete_model_json[
-            "metadata"
-        ] = collection_metadata_model
-        set_key_policies_one_of_set_key_policy_dual_auth_delete_model_json[
-            "resources"
-        ] = [key_policy_dual_auth_delete_model]
+        set_key_policies_one_of_set_key_policy_dual_auth_delete_model_json["metadata"] = collection_metadata_model
+        set_key_policies_one_of_set_key_policy_dual_auth_delete_model_json["resources"] = [
+            key_policy_dual_auth_delete_model
+        ]
 
         # Construct a model instance of SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete by calling from_dict on the json representation
         set_key_policies_one_of_set_key_policy_dual_auth_delete_model = (
@@ -14186,10 +13010,8 @@ class TestModel_SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete:
                 set_key_policies_one_of_set_key_policy_dual_auth_delete_model_json
             ).__dict__
         )
-        set_key_policies_one_of_set_key_policy_dual_auth_delete_model2 = (
-            SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete(
-                **set_key_policies_one_of_set_key_policy_dual_auth_delete_model_dict
-            )
+        set_key_policies_one_of_set_key_policy_dual_auth_delete_model2 = SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete(
+            **set_key_policies_one_of_set_key_policy_dual_auth_delete_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -14221,9 +13043,7 @@ class TestModel_SetKeyPoliciesOneOfSetKeyPolicyRotation:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
         key_policy_rotation_rotation_model = {}  # KeyPolicyRotationRotation
@@ -14236,31 +13056,21 @@ class TestModel_SetKeyPoliciesOneOfSetKeyPolicyRotation:
 
         # Construct a json representation of a SetKeyPoliciesOneOfSetKeyPolicyRotation model
         set_key_policies_one_of_set_key_policy_rotation_model_json = {}
-        set_key_policies_one_of_set_key_policy_rotation_model_json["metadata"] = (
-            collection_metadata_model
-        )
-        set_key_policies_one_of_set_key_policy_rotation_model_json["resources"] = [
-            key_policy_rotation_model
-        ]
+        set_key_policies_one_of_set_key_policy_rotation_model_json["metadata"] = collection_metadata_model
+        set_key_policies_one_of_set_key_policy_rotation_model_json["resources"] = [key_policy_rotation_model]
 
         # Construct a model instance of SetKeyPoliciesOneOfSetKeyPolicyRotation by calling from_dict on the json representation
-        set_key_policies_one_of_set_key_policy_rotation_model = (
-            SetKeyPoliciesOneOfSetKeyPolicyRotation.from_dict(
-                set_key_policies_one_of_set_key_policy_rotation_model_json
-            )
+        set_key_policies_one_of_set_key_policy_rotation_model = SetKeyPoliciesOneOfSetKeyPolicyRotation.from_dict(
+            set_key_policies_one_of_set_key_policy_rotation_model_json
         )
         assert set_key_policies_one_of_set_key_policy_rotation_model != False
 
         # Construct a model instance of SetKeyPoliciesOneOfSetKeyPolicyRotation by calling from_dict on the json representation
-        set_key_policies_one_of_set_key_policy_rotation_model_dict = (
-            SetKeyPoliciesOneOfSetKeyPolicyRotation.from_dict(
-                set_key_policies_one_of_set_key_policy_rotation_model_json
-            ).__dict__
-        )
-        set_key_policies_one_of_set_key_policy_rotation_model2 = (
-            SetKeyPoliciesOneOfSetKeyPolicyRotation(
-                **set_key_policies_one_of_set_key_policy_rotation_model_dict
-            )
+        set_key_policies_one_of_set_key_policy_rotation_model_dict = SetKeyPoliciesOneOfSetKeyPolicyRotation.from_dict(
+            set_key_policies_one_of_set_key_policy_rotation_model_json
+        ).__dict__
+        set_key_policies_one_of_set_key_policy_rotation_model2 = SetKeyPoliciesOneOfSetKeyPolicyRotation(
+            **set_key_policies_one_of_set_key_policy_rotation_model_dict
         )
 
         # Verify the model instances are equivalent
@@ -14292,14 +13102,10 @@ class TestModel_SetKeyPoliciesOneOfSetMultipleKeyPolicies:
         # Construct dict forms of any model objects needed in order to build this model.
 
         collection_metadata_model = {}  # CollectionMetadata
-        collection_metadata_model["collectionType"] = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        collection_metadata_model["collectionType"] = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         collection_metadata_model["collectionTotal"] = 1
 
-        key_policy_dual_auth_delete_dual_auth_delete_model = (
-            {}
-        )  # KeyPolicyDualAuthDeleteDualAuthDelete
+        key_policy_dual_auth_delete_dual_auth_delete_model = {}  # KeyPolicyDualAuthDeleteDualAuthDelete
         key_policy_dual_auth_delete_dual_auth_delete_model["enabled"] = True
 
         key_policy_rotation_rotation_model = {}  # KeyPolicyRotationRotation
@@ -14307,30 +13113,20 @@ class TestModel_SetKeyPoliciesOneOfSetMultipleKeyPolicies:
         key_policy_rotation_rotation_model["interval_month"] = 1
 
         set_multiple_key_policies_resource_model = {}  # SetMultipleKeyPoliciesResource
-        set_multiple_key_policies_resource_model["type"] = (
-            "application/vnd.ibm.kms.policy+json"
-        )
-        set_multiple_key_policies_resource_model["dualAuthDelete"] = (
-            key_policy_dual_auth_delete_dual_auth_delete_model
-        )
-        set_multiple_key_policies_resource_model["rotation"] = (
-            key_policy_rotation_rotation_model
-        )
+        set_multiple_key_policies_resource_model["type"] = "application/vnd.ibm.kms.policy+json"
+        set_multiple_key_policies_resource_model["dualAuthDelete"] = key_policy_dual_auth_delete_dual_auth_delete_model
+        set_multiple_key_policies_resource_model["rotation"] = key_policy_rotation_rotation_model
 
         # Construct a json representation of a SetKeyPoliciesOneOfSetMultipleKeyPolicies model
         set_key_policies_one_of_set_multiple_key_policies_model_json = {}
-        set_key_policies_one_of_set_multiple_key_policies_model_json["metadata"] = (
-            collection_metadata_model
-        )
+        set_key_policies_one_of_set_multiple_key_policies_model_json["metadata"] = collection_metadata_model
         set_key_policies_one_of_set_multiple_key_policies_model_json["resources"] = [
             set_multiple_key_policies_resource_model
         ]
 
         # Construct a model instance of SetKeyPoliciesOneOfSetMultipleKeyPolicies by calling from_dict on the json representation
-        set_key_policies_one_of_set_multiple_key_policies_model = (
-            SetKeyPoliciesOneOfSetMultipleKeyPolicies.from_dict(
-                set_key_policies_one_of_set_multiple_key_policies_model_json
-            )
+        set_key_policies_one_of_set_multiple_key_policies_model = SetKeyPoliciesOneOfSetMultipleKeyPolicies.from_dict(
+            set_key_policies_one_of_set_multiple_key_policies_model_json
         )
         assert set_key_policies_one_of_set_multiple_key_policies_model != False
 
@@ -14340,10 +13136,8 @@ class TestModel_SetKeyPoliciesOneOfSetMultipleKeyPolicies:
                 set_key_policies_one_of_set_multiple_key_policies_model_json
             ).__dict__
         )
-        set_key_policies_one_of_set_multiple_key_policies_model2 = (
-            SetKeyPoliciesOneOfSetMultipleKeyPolicies(
-                **set_key_policies_one_of_set_multiple_key_policies_model_dict
-            )
+        set_key_policies_one_of_set_multiple_key_policies_model2 = SetKeyPoliciesOneOfSetMultipleKeyPolicies(
+            **set_key_policies_one_of_set_multiple_key_policies_model_dict
         )
 
         # Verify the model instances are equivalent
