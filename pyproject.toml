@@ -51,3 +51,24 @@ dev = [
     "black>=25.0.0,<26.0.0",
     "pytest-rerunfailures>=3.1",
 ]
+publish = [
+    "build",
+    "twine"
+]
+
+[build-system]
+requires = ["setuptools>=67.7.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["keyprotect"]
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+
+[tool.pip.install]
+uploaded-prior-to = "P3D"
+
+[tool.uv]
+exclude-newer = "3 days"
