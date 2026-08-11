@@ -104,9 +104,7 @@ class IbmKeyProtectApiV2(BaseService):
                Get up to date information from https://github.com/IBM/python-sdk-core/blob/main/README.md
                about initializing the authenticator of your choice.
         """
-        BaseService.__init__(
-            self, service_url=self.DEFAULT_SERVICE_URL, authenticator=authenticator
-        )
+        BaseService.__init__(self, service_url=self.DEFAULT_SERVICE_URL, authenticator=authenticator)
 
     #########################
     # Keys
@@ -3443,9 +3441,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id"]
         path_param_values = self.encode_path_vars(adapter_id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/kmip_objects".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/kmip_objects".format(**path_param_dict)
         request = self.prepare_request(
             method="GET",
             url=url,
@@ -3507,9 +3503,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id", "id"]
         path_param_values = self.encode_path_vars(adapter_id, id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/kmip_objects/{id}".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/kmip_objects/{id}".format(**path_param_dict)
         request = self.prepare_request(
             method="GET",
             url=url,
@@ -3581,9 +3575,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id", "id"]
         path_param_values = self.encode_path_vars(adapter_id, id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/kmip_objects/{id}".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/kmip_objects/{id}".format(**path_param_dict)
         request = self.prepare_request(
             method="DELETE",
             url=url,
@@ -3671,9 +3663,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id"]
         path_param_values = self.encode_path_vars(adapter_id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/certificates".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/certificates".format(**path_param_dict)
         request = self.prepare_request(
             method="GET",
             url=url,
@@ -3753,9 +3743,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id"]
         path_param_values = self.encode_path_vars(adapter_id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/certificates".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/certificates".format(**path_param_dict)
         request = self.prepare_request(
             method="POST",
             url=url,
@@ -3818,9 +3806,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id", "id"]
         path_param_values = self.encode_path_vars(adapter_id, id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/certificates/{id}".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/certificates/{id}".format(**path_param_dict)
         request = self.prepare_request(
             method="GET",
             url=url,
@@ -3883,9 +3869,7 @@ class IbmKeyProtectApiV2(BaseService):
         path_param_keys = ["adapter_id", "id"]
         path_param_values = self.encode_path_vars(adapter_id, id)
         path_param_dict = dict(zip(path_param_keys, path_param_values))
-        url = "/api/v2/kmip_adapters/{adapter_id}/certificates/{id}".format(
-            **path_param_dict
-        )
+        url = "/api/v2/kmip_adapters/{adapter_id}/certificates/{id}".format(**path_param_dict)
         request = self.prepare_request(
             method="DELETE",
             url=url,
@@ -4282,10 +4266,7 @@ class AllowedIPPortResource:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "private_endpoint_port")
-            and getattr(self, "private_endpoint_port") is not None
-        ):
+        if hasattr(self, "private_endpoint_port") and getattr(self, "private_endpoint_port") is not None:
             _dict["private_endpoint_port"] = getattr(self, "private_endpoint_port")
         return _dict
 
@@ -4337,15 +4318,11 @@ class CollectionMetadata:
         if (collection_type := _dict.get("collectionType")) is not None:
             args["collection_type"] = collection_type
         else:
-            raise ValueError(
-                "Required property 'collectionType' not present in CollectionMetadata JSON"
-            )
+            raise ValueError("Required property 'collectionType' not present in CollectionMetadata JSON")
         if (collection_total := _dict.get("collectionTotal")) is not None:
             args["collection_total"] = collection_total
         else:
-            raise ValueError(
-                "Required property 'collectionTotal' not present in CollectionMetadata JSON"
-            )
+            raise ValueError("Required property 'collectionTotal' not present in CollectionMetadata JSON")
         return cls(**args)
 
     @classmethod
@@ -4385,42 +4362,22 @@ class CollectionMetadata:
         The type of resources in the resource array.
         """
 
-        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         APPLICATION_VND_IBM_KMS_CRN_JSON = "application/vnd.ibm.kms.crn+json"
         APPLICATION_VND_IBM_KMS_ERROR_JSON = "application/vnd.ibm.kms.error+json"
-        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = (
-            "application/vnd.ibm.kms.event_acknowledge+json"
-        )
-        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = (
-            "application/vnd.ibm.kms.import_token+json"
-        )
+        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = "application/vnd.ibm.kms.event_acknowledge+json"
+        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = "application/vnd.ibm.kms.import_token+json"
         APPLICATION_VND_IBM_KMS_KEY_JSON = "application/vnd.ibm.kms.key+json"
-        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = (
-            "application/vnd.ibm.kms.key_action+json"
-        )
+        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = "application/vnd.ibm.kms.key_action+json"
         APPLICATION_VND_IBM_KMS_ALIAS_JSON = "application/vnd.ibm.kms.alias+json"
         APPLICATION_VND_IBM_KMS_KEY_RING_JSON = "application/vnd.ibm.kms.key_ring+json"
         APPLICATION_VND_IBM_KMS_POLICY_JSON = "application/vnd.ibm.kms.policy+json"
-        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = (
-            "application/vnd.ibm.kms.registration_input+json"
-        )
-        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = (
-            "application/vnd.ibm.kms.registration+json"
-        )
-        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = (
-            "application/vnd.ibm.kms.resource_crn+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = (
-            "application/vnd.ibm.kms.kmip_object+json"
-        )
+        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = "application/vnd.ibm.kms.registration_input+json"
+        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = "application/vnd.ibm.kms.registration+json"
+        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = "application/vnd.ibm.kms.resource_crn+json"
+        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = "application/vnd.ibm.kms.kmip_adapter+json"
+        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = "application/vnd.ibm.kms.kmip_client_certificate+json"
+        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = "application/vnd.ibm.kms.kmip_object+json"
 
 
 class CollectionMetadataListKeys:
@@ -4475,21 +4432,15 @@ class CollectionMetadataListKeys:
         if (collection_type := _dict.get("collectionType")) is not None:
             args["collection_type"] = collection_type
         else:
-            raise ValueError(
-                "Required property 'collectionType' not present in CollectionMetadataListKeys JSON"
-            )
+            raise ValueError("Required property 'collectionType' not present in CollectionMetadataListKeys JSON")
         if (collection_total := _dict.get("collectionTotal")) is not None:
             args["collection_total"] = collection_total
         else:
-            raise ValueError(
-                "Required property 'collectionTotal' not present in CollectionMetadataListKeys JSON"
-            )
+            raise ValueError("Required property 'collectionTotal' not present in CollectionMetadataListKeys JSON")
         if (incomplete_search := _dict.get("incompleteSearch")) is not None:
             args["incomplete_search"] = incomplete_search
         if (search_query := _dict.get("searchQuery")) is not None:
-            args["search_query"] = ListKeysMetadataPropertiesSearchQuery.from_dict(
-                search_query
-            )
+            args["search_query"] = ListKeysMetadataPropertiesSearchQuery.from_dict(search_query)
         return cls(**args)
 
     @classmethod
@@ -4536,42 +4487,22 @@ class CollectionMetadataListKeys:
         The type of resources in the resource array.
         """
 
-        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         APPLICATION_VND_IBM_KMS_CRN_JSON = "application/vnd.ibm.kms.crn+json"
         APPLICATION_VND_IBM_KMS_ERROR_JSON = "application/vnd.ibm.kms.error+json"
-        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = (
-            "application/vnd.ibm.kms.event_acknowledge+json"
-        )
-        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = (
-            "application/vnd.ibm.kms.import_token+json"
-        )
+        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = "application/vnd.ibm.kms.event_acknowledge+json"
+        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = "application/vnd.ibm.kms.import_token+json"
         APPLICATION_VND_IBM_KMS_KEY_JSON = "application/vnd.ibm.kms.key+json"
-        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = (
-            "application/vnd.ibm.kms.key_action+json"
-        )
+        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = "application/vnd.ibm.kms.key_action+json"
         APPLICATION_VND_IBM_KMS_ALIAS_JSON = "application/vnd.ibm.kms.alias+json"
         APPLICATION_VND_IBM_KMS_KEY_RING_JSON = "application/vnd.ibm.kms.key_ring+json"
         APPLICATION_VND_IBM_KMS_POLICY_JSON = "application/vnd.ibm.kms.policy+json"
-        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = (
-            "application/vnd.ibm.kms.registration_input+json"
-        )
-        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = (
-            "application/vnd.ibm.kms.registration+json"
-        )
-        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = (
-            "application/vnd.ibm.kms.resource_crn+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = (
-            "application/vnd.ibm.kms.kmip_object+json"
-        )
+        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = "application/vnd.ibm.kms.registration_input+json"
+        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = "application/vnd.ibm.kms.registration+json"
+        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = "application/vnd.ibm.kms.resource_crn+json"
+        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = "application/vnd.ibm.kms.kmip_adapter+json"
+        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = "application/vnd.ibm.kms.kmip_client_certificate+json"
+        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = "application/vnd.ibm.kms.kmip_object+json"
 
 
 class CollectionMetadataOneOf:
@@ -4629,15 +4560,11 @@ class CollectionMetadataWithTotalCount:
         if (collection_type := _dict.get("collectionType")) is not None:
             args["collection_type"] = collection_type
         else:
-            raise ValueError(
-                "Required property 'collectionType' not present in CollectionMetadataWithTotalCount JSON"
-            )
+            raise ValueError("Required property 'collectionType' not present in CollectionMetadataWithTotalCount JSON")
         if (collection_total := _dict.get("collectionTotal")) is not None:
             args["collection_total"] = collection_total
         else:
-            raise ValueError(
-                "Required property 'collectionTotal' not present in CollectionMetadataWithTotalCount JSON"
-            )
+            raise ValueError("Required property 'collectionTotal' not present in CollectionMetadataWithTotalCount JSON")
         if (total_count := _dict.get("totalCount")) is not None:
             args["total_count"] = total_count
         return cls(**args)
@@ -4681,42 +4608,22 @@ class CollectionMetadataWithTotalCount:
         The type of resources in the resource array.
         """
 
-        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         APPLICATION_VND_IBM_KMS_CRN_JSON = "application/vnd.ibm.kms.crn+json"
         APPLICATION_VND_IBM_KMS_ERROR_JSON = "application/vnd.ibm.kms.error+json"
-        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = (
-            "application/vnd.ibm.kms.event_acknowledge+json"
-        )
-        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = (
-            "application/vnd.ibm.kms.import_token+json"
-        )
+        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = "application/vnd.ibm.kms.event_acknowledge+json"
+        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = "application/vnd.ibm.kms.import_token+json"
         APPLICATION_VND_IBM_KMS_KEY_JSON = "application/vnd.ibm.kms.key+json"
-        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = (
-            "application/vnd.ibm.kms.key_action+json"
-        )
+        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = "application/vnd.ibm.kms.key_action+json"
         APPLICATION_VND_IBM_KMS_ALIAS_JSON = "application/vnd.ibm.kms.alias+json"
         APPLICATION_VND_IBM_KMS_KEY_RING_JSON = "application/vnd.ibm.kms.key_ring+json"
         APPLICATION_VND_IBM_KMS_POLICY_JSON = "application/vnd.ibm.kms.policy+json"
-        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = (
-            "application/vnd.ibm.kms.registration_input+json"
-        )
-        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = (
-            "application/vnd.ibm.kms.registration+json"
-        )
-        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = (
-            "application/vnd.ibm.kms.resource_crn+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = (
-            "application/vnd.ibm.kms.kmip_object+json"
-        )
+        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = "application/vnd.ibm.kms.registration_input+json"
+        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = "application/vnd.ibm.kms.registration+json"
+        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = "application/vnd.ibm.kms.resource_crn+json"
+        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = "application/vnd.ibm.kms.kmip_adapter+json"
+        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = "application/vnd.ibm.kms.kmip_client_certificate+json"
+        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = "application/vnd.ibm.kms.kmip_object+json"
 
 
 class CreateKMIPAdapterObject:
@@ -4781,9 +4688,7 @@ class CreateKMIPAdapterObject:
         if (profile := _dict.get("profile")) is not None:
             args["profile"] = profile
         else:
-            raise ValueError(
-                "Required property 'profile' not present in CreateKMIPAdapterObject JSON"
-            )
+            raise ValueError("Required property 'profile' not present in CreateKMIPAdapterObject JSON")
         if (profile_data := _dict.get("profile_data")) is not None:
             args["profile_data"] = profile_data
         return cls(**args)
@@ -4880,9 +4785,7 @@ class CreateKMIPClientCertificateObject:
         if (certificate := _dict.get("certificate")) is not None:
             args["certificate"] = certificate
         else:
-            raise ValueError(
-                "Required property 'certificate' not present in CreateKMIPClientCertificateObject JSON"
-            )
+            raise ValueError("Required property 'certificate' not present in CreateKMIPClientCertificateObject JSON")
         if (name := _dict.get("name")) is not None:
             args["name"] = name
         return cls(**args)
@@ -4951,15 +4854,11 @@ class DeleteKey:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadata.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in DeleteKey JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in DeleteKey JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KeyWithPayload.from_dict(v) for v in resources]
         else:
-            raise ValueError(
-                "Required property 'resources' not present in DeleteKey JSON"
-            )
+            raise ValueError("Required property 'resources' not present in DeleteKey JSON")
         return cls(**args)
 
     @classmethod
@@ -5040,9 +4939,7 @@ class DualAuthDeleteProperties:
         if (enabled := _dict.get("enabled")) is not None:
             args["enabled"] = enabled
         else:
-            raise ValueError(
-                "Required property 'enabled' not present in DualAuthDeleteProperties JSON"
-            )
+            raise ValueError("Required property 'enabled' not present in DualAuthDeleteProperties JSON")
         return cls(**args)
 
     @classmethod
@@ -5124,9 +5021,7 @@ class DualAuthKeyMetadata:
         if (enabled := _dict.get("enabled")) is not None:
             args["enabled"] = enabled
         else:
-            raise ValueError(
-                "Required property 'enabled' not present in DualAuthKeyMetadata JSON"
-            )
+            raise ValueError("Required property 'enabled' not present in DualAuthKeyMetadata JSON")
         if (key_set_for_deletion := _dict.get("keySetForDeletion")) is not None:
             args["key_set_for_deletion"] = key_set_for_deletion
         if (auth_expiration := _dict.get("authExpiration")) is not None:
@@ -5143,18 +5038,10 @@ class DualAuthKeyMetadata:
         _dict = {}
         if hasattr(self, "enabled") and self.enabled is not None:
             _dict["enabled"] = self.enabled
-        if (
-            hasattr(self, "key_set_for_deletion")
-            and self.key_set_for_deletion is not None
-        ):
+        if hasattr(self, "key_set_for_deletion") and self.key_set_for_deletion is not None:
             _dict["keySetForDeletion"] = self.key_set_for_deletion
-        if (
-            hasattr(self, "auth_expiration")
-            and getattr(self, "auth_expiration") is not None
-        ):
-            _dict["authExpiration"] = datetime_to_string(
-                getattr(self, "auth_expiration")
-            )
+        if hasattr(self, "auth_expiration") and getattr(self, "auth_expiration") is not None:
+            _dict["authExpiration"] = datetime_to_string(getattr(self, "auth_expiration"))
         return _dict
 
     def _to_dict(self):
@@ -5263,27 +5150,13 @@ class GetImportToken:
         _dict = {}
         if hasattr(self, "expiration") and self.expiration is not None:
             _dict["expiration"] = self.expiration
-        if (
-            hasattr(self, "max_allowed_retrievals")
-            and self.max_allowed_retrievals is not None
-        ):
+        if hasattr(self, "max_allowed_retrievals") and self.max_allowed_retrievals is not None:
             _dict["maxAllowedRetrievals"] = self.max_allowed_retrievals
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
-        if (
-            hasattr(self, "expiration_date")
-            and getattr(self, "expiration_date") is not None
-        ):
-            _dict["expirationDate"] = datetime_to_string(
-                getattr(self, "expiration_date")
-            )
-        if (
-            hasattr(self, "remaining_retrievals")
-            and getattr(self, "remaining_retrievals") is not None
-        ):
+        if hasattr(self, "expiration_date") and getattr(self, "expiration_date") is not None:
+            _dict["expirationDate"] = datetime_to_string(getattr(self, "expiration_date"))
+        if hasattr(self, "remaining_retrievals") and getattr(self, "remaining_retrievals") is not None:
             _dict["remainingRetrievals"] = getattr(self, "remaining_retrievals")
         if hasattr(self, "payload") and getattr(self, "payload") is not None:
             _dict["payload"] = str(base64.b64encode(getattr(self, "payload")), "utf-8")
@@ -5385,9 +5258,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem:
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem object from a json dictionary."""
         args = {}
         if (creation_date := _dict.get("creationDate")) is not None:
@@ -5406,9 +5277,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem:
             )
         if (policy_data := _dict.get("policy_data")) is not None:
             args["policy_data"] = (
-                GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(
-                    policy_data
-                )
+                GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData.from_dict(policy_data)
             )
         else:
             raise ValueError(
@@ -5424,10 +5293,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -5511,11 +5377,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicy
         self.attributes = attributes
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> (
-        "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData"
-    ):
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItemPolicyData object from a json dictionary."""
         args = {}
         if (enabled := _dict.get("enabled")) is not None:
@@ -5701,9 +5563,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesIte
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem object from a json dictionary."""
         args = {}
         if (creation_date := _dict.get("creationDate")) is not None:
@@ -5740,10 +5600,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesIte
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -6011,17 +5868,11 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesIte
         _dict = {}
         if hasattr(self, "create_root_key") and self.create_root_key is not None:
             _dict["create_root_key"] = self.create_root_key
-        if (
-            hasattr(self, "create_standard_key")
-            and self.create_standard_key is not None
-        ):
+        if hasattr(self, "create_standard_key") and self.create_standard_key is not None:
             _dict["create_standard_key"] = self.create_standard_key
         if hasattr(self, "import_root_key") and self.import_root_key is not None:
             _dict["import_root_key"] = self.import_root_key
-        if (
-            hasattr(self, "import_standard_key")
-            and self.import_standard_key is not None
-        ):
+        if hasattr(self, "import_standard_key") and self.import_standard_key is not None:
             _dict["import_standard_key"] = self.import_standard_key
         if hasattr(self, "enforce_token") and self.enforce_token is not None:
             _dict["enforce_token"] = self.enforce_token
@@ -6113,9 +5964,7 @@ class GetInstancePolicyAllowedIPResourcesItem:
                 "Required property 'policy_type' not present in GetInstancePolicyAllowedIPResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = (
-                GetInstancePolicyAllowedIPResourcesItemPolicyData.from_dict(policy_data)
-            )
+            args["policy_data"] = GetInstancePolicyAllowedIPResourcesItemPolicyData.from_dict(policy_data)
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in GetInstancePolicyAllowedIPResourcesItem JSON"
@@ -6130,10 +5979,7 @@ class GetInstancePolicyAllowedIPResourcesItem:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -6187,9 +6033,7 @@ class GetInstancePolicyAllowedIPResourcesItemPolicyData:
         self,
         enabled: bool,
         *,
-        attributes: Optional[
-            "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes"
-        ] = None,
+        attributes: Optional["GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes"] = None,
     ) -> None:
         """
         Initialize a GetInstancePolicyAllowedIPResourcesItemPolicyData object.
@@ -6207,9 +6051,7 @@ class GetInstancePolicyAllowedIPResourcesItemPolicyData:
         self.attributes = attributes
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePolicyAllowedIPResourcesItemPolicyData":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePolicyAllowedIPResourcesItemPolicyData":
         """Initialize a GetInstancePolicyAllowedIPResourcesItemPolicyData object from a json dictionary."""
         args = {}
         if (enabled := _dict.get("enabled")) is not None:
@@ -6217,11 +6059,7 @@ class GetInstancePolicyAllowedIPResourcesItemPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = (
-                GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes.from_dict(
-                    attributes
-                )
-            )
+            args["attributes"] = GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -6249,17 +6087,13 @@ class GetInstancePolicyAllowedIPResourcesItemPolicyData:
         """Return a `str` version of this GetInstancePolicyAllowedIPResourcesItemPolicyData object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyData"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyData") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyData"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyData") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -6313,9 +6147,7 @@ class GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes:
         self.allowed_ip = allowed_ip
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes":
         """Initialize a GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes object from a json dictionary."""
         args = {}
         if (allowed_ip := _dict.get("allowed_ip")) is not None:
@@ -6342,17 +6174,13 @@ class GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes:
         """Return a `str` version of this GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePolicyAllowedIPResourcesItemPolicyDataAttributes") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -6432,10 +6260,7 @@ class GetInstancePolicyDualAuthDeleteResourcesItem:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -6546,10 +6371,7 @@ class GetInstancePolicyMetricsResourcesItem:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -6646,9 +6468,7 @@ class GetInstancePolicyRotationResourcesItem:
                 "Required property 'policy_type' not present in GetInstancePolicyRotationResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = (
-                GetInstancePolicyRotationResourcesItemPolicyData.from_dict(policy_data)
-            )
+            args["policy_data"] = GetInstancePolicyRotationResourcesItemPolicyData.from_dict(policy_data)
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in GetInstancePolicyRotationResourcesItem JSON"
@@ -6663,10 +6483,7 @@ class GetInstancePolicyRotationResourcesItem:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -6720,9 +6537,7 @@ class GetInstancePolicyRotationResourcesItemPolicyData:
         self,
         enabled: bool,
         *,
-        attributes: Optional[
-            "GetInstancePolicyRotationResourcesItemPolicyDataAttributes"
-        ] = None,
+        attributes: Optional["GetInstancePolicyRotationResourcesItemPolicyDataAttributes"] = None,
     ) -> None:
         """
         Initialize a GetInstancePolicyRotationResourcesItemPolicyData object.
@@ -6740,9 +6555,7 @@ class GetInstancePolicyRotationResourcesItemPolicyData:
         self.attributes = attributes
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePolicyRotationResourcesItemPolicyData":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePolicyRotationResourcesItemPolicyData":
         """Initialize a GetInstancePolicyRotationResourcesItemPolicyData object from a json dictionary."""
         args = {}
         if (enabled := _dict.get("enabled")) is not None:
@@ -6750,11 +6563,7 @@ class GetInstancePolicyRotationResourcesItemPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = (
-                GetInstancePolicyRotationResourcesItemPolicyDataAttributes.from_dict(
-                    attributes
-                )
-            )
+            args["attributes"] = GetInstancePolicyRotationResourcesItemPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -6816,9 +6625,7 @@ class GetInstancePolicyRotationResourcesItemPolicyDataAttributes:
         self.interval_month = interval_month
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePolicyRotationResourcesItemPolicyDataAttributes":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePolicyRotationResourcesItemPolicyDataAttributes":
         """Initialize a GetInstancePolicyRotationResourcesItemPolicyDataAttributes object from a json dictionary."""
         args = {}
         if (interval_month := _dict.get("interval_month")) is not None:
@@ -6847,17 +6654,13 @@ class GetInstancePolicyRotationResourcesItemPolicyDataAttributes:
         """Return a `str` version of this GetInstancePolicyRotationResourcesItemPolicyDataAttributes object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePolicyRotationResourcesItemPolicyDataAttributes"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePolicyRotationResourcesItemPolicyDataAttributes") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePolicyRotationResourcesItemPolicyDataAttributes"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePolicyRotationResourcesItemPolicyDataAttributes") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -6973,15 +6776,11 @@ class GetKeyMetadata:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadata.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in GetKeyMetadata JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in GetKeyMetadata JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KeyFullRepresentation.from_dict(v) for v in resources]
         else:
-            raise ValueError(
-                "Required property 'resources' not present in GetKeyMetadata JSON"
-            )
+            raise ValueError("Required property 'resources' not present in GetKeyMetadata JSON")
         return cls(**args)
 
     @classmethod
@@ -7103,9 +6902,7 @@ class GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
         self.dual_auth_delete = dual_auth_delete
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem":
         """Initialize a GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem object from a json dictionary."""
         args = {}
         if (id := _dict.get("id")) is not None:
@@ -7127,9 +6924,7 @@ class GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
                 "Required property 'type' not present in GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem JSON"
             )
         if (dual_auth_delete := _dict.get("dualAuthDelete")) is not None:
-            args["dual_auth_delete"] = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
-                dual_auth_delete
-            )
+            args["dual_auth_delete"] = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(dual_auth_delete)
         else:
             args["dual_auth_delete"] = None
         return cls(**args)
@@ -7146,20 +6941,12 @@ class GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
             _dict["id"] = getattr(self, "id")
         if hasattr(self, "crn") and getattr(self, "crn") is not None:
             _dict["crn"] = getattr(self, "crn")
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "last_update_date")
-            and getattr(self, "last_update_date") is not None
-        ):
-            _dict["lastUpdateDate"] = datetime_to_string(
-                getattr(self, "last_update_date")
-            )
+        if hasattr(self, "last_update_date") and getattr(self, "last_update_date") is not None:
+            _dict["lastUpdateDate"] = datetime_to_string(getattr(self, "last_update_date"))
         if hasattr(self, "updated_by") and getattr(self, "updated_by") is not None:
             _dict["updatedBy"] = getattr(self, "updated_by")
         if hasattr(self, "type") and self.type is not None:
@@ -7179,17 +6966,13 @@ class GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem:
         """Return a `str` version of this GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem"
-    ) -> bool:
+    def __eq__(self, other: "GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem"
-    ) -> bool:
+    def __ne__(self, other: "GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -7272,9 +7055,7 @@ class GetKeyPolicyRotationResourcesItem:
         if (type := _dict.get("type")) is not None:
             args["type"] = type
         else:
-            raise ValueError(
-                "Required property 'type' not present in GetKeyPolicyRotationResourcesItem JSON"
-            )
+            raise ValueError("Required property 'type' not present in GetKeyPolicyRotationResourcesItem JSON")
         if (rotation := _dict.get("rotation")) is not None:
             args["rotation"] = KeyPolicyRotationRotation.from_dict(rotation)
         else:
@@ -7293,20 +7074,12 @@ class GetKeyPolicyRotationResourcesItem:
             _dict["id"] = getattr(self, "id")
         if hasattr(self, "crn") and getattr(self, "crn") is not None:
             _dict["crn"] = getattr(self, "crn")
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "last_update_date")
-            and getattr(self, "last_update_date") is not None
-        ):
-            _dict["lastUpdateDate"] = datetime_to_string(
-                getattr(self, "last_update_date")
-            )
+        if hasattr(self, "last_update_date") and getattr(self, "last_update_date") is not None:
+            _dict["lastUpdateDate"] = datetime_to_string(getattr(self, "last_update_date"))
         if hasattr(self, "updated_by") and getattr(self, "updated_by") is not None:
             _dict["updatedBy"] = getattr(self, "updated_by")
         if hasattr(self, "type") and self.type is not None:
@@ -7370,9 +7143,7 @@ class GetMultipleKeyPoliciesResource:
     def __init__(
         self,
         *,
-        dual_auth_delete: Optional[
-            "GetMultipleKeyPoliciesResourceDualAuthDelete"
-        ] = None,
+        dual_auth_delete: Optional["GetMultipleKeyPoliciesResourceDualAuthDelete"] = None,
         rotation: Optional["KeyPolicyRotationNonRequiredRotation"] = None,
         id: Optional[str] = None,
         crn: Optional[str] = None,
@@ -7403,9 +7174,7 @@ class GetMultipleKeyPoliciesResource:
         """Initialize a GetMultipleKeyPoliciesResource object from a json dictionary."""
         args = {}
         if (dual_auth_delete := _dict.get("dualAuthDelete")) is not None:
-            args["dual_auth_delete"] = (
-                GetMultipleKeyPoliciesResourceDualAuthDelete.from_dict(dual_auth_delete)
-            )
+            args["dual_auth_delete"] = GetMultipleKeyPoliciesResourceDualAuthDelete.from_dict(dual_auth_delete)
         if (rotation := _dict.get("rotation")) is not None:
             args["rotation"] = KeyPolicyRotationNonRequiredRotation.from_dict(rotation)
         if (id := _dict.get("id")) is not None:
@@ -7444,20 +7213,12 @@ class GetMultipleKeyPoliciesResource:
             _dict["id"] = getattr(self, "id")
         if hasattr(self, "crn") and getattr(self, "crn") is not None:
             _dict["crn"] = getattr(self, "crn")
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "last_update_date")
-            and getattr(self, "last_update_date") is not None
-        ):
-            _dict["lastUpdateDate"] = datetime_to_string(
-                getattr(self, "last_update_date")
-            )
+        if hasattr(self, "last_update_date") and getattr(self, "last_update_date") is not None:
+            _dict["lastUpdateDate"] = datetime_to_string(getattr(self, "last_update_date"))
         if hasattr(self, "updated_by") and getattr(self, "updated_by") is not None:
             _dict["updatedBy"] = getattr(self, "updated_by")
         return _dict
@@ -7629,27 +7390,13 @@ class ImportToken:
         _dict = {}
         if hasattr(self, "expiration") and self.expiration is not None:
             _dict["expiration"] = self.expiration
-        if (
-            hasattr(self, "max_allowed_retrievals")
-            and self.max_allowed_retrievals is not None
-        ):
+        if hasattr(self, "max_allowed_retrievals") and self.max_allowed_retrievals is not None:
             _dict["maxAllowedRetrievals"] = self.max_allowed_retrievals
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
-        if (
-            hasattr(self, "expiration_date")
-            and getattr(self, "expiration_date") is not None
-        ):
-            _dict["expirationDate"] = datetime_to_string(
-                getattr(self, "expiration_date")
-            )
-        if (
-            hasattr(self, "remaining_retrievals")
-            and getattr(self, "remaining_retrievals") is not None
-        ):
+        if hasattr(self, "expiration_date") and getattr(self, "expiration_date") is not None:
+            _dict["expirationDate"] = datetime_to_string(getattr(self, "expiration_date"))
+        if hasattr(self, "remaining_retrievals") and getattr(self, "remaining_retrievals") is not None:
             _dict["remainingRetrievals"] = getattr(self, "remaining_retrievals")
         return _dict
 
@@ -7719,9 +7466,7 @@ class InstancePolicyAllowedIPPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = InstancePolicyAllowedIPPolicyDataAttributes.from_dict(
-                attributes
-            )
+            args["attributes"] = InstancePolicyAllowedIPPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -7896,9 +7641,7 @@ class InstancePolicyAllowedNetworkPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = (
-                InstancePolicyAllowedNetworkPolicyDataAttributes.from_dict(attributes)
-            )
+            args["attributes"] = InstancePolicyAllowedNetworkPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -7963,9 +7706,7 @@ class InstancePolicyAllowedNetworkPolicyDataAttributes:
         self.allowed_network = allowed_network
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "InstancePolicyAllowedNetworkPolicyDataAttributes":
+    def from_dict(cls, _dict: Dict) -> "InstancePolicyAllowedNetworkPolicyDataAttributes":
         """Initialize a InstancePolicyAllowedNetworkPolicyDataAttributes object from a json dictionary."""
         args = {}
         if (allowed_network := _dict.get("allowed_network")) is not None:
@@ -8036,9 +7777,7 @@ class InstancePolicyKeyCreateImportAccessPolicyData:
         self,
         enabled: bool,
         *,
-        attributes: Optional[
-            "InstancePolicyKeyCreateImportAccessPolicyDataAttributes"
-        ] = None,
+        attributes: Optional["InstancePolicyKeyCreateImportAccessPolicyDataAttributes"] = None,
     ) -> None:
         """
         Initialize a InstancePolicyKeyCreateImportAccessPolicyData object.
@@ -8066,11 +7805,7 @@ class InstancePolicyKeyCreateImportAccessPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = (
-                InstancePolicyKeyCreateImportAccessPolicyDataAttributes.from_dict(
-                    attributes
-                )
-            )
+            args["attributes"] = InstancePolicyKeyCreateImportAccessPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -8199,9 +7934,7 @@ class InstancePolicyKeyCreateImportAccessPolicyDataAttributes:
         self.enforce_token = enforce_token
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "InstancePolicyKeyCreateImportAccessPolicyDataAttributes":
+    def from_dict(cls, _dict: Dict) -> "InstancePolicyKeyCreateImportAccessPolicyDataAttributes":
         """Initialize a InstancePolicyKeyCreateImportAccessPolicyDataAttributes object from a json dictionary."""
         args = {}
         if (create_root_key := _dict.get("create_root_key")) is not None:
@@ -8226,17 +7959,11 @@ class InstancePolicyKeyCreateImportAccessPolicyDataAttributes:
         _dict = {}
         if hasattr(self, "create_root_key") and self.create_root_key is not None:
             _dict["create_root_key"] = self.create_root_key
-        if (
-            hasattr(self, "create_standard_key")
-            and self.create_standard_key is not None
-        ):
+        if hasattr(self, "create_standard_key") and self.create_standard_key is not None:
             _dict["create_standard_key"] = self.create_standard_key
         if hasattr(self, "import_root_key") and self.import_root_key is not None:
             _dict["import_root_key"] = self.import_root_key
-        if (
-            hasattr(self, "import_standard_key")
-            and self.import_standard_key is not None
-        ):
+        if hasattr(self, "import_standard_key") and self.import_standard_key is not None:
             _dict["import_standard_key"] = self.import_standard_key
         if hasattr(self, "enforce_token") and self.enforce_token is not None:
             _dict["enforce_token"] = self.enforce_token
@@ -8250,17 +7977,13 @@ class InstancePolicyKeyCreateImportAccessPolicyDataAttributes:
         """Return a `str` version of this InstancePolicyKeyCreateImportAccessPolicyDataAttributes object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "InstancePolicyKeyCreateImportAccessPolicyDataAttributes"
-    ) -> bool:
+    def __eq__(self, other: "InstancePolicyKeyCreateImportAccessPolicyDataAttributes") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "InstancePolicyKeyCreateImportAccessPolicyDataAttributes"
-    ) -> bool:
+    def __ne__(self, other: "InstancePolicyKeyCreateImportAccessPolicyDataAttributes") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -8309,9 +8032,7 @@ class InstancePolicyProperties:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = InstancePolicyPropertiesAttributes.from_dict(
-                attributes
-            )
+            args["attributes"] = InstancePolicyPropertiesAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -8525,17 +8246,11 @@ class InstancePolicyPropertiesAttributes:
             _dict["allowed_ip"] = self.allowed_ip
         if hasattr(self, "create_root_key") and self.create_root_key is not None:
             _dict["create_root_key"] = self.create_root_key
-        if (
-            hasattr(self, "create_standard_key")
-            and self.create_standard_key is not None
-        ):
+        if hasattr(self, "create_standard_key") and self.create_standard_key is not None:
             _dict["create_standard_key"] = self.create_standard_key
         if hasattr(self, "import_root_key") and self.import_root_key is not None:
             _dict["import_root_key"] = self.import_root_key
-        if (
-            hasattr(self, "import_standard_key")
-            and self.import_standard_key is not None
-        ):
+        if hasattr(self, "import_standard_key") and self.import_standard_key is not None:
             _dict["import_standard_key"] = self.import_standard_key
         if hasattr(self, "enforce_token") and self.enforce_token is not None:
             _dict["enforce_token"] = self.enforce_token
@@ -8628,9 +8343,7 @@ class InstancePolicyResource:
         if (policy_type := _dict.get("policy_type")) is not None:
             args["policy_type"] = policy_type
         else:
-            raise ValueError(
-                "Required property 'policy_type' not present in InstancePolicyResource JSON"
-            )
+            raise ValueError("Required property 'policy_type' not present in InstancePolicyResource JSON")
         if (policy_data := _dict.get("policy_data")) is not None:
             args["policy_data"] = InstancePolicyProperties.from_dict(policy_data)
         else:
@@ -8645,10 +8358,7 @@ class InstancePolicyResource:
     def to_dict(self) -> Dict:
         """Return a json dictionary representing this model."""
         _dict = {}
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
@@ -8731,9 +8441,7 @@ class InstancePolicyRotationPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = InstancePolicyRotationPolicyDataAttributes.from_dict(
-                attributes
-            )
+            args["attributes"] = InstancePolicyRotationPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -8934,9 +8642,7 @@ class KMIPAdapter:
         if (created_by := _dict.get("created_by")) is not None:
             args["created_by"] = created_by
         else:
-            raise ValueError(
-                "Required property 'created_by' not present in KMIPAdapter JSON"
-            )
+            raise ValueError("Required property 'created_by' not present in KMIPAdapter JSON")
         if (updated_at := _dict.get("updated_at")) is not None:
             args["updated_at"] = string_to_datetime(updated_at)
         else:
@@ -8944,15 +8650,11 @@ class KMIPAdapter:
         if (updated_by := _dict.get("updated_by")) is not None:
             args["updated_by"] = updated_by
         else:
-            raise ValueError(
-                "Required property 'updated_by' not present in KMIPAdapter JSON"
-            )
+            raise ValueError("Required property 'updated_by' not present in KMIPAdapter JSON")
         if (profile := _dict.get("profile")) is not None:
             args["profile"] = profile
         else:
-            raise ValueError(
-                "Required property 'profile' not present in KMIPAdapter JSON"
-            )
+            raise ValueError("Required property 'profile' not present in KMIPAdapter JSON")
         if (description := _dict.get("description")) is not None:
             args["description"] = description
         if (profile_data := _dict.get("profile_data")) is not None:
@@ -9075,15 +8777,11 @@ class KMIPClientCertificate:
         if (name := _dict.get("name")) is not None:
             args["name"] = name
         else:
-            raise ValueError(
-                "Required property 'name' not present in KMIPClientCertificate JSON"
-            )
+            raise ValueError("Required property 'name' not present in KMIPClientCertificate JSON")
         if (id := _dict.get("id")) is not None:
             args["id"] = id
         else:
-            raise ValueError(
-                "Required property 'id' not present in KMIPClientCertificate JSON"
-            )
+            raise ValueError("Required property 'id' not present in KMIPClientCertificate JSON")
         if (created_at := _dict.get("created_at")) is not None:
             args["created_at"] = string_to_datetime(created_at)
         else:
@@ -9091,15 +8789,11 @@ class KMIPClientCertificate:
         if (created_by := _dict.get("created_by")) is not None:
             args["created_by"] = created_by
         else:
-            raise ValueError(
-                "Required property 'created_by' not present in KMIPClientCertificate JSON"
-            )
+            raise ValueError("Required property 'created_by' not present in KMIPClientCertificate JSON")
         if (certificate := _dict.get("certificate")) is not None:
             args["certificate"] = certificate
         else:
-            raise ValueError(
-                "Required property 'certificate' not present in KMIPClientCertificate JSON"
-            )
+            raise ValueError("Required property 'certificate' not present in KMIPClientCertificate JSON")
         return cls(**args)
 
     @classmethod
@@ -9192,15 +8886,11 @@ class KMIPClientPartialCertificate:
         if (name := _dict.get("name")) is not None:
             args["name"] = name
         else:
-            raise ValueError(
-                "Required property 'name' not present in KMIPClientPartialCertificate JSON"
-            )
+            raise ValueError("Required property 'name' not present in KMIPClientPartialCertificate JSON")
         if (id := _dict.get("id")) is not None:
             args["id"] = id
         else:
-            raise ValueError(
-                "Required property 'id' not present in KMIPClientPartialCertificate JSON"
-            )
+            raise ValueError("Required property 'id' not present in KMIPClientPartialCertificate JSON")
         if (created_at := _dict.get("created_at")) is not None:
             args["created_at"] = string_to_datetime(created_at)
         else:
@@ -9208,9 +8898,7 @@ class KMIPClientPartialCertificate:
         if (created_by := _dict.get("created_by")) is not None:
             args["created_by"] = created_by
         else:
-            raise ValueError(
-                "Required property 'created_by' not present in KMIPClientPartialCertificate JSON"
-            )
+            raise ValueError("Required property 'created_by' not present in KMIPClientPartialCertificate JSON")
         return cls(**args)
 
     @classmethod
@@ -9361,44 +9049,28 @@ class KMIPObject:
         if (kmip_object_type := _dict.get("kmip_object_type")) is not None:
             args["kmip_object_type"] = kmip_object_type
         else:
-            raise ValueError(
-                "Required property 'kmip_object_type' not present in KMIPObject JSON"
-            )
+            raise ValueError("Required property 'kmip_object_type' not present in KMIPObject JSON")
         if (state := _dict.get("state")) is not None:
             args["state"] = state
         if (created_at := _dict.get("created_at")) is not None:
             args["created_at"] = string_to_datetime(created_at)
         else:
             args["created_at"] = None
-        if (
-            created_by_kmip_client_cert_id := _dict.get(
-                "created_by_kmip_client_cert_id"
-            )
-        ) is not None:
+        if (created_by_kmip_client_cert_id := _dict.get("created_by_kmip_client_cert_id")) is not None:
             args["created_by_kmip_client_cert_id"] = created_by_kmip_client_cert_id
         else:
-            raise ValueError(
-                "Required property 'created_by_kmip_client_cert_id' not present in KMIPObject JSON"
-            )
+            raise ValueError("Required property 'created_by_kmip_client_cert_id' not present in KMIPObject JSON")
         if (created_by := _dict.get("created_by")) is not None:
             args["created_by"] = created_by
         if (updated_at := _dict.get("updated_at")) is not None:
             args["updated_at"] = string_to_datetime(updated_at)
-        if (
-            updated_by_kmip_client_cert_id := _dict.get(
-                "updated_by_kmip_client_cert_id"
-            )
-        ) is not None:
+        if (updated_by_kmip_client_cert_id := _dict.get("updated_by_kmip_client_cert_id")) is not None:
             args["updated_by_kmip_client_cert_id"] = updated_by_kmip_client_cert_id
         if (updated_by := _dict.get("updated_by")) is not None:
             args["updated_by"] = updated_by
         if (destroyed_at := _dict.get("destroyed_at")) is not None:
             args["destroyed_at"] = string_to_datetime(destroyed_at)
-        if (
-            destroyed_by_kmip_client_cert_id := _dict.get(
-                "destroyed_by_kmip_client_cert_id"
-            )
-        ) is not None:
+        if (destroyed_by_kmip_client_cert_id := _dict.get("destroyed_by_kmip_client_cert_id")) is not None:
             args["destroyed_by_kmip_client_cert_id"] = destroyed_by_kmip_client_cert_id
         if (destroyed_by := _dict.get("destroyed_by")) is not None:
             args["destroyed_by"] = destroyed_by
@@ -9422,35 +9094,20 @@ class KMIPObject:
             _dict["state"] = self.state
         if hasattr(self, "created_at") and self.created_at is not None:
             _dict["created_at"] = datetime_to_string(self.created_at)
-        if (
-            hasattr(self, "created_by_kmip_client_cert_id")
-            and self.created_by_kmip_client_cert_id is not None
-        ):
-            _dict["created_by_kmip_client_cert_id"] = (
-                self.created_by_kmip_client_cert_id
-            )
+        if hasattr(self, "created_by_kmip_client_cert_id") and self.created_by_kmip_client_cert_id is not None:
+            _dict["created_by_kmip_client_cert_id"] = self.created_by_kmip_client_cert_id
         if hasattr(self, "created_by") and self.created_by is not None:
             _dict["created_by"] = self.created_by
         if hasattr(self, "updated_at") and self.updated_at is not None:
             _dict["updated_at"] = datetime_to_string(self.updated_at)
-        if (
-            hasattr(self, "updated_by_kmip_client_cert_id")
-            and self.updated_by_kmip_client_cert_id is not None
-        ):
-            _dict["updated_by_kmip_client_cert_id"] = (
-                self.updated_by_kmip_client_cert_id
-            )
+        if hasattr(self, "updated_by_kmip_client_cert_id") and self.updated_by_kmip_client_cert_id is not None:
+            _dict["updated_by_kmip_client_cert_id"] = self.updated_by_kmip_client_cert_id
         if hasattr(self, "updated_by") and self.updated_by is not None:
             _dict["updated_by"] = self.updated_by
         if hasattr(self, "destroyed_at") and self.destroyed_at is not None:
             _dict["destroyed_at"] = datetime_to_string(self.destroyed_at)
-        if (
-            hasattr(self, "destroyed_by_kmip_client_cert_id")
-            and self.destroyed_by_kmip_client_cert_id is not None
-        ):
-            _dict["destroyed_by_kmip_client_cert_id"] = (
-                self.destroyed_by_kmip_client_cert_id
-            )
+        if hasattr(self, "destroyed_by_kmip_client_cert_id") and self.destroyed_by_kmip_client_cert_id is not None:
+            _dict["destroyed_by_kmip_client_cert_id"] = self.destroyed_by_kmip_client_cert_id
         if hasattr(self, "destroyed_by") and self.destroyed_by is not None:
             _dict["destroyed_by"] = self.destroyed_by
         if hasattr(self, "recoverable") and self.recoverable is not None:
@@ -9734,10 +9391,7 @@ class KeyAliasResource:
             _dict["alias"] = getattr(self, "alias")
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         return _dict
 
@@ -10020,9 +9674,7 @@ class KeyFullRepresentation:
         if (algorithm_type := _dict.get("algorithmType")) is not None:
             args["algorithm_type"] = algorithm_type
         if (algorithm_metadata := _dict.get("algorithmMetadata")) is not None:
-            args["algorithm_metadata"] = (
-                KeyFullRepresentationAlgorithmMetadata.from_dict(algorithm_metadata)
-            )
+            args["algorithm_metadata"] = KeyFullRepresentationAlgorithmMetadata.from_dict(algorithm_metadata)
         if (algorithm_bit_size := _dict.get("algorithmBitSize")) is not None:
             args["algorithm_bit_size"] = algorithm_bit_size
         if (algorithm_mode := _dict.get("algorithmMode")) is not None:
@@ -10046,9 +9698,7 @@ class KeyFullRepresentation:
         if (deleted_by := _dict.get("deletedBy")) is not None:
             args["deleted_by"] = deleted_by
         if (restore_expiration_date := _dict.get("restoreExpirationDate")) is not None:
-            args["restore_expiration_date"] = string_to_datetime(
-                restore_expiration_date
-            )
+            args["restore_expiration_date"] = string_to_datetime(restore_expiration_date)
         if (restore_allowed := _dict.get("restoreAllowed")) is not None:
             args["restore_allowed"] = restore_allowed
         if (purge_allowed := _dict.get("purgeAllowed")) is not None:
@@ -10081,13 +9731,8 @@ class KeyFullRepresentation:
             _dict["tags"] = self.tags
         if hasattr(self, "state") and getattr(self, "state") is not None:
             _dict["state"] = getattr(self, "state")
-        if (
-            hasattr(self, "expiration_date")
-            and getattr(self, "expiration_date") is not None
-        ):
-            _dict["expirationDate"] = datetime_to_string(
-                getattr(self, "expiration_date")
-            )
+        if hasattr(self, "expiration_date") and getattr(self, "expiration_date") is not None:
+            _dict["expirationDate"] = datetime_to_string(getattr(self, "expiration_date"))
         if hasattr(self, "extractable") and self.extractable is not None:
             _dict["extractable"] = self.extractable
         if hasattr(self, "crn") and getattr(self, "crn") is not None:
@@ -10096,51 +9741,27 @@ class KeyFullRepresentation:
             _dict["imported"] = getattr(self, "imported")
         if hasattr(self, "key_ring_id") and self.key_ring_id is not None:
             _dict["keyRingID"] = self.key_ring_id
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "algorithm_type")
-            and getattr(self, "algorithm_type") is not None
-        ):
+        if hasattr(self, "algorithm_type") and getattr(self, "algorithm_type") is not None:
             _dict["algorithmType"] = getattr(self, "algorithm_type")
-        if (
-            hasattr(self, "algorithm_metadata")
-            and getattr(self, "algorithm_metadata") is not None
-        ):
+        if hasattr(self, "algorithm_metadata") and getattr(self, "algorithm_metadata") is not None:
             if isinstance(getattr(self, "algorithm_metadata"), dict):
                 _dict["algorithmMetadata"] = getattr(self, "algorithm_metadata")
             else:
-                _dict["algorithmMetadata"] = getattr(
-                    self, "algorithm_metadata"
-                ).to_dict()
+                _dict["algorithmMetadata"] = getattr(self, "algorithm_metadata").to_dict()
         if hasattr(self, "algorithm_bit_size") and self.algorithm_bit_size is not None:
             _dict["algorithmBitSize"] = self.algorithm_bit_size
         if hasattr(self, "algorithm_mode") and self.algorithm_mode is not None:
             _dict["algorithmMode"] = self.algorithm_mode
-        if (
-            hasattr(self, "nonactive_state_reason")
-            and getattr(self, "nonactive_state_reason") is not None
-        ):
+        if hasattr(self, "nonactive_state_reason") and getattr(self, "nonactive_state_reason") is not None:
             _dict["nonactiveStateReason"] = getattr(self, "nonactive_state_reason")
-        if (
-            hasattr(self, "last_update_date")
-            and getattr(self, "last_update_date") is not None
-        ):
-            _dict["lastUpdateDate"] = datetime_to_string(
-                getattr(self, "last_update_date")
-            )
-        if (
-            hasattr(self, "last_rotate_date")
-            and getattr(self, "last_rotate_date") is not None
-        ):
-            _dict["lastRotateDate"] = datetime_to_string(
-                getattr(self, "last_rotate_date")
-            )
+        if hasattr(self, "last_update_date") and getattr(self, "last_update_date") is not None:
+            _dict["lastUpdateDate"] = datetime_to_string(getattr(self, "last_update_date"))
+        if hasattr(self, "last_rotate_date") and getattr(self, "last_rotate_date") is not None:
+            _dict["lastRotateDate"] = datetime_to_string(getattr(self, "last_rotate_date"))
         if hasattr(self, "key_version") and getattr(self, "key_version") is not None:
             if isinstance(getattr(self, "key_version"), dict):
                 _dict["keyVersion"] = getattr(self, "key_version")
@@ -10158,20 +9779,12 @@ class KeyFullRepresentation:
                 _dict["rotation"] = self.rotation.to_dict()
         if hasattr(self, "deleted") and getattr(self, "deleted") is not None:
             _dict["deleted"] = getattr(self, "deleted")
-        if (
-            hasattr(self, "deletion_date")
-            and getattr(self, "deletion_date") is not None
-        ):
+        if hasattr(self, "deletion_date") and getattr(self, "deletion_date") is not None:
             _dict["deletionDate"] = datetime_to_string(getattr(self, "deletion_date"))
         if hasattr(self, "deleted_by") and getattr(self, "deleted_by") is not None:
             _dict["deletedBy"] = getattr(self, "deleted_by")
-        if (
-            hasattr(self, "restore_expiration_date")
-            and self.restore_expiration_date is not None
-        ):
-            _dict["restoreExpirationDate"] = datetime_to_string(
-                self.restore_expiration_date
-            )
+        if hasattr(self, "restore_expiration_date") and self.restore_expiration_date is not None:
+            _dict["restoreExpirationDate"] = datetime_to_string(self.restore_expiration_date)
         if hasattr(self, "restore_allowed") and self.restore_allowed is not None:
             _dict["restoreAllowed"] = self.restore_allowed
         if hasattr(self, "purge_allowed") and self.purge_allowed is not None:
@@ -10332,13 +9945,9 @@ class KeyPolicyDualAuthDelete:
         if (type := _dict.get("type")) is not None:
             args["type"] = type
         else:
-            raise ValueError(
-                "Required property 'type' not present in KeyPolicyDualAuthDelete JSON"
-            )
+            raise ValueError("Required property 'type' not present in KeyPolicyDualAuthDelete JSON")
         if (dual_auth_delete := _dict.get("dualAuthDelete")) is not None:
-            args["dual_auth_delete"] = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
-                dual_auth_delete
-            )
+            args["dual_auth_delete"] = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(dual_auth_delete)
         else:
             args["dual_auth_delete"] = None
         return cls(**args)
@@ -10494,9 +10103,7 @@ class KeyPolicyRotation:
         if (type := _dict.get("type")) is not None:
             args["type"] = type
         else:
-            raise ValueError(
-                "Required property 'type' not present in KeyPolicyRotation JSON"
-            )
+            raise ValueError("Required property 'type' not present in KeyPolicyRotation JSON")
         if (rotation := _dict.get("rotation")) is not None:
             args["rotation"] = KeyPolicyRotationRotation.from_dict(rotation)
         else:
@@ -10582,9 +10189,7 @@ class KeyPolicyRotationNonRequiredRotation:
         if (enabled := _dict.get("enabled")) is not None:
             args["enabled"] = enabled
         else:
-            raise ValueError(
-                "Required property 'enabled' not present in KeyPolicyRotationNonRequiredRotation JSON"
-            )
+            raise ValueError("Required property 'enabled' not present in KeyPolicyRotationNonRequiredRotation JSON")
         if (interval_month := _dict.get("interval_month")) is not None:
             args["interval_month"] = interval_month
         else:
@@ -10824,10 +10429,7 @@ class KeyVersion:
         _dict = {}
         if hasattr(self, "id") and getattr(self, "id") is not None:
             _dict["id"] = getattr(self, "id")
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         return _dict
 
@@ -11116,9 +10718,7 @@ class KeyWithPayload:
         if (algorithm_type := _dict.get("algorithmType")) is not None:
             args["algorithm_type"] = algorithm_type
         if (algorithm_metadata := _dict.get("algorithmMetadata")) is not None:
-            args["algorithm_metadata"] = KeyWithPayloadAlgorithmMetadata.from_dict(
-                algorithm_metadata
-            )
+            args["algorithm_metadata"] = KeyWithPayloadAlgorithmMetadata.from_dict(algorithm_metadata)
         if (algorithm_bit_size := _dict.get("algorithmBitSize")) is not None:
             args["algorithm_bit_size"] = algorithm_bit_size
         if (algorithm_mode := _dict.get("algorithmMode")) is not None:
@@ -11142,9 +10742,7 @@ class KeyWithPayload:
         if (deleted_by := _dict.get("deletedBy")) is not None:
             args["deleted_by"] = deleted_by
         if (restore_expiration_date := _dict.get("restoreExpirationDate")) is not None:
-            args["restore_expiration_date"] = string_to_datetime(
-                restore_expiration_date
-            )
+            args["restore_expiration_date"] = string_to_datetime(restore_expiration_date)
         if (restore_allowed := _dict.get("restoreAllowed")) is not None:
             args["restore_allowed"] = restore_allowed
         if (purge_allowed := _dict.get("purgeAllowed")) is not None:
@@ -11179,13 +10777,8 @@ class KeyWithPayload:
             _dict["tags"] = self.tags
         if hasattr(self, "state") and getattr(self, "state") is not None:
             _dict["state"] = getattr(self, "state")
-        if (
-            hasattr(self, "expiration_date")
-            and getattr(self, "expiration_date") is not None
-        ):
-            _dict["expirationDate"] = datetime_to_string(
-                getattr(self, "expiration_date")
-            )
+        if hasattr(self, "expiration_date") and getattr(self, "expiration_date") is not None:
+            _dict["expirationDate"] = datetime_to_string(getattr(self, "expiration_date"))
         if hasattr(self, "extractable") and self.extractable is not None:
             _dict["extractable"] = self.extractable
         if hasattr(self, "crn") and getattr(self, "crn") is not None:
@@ -11194,51 +10787,27 @@ class KeyWithPayload:
             _dict["imported"] = getattr(self, "imported")
         if hasattr(self, "key_ring_id") and self.key_ring_id is not None:
             _dict["keyRingID"] = self.key_ring_id
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "algorithm_type")
-            and getattr(self, "algorithm_type") is not None
-        ):
+        if hasattr(self, "algorithm_type") and getattr(self, "algorithm_type") is not None:
             _dict["algorithmType"] = getattr(self, "algorithm_type")
-        if (
-            hasattr(self, "algorithm_metadata")
-            and getattr(self, "algorithm_metadata") is not None
-        ):
+        if hasattr(self, "algorithm_metadata") and getattr(self, "algorithm_metadata") is not None:
             if isinstance(getattr(self, "algorithm_metadata"), dict):
                 _dict["algorithmMetadata"] = getattr(self, "algorithm_metadata")
             else:
-                _dict["algorithmMetadata"] = getattr(
-                    self, "algorithm_metadata"
-                ).to_dict()
+                _dict["algorithmMetadata"] = getattr(self, "algorithm_metadata").to_dict()
         if hasattr(self, "algorithm_bit_size") and self.algorithm_bit_size is not None:
             _dict["algorithmBitSize"] = self.algorithm_bit_size
         if hasattr(self, "algorithm_mode") and self.algorithm_mode is not None:
             _dict["algorithmMode"] = self.algorithm_mode
-        if (
-            hasattr(self, "nonactive_state_reason")
-            and getattr(self, "nonactive_state_reason") is not None
-        ):
+        if hasattr(self, "nonactive_state_reason") and getattr(self, "nonactive_state_reason") is not None:
             _dict["nonactiveStateReason"] = getattr(self, "nonactive_state_reason")
-        if (
-            hasattr(self, "last_update_date")
-            and getattr(self, "last_update_date") is not None
-        ):
-            _dict["lastUpdateDate"] = datetime_to_string(
-                getattr(self, "last_update_date")
-            )
-        if (
-            hasattr(self, "last_rotate_date")
-            and getattr(self, "last_rotate_date") is not None
-        ):
-            _dict["lastRotateDate"] = datetime_to_string(
-                getattr(self, "last_rotate_date")
-            )
+        if hasattr(self, "last_update_date") and getattr(self, "last_update_date") is not None:
+            _dict["lastUpdateDate"] = datetime_to_string(getattr(self, "last_update_date"))
+        if hasattr(self, "last_rotate_date") and getattr(self, "last_rotate_date") is not None:
+            _dict["lastRotateDate"] = datetime_to_string(getattr(self, "last_rotate_date"))
         if hasattr(self, "key_version") and getattr(self, "key_version") is not None:
             if isinstance(getattr(self, "key_version"), dict):
                 _dict["keyVersion"] = getattr(self, "key_version")
@@ -11256,20 +10825,12 @@ class KeyWithPayload:
                 _dict["rotation"] = self.rotation.to_dict()
         if hasattr(self, "deleted") and getattr(self, "deleted") is not None:
             _dict["deleted"] = getattr(self, "deleted")
-        if (
-            hasattr(self, "deletion_date")
-            and getattr(self, "deletion_date") is not None
-        ):
+        if hasattr(self, "deletion_date") and getattr(self, "deletion_date") is not None:
             _dict["deletionDate"] = datetime_to_string(getattr(self, "deletion_date"))
         if hasattr(self, "deleted_by") and getattr(self, "deleted_by") is not None:
             _dict["deletedBy"] = getattr(self, "deleted_by")
-        if (
-            hasattr(self, "restore_expiration_date")
-            and self.restore_expiration_date is not None
-        ):
-            _dict["restoreExpirationDate"] = datetime_to_string(
-                self.restore_expiration_date
-            )
+        if hasattr(self, "restore_expiration_date") and self.restore_expiration_date is not None:
+            _dict["restoreExpirationDate"] = datetime_to_string(self.restore_expiration_date)
         if hasattr(self, "restore_allowed") and self.restore_allowed is not None:
             _dict["restoreAllowed"] = self.restore_allowed
         if hasattr(self, "purge_allowed") and self.purge_allowed is not None:
@@ -11530,9 +11091,7 @@ class ListKMIPAdaptersWithTotalCount:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadataWithTotalCount.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in ListKMIPAdaptersWithTotalCount JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in ListKMIPAdaptersWithTotalCount JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KMIPAdapter.from_dict(v) for v in resources]
         return cls(**args)
@@ -11688,9 +11247,7 @@ class ListKMIPObjectsWithTotalCount:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadataWithTotalCount.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in ListKMIPObjectsWithTotalCount JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in ListKMIPObjectsWithTotalCount JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KMIPObject.from_dict(v) for v in resources]
         return cls(**args)
@@ -11765,9 +11322,7 @@ class ListKMIPPartialClientCertificatesWithTotalCount:
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "ListKMIPPartialClientCertificatesWithTotalCount":
+    def from_dict(cls, _dict: Dict) -> "ListKMIPPartialClientCertificatesWithTotalCount":
         """Initialize a ListKMIPPartialClientCertificatesWithTotalCount object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -11777,9 +11332,7 @@ class ListKMIPPartialClientCertificatesWithTotalCount:
                 "Required property 'metadata' not present in ListKMIPPartialClientCertificatesWithTotalCount JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                KMIPClientPartialCertificate.from_dict(v) for v in resources
-            ]
+            args["resources"] = [KMIPClientPartialCertificate.from_dict(v) for v in resources]
         return cls(**args)
 
     @classmethod
@@ -11856,9 +11409,7 @@ class ListKeyRingsWithTotalCount:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadataWithTotalCount.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in ListKeyRingsWithTotalCount JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in ListKeyRingsWithTotalCount JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KeyRing.from_dict(v) for v in resources]
         return cls(**args)
@@ -12014,9 +11565,7 @@ class ListKeys:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadataListKeys.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in ListKeys JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in ListKeys JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KeyFullRepresentation.from_dict(v) for v in resources]
         return cls(**args)
@@ -12104,15 +11653,11 @@ class ListKeysMetadataPropertiesSearchQuery:
         if (query := _dict.get("query")) is not None:
             args["query"] = query
         else:
-            raise ValueError(
-                "Required property 'query' not present in ListKeysMetadataPropertiesSearchQuery JSON"
-            )
+            raise ValueError("Required property 'query' not present in ListKeysMetadataPropertiesSearchQuery JSON")
         if (scopes := _dict.get("scopes")) is not None:
             args["scopes"] = scopes
         else:
-            raise ValueError(
-                "Required property 'scopes' not present in ListKeysMetadataPropertiesSearchQuery JSON"
-            )
+            raise ValueError("Required property 'scopes' not present in ListKeysMetadataPropertiesSearchQuery JSON")
         if (not_ := _dict.get("not")) is not None:
             args["not_"] = not_
         if (exact := _dict.get("exact")) is not None:
@@ -12212,9 +11757,7 @@ class MetricsProperties:
         if (enabled := _dict.get("enabled")) is not None:
             args["enabled"] = enabled
         else:
-            raise ValueError(
-                "Required property 'enabled' not present in MetricsProperties JSON"
-            )
+            raise ValueError("Required property 'enabled' not present in MetricsProperties JSON")
         return cls(**args)
 
     @classmethod
@@ -12357,15 +11900,11 @@ class PurgeKey:
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadata.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in PurgeKey JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in PurgeKey JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KeyFullRepresentation.from_dict(v) for v in resources]
         else:
-            raise ValueError(
-                "Required property 'resources' not present in PurgeKey JSON"
-            )
+            raise ValueError("Required property 'resources' not present in PurgeKey JSON")
         return cls(**args)
 
     @classmethod
@@ -12508,10 +12047,7 @@ class RegistrationResource:
             _dict["resourceCrn"] = getattr(self, "resource_crn")
         if hasattr(self, "created_by") and getattr(self, "created_by") is not None:
             _dict["createdBy"] = getattr(self, "created_by")
-        if (
-            hasattr(self, "creation_date")
-            and getattr(self, "creation_date") is not None
-        ):
+        if hasattr(self, "creation_date") and getattr(self, "creation_date") is not None:
             _dict["creationDate"] = datetime_to_string(getattr(self, "creation_date"))
         if hasattr(self, "updated_by") and getattr(self, "updated_by") is not None:
             _dict["updatedBy"] = getattr(self, "updated_by")
@@ -12519,10 +12055,7 @@ class RegistrationResource:
             _dict["lastUpdated"] = datetime_to_string(getattr(self, "last_updated"))
         if hasattr(self, "description") and getattr(self, "description") is not None:
             _dict["description"] = getattr(self, "description")
-        if (
-            hasattr(self, "prevent_key_deletion")
-            and getattr(self, "prevent_key_deletion") is not None
-        ):
+        if hasattr(self, "prevent_key_deletion") and getattr(self, "prevent_key_deletion") is not None:
             _dict["preventKeyDeletion"] = getattr(self, "prevent_key_deletion")
         if hasattr(self, "key_version") and getattr(self, "key_version") is not None:
             if isinstance(getattr(self, "key_version"), dict):
@@ -12651,9 +12184,7 @@ class RewrapKeyResponseBody:
         *,
         ciphertext: Optional[str] = None,
         key_version: Optional["WrappedKeyVersionKeyVersion"] = None,
-        rewrapped_key_version: Optional[
-            "RewrappedKeyVersionRewrappedKeyVersion"
-        ] = None,
+        rewrapped_key_version: Optional["RewrappedKeyVersionRewrappedKeyVersion"] = None,
     ) -> None:
         """
         Initialize a RewrapKeyResponseBody object.
@@ -12677,9 +12208,7 @@ class RewrapKeyResponseBody:
         if (key_version := _dict.get("keyVersion")) is not None:
             args["key_version"] = WrappedKeyVersionKeyVersion.from_dict(key_version)
         if (rewrapped_key_version := _dict.get("rewrappedKeyVersion")) is not None:
-            args["rewrapped_key_version"] = (
-                RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
-            )
+            args["rewrapped_key_version"] = RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
         return cls(**args)
 
     @classmethod
@@ -12697,16 +12226,11 @@ class RewrapKeyResponseBody:
                 _dict["keyVersion"] = getattr(self, "key_version")
             else:
                 _dict["keyVersion"] = getattr(self, "key_version").to_dict()
-        if (
-            hasattr(self, "rewrapped_key_version")
-            and getattr(self, "rewrapped_key_version") is not None
-        ):
+        if hasattr(self, "rewrapped_key_version") and getattr(self, "rewrapped_key_version") is not None:
             if isinstance(getattr(self, "rewrapped_key_version"), dict):
                 _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version")
             else:
-                _dict["rewrappedKeyVersion"] = getattr(
-                    self, "rewrapped_key_version"
-                ).to_dict()
+                _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version").to_dict()
         return _dict
 
     def _to_dict(self):
@@ -12914,9 +12438,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem object from a json dictionary."""
         args = {}
         if (policy_type := _dict.get("policy_type")) is not None:
@@ -12926,9 +12448,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
                 "Required property 'policy_type' not present in SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = InstancePolicyAllowedIPPolicyData.from_dict(
-                policy_data
-            )
+            args["policy_data"] = InstancePolicyAllowedIPPolicyData.from_dict(policy_data)
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem JSON"
@@ -12960,17 +12480,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem:
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -13007,9 +12523,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem:
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem object from a json dictionary."""
         args = {}
         if (policy_type := _dict.get("policy_type")) is not None:
@@ -13019,9 +12533,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem:
                 "Required property 'policy_type' not present in SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = InstancePolicyAllowedNetworkPolicyData.from_dict(
-                policy_data
-            )
+            args["policy_data"] = InstancePolicyAllowedNetworkPolicyData.from_dict(policy_data)
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem JSON"
@@ -13104,9 +12616,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesIte
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem object from a json dictionary."""
         args = {}
         if (policy_type := _dict.get("policy_type")) is not None:
@@ -13116,9 +12626,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesIte
                 "Required property 'policy_type' not present in SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = (
-                InstancePolicyKeyCreateImportAccessPolicyData.from_dict(policy_data)
-            )
+            args["policy_data"] = InstancePolicyKeyCreateImportAccessPolicyData.from_dict(policy_data)
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem JSON"
@@ -13199,9 +12707,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem:
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem object from a json dictionary."""
         args = {}
         if (policy_type := _dict.get("policy_type")) is not None:
@@ -13243,17 +12749,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem:
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -13290,9 +12792,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem:
         self.policy_data = policy_data
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem object from a json dictionary."""
         args = {}
         if (policy_type := _dict.get("policy_type")) is not None:
@@ -13302,9 +12802,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem:
                 "Required property 'policy_type' not present in SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = InstancePolicyRotationPolicyData.from_dict(
-                policy_data
-            )
+            args["policy_data"] = InstancePolicyRotationPolicyData.from_dict(policy_data)
         else:
             raise ValueError(
                 "Required property 'policy_data' not present in SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem JSON"
@@ -13336,17 +12834,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem:
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -13503,11 +12997,7 @@ class SetMultipleInstancePoliciesResourcesItem:
                 "Required property 'policy_type' not present in SetMultipleInstancePoliciesResourcesItem JSON"
             )
         if (policy_data := _dict.get("policy_data")) is not None:
-            args["policy_data"] = (
-                SetMultipleInstancePoliciesResourcesItemPolicyData.from_dict(
-                    policy_data
-                )
-            )
+            args["policy_data"] = SetMultipleInstancePoliciesResourcesItemPolicyData.from_dict(policy_data)
         else:
             args["policy_data"] = None
         return cls(**args)
@@ -13580,9 +13070,7 @@ class SetMultipleInstancePoliciesResourcesItemPolicyData:
         self,
         enabled: bool,
         *,
-        attributes: Optional[
-            "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes"
-        ] = None,
+        attributes: Optional["SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes"] = None,
     ) -> None:
         """
         Initialize a SetMultipleInstancePoliciesResourcesItemPolicyData object.
@@ -13603,9 +13091,7 @@ class SetMultipleInstancePoliciesResourcesItemPolicyData:
         self.attributes = attributes
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetMultipleInstancePoliciesResourcesItemPolicyData":
+    def from_dict(cls, _dict: Dict) -> "SetMultipleInstancePoliciesResourcesItemPolicyData":
         """Initialize a SetMultipleInstancePoliciesResourcesItemPolicyData object from a json dictionary."""
         args = {}
         if (enabled := _dict.get("enabled")) is not None:
@@ -13613,11 +13099,7 @@ class SetMultipleInstancePoliciesResourcesItemPolicyData:
         else:
             args["enabled"] = None
         if (attributes := _dict.get("attributes")) is not None:
-            args["attributes"] = (
-                SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes.from_dict(
-                    attributes
-                )
-            )
+            args["attributes"] = SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes.from_dict(attributes)
         return cls(**args)
 
     @classmethod
@@ -13645,17 +13127,13 @@ class SetMultipleInstancePoliciesResourcesItemPolicyData:
         """Return a `str` version of this SetMultipleInstancePoliciesResourcesItemPolicyData object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetMultipleInstancePoliciesResourcesItemPolicyData"
-    ) -> bool:
+    def __eq__(self, other: "SetMultipleInstancePoliciesResourcesItemPolicyData") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetMultipleInstancePoliciesResourcesItemPolicyData"
-    ) -> bool:
+    def __ne__(self, other: "SetMultipleInstancePoliciesResourcesItemPolicyData") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -13802,9 +13280,7 @@ class SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes:
         self.interval_month = interval_month
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes":
+    def from_dict(cls, _dict: Dict) -> "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes":
         """Initialize a SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes object from a json dictionary."""
         args = {}
         if (allowed_network := _dict.get("allowed_network")) is not None:
@@ -13839,17 +13315,11 @@ class SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes:
             _dict["allowed_ip"] = self.allowed_ip
         if hasattr(self, "create_root_key") and self.create_root_key is not None:
             _dict["create_root_key"] = self.create_root_key
-        if (
-            hasattr(self, "create_standard_key")
-            and self.create_standard_key is not None
-        ):
+        if hasattr(self, "create_standard_key") and self.create_standard_key is not None:
             _dict["create_standard_key"] = self.create_standard_key
         if hasattr(self, "import_root_key") and self.import_root_key is not None:
             _dict["import_root_key"] = self.import_root_key
-        if (
-            hasattr(self, "import_standard_key")
-            and self.import_standard_key is not None
-        ):
+        if hasattr(self, "import_standard_key") and self.import_standard_key is not None:
             _dict["import_standard_key"] = self.import_standard_key
         if hasattr(self, "enforce_token") and self.enforce_token is not None:
             _dict["enforce_token"] = self.enforce_token
@@ -13865,17 +13335,13 @@ class SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes:
         """Return a `str` version of this SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes"
-    ) -> bool:
+    def __eq__(self, other: "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes"
-    ) -> bool:
+    def __ne__(self, other: "SetMultipleInstancePoliciesResourcesItemPolicyDataAttributes") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -13929,13 +13395,9 @@ class SetMultipleKeyPoliciesResource:
         if (type := _dict.get("type")) is not None:
             args["type"] = type
         else:
-            raise ValueError(
-                "Required property 'type' not present in SetMultipleKeyPoliciesResource JSON"
-            )
+            raise ValueError("Required property 'type' not present in SetMultipleKeyPoliciesResource JSON")
         if (dual_auth_delete := _dict.get("dualAuthDelete")) is not None:
-            args["dual_auth_delete"] = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(
-                dual_auth_delete
-            )
+            args["dual_auth_delete"] = KeyPolicyDualAuthDeleteDualAuthDelete.from_dict(dual_auth_delete)
         else:
             args["dual_auth_delete"] = None
         if (rotation := _dict.get("rotation")) is not None:
@@ -14028,9 +13490,7 @@ class UnwrapKeyResponseBody:
         plaintext: Optional[str] = None,
         ciphertext: Optional[str] = None,
         key_version: Optional["WrappedKeyVersionKeyVersion"] = None,
-        rewrapped_key_version: Optional[
-            "RewrappedKeyVersionRewrappedKeyVersion"
-        ] = None,
+        rewrapped_key_version: Optional["RewrappedKeyVersionRewrappedKeyVersion"] = None,
     ) -> None:
         """
         Initialize a UnwrapKeyResponseBody object.
@@ -14070,9 +13530,7 @@ class UnwrapKeyResponseBody:
         if (key_version := _dict.get("keyVersion")) is not None:
             args["key_version"] = WrappedKeyVersionKeyVersion.from_dict(key_version)
         if (rewrapped_key_version := _dict.get("rewrappedKeyVersion")) is not None:
-            args["rewrapped_key_version"] = (
-                RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
-            )
+            args["rewrapped_key_version"] = RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
         return cls(**args)
 
     @classmethod
@@ -14092,16 +13550,11 @@ class UnwrapKeyResponseBody:
                 _dict["keyVersion"] = getattr(self, "key_version")
             else:
                 _dict["keyVersion"] = getattr(self, "key_version").to_dict()
-        if (
-            hasattr(self, "rewrapped_key_version")
-            and getattr(self, "rewrapped_key_version") is not None
-        ):
+        if hasattr(self, "rewrapped_key_version") and getattr(self, "rewrapped_key_version") is not None:
             if isinstance(getattr(self, "rewrapped_key_version"), dict):
                 _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version")
             else:
-                _dict["rewrappedKeyVersion"] = getattr(
-                    self, "rewrapped_key_version"
-                ).to_dict()
+                _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version").to_dict()
         return _dict
 
     def _to_dict(self):
@@ -14368,42 +13821,22 @@ class CollectionMetadataOneOfCollectionMetadata(CollectionMetadataOneOf):
         The type of resources in the resource array.
         """
 
-        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         APPLICATION_VND_IBM_KMS_CRN_JSON = "application/vnd.ibm.kms.crn+json"
         APPLICATION_VND_IBM_KMS_ERROR_JSON = "application/vnd.ibm.kms.error+json"
-        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = (
-            "application/vnd.ibm.kms.event_acknowledge+json"
-        )
-        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = (
-            "application/vnd.ibm.kms.import_token+json"
-        )
+        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = "application/vnd.ibm.kms.event_acknowledge+json"
+        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = "application/vnd.ibm.kms.import_token+json"
         APPLICATION_VND_IBM_KMS_KEY_JSON = "application/vnd.ibm.kms.key+json"
-        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = (
-            "application/vnd.ibm.kms.key_action+json"
-        )
+        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = "application/vnd.ibm.kms.key_action+json"
         APPLICATION_VND_IBM_KMS_ALIAS_JSON = "application/vnd.ibm.kms.alias+json"
         APPLICATION_VND_IBM_KMS_KEY_RING_JSON = "application/vnd.ibm.kms.key_ring+json"
         APPLICATION_VND_IBM_KMS_POLICY_JSON = "application/vnd.ibm.kms.policy+json"
-        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = (
-            "application/vnd.ibm.kms.registration_input+json"
-        )
-        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = (
-            "application/vnd.ibm.kms.registration+json"
-        )
-        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = (
-            "application/vnd.ibm.kms.resource_crn+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = (
-            "application/vnd.ibm.kms.kmip_object+json"
-        )
+        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = "application/vnd.ibm.kms.registration_input+json"
+        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = "application/vnd.ibm.kms.registration+json"
+        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = "application/vnd.ibm.kms.resource_crn+json"
+        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = "application/vnd.ibm.kms.kmip_adapter+json"
+        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = "application/vnd.ibm.kms.kmip_client_certificate+json"
+        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = "application/vnd.ibm.kms.kmip_object+json"
 
 
 class GetInstancePoliciesOneOfGetInstancePolicyAllowedIP(GetInstancePoliciesOneOf):
@@ -14432,9 +13865,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedIP(GetInstancePoliciesOneO
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedIP":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedIP":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyAllowedIP object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -14444,9 +13875,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedIP(GetInstancePoliciesOneO
                 "Required property 'metadata' not present in GetInstancePoliciesOneOfGetInstancePolicyAllowedIP JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                GetInstancePolicyAllowedIPResourcesItem.from_dict(v) for v in resources
-            ]
+            args["resources"] = [GetInstancePolicyAllowedIPResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in GetInstancePoliciesOneOfGetInstancePolicyAllowedIP JSON"
@@ -14484,17 +13913,13 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedIP(GetInstancePoliciesOneO
         """Return a `str` version of this GetInstancePoliciesOneOfGetInstancePolicyAllowedIP object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedIP"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedIP") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedIP"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedIP") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -14513,9 +13938,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork(GetInstancePolicie
     def __init__(
         self,
         metadata: "CollectionMetadataOneOf",
-        resources: List[
-            "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem"
-        ],
+        resources: List["GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem"],
     ) -> None:
         """
         Initialize a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork object.
@@ -14530,9 +13953,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork(GetInstancePolicie
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -14543,10 +13964,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork(GetInstancePolicie
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem.from_dict(
-                    v
-                )
-                for v in resources
+                GetInstancePoliciesOneOfGetInstancePolicyAllowedNetworkResourcesItem.from_dict(v) for v in resources
             ]
         else:
             raise ValueError(
@@ -14585,17 +14003,13 @@ class GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork(GetInstancePolicie
         """Return a `str` version of this GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyAllowedNetwork") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -14627,9 +14041,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete(GetInstancePolicie
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -14639,10 +14051,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete(GetInstancePolicie
                 "Required property 'metadata' not present in GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                GetInstancePolicyDualAuthDeleteResourcesItem.from_dict(v)
-                for v in resources
-            ]
+            args["resources"] = [GetInstancePolicyDualAuthDeleteResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete JSON"
@@ -14680,24 +14089,18 @@ class GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete(GetInstancePolicie
         """Return a `str` version of this GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyDualAuthDelete") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
 
-class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
-    GetInstancePoliciesOneOf
-):
+class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(GetInstancePoliciesOneOf):
     """
     Properties that are associated with retrieving an instance level key create and import
     access policy.
@@ -14711,9 +14114,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
     def __init__(
         self,
         metadata: "CollectionMetadataOneOf",
-        resources: List[
-            "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem"
-        ],
+        resources: List["GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem"],
     ) -> None:
         """
         Initialize a GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess object.
@@ -14728,9 +14129,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -14741,9 +14140,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
-                    v
-                )
+                GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(v)
                 for v in resources
             ]
         else:
@@ -14783,17 +14180,13 @@ class GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess(
         """Return a `str` version of this GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyKeyCreateImportAccess") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -14824,9 +14217,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyMetrics(GetInstancePoliciesOneOf)
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyMetrics":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyMetrics":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyMetrics object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -14836,9 +14227,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyMetrics(GetInstancePoliciesOneOf)
                 "Required property 'metadata' not present in GetInstancePoliciesOneOfGetInstancePolicyMetrics JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                GetInstancePolicyMetricsResourcesItem.from_dict(v) for v in resources
-            ]
+            args["resources"] = [GetInstancePolicyMetricsResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in GetInstancePoliciesOneOfGetInstancePolicyMetrics JSON"
@@ -14913,9 +14302,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyRotation(GetInstancePoliciesOneOf
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetInstancePolicyRotation":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetInstancePolicyRotation":
         """Initialize a GetInstancePoliciesOneOfGetInstancePolicyRotation object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -14925,9 +14312,7 @@ class GetInstancePoliciesOneOfGetInstancePolicyRotation(GetInstancePoliciesOneOf
                 "Required property 'metadata' not present in GetInstancePoliciesOneOfGetInstancePolicyRotation JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                GetInstancePolicyRotationResourcesItem.from_dict(v) for v in resources
-            ]
+            args["resources"] = [GetInstancePolicyRotationResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in GetInstancePoliciesOneOfGetInstancePolicyRotation JSON"
@@ -14965,17 +14350,13 @@ class GetInstancePoliciesOneOfGetInstancePolicyRotation(GetInstancePoliciesOneOf
         """Return a `str` version of this GetInstancePoliciesOneOfGetInstancePolicyRotation object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyRotation"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyRotation") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePoliciesOneOfGetInstancePolicyRotation"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePoliciesOneOfGetInstancePolicyRotation") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -15004,9 +14385,7 @@ class GetInstancePoliciesOneOfGetMultipleInstancePolicies(GetInstancePoliciesOne
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "GetInstancePoliciesOneOfGetMultipleInstancePolicies":
+    def from_dict(cls, _dict: Dict) -> "GetInstancePoliciesOneOfGetMultipleInstancePolicies":
         """Initialize a GetInstancePoliciesOneOfGetMultipleInstancePolicies object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -15054,17 +14433,13 @@ class GetInstancePoliciesOneOfGetMultipleInstancePolicies(GetInstancePoliciesOne
         """Return a `str` version of this GetInstancePoliciesOneOfGetMultipleInstancePolicies object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "GetInstancePoliciesOneOfGetMultipleInstancePolicies"
-    ) -> bool:
+    def __eq__(self, other: "GetInstancePoliciesOneOfGetMultipleInstancePolicies") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "GetInstancePoliciesOneOfGetMultipleInstancePolicies"
-    ) -> bool:
+    def __ne__(self, other: "GetInstancePoliciesOneOfGetMultipleInstancePolicies") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -15108,8 +14483,7 @@ class GetKeyPoliciesOneOfGetKeyPolicyDualAuthDelete(GetKeyPoliciesOneOf):
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem.from_dict(v)
-                for v in resources
+                GetKeyPoliciesOneOfGetKeyPolicyDualAuthDeleteResourcesItem.from_dict(v) for v in resources
             ]
         else:
             raise ValueError(
@@ -15193,13 +14567,9 @@ class GetKeyPoliciesOneOfGetKeyPolicyRotation(GetKeyPoliciesOneOf):
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadata.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in GetKeyPoliciesOneOfGetKeyPolicyRotation JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in GetKeyPoliciesOneOfGetKeyPolicyRotation JSON")
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                GetKeyPolicyRotationResourcesItem.from_dict(v) for v in resources
-            ]
+            args["resources"] = [GetKeyPolicyRotationResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in GetKeyPoliciesOneOfGetKeyPolicyRotation JSON"
@@ -15286,9 +14656,7 @@ class GetKeyPoliciesOneOfGetMultipleKeyPolicies(GetKeyPoliciesOneOf):
                 "Required property 'metadata' not present in GetKeyPoliciesOneOfGetMultipleKeyPolicies JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                GetMultipleKeyPoliciesResource.from_dict(v) for v in resources
-            ]
+            args["resources"] = [GetMultipleKeyPoliciesResource.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in GetKeyPoliciesOneOfGetMultipleKeyPolicies JSON"
@@ -15366,9 +14734,7 @@ class KMIPProfileDataBodyKMIPProfileDataNative(KMIPProfileDataBody):
         if (crk_id := _dict.get("crk_id")) is not None:
             args["crk_id"] = crk_id
         else:
-            raise ValueError(
-                "Required property 'crk_id' not present in KMIPProfileDataBodyKMIPProfileDataNative JSON"
-            )
+            raise ValueError("Required property 'crk_id' not present in KMIPProfileDataBodyKMIPProfileDataNative JSON")
         return cls(**args)
 
     @classmethod
@@ -15423,9 +14789,7 @@ class KeyActionOneOfResponseRewrapKeyResponseBody(KeyActionOneOfResponse):
         *,
         ciphertext: Optional[str] = None,
         key_version: Optional["WrappedKeyVersionKeyVersion"] = None,
-        rewrapped_key_version: Optional[
-            "RewrappedKeyVersionRewrappedKeyVersion"
-        ] = None,
+        rewrapped_key_version: Optional["RewrappedKeyVersionRewrappedKeyVersion"] = None,
     ) -> None:
         """
         Initialize a KeyActionOneOfResponseRewrapKeyResponseBody object.
@@ -15450,9 +14814,7 @@ class KeyActionOneOfResponseRewrapKeyResponseBody(KeyActionOneOfResponse):
         if (key_version := _dict.get("keyVersion")) is not None:
             args["key_version"] = WrappedKeyVersionKeyVersion.from_dict(key_version)
         if (rewrapped_key_version := _dict.get("rewrappedKeyVersion")) is not None:
-            args["rewrapped_key_version"] = (
-                RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
-            )
+            args["rewrapped_key_version"] = RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
         return cls(**args)
 
     @classmethod
@@ -15470,16 +14832,11 @@ class KeyActionOneOfResponseRewrapKeyResponseBody(KeyActionOneOfResponse):
                 _dict["keyVersion"] = getattr(self, "key_version")
             else:
                 _dict["keyVersion"] = getattr(self, "key_version").to_dict()
-        if (
-            hasattr(self, "rewrapped_key_version")
-            and getattr(self, "rewrapped_key_version") is not None
-        ):
+        if hasattr(self, "rewrapped_key_version") and getattr(self, "rewrapped_key_version") is not None:
             if isinstance(getattr(self, "rewrapped_key_version"), dict):
                 _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version")
             else:
-                _dict["rewrappedKeyVersion"] = getattr(
-                    self, "rewrapped_key_version"
-                ).to_dict()
+                _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version").to_dict()
         return _dict
 
     def _to_dict(self):
@@ -15536,9 +14893,7 @@ class KeyActionOneOfResponseUnwrapKeyResponseBody(KeyActionOneOfResponse):
         plaintext: Optional[str] = None,
         ciphertext: Optional[str] = None,
         key_version: Optional["WrappedKeyVersionKeyVersion"] = None,
-        rewrapped_key_version: Optional[
-            "RewrappedKeyVersionRewrappedKeyVersion"
-        ] = None,
+        rewrapped_key_version: Optional["RewrappedKeyVersionRewrappedKeyVersion"] = None,
     ) -> None:
         """
         Initialize a KeyActionOneOfResponseUnwrapKeyResponseBody object.
@@ -15579,9 +14934,7 @@ class KeyActionOneOfResponseUnwrapKeyResponseBody(KeyActionOneOfResponse):
         if (key_version := _dict.get("keyVersion")) is not None:
             args["key_version"] = WrappedKeyVersionKeyVersion.from_dict(key_version)
         if (rewrapped_key_version := _dict.get("rewrappedKeyVersion")) is not None:
-            args["rewrapped_key_version"] = (
-                RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
-            )
+            args["rewrapped_key_version"] = RewrappedKeyVersionRewrappedKeyVersion.from_dict(rewrapped_key_version)
         return cls(**args)
 
     @classmethod
@@ -15601,16 +14954,11 @@ class KeyActionOneOfResponseUnwrapKeyResponseBody(KeyActionOneOfResponse):
                 _dict["keyVersion"] = getattr(self, "key_version")
             else:
                 _dict["keyVersion"] = getattr(self, "key_version").to_dict()
-        if (
-            hasattr(self, "rewrapped_key_version")
-            and getattr(self, "rewrapped_key_version") is not None
-        ):
+        if hasattr(self, "rewrapped_key_version") and getattr(self, "rewrapped_key_version") is not None:
             if isinstance(getattr(self, "rewrapped_key_version"), dict):
                 _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version")
             else:
-                _dict["rewrappedKeyVersion"] = getattr(
-                    self, "rewrapped_key_version"
-                ).to_dict()
+                _dict["rewrappedKeyVersion"] = getattr(self, "rewrapped_key_version").to_dict()
         return _dict
 
     def _to_dict(self):
@@ -15820,42 +15168,22 @@ class ListCollectionMetadataCollectionMetadata(ListCollectionMetadata):
         The type of resources in the resource array.
         """
 
-        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         APPLICATION_VND_IBM_KMS_CRN_JSON = "application/vnd.ibm.kms.crn+json"
         APPLICATION_VND_IBM_KMS_ERROR_JSON = "application/vnd.ibm.kms.error+json"
-        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = (
-            "application/vnd.ibm.kms.event_acknowledge+json"
-        )
-        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = (
-            "application/vnd.ibm.kms.import_token+json"
-        )
+        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = "application/vnd.ibm.kms.event_acknowledge+json"
+        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = "application/vnd.ibm.kms.import_token+json"
         APPLICATION_VND_IBM_KMS_KEY_JSON = "application/vnd.ibm.kms.key+json"
-        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = (
-            "application/vnd.ibm.kms.key_action+json"
-        )
+        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = "application/vnd.ibm.kms.key_action+json"
         APPLICATION_VND_IBM_KMS_ALIAS_JSON = "application/vnd.ibm.kms.alias+json"
         APPLICATION_VND_IBM_KMS_KEY_RING_JSON = "application/vnd.ibm.kms.key_ring+json"
         APPLICATION_VND_IBM_KMS_POLICY_JSON = "application/vnd.ibm.kms.policy+json"
-        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = (
-            "application/vnd.ibm.kms.registration_input+json"
-        )
-        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = (
-            "application/vnd.ibm.kms.registration+json"
-        )
-        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = (
-            "application/vnd.ibm.kms.resource_crn+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = (
-            "application/vnd.ibm.kms.kmip_object+json"
-        )
+        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = "application/vnd.ibm.kms.registration_input+json"
+        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = "application/vnd.ibm.kms.registration+json"
+        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = "application/vnd.ibm.kms.resource_crn+json"
+        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = "application/vnd.ibm.kms.kmip_adapter+json"
+        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = "application/vnd.ibm.kms.kmip_client_certificate+json"
+        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = "application/vnd.ibm.kms.kmip_object+json"
 
 
 class ListCollectionMetadataCollectionMetadataWithTotalCount(ListCollectionMetadata):
@@ -15889,9 +15217,7 @@ class ListCollectionMetadataCollectionMetadataWithTotalCount(ListCollectionMetad
         self.total_count = total_count
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "ListCollectionMetadataCollectionMetadataWithTotalCount":
+    def from_dict(cls, _dict: Dict) -> "ListCollectionMetadataCollectionMetadataWithTotalCount":
         """Initialize a ListCollectionMetadataCollectionMetadataWithTotalCount object from a json dictionary."""
         args = {}
         if (collection_type := _dict.get("collectionType")) is not None:
@@ -15934,17 +15260,13 @@ class ListCollectionMetadataCollectionMetadataWithTotalCount(ListCollectionMetad
         """Return a `str` version of this ListCollectionMetadataCollectionMetadataWithTotalCount object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "ListCollectionMetadataCollectionMetadataWithTotalCount"
-    ) -> bool:
+    def __eq__(self, other: "ListCollectionMetadataCollectionMetadataWithTotalCount") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "ListCollectionMetadataCollectionMetadataWithTotalCount"
-    ) -> bool:
+    def __ne__(self, other: "ListCollectionMetadataCollectionMetadataWithTotalCount") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -15953,42 +15275,22 @@ class ListCollectionMetadataCollectionMetadataWithTotalCount(ListCollectionMetad
         The type of resources in the resource array.
         """
 
-        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = (
-            "application/vnd.ibm.kms.allowed_ip_metadata+json"
-        )
+        APPLICATION_VND_IBM_KMS_ALLOWED_IP_METADATA_JSON = "application/vnd.ibm.kms.allowed_ip_metadata+json"
         APPLICATION_VND_IBM_KMS_CRN_JSON = "application/vnd.ibm.kms.crn+json"
         APPLICATION_VND_IBM_KMS_ERROR_JSON = "application/vnd.ibm.kms.error+json"
-        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = (
-            "application/vnd.ibm.kms.event_acknowledge+json"
-        )
-        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = (
-            "application/vnd.ibm.kms.import_token+json"
-        )
+        APPLICATION_VND_IBM_KMS_EVENT_ACKNOWLEDGE_JSON = "application/vnd.ibm.kms.event_acknowledge+json"
+        APPLICATION_VND_IBM_KMS_IMPORT_TOKEN_JSON = "application/vnd.ibm.kms.import_token+json"
         APPLICATION_VND_IBM_KMS_KEY_JSON = "application/vnd.ibm.kms.key+json"
-        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = (
-            "application/vnd.ibm.kms.key_action+json"
-        )
+        APPLICATION_VND_IBM_KMS_KEY_ACTION_JSON = "application/vnd.ibm.kms.key_action+json"
         APPLICATION_VND_IBM_KMS_ALIAS_JSON = "application/vnd.ibm.kms.alias+json"
         APPLICATION_VND_IBM_KMS_KEY_RING_JSON = "application/vnd.ibm.kms.key_ring+json"
         APPLICATION_VND_IBM_KMS_POLICY_JSON = "application/vnd.ibm.kms.policy+json"
-        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = (
-            "application/vnd.ibm.kms.registration_input+json"
-        )
-        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = (
-            "application/vnd.ibm.kms.registration+json"
-        )
-        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = (
-            "application/vnd.ibm.kms.resource_crn+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = (
-            "application/vnd.ibm.kms.kmip_adapter+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = (
-            "application/vnd.ibm.kms.kmip_client_certificate+json"
-        )
-        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = (
-            "application/vnd.ibm.kms.kmip_object+json"
-        )
+        APPLICATION_VND_IBM_KMS_REGISTRATION_INPUT_JSON = "application/vnd.ibm.kms.registration_input+json"
+        APPLICATION_VND_IBM_KMS_REGISTRATION_JSON = "application/vnd.ibm.kms.registration+json"
+        APPLICATION_VND_IBM_KMS_RESOURCE_CRN_JSON = "application/vnd.ibm.kms.resource_crn+json"
+        APPLICATION_VND_IBM_KMS_KMIP_ADAPTER_JSON = "application/vnd.ibm.kms.kmip_adapter+json"
+        APPLICATION_VND_IBM_KMS_KMIP_CLIENT_CERTIFICATE_JSON = "application/vnd.ibm.kms.kmip_client_certificate+json"
+        APPLICATION_VND_IBM_KMS_KMIP_OBJECT_JSON = "application/vnd.ibm.kms.kmip_object+json"
 
 
 class SetInstancePoliciesOneOfSetInstancePolicyAllowedIP(SetInstancePoliciesOneOf):
@@ -16004,9 +15306,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIP(SetInstancePoliciesOneO
     def __init__(
         self,
         metadata: "CollectionMetadata",
-        resources: List[
-            "SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem"
-        ],
+        resources: List["SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem"],
     ) -> None:
         """
         Initialize a SetInstancePoliciesOneOfSetInstancePolicyAllowedIP object.
@@ -16022,9 +15322,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIP(SetInstancePoliciesOneO
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedIP":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedIP":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyAllowedIP object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16035,10 +15333,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIP(SetInstancePoliciesOneO
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem.from_dict(
-                    v
-                )
-                for v in resources
+                SetInstancePoliciesOneOfSetInstancePolicyAllowedIPResourcesItem.from_dict(v) for v in resources
             ]
         else:
             raise ValueError(
@@ -16077,17 +15372,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedIP(SetInstancePoliciesOneO
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyAllowedIP object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIP"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIP") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIP"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedIP") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -16106,9 +15397,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork(SetInstancePolicie
     def __init__(
         self,
         metadata: "CollectionMetadata",
-        resources: List[
-            "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem"
-        ],
+        resources: List["SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem"],
     ) -> None:
         """
         Initialize a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork object.
@@ -16124,9 +15413,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork(SetInstancePolicie
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16137,10 +15424,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork(SetInstancePolicie
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem.from_dict(
-                    v
-                )
-                for v in resources
+                SetInstancePoliciesOneOfSetInstancePolicyAllowedNetworkResourcesItem.from_dict(v) for v in resources
             ]
         else:
             raise ValueError(
@@ -16179,17 +15463,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork(SetInstancePolicie
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyAllowedNetwork") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -16223,9 +15503,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete(SetInstancePolicie
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16235,10 +15513,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete(SetInstancePolicie
                 "Required property 'metadata' not present in SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                SetInstancePolicyDualAuthDeleteResourcesItem.from_dict(v)
-                for v in resources
-            ]
+            args["resources"] = [SetInstancePolicyDualAuthDeleteResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete JSON"
@@ -16276,24 +15551,18 @@ class SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete(SetInstancePolicie
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyDualAuthDelete") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
 
-class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
-    SetInstancePoliciesOneOf
-):
+class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(SetInstancePoliciesOneOf):
     """
     Properties that are associated with setting an instance level key create and import
     access policy.
@@ -16308,9 +15577,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
     def __init__(
         self,
         metadata: "CollectionMetadata",
-        resources: List[
-            "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem"
-        ],
+        resources: List["SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem"],
     ) -> None:
         """
         Initialize a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess object.
@@ -16326,9 +15593,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16339,9 +15604,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(
-                    v
-                )
+                SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccessResourcesItem.from_dict(v)
                 for v in resources
             ]
         else:
@@ -16381,17 +15644,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess(
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyKeyCreateImportAccess") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -16409,9 +15668,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyMetrics(SetInstancePoliciesOneOf)
     def __init__(
         self,
         metadata: "CollectionMetadata",
-        resources: List[
-            "SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem"
-        ],
+        resources: List["SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem"],
     ) -> None:
         """
         Initialize a SetInstancePoliciesOneOfSetInstancePolicyMetrics object.
@@ -16426,9 +15683,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyMetrics(SetInstancePoliciesOneOf)
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyMetrics":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyMetrics":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyMetrics object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16439,10 +15694,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyMetrics(SetInstancePoliciesOneOf)
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem.from_dict(
-                    v
-                )
-                for v in resources
+                SetInstancePoliciesOneOfSetInstancePolicyMetricsResourcesItem.from_dict(v) for v in resources
             ]
         else:
             raise ValueError(
@@ -16505,9 +15757,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotation(SetInstancePoliciesOneOf
     def __init__(
         self,
         metadata: "CollectionMetadata",
-        resources: List[
-            "SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem"
-        ],
+        resources: List["SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem"],
     ) -> None:
         """
         Initialize a SetInstancePoliciesOneOfSetInstancePolicyRotation object.
@@ -16522,9 +15772,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotation(SetInstancePoliciesOneOf
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetInstancePolicyRotation":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetInstancePolicyRotation":
         """Initialize a SetInstancePoliciesOneOfSetInstancePolicyRotation object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16535,10 +15783,7 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotation(SetInstancePoliciesOneOf
             )
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [
-                SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem.from_dict(
-                    v
-                )
-                for v in resources
+                SetInstancePoliciesOneOfSetInstancePolicyRotationResourcesItem.from_dict(v) for v in resources
             ]
         else:
             raise ValueError(
@@ -16577,17 +15822,13 @@ class SetInstancePoliciesOneOfSetInstancePolicyRotation(SetInstancePoliciesOneOf
         """Return a `str` version of this SetInstancePoliciesOneOfSetInstancePolicyRotation object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotation"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotation") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotation"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetInstancePolicyRotation") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -16620,9 +15861,7 @@ class SetInstancePoliciesOneOfSetMultipleInstancePolicies(SetInstancePoliciesOne
         self.resources = resources
 
     @classmethod
-    def from_dict(
-        cls, _dict: Dict
-    ) -> "SetInstancePoliciesOneOfSetMultipleInstancePolicies":
+    def from_dict(cls, _dict: Dict) -> "SetInstancePoliciesOneOfSetMultipleInstancePolicies":
         """Initialize a SetInstancePoliciesOneOfSetMultipleInstancePolicies object from a json dictionary."""
         args = {}
         if (metadata := _dict.get("metadata")) is not None:
@@ -16632,9 +15871,7 @@ class SetInstancePoliciesOneOfSetMultipleInstancePolicies(SetInstancePoliciesOne
                 "Required property 'metadata' not present in SetInstancePoliciesOneOfSetMultipleInstancePolicies JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                SetMultipleInstancePoliciesResourcesItem.from_dict(v) for v in resources
-            ]
+            args["resources"] = [SetMultipleInstancePoliciesResourcesItem.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in SetInstancePoliciesOneOfSetMultipleInstancePolicies JSON"
@@ -16672,17 +15909,13 @@ class SetInstancePoliciesOneOfSetMultipleInstancePolicies(SetInstancePoliciesOne
         """Return a `str` version of this SetInstancePoliciesOneOfSetMultipleInstancePolicies object."""
         return json.dumps(self.to_dict(), indent=2)
 
-    def __eq__(
-        self, other: "SetInstancePoliciesOneOfSetMultipleInstancePolicies"
-    ) -> bool:
+    def __eq__(self, other: "SetInstancePoliciesOneOfSetMultipleInstancePolicies") -> bool:
         """Return `true` when self and other are equal, false otherwise."""
         if not isinstance(other, self.__class__):
             return False
         return self.__dict__ == other.__dict__
 
-    def __ne__(
-        self, other: "SetInstancePoliciesOneOfSetMultipleInstancePolicies"
-    ) -> bool:
+    def __ne__(self, other: "SetInstancePoliciesOneOfSetMultipleInstancePolicies") -> bool:
         """Return `true` when self and other are not equal, false otherwise."""
         return not self == other
 
@@ -16724,9 +15957,7 @@ class SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete(SetKeyPoliciesOneOf):
                 "Required property 'metadata' not present in SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                KeyPolicyDualAuthDelete.from_dict(v) for v in resources
-            ]
+            args["resources"] = [KeyPolicyDualAuthDelete.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in SetKeyPoliciesOneOfSetKeyPolicyDualAuthDelete JSON"
@@ -16807,9 +16038,7 @@ class SetKeyPoliciesOneOfSetKeyPolicyRotation(SetKeyPoliciesOneOf):
         if (metadata := _dict.get("metadata")) is not None:
             args["metadata"] = CollectionMetadata.from_dict(metadata)
         else:
-            raise ValueError(
-                "Required property 'metadata' not present in SetKeyPoliciesOneOfSetKeyPolicyRotation JSON"
-            )
+            raise ValueError("Required property 'metadata' not present in SetKeyPoliciesOneOfSetKeyPolicyRotation JSON")
         if (resources := _dict.get("resources")) is not None:
             args["resources"] = [KeyPolicyRotation.from_dict(v) for v in resources]
         else:
@@ -16898,9 +16127,7 @@ class SetKeyPoliciesOneOfSetMultipleKeyPolicies(SetKeyPoliciesOneOf):
                 "Required property 'metadata' not present in SetKeyPoliciesOneOfSetMultipleKeyPolicies JSON"
             )
         if (resources := _dict.get("resources")) is not None:
-            args["resources"] = [
-                SetMultipleKeyPoliciesResource.from_dict(v) for v in resources
-            ]
+            args["resources"] = [SetMultipleKeyPoliciesResource.from_dict(v) for v in resources]
         else:
             raise ValueError(
                 "Required property 'resources' not present in SetKeyPoliciesOneOfSetMultipleKeyPolicies JSON"
