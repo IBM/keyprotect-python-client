@@ -56,9 +56,6 @@ publish = [
     "twine"
 ]
 
-[tool.setuptools]
-packages = ["keyprotect"]
-
 [tool.black]
 line-length = 120
 skip-string-normalization = true
