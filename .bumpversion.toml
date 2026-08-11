@@ -11,8 +11,8 @@ replace = "{new_version}"
 
 [[tool.bumpversion.files]]
 filename = "keyprotect/version.py"
-search = "__version__ = '{current_version}'"
-replace = "__version__ = '{new_version}'"
+search = "__version__ = \"{current_version}\""
+replace = "__version__ = \"{new_version}\""
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
