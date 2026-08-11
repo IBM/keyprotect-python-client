@@ -1,22 +1,60 @@
-.PHONY: dist
+# This makefile is used to make it easier to get the project set up
+# to be ready for development work in the local sandbox.
+# example: "make setup"
 
-dist:
-	python setup.py sdist bdist_wheel
+PYTHON=python
+LINT=black
+LINT_DIRS=keyprotect test/unit test/integration examples
 
-publish: dist
-	pip install 'twine>=1.5.0'
-	twine upload dist/*
-	rm -fr build dist .egg *.egg-info
+setup: deps dev-deps install-project
 
-setup: deps dev_deps
+all: upgrade-pip setup test-unit lint
+
+ci: all
+
+publish-release: publish-deps build-dist publish-dist
+
+upgrade-pip:
+	${PYTHON} -m pip install --upgrade pip
 
 deps:
-	python -m pip install -r requirements.txt
+	${PYTHON} -m pip install .
 
-dev_deps:
-	python -m pip install -r requirements-dev.txt
+dev-deps:
+	${PYTHON} -m pip install .[dev]
 
-ci: setup lint
+detect-secrets:
+	detect-secrets scan --update .secrets.baseline
+	detect-secrets audit .secrets.baseline
+
+publish-deps:
+	${PYTHON} -m pip install .[publish]
+
+install-project:
+	${PYTHON} -m pip install -e .
+
+test: test-unit test-int
+
+test-unit:
+	${PYTHON} -m pytest --cov=keyprotect test/unit
+
+test-int:
+	${PYTHON} -m pytest test/integration
+
+test-examples:
+	${PYTHON} -m pytest examples
 
 lint:
-	./pylint.sh
+	${PYTHON} -m pylint ${LINT_DIRS}
+	${LINT} --check ${LINT_DIRS}
+
+lint-fix:
+	${LINT} ${LINT_DIRS}
+
+build-dist:
+	rm -fr dist
+	${PYTHON} -m build
+
+# This target requires the TWINE_PASSWORD env variable to be set to the user's pypi.org API token.
+publish-dist:
+	TWINE_USERNAME=__token__ ${PYTHON} -m twine upload --non-interactive --verbose dist/*
