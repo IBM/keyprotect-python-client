@@ -13,6 +13,9 @@ on:
   workflow_dispatch:
     # Allow workflow to be triggered manually.
 
+permissions:
+  contents: read
+
 jobs:
   detect-secrets:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
@@ -62,6 +65,7 @@ jobs:
     if: ${{ always() }}
     runs-on: ubuntu-latest
     name: Final Test Results
+    permissions: {}
     needs: [build]
     steps:
       - run: |
@@ -77,6 +81,8 @@ jobs:
     if: "github.ref_name == 'master' && github.event_name != 'pull_request'"
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
